@@ -15,6 +15,11 @@ public class BossBehaviour01 : MonoBehaviour
     public GameObject plaqSpawner2;
     public GameObject plaqSpawner3;
     public GameObject plaqSpawner4;
+    public GameObject plaqSpawner5;
+    public GameObject plaqSpawner6;
+    public GameObject plaqSpawner7;
+    public GameObject plaqSpawner8;
+
     public GameObject plaqueta;
     public float currentTime;
     public bool spawning;
@@ -62,8 +67,11 @@ public class BossBehaviour01 : MonoBehaviour
         Instantiate(plaqueta, new Vector3(plaqSpawner1.transform.position.x, plaqSpawner1.transform.position.y, 0), Quaternion.identity);
         Instantiate(plaqueta, new Vector3(plaqSpawner2.transform.position.x, plaqSpawner2.transform.position.y, 0), Quaternion.identity);
         Instantiate(plaqueta, new Vector3(plaqSpawner3.transform.position.x, plaqSpawner3.transform.position.y, 0), Quaternion.identity);
-        Instantiate(plaqueta, new Vector3(plaqSpawner4.transform.position.x, plaqSpawner4.gameObject.transform.position.y, 0), Quaternion.identity);
-
+        Instantiate(plaqueta, new Vector3(plaqSpawner4.transform.position.x, plaqSpawner4.transform.position.y, 0), Quaternion.identity);
+        Instantiate(plaqueta, new Vector3(plaqSpawner5.transform.position.x, plaqSpawner5.transform.position.y, 0), Quaternion.identity);
+        Instantiate(plaqueta, new Vector3(plaqSpawner6.transform.position.x, plaqSpawner6.transform.position.y, 0), Quaternion.identity);
+        Instantiate(plaqueta, new Vector3(plaqSpawner7.transform.position.x, plaqSpawner7.transform.position.y, 0), Quaternion.identity);
+        Instantiate(plaqueta, new Vector3(plaqSpawner8.transform.position.x, plaqSpawner8.transform.position.y, 0), Quaternion.identity);
 
 
     }
