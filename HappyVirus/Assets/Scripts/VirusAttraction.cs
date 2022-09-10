@@ -38,13 +38,13 @@ public class VirusAttraction : MonoBehaviour {
         
         if (collision.gameObject.tag == "VirusNexus")
         { isChasing = false; } ;
-        Debug.Log("Im INSIDE");
+       // Debug.Log("Im INSIDE");
     }
     public void OnCollisionExit2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "VirusNexus")
         { isChasing = true; };
-        Debug.Log("Im OUTSIDE");
+       // Debug.Log("Im OUTSIDE");
 
     }
 }

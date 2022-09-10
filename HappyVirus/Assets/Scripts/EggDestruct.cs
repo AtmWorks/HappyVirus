@@ -15,7 +15,6 @@ public class EggDestruct : MonoBehaviour {
     {
         if(other.tag == "EggAtractor" && PlayerStatics.creationState == 1)
         {
-            Debug.Log("ITS WORKING");
            Destroy(mainEgg);
         }
     }

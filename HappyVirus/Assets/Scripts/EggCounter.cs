@@ -27,7 +27,7 @@ public class EggCounter : MonoBehaviour {
         if (other.tag == "EGG")
         { 
         EggCount++;
-        Debug.Log(string.Format("EggCount = {0}", EggCount));
+        //Debug.Log(string.Format("EggCount = {0}", EggCount));
 
         }
     }
@@ -38,7 +38,7 @@ public class EggCounter : MonoBehaviour {
         if (other.tag == "EGG")
         {
             EggCount--;
-            Debug.Log(string.Format("EggCount = {0}", EggCount));
+            //Debug.Log(string.Format("EggCount = {0}", EggCount));
 
         }
     }

@@ -12,7 +12,7 @@ public class EggAttraction : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.tag == "Virus" && isAbsorbing == true)
+        if (collision.tag == "Follow" && isAbsorbing == true)
         {
             transform.position = Vector3.MoveTowards(transform.position, collision.transform.position, AttractionSpeed * Time.deltaTime);
     

@@ -7,7 +7,8 @@ public class PlayerStatics : MonoBehaviour {
     public static int creationState;
     public static int O2counter;
     public static int EggsCounterPubl;
-    public static int VirusState; //
+    public static int VirusState;
+    public static float inmuneTimer;//
 	// Use this for initialization
 	void Start ()
     {
@@ -18,8 +19,11 @@ public class PlayerStatics : MonoBehaviour {
     }
 	
 	// Update is called once per frame
-	void Update ()
+	void FixedUpdate ()
     {
-		
-	}
+        if (PlayerStatics.inmuneTimer > 0)
+        {
+            PlayerStatics.inmuneTimer -= 1 * Time.deltaTime;
+        }
+    }
 }

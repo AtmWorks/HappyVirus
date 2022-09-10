@@ -35,8 +35,8 @@ public class BossBehaviour01 : MonoBehaviour
         bossHP = 1;
         spawning = false;
         isChasing = false;
-        currentTime = 6f;
-        maxTime = 6f;
+        currentTime = 5f;
+        maxTime = 5f;
         EnemyCurrentState = 1;
     }
 
@@ -68,10 +68,10 @@ public class BossBehaviour01 : MonoBehaviour
         Instantiate(plaqueta, new Vector3(plaqSpawner2.transform.position.x, plaqSpawner2.transform.position.y, 0), Quaternion.identity);
         Instantiate(plaqueta, new Vector3(plaqSpawner3.transform.position.x, plaqSpawner3.transform.position.y, 0), Quaternion.identity);
         Instantiate(plaqueta, new Vector3(plaqSpawner4.transform.position.x, plaqSpawner4.transform.position.y, 0), Quaternion.identity);
-        Instantiate(plaqueta, new Vector3(plaqSpawner5.transform.position.x, plaqSpawner5.transform.position.y, 0), Quaternion.identity);
-        Instantiate(plaqueta, new Vector3(plaqSpawner6.transform.position.x, plaqSpawner6.transform.position.y, 0), Quaternion.identity);
-        Instantiate(plaqueta, new Vector3(plaqSpawner7.transform.position.x, plaqSpawner7.transform.position.y, 0), Quaternion.identity);
-        Instantiate(plaqueta, new Vector3(plaqSpawner8.transform.position.x, plaqSpawner8.transform.position.y, 0), Quaternion.identity);
+        //Instantiate(plaqueta, new Vector3(plaqSpawner5.transform.position.x, plaqSpawner5.transform.position.y, 0), Quaternion.identity);
+        //Instantiate(plaqueta, new Vector3(plaqSpawner6.transform.position.x, plaqSpawner6.transform.position.y, 0), Quaternion.identity);
+        //Instantiate(plaqueta, new Vector3(plaqSpawner7.transform.position.x, plaqSpawner7.transform.position.y, 0), Quaternion.identity);
+        //Instantiate(plaqueta, new Vector3(plaqSpawner8.transform.position.x, plaqSpawner8.transform.position.y, 0), Quaternion.identity);
 
 
     }

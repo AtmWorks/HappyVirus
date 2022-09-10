@@ -6,6 +6,7 @@ public class ParticleFire : MonoBehaviour {
 
     public static int shootMode;
     public GameObject firePoint;
+    public GameObject firePoint2;
     public List<GameObject> vfx = new List<GameObject>();
 
     private GameObject effectToSpawn;
@@ -89,7 +90,7 @@ public class ParticleFire : MonoBehaviour {
         if (currentEggTime <= 0)
         {
             effectToSpawn = vfx[1];
-            SpawnVFX();
+            SpawnEgg();
             PlayerStatics.EggsCounterPubl++;
             PlayerStatics.O2counter -= 3;
             currentEggTime = startingEggTime;
@@ -110,6 +111,16 @@ public class ParticleFire : MonoBehaviour {
         { Debug.Log("No Fire Point"); }
     }
 
-	
+    void SpawnEgg()
+    {
+        GameObject vfx;
+
+        if (firePoint != null)
+        { vfx = Instantiate(effectToSpawn, firePoint2.transform.position, transform.rotation); }
+
+        else
+        { Debug.Log("No Fire Point"); }
+
+    }
 		
 }

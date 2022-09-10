@@ -254,7 +254,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0.21, y: -3.26}
+  m_AnchoredPosition: {x: 0.1, y: -2.4}
   m_SizeDelta: {x: 485, y: 273}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &1393127237
@@ -1546,7 +1546,7 @@ Transform:
   m_GameObject: {fileID: 1056478309327772}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 4829413828833128}
   m_Father: {fileID: 4111984934773504}
@@ -2472,10 +2472,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0c1e8b476cfd4742ac0acf9dcac8ba3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  virusParent: {fileID: 0}
   explosion: {fileID: 0}
   spawn: {fileID: 0}
-  InmuneTime: 3
-  FaceTime: 0
 --- !u!114 &114917982230867160
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2491,7 +2490,6 @@ MonoBehaviour:
   VirusNexus: {fileID: 1553776713527444}
   AttractionSpeed: 6
   isChasing: 0
-  isOnControl: 0
 --- !u!58 &58105245641664402
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -2774,10 +2772,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0c1e8b476cfd4742ac0acf9dcac8ba3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  virusParent: {fileID: 0}
   explosion: {fileID: 0}
   spawn: {fileID: 0}
-  InmuneTime: 3
-  FaceTime: 0
 --- !u!114 &114307912062046814
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2793,7 +2790,6 @@ MonoBehaviour:
   VirusNexus: {fileID: 1913569933880434}
   AttractionSpeed: 6
   isChasing: 0
-  isOnControl: 0
 --- !u!58 &58015181734412692
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -4611,10 +4607,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0c1e8b476cfd4742ac0acf9dcac8ba3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  virusParent: {fileID: 0}
   explosion: {fileID: 0}
   spawn: {fileID: 0}
-  InmuneTime: 3
-  FaceTime: 0
 --- !u!114 &114835942148882544
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4630,7 +4625,6 @@ MonoBehaviour:
   VirusNexus: {fileID: 1563177237335048}
   AttractionSpeed: 6
   isChasing: 0
-  isOnControl: 0
 --- !u!58 &58245350367002624
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -5047,7 +5041,7 @@ Transform:
   m_GameObject: {fileID: 1430095640808438}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 4295239995859094}
   - {fileID: 4520851612426658}
@@ -5879,6 +5873,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   firePoint: {fileID: 1146151375903804}
+  firePoint2: {fileID: 0}
   vfx:
   - {fileID: 1719886368425528, guid: 52895f70bb88c7a4dac2daf24bbfa763, type: 3}
   - {fileID: 0}
@@ -6466,6 +6461,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   firePoint: {fileID: 1392715696492540}
+  firePoint2: {fileID: 0}
   vfx:
   - {fileID: 1719886368425528, guid: 52895f70bb88c7a4dac2daf24bbfa763, type: 3}
   - {fileID: 1110859084557204, guid: 614d805e7dda6804d9812a5c46ad4a88, type: 3}
@@ -6611,6 +6607,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   firePoint: {fileID: 1706302129736130}
+  firePoint2: {fileID: 0}
   vfx:
   - {fileID: 1719886368425528, guid: 52895f70bb88c7a4dac2daf24bbfa763, type: 3}
   - {fileID: 0}
@@ -7034,10 +7031,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bigLight: {fileID: 2059044347}
   VirusFace: {fileID: 1430095640808438}
+  VirusSkin: {fileID: 0}
   VirusBody: {fileID: 1056478309327772}
   virusDoble: {fileID: 1191559476487358}
   speed: 6
   control: {fileID: 114307912062046814}
+  blob1: {fileID: 0}
+  blob2: {fileID: 0}
+  blob3: {fileID: 0}
+  blob4: {fileID: 0}
+  blob5: {fileID: 0}
+  blob6: {fileID: 0}
+  skinPos: {x: 0, y: 0, z: 0}
+  skinScale: {x: 0, y: 0, z: 0}
+  skinRot: {x: 0, y: 0, z: 0, w: 0}
   Stamina: {fileID: 4483969882728157853}
   coolingDown: 0
   waitTime: 1
@@ -7071,11 +7078,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0c1e8b476cfd4742ac0acf9dcac8ba3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  virusParent: {fileID: 0}
   explosion: {fileID: 5459446116007223409, guid: d526eccf8bb67924ea4503130961d5fb,
     type: 3}
   spawn: {fileID: 0}
-  InmuneTime: 2
-  FaceTime: 2
 --- !u!58 &58134490741272158
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -7548,6 +7554,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   firePoint: {fileID: 1630743080036066}
+  firePoint2: {fileID: 0}
   vfx:
   - {fileID: 1719886368425528, guid: 52895f70bb88c7a4dac2daf24bbfa763, type: 3}
   - {fileID: 0}
@@ -7629,6 +7636,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   firePoint: {fileID: 1698148560610684}
+  firePoint2: {fileID: 0}
   vfx:
   - {fileID: 1719886368425528, guid: 52895f70bb88c7a4dac2daf24bbfa763, type: 3}
   - {fileID: 0}
@@ -10134,10 +10142,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0c1e8b476cfd4742ac0acf9dcac8ba3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  virusParent: {fileID: 0}
   explosion: {fileID: 0}
   spawn: {fileID: 0}
-  InmuneTime: 3
-  FaceTime: 0
 --- !u!114 &114617486021457866
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10153,7 +10160,6 @@ MonoBehaviour:
   VirusNexus: {fileID: 1055010812551534}
   AttractionSpeed: 6
   isChasing: 0
-  isOnControl: 0
 --- !u!58 &58213356281604230
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -10457,12 +10463,12 @@ PrefabInstance:
     - target: {fileID: 2825816797634606022, guid: 5e1d74d0c1c06854886a78bfaaab7b50,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -2.14
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2825816797634606022, guid: 5e1d74d0c1c06854886a78bfaaab7b50,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 5.33
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2825816797634606022, guid: 5e1d74d0c1c06854886a78bfaaab7b50,
         type: 3}
@@ -10482,17 +10488,22 @@ PrefabInstance:
     - target: {fileID: 4483969882342891355, guid: 5e1d74d0c1c06854886a78bfaaab7b50,
         type: 3}
       propertyPath: m_Color.a
-      value: 0.9137255
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4483969882342891355, guid: 5e1d74d0c1c06854886a78bfaaab7b50,
         type: 3}
       propertyPath: m_Color.b
-      value: 0.3726415
+      value: 95
       objectReference: {fileID: 0}
     - target: {fileID: 4483969882342891355, guid: 5e1d74d0c1c06854886a78bfaaab7b50,
         type: 3}
       propertyPath: m_Color.g
-      value: 0.96482104
+      value: 246
+      objectReference: {fileID: 0}
+    - target: {fileID: 4483969882342891355, guid: 5e1d74d0c1c06854886a78bfaaab7b50,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 255
       objectReference: {fileID: 0}
     - target: {fileID: 4672869578218192816, guid: 5e1d74d0c1c06854886a78bfaaab7b50,
         type: 3}

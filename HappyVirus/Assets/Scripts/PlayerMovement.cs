@@ -9,6 +9,7 @@ public class PlayerMovement : MonoBehaviour
     //public bool VirusFaceCheck;
     public GameObject bigLight;
     public GameObject VirusFace;
+    public GameObject VirusSkin;
     public GameObject VirusBody;
     public GameObject virusDoble;
     public float speed;
@@ -17,7 +18,28 @@ public class PlayerMovement : MonoBehaviour
     private bool growingFace;
     private bool outOfControl;
     public VirusAttraction control;
-    
+
+
+    //Posicionamiento del soft body
+    public GameObject blob1;
+    public GameObject blob2;
+    public GameObject blob3;
+    public GameObject blob4;
+    public GameObject blob5;
+    public GameObject blob6;
+
+    private Vector3 softPos1;
+    private Vector3 softPos2;
+    private Vector3 softPos3;
+    private Vector3 softPos4;
+    private Vector3 softPos5;
+    private Vector3 softPos6;
+    public Vector3 skinPos;
+    public Vector3 skinScale;
+    private Quaternion softRot;
+    public Quaternion skinRot;
+
+
     //
     public Image Stamina;
     public bool coolingDown;
@@ -38,57 +60,88 @@ public class PlayerMovement : MonoBehaviour
 
     void Start ()
     {
-        VirusFace.gameObject.transform.localScale = new Vector3(0, 0, 0);
-        VirusBody.gameObject.transform.localScale = new Vector3(0, 0, 0);
+       
+
+        VirusBody.gameObject.SetActive(false);
         outOfControl = false;
         //VirusFaceCheck = false;
         
         waitTime = 2f;
-       
+
+        //guardamos posiciones del soft body
+
+        softPos1 = blob1.transform.localPosition;
+        softPos2 = blob2.transform.localPosition;
+        softPos3 = blob3.transform.localPosition;
+        softPos4 = blob4.transform.localPosition;
+        softPos5 = blob5.transform.localPosition;
+        softPos6 = blob6.transform.localPosition;
+        softRot = blob1.transform.rotation;
+
+        skinPos = VirusSkin.transform.localPosition;
+        skinRot = VirusSkin.transform.localRotation;
+        skinScale = VirusSkin.transform.localScale;
+
+        VirusFace.gameObject.transform.localScale = new Vector3(0, 0, 0);
+        //VirusSkin.SetActive(false);
+        growingFace = false;
 
     }
-	
-	private void faceGrow ()
-    { 
-        VirusFace.gameObject.transform.localScale += new Vector3(1.5f *Time.deltaTime, 1.5f*Time.deltaTime,1.5f* Time.deltaTime);
-        VirusBody.gameObject.transform.localScale += new Vector3(1.5f * Time.deltaTime, 1.5f * Time.deltaTime, 1.5f * Time.deltaTime);
-    }
-
-	void FixedUpdate ()
+    private void softBodyPosition()
     {
-        
+        VirusBody.SetActive(true);
+        //VirusSkin.SetActive(true);
+
+        blob1.transform.localPosition = softPos1;
+        blob2.transform.localPosition = softPos2;
+        blob3.transform.localPosition = softPos3;
+        blob4.transform.localPosition = softPos4;
+        blob5.transform.localPosition = softPos5;
+        blob6.transform.localPosition = softPos6;
+        blob1.transform.rotation = softRot;
+        blob2.transform.rotation = softRot;
+        blob3.transform.rotation = softRot;
+        blob4.transform.rotation = softRot;
+        blob5.transform.rotation = softRot;
+        blob6.transform.rotation = softRot;
+        VirusSkin.gameObject.transform.localPosition = skinPos;
+        VirusSkin.gameObject.transform.localRotation = skinRot;
+        VirusSkin.gameObject.transform.localScale = skinScale;
+
+    }
+
+    void FixedUpdate ()
+    {
+
         //MECANICA DE CAMBIAR DE FORMA
-        if (growingFace== true  )
+        if (growingFace == true)
         {
-            Debug.Log ("Face Growing");
-            faceGrow();
-            
+            VirusFace.gameObject.transform.localScale += new Vector3(1.5f * Time.deltaTime, 1.5f * Time.deltaTime, 1.5f * Time.deltaTime);
         }
         if (VirusFace.gameObject.transform.localScale.x >= 1 && VirusFace.gameObject.transform.localScale.y >= 1)
         {
-            growingFace = false;
-            VirusFaceCheck = true;
             VirusFace.gameObject.transform.localScale = new Vector3(1, 1, 1);
-            VirusBody.gameObject.transform.localScale = new Vector3(1, 1, 1);
-            bigLight.SetActive(true);
-
+            growingFace = false;
 
         }
-        else
-        {
-            VirusFaceCheck = false;
-            bigLight.SetActive(false);
-
-        }
+ 
         if (Input.GetKeyDown("p") && PlayerStatics.O2counter >=3 && VirusFaceCheck == false)
         {
-            growingFace = true;
+            
+
             //VirusFace.gameObject.transform.localScale = new Vector3 (1, 1, 1) ; 
             //VirusFace.SetActive(true);
             PlayerStatics.O2counter -= 3;
             PlayerCollision.PlayermaxHP = 10;
             PlayerCollision.PlayerHP = 10;
             PlayerStatics.VirusState = 2;
+            softBodyPosition();
+            growingFace = true;
+            Debug.Log("Face Growing");
+            bigLight.SetActive(true);
+            VirusFaceCheck = true;
+            
+
 
 
         }
@@ -97,16 +150,19 @@ public class PlayerMovement : MonoBehaviour
             //VirusFace.SetActive(false);
             PlayerStatics.VirusState = 1;
             VirusFace.gameObject.transform.localScale = new Vector3(0, 0, 0);
-            VirusBody.gameObject.transform.localScale = new Vector3(0, 0, 0);
+            //VirusSkin.gameObject.transform.localScale = new Vector3(0, 0, 0);
 
+            VirusBody.gameObject.SetActive(false);
+        
             PlayerCollision.PlayermaxHP =3;
             PlayerCollision.PlayerHP = 3;
+            bigLight.SetActive(false);
+            VirusFaceCheck = false;
         }
         //ATRAER HUEVOS AL PLAYER//
         if (Input.GetMouseButton(1) && PlayerAnimator.IsShooting == false)
         {
             EggAttraction.isAbsorbing = true;
-
         }
         else
         {
@@ -172,7 +228,7 @@ public class PlayerMovement : MonoBehaviour
         Vector2 movement = new Vector2(moveHorizontal, moveVertical);
         rig.velocity = movement * speed;
         //rig.AddForce(movement * speed);
-        Debug.Log(rig.velocity);
+        //Debug.Log(rig.velocity);
         
 
         //MOVIMIENTO AL DOBLE

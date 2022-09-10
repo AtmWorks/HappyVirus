@@ -18,7 +18,7 @@ public class disablePlaquetas : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (spawn.isInfected == true)
+        if (spawn.isInfected == true ) 
         {
             Instantiate(explosion, new Vector3(this.gameObject.transform.position.x, this.gameObject.transform.position.y, 0), Quaternion.identity);
 
