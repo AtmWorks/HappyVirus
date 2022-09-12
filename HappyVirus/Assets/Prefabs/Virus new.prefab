@@ -1,5 +1,52 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &982471789
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 982471790}
+  - component: {fileID: 982471791}
+  m_Layer: 0
+  m_Name: FollowEgg
+  m_TagString: Follow
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &982471790
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 982471789}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.01, y: -0.01, z: 0}
+  m_LocalScale: {x: 0.99449754, y: 0.99449754, z: 0}
+  m_Children: []
+  m_Father: {fileID: 1374653703284074444}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!58 &982471791
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 982471789}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 1.72
 --- !u!1 &1373598565108028082
 GameObject:
   m_ObjectHideFlags: 0
@@ -1520,7 +1567,7 @@ DistanceJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}
   m_AutoConfigureDistance: 1
-  m_Distance: 1.0697168
+  m_Distance: 0.93079466
   m_MaxDistanceOnly: 0
 --- !u!231 &1374653703127428618
 SpringJoint2D:
@@ -1539,7 +1586,7 @@ SpringJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}
   m_AutoConfigureDistance: 1
-  m_Distance: 1.0779991
+  m_Distance: 0.9380002
   m_DampingRatio: 0
   m_Frequency: 5
 --- !u!231 &1374653703127428597
@@ -1559,7 +1606,7 @@ SpringJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}
   m_AutoConfigureDistance: 1
-  m_Distance: 1.0697168
+  m_Distance: 0.93079466
   m_DampingRatio: 0
   m_Frequency: 5
 --- !u!231 &1374653703127428596
@@ -1579,7 +1626,7 @@ SpringJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}
   m_AutoConfigureDistance: 1
-  m_Distance: 1.0697168
+  m_Distance: 0.93079466
   m_DampingRatio: 0
   m_Frequency: 5
 --- !u!114 &1374653703127428623
@@ -1598,8 +1645,6 @@ MonoBehaviour:
   explosion: {fileID: 5459446116007223409, guid: d526eccf8bb67924ea4503130961d5fb,
     type: 3}
   spawn: {fileID: 0}
-  InmuneTime: 2
-  FaceTime: 2
 --- !u!1 &1374653703137111389
 GameObject:
   m_ObjectHideFlags: 0
@@ -1745,7 +1790,7 @@ DistanceJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}
   m_AutoConfigureDistance: 1
-  m_Distance: 1.0697168
+  m_Distance: 0.93079466
   m_MaxDistanceOnly: 0
 --- !u!231 &1374653703137111377
 SpringJoint2D:
@@ -1764,7 +1809,7 @@ SpringJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}
   m_AutoConfigureDistance: 1
-  m_Distance: 1.0779991
+  m_Distance: 0.9380002
   m_DampingRatio: 0
   m_Frequency: 5
 --- !u!231 &1374653703137111376
@@ -1784,7 +1829,7 @@ SpringJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}
   m_AutoConfigureDistance: 1
-  m_Distance: 1.0697168
+  m_Distance: 0.93079466
   m_DampingRatio: 0
   m_Frequency: 5
 --- !u!231 &1374653703137111379
@@ -1804,7 +1849,7 @@ SpringJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}
   m_AutoConfigureDistance: 1
-  m_Distance: 1.0697168
+  m_Distance: 0.93079466
   m_DampingRatio: 0
   m_Frequency: 5
 --- !u!114 &1374653703137111402
@@ -1823,8 +1868,6 @@ MonoBehaviour:
   explosion: {fileID: 5459446116007223409, guid: d526eccf8bb67924ea4503130961d5fb,
     type: 3}
   spawn: {fileID: 0}
-  InmuneTime: 2
-  FaceTime: 2
 --- !u!1 &1374653703168829465
 GameObject:
   m_ObjectHideFlags: 0
@@ -1840,7 +1883,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1374653703168829470
 Transform:
   m_ObjectHideFlags: 0
@@ -1850,7 +1893,7 @@ Transform:
   m_GameObject: {fileID: 1374653703168829465}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.77, y: 0.77, z: 0.77}
+  m_LocalScale: {x: 0.67, y: 0.67, z: 0.67}
   m_Children:
   - {fileID: 1374653704044137752}
   - {fileID: 1374653703127428622}
@@ -1983,7 +2026,7 @@ GameObject:
   - component: {fileID: 1374653703271719063}
   m_Layer: 0
   m_Name: FirePoint2
-  m_TagString: Follow
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1996,7 +2039,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1374653703271719057}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.01, y: -1.41, z: 0}
+  m_LocalPosition: {x: 0.01, y: -1.33, z: 0}
   m_LocalScale: {x: 0.99449754, y: 0.99449754, z: 0}
   m_Children: []
   m_Father: {fileID: 1374653703284074444}
@@ -2009,7 +2052,7 @@ CircleCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1374653703271719057}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
@@ -2065,6 +2108,7 @@ Transform:
   - {fileID: 1374653704492727714}
   - {fileID: 1374653705100309715}
   - {fileID: 1374653703168829470}
+  - {fileID: 982471790}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2137,8 +2181,6 @@ MonoBehaviour:
   explosion: {fileID: 5459446116007223409, guid: d526eccf8bb67924ea4503130961d5fb,
     type: 3}
   spawn: {fileID: 0}
-  InmuneTime: 2
-  FaceTime: 2
 --- !u!114 &1374653703284074423
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2169,9 +2211,9 @@ MonoBehaviour:
   VirusFace: {fileID: 1375520831685098200}
   VirusSkin: {fileID: 1374653704959941316}
   VirusBody: {fileID: 1374653703168829465}
-  virusDoble: {fileID: 1191559476487358, guid: bf067674325f23d4ca2925f33c2f88e1, type: 3}
+  virusDoble: {fileID: 1375845240874997136}
   speed: 6
-  control: {fileID: 114307912062046814, guid: bf067674325f23d4ca2925f33c2f88e1, type: 3}
+  control: {fileID: 1334712773714551664}
   blob1: {fileID: 1374653704044137728}
   blob2: {fileID: 1374653703127428598}
   blob3: {fileID: 1374653703735055633}
@@ -2187,8 +2229,7 @@ MonoBehaviour:
   resting: 0
   activedobl: 0
   mainCamera: {fileID: 0}
-  virusSelect: {fileID: 114441312560226246, guid: bf067674325f23d4ca2925f33c2f88e1,
-    type: 3}
+  virusSelect: {fileID: 1334564703768096488}
 --- !u!114 &1374653703284074440
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2496,7 +2537,7 @@ DistanceJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}
   m_AutoConfigureDistance: 1
-  m_Distance: 1.0780029
+  m_Distance: 0.9379997
   m_MaxDistanceOnly: 0
 --- !u!231 &1374653703735055637
 SpringJoint2D:
@@ -2515,7 +2556,7 @@ SpringJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}
   m_AutoConfigureDistance: 1
-  m_Distance: 1.0697187
+  m_Distance: 0.9307944
   m_DampingRatio: 0
   m_Frequency: 5
 --- !u!231 &1374653703735055636
@@ -2535,7 +2576,7 @@ SpringJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}
   m_AutoConfigureDistance: 1
-  m_Distance: 1.0780029
+  m_Distance: 0.9379997
   m_DampingRatio: 0
   m_Frequency: 5
 --- !u!231 &1374653703735055639
@@ -2555,7 +2596,7 @@ SpringJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}
   m_AutoConfigureDistance: 1
-  m_Distance: 1.0697168
+  m_Distance: 0.93079466
   m_DampingRatio: 0
   m_Frequency: 5
 --- !u!114 &1374653703735055662
@@ -2574,8 +2615,6 @@ MonoBehaviour:
   explosion: {fileID: 5459446116007223409, guid: d526eccf8bb67924ea4503130961d5fb,
     type: 3}
   spawn: {fileID: 0}
-  InmuneTime: 2
-  FaceTime: 2
 --- !u!1 &1374653703812798151
 GameObject:
   m_ObjectHideFlags: 0
@@ -2721,7 +2760,7 @@ DistanceJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}
   m_AutoConfigureDistance: 1
-  m_Distance: 1.0780029
+  m_Distance: 0.9379997
   m_MaxDistanceOnly: 0
 --- !u!231 &1374653703812798171
 SpringJoint2D:
@@ -2740,7 +2779,7 @@ SpringJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}
   m_AutoConfigureDistance: 1
-  m_Distance: 1.0697187
+  m_Distance: 0.9307944
   m_DampingRatio: 0
   m_Frequency: 5
 --- !u!231 &1374653703812798170
@@ -2760,7 +2799,7 @@ SpringJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}
   m_AutoConfigureDistance: 1
-  m_Distance: 1.0780029
+  m_Distance: 0.9379997
   m_DampingRatio: 0
   m_Frequency: 5
 --- !u!231 &1374653703812798149
@@ -2780,7 +2819,7 @@ SpringJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}
   m_AutoConfigureDistance: 1
-  m_Distance: 1.0697168
+  m_Distance: 0.93079466
   m_DampingRatio: 0
   m_Frequency: 5
 --- !u!114 &1374653703812798172
@@ -2799,8 +2838,6 @@ MonoBehaviour:
   explosion: {fileID: 5459446116007223409, guid: d526eccf8bb67924ea4503130961d5fb,
     type: 3}
   spawn: {fileID: 0}
-  InmuneTime: 2
-  FaceTime: 2
 --- !u!1 &1374653704044137728
 GameObject:
   m_ObjectHideFlags: 0
@@ -2946,7 +2983,7 @@ DistanceJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}
   m_AutoConfigureDistance: 1
-  m_Distance: 1.0697168
+  m_Distance: 0.93079466
   m_MaxDistanceOnly: 0
 --- !u!231 &1374653704044137732
 SpringJoint2D:
@@ -2965,7 +3002,7 @@ SpringJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}
   m_AutoConfigureDistance: 1
-  m_Distance: 1.0697187
+  m_Distance: 0.9307944
   m_DampingRatio: 0
   m_Frequency: 5
 --- !u!231 &1374653704044137735
@@ -2985,7 +3022,7 @@ SpringJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}
   m_AutoConfigureDistance: 1
-  m_Distance: 1.0697168
+  m_Distance: 0.93079466
   m_DampingRatio: 0
   m_Frequency: 5
 --- !u!231 &1374653704044137734
@@ -3005,7 +3042,7 @@ SpringJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}
   m_AutoConfigureDistance: 1
-  m_Distance: 1.0780029
+  m_Distance: 0.9379997
   m_DampingRatio: 0
   m_Frequency: 5
 --- !u!114 &1374653704044137753
@@ -3024,8 +3061,6 @@ MonoBehaviour:
   explosion: {fileID: 5459446116007223409, guid: d526eccf8bb67924ea4503130961d5fb,
     type: 3}
   spawn: {fileID: 0}
-  InmuneTime: 2
-  FaceTime: 2
 --- !u!1 &1374653704492727717
 GameObject:
   m_ObjectHideFlags: 0
@@ -3280,7 +3315,7 @@ DistanceJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}
   m_AutoConfigureDistance: 1
-  m_Distance: 1.0697168
+  m_Distance: 0.93079466
   m_MaxDistanceOnly: 0
 --- !u!231 &1374653704498784138
 SpringJoint2D:
@@ -3299,7 +3334,7 @@ SpringJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}
   m_AutoConfigureDistance: 1
-  m_Distance: 1.0697187
+  m_Distance: 0.9307944
   m_DampingRatio: 0
   m_Frequency: 5
 --- !u!231 &1374653704498784117
@@ -3319,7 +3354,7 @@ SpringJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}
   m_AutoConfigureDistance: 1
-  m_Distance: 1.0780029
+  m_Distance: 0.9379997
   m_DampingRatio: 0
   m_Frequency: 5
 --- !u!231 &1374653704498784116
@@ -3339,7 +3374,7 @@ SpringJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}
   m_AutoConfigureDistance: 1
-  m_Distance: 1.0697168
+  m_Distance: 0.93079466
   m_DampingRatio: 0
   m_Frequency: 5
 --- !u!114 &1374653704498784143
@@ -3358,8 +3393,6 @@ MonoBehaviour:
   explosion: {fileID: 5459446116007223409, guid: d526eccf8bb67924ea4503130961d5fb,
     type: 3}
   spawn: {fileID: 0}
-  InmuneTime: 2
-  FaceTime: 2
 --- !u!1 &1374653704626147368
 GameObject:
   m_ObjectHideFlags: 0
@@ -3752,13 +3785,23 @@ SpriteShapeRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 14
-  m_Color: {r: 0.52156866, g: 0.7803922, b: 0.35686275, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.78431374}
   m_MaskInteraction: 0
-  m_ShapeTexture: {fileID: 0}
-  m_Sprites: []
+  m_ShapeTexture: {fileID: 2800000, guid: 77bde822a5676ce42a6c685ec3ea30e4, type: 3}
+  m_Sprites:
+  - {fileID: 21300000, guid: 108a43b024a1a954284675e3aff00155, type: 3}
+  - {fileID: 21300000, guid: 108a43b024a1a954284675e3aff00155, type: 3}
+  - {fileID: 21300000, guid: 608e61deb05c54660bebf5a4dd2ee02d, type: 3}
+  - {fileID: 21300000, guid: 608e61deb05c54660bebf5a4dd2ee02d, type: 3}
+  - {fileID: 21300000, guid: 608e61deb05c54660bebf5a4dd2ee02d, type: 3}
+  - {fileID: 21300000, guid: 608e61deb05c54660bebf5a4dd2ee02d, type: 3}
+  - {fileID: 21300000, guid: 608e61deb05c54660bebf5a4dd2ee02d, type: 3}
+  - {fileID: 21300000, guid: 608e61deb05c54660bebf5a4dd2ee02d, type: 3}
+  - {fileID: 21300000, guid: 608e61deb05c54660bebf5a4dd2ee02d, type: 3}
+  - {fileID: 21300000, guid: 608e61deb05c54660bebf5a4dd2ee02d, type: 3}
   m_LocalAABB:
-    m_Center: {x: 0.111787915, y: 0.06632829, z: 0}
-    m_Extent: {x: 2.0473335, y: 2.0128534, z: 0}
+    m_Center: {x: 0.07652879, y: 0.09679866, z: -0.00005}
+    m_Extent: {x: 2.2504578, y: 2.205993, z: 0.00005}
 --- !u!114 &1374653704959941338
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3774,9 +3817,9 @@ MonoBehaviour:
   m_Spline:
     m_IsOpenEnded: 0
     m_ControlPoints:
-    - position: {x: -1.9355456, y: 0.18688828, z: 0}
-      leftTangent: {x: -0.013939977, y: -0.73794013, z: 0}
-      rightTangent: {x: 0.014053106, y: 0.7439293, z: 0}
+    - position: {x: -1.9818283, y: 0.09914548, z: 0}
+      leftTangent: {x: -0.013939619, y: -0.73794293, z: 0}
+      rightTangent: {x: 0.014053345, y: 0.7439262, z: 0}
       mode: 1
       height: 1
       bevelCutoff: 0
@@ -3784,9 +3827,9 @@ MonoBehaviour:
       spriteIndex: 0
       corner: 1
       m_CornerMode: 1
-    - position: {x: -0.8324806, y: 1.8466563, z: 0}
-      leftTangent: {x: -0.5256724, y: -0.29636228, z: 0}
-      rightTangent: {x: 0.5033448, y: 0.2837746, z: 0}
+    - position: {x: -0.90640503, y: 1.8482631, z: 0}
+      leftTangent: {x: -0.5303115, y: -0.2879809, z: 0}
+      rightTangent: {x: 0.52384186, y: 0.2844683, z: 0}
       mode: 1
       height: 1
       bevelCutoff: 0
@@ -3794,9 +3837,9 @@ MonoBehaviour:
       spriteIndex: 0
       corner: 1
       m_CornerMode: 1
-    - position: {x: 1.0371934, y: 1.8421654, z: 0}
-      leftTangent: {x: -0.68954366, y: 0.34180677, z: 0}
-      rightTangent: {x: 0.70156693, y: -0.34776664, z: 0}
+    - position: {x: 1.0716118, y: 1.8977656, z: 0}
+      leftTangent: {x: -0.68954, y: 0.3418007, z: 0}
+      rightTangent: {x: 0.70157063, y: -0.34777212, z: 0}
       mode: 1
       height: 1
       bevelCutoff: 0
@@ -3804,9 +3847,9 @@ MonoBehaviour:
       spriteIndex: 0
       corner: 1
       m_CornerMode: 1
-    - position: {x: 2.1591213, y: -0.009440897, z: 0}
-      leftTangent: {x: -0.011593342, y: 0.6531994, z: 0}
-      rightTangent: {x: 0.010236263, y: -0.5767387, z: 0}
+    - position: {x: 2.129838, y: -0.10719243, z: 0}
+      leftTangent: {x: 0.056078434, y: 0.65084684, z: 0}
+      rightTangent: {x: -0.055761337, y: -0.6471827, z: 0}
       mode: 1
       height: 1
       bevelCutoff: 0
@@ -3814,19 +3857,9 @@ MonoBehaviour:
       spriteIndex: 0
       corner: 1
       m_CornerMode: 1
-    - position: {x: 1.0770451, y: -1.6636989, z: 0}
-      leftTangent: {x: 0.7442423, y: 0.3895434, z: 0}
-      rightTangent: {x: -0.71581894, y: -0.37466645, z: 0}
-      mode: 1
-      height: 0.1
-      bevelCutoff: 0
-      bevelSize: 0
-      spriteIndex: 0
-      corner: 1
-      m_CornerMode: 1
-    - position: {x: -0.91603637, y: -1.6743941, z: 0}
-      leftTangent: {x: 0.68299085, y: -0.36761928, z: 0}
-      rightTangent: {x: -0.55291736, y: 0.2976073, z: 0}
+    - position: {x: 1.0610147, y: -1.6956509, z: 0}
+      leftTangent: {x: 0.5398718, y: 0.29608715, z: 0}
+      rightTangent: {x: -0.44971293, y: -0.24664259, z: 0}
       mode: 1
       height: 1
       bevelCutoff: 0
@@ -3834,7 +3867,17 @@ MonoBehaviour:
       spriteIndex: 0
       corner: 1
       m_CornerMode: 1
-  m_SpriteShape: {fileID: 0}
+    - position: {x: -0.95702827, y: -1.6757812, z: 0}
+      leftTangent: {x: 0.6829915, y: -0.36761928, z: 0}
+      rightTangent: {x: -0.55291796, y: 0.29761064, z: 0}
+      mode: 1
+      height: 1
+      bevelCutoff: 0
+      bevelSize: 0
+      spriteIndex: 0
+      corner: 1
+      m_CornerMode: 1
+  m_SpriteShape: {fileID: 11400000, guid: cf501260079e6384ebe18397ec79f481, type: 2}
   m_FillPixelPerUnit: 256
   m_StretchTiling: 1
   m_SplineDetail: 16
@@ -4050,8 +4093,6 @@ MonoBehaviour:
   virusParent: {fileID: 0}
   explosion: {fileID: 0}
   spawn: {fileID: 0}
-  InmuneTime: 3
-  FaceTime: 0
 --- !u!114 &1334459384902469348
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5917,7 +5958,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   firePoint: {fileID: 1375299262364407756}
-  firePoint2: {fileID: 0}
+  firePoint2: {fileID: 1374653703271719057}
   vfx:
   - {fileID: 1719886368425528, guid: 52895f70bb88c7a4dac2daf24bbfa763, type: 3}
   - {fileID: 0}
@@ -5999,7 +6040,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   firePoint: {fileID: 1375225402106844242}
-  firePoint2: {fileID: 0}
+  firePoint2: {fileID: 1374653703271719057}
   vfx:
   - {fileID: 1719886368425528, guid: 52895f70bb88c7a4dac2daf24bbfa763, type: 3}
   - {fileID: 0}
@@ -7273,7 +7314,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   firePoint: {fileID: 1375233538261367020}
-  firePoint2: {fileID: 0}
+  firePoint2: {fileID: 1374653703271719057}
   vfx:
   - {fileID: 1719886368425528, guid: 52895f70bb88c7a4dac2daf24bbfa763, type: 3}
   - {fileID: 0}
@@ -8088,7 +8129,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   firePoint: {fileID: 1375799287514508562}
-  firePoint2: {fileID: 0}
+  firePoint2: {fileID: 1374653703271719057}
   vfx:
   - {fileID: 1719886368425528, guid: 52895f70bb88c7a4dac2daf24bbfa763, type: 3}
   - {fileID: 0}
@@ -9441,8 +9482,6 @@ MonoBehaviour:
   virusParent: {fileID: 0}
   explosion: {fileID: 0}
   spawn: {fileID: 0}
-  InmuneTime: 3
-  FaceTime: 0
 --- !u!114 &1334256178589102430
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11565,8 +11604,6 @@ MonoBehaviour:
   virusParent: {fileID: 0}
   explosion: {fileID: 0}
   spawn: {fileID: 0}
-  InmuneTime: 3
-  FaceTime: 0
 --- !u!114 &1336307989392121334
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11867,8 +11904,6 @@ MonoBehaviour:
   virusParent: {fileID: 0}
   explosion: {fileID: 0}
   spawn: {fileID: 0}
-  InmuneTime: 3
-  FaceTime: 0
 --- !u!114 &1334712773714551664
 MonoBehaviour:
   m_ObjectHideFlags: 0
