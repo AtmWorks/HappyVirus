@@ -1,5 +1,64 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &795382620
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 795382621}
+  - component: {fileID: 795382622}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Wall
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &795382621
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 795382620}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 5527237080890088051}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!68 &795382622
+EdgeCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 795382620}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_EdgeRadius: 0
+  m_Points:
+  - {x: -0.15055847, y: -1.4014329}
+  - {x: -0.82169145, y: -0.49783477}
+  - {x: -0.49574202, y: 0.8251924}
+  - {x: 0.006007988, y: 2.2414217}
+  - {x: 0.4764637, y: 0.80622107}
+  - {x: 0.524564, y: 0.49824184}
+  - {x: 0.8728278, y: -0.6167209}
+  - {x: 0.33360833, y: -1.2095937}
+  m_AdjacentStartPoint: {x: 0, y: 0}
+  m_AdjacentEndPoint: {x: 0, y: 0}
+  m_UseAdjacentStartPoint: 0
+  m_UseAdjacentEndPoint: 0
 --- !u!1 &5527237080890088054
 GameObject:
   m_ObjectHideFlags: 0
@@ -25,10 +84,11 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5527237080890088054}
-  m_LocalRotation: {x: -0, y: -0, z: -0.20973133, w: -0.97775906}
+  m_LocalRotation: {x: -0, y: 0, z: -0.20972955, w: -0.9777595}
   m_LocalPosition: {x: 376.57007, y: -35.290024, z: 0}
-  m_LocalScale: {x: 1.2141067, y: 1.2141067, z: 1.2141067}
-  m_Children: []
+  m_LocalScale: {x: 1.8082018, y: 1.8082018, z: 1.8082018}
+  m_Children:
+  - {fileID: 795382621}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -335.787}
@@ -101,11 +161,16 @@ EdgeCollider2D:
   m_Offset: {x: 0, y: 0}
   m_EdgeRadius: 0
   m_Points:
-  - {x: -0.2732104, y: -3.5762405}
-  - {x: -1.039978, y: -2.1268768}
-  - {x: -0.008117676, y: 2.1614647}
-  - {x: 1.2492371, y: -2.3157654}
-  - {x: 0.23390377, y: -3.6155357}
+  - {x: 0.37312055, y: -1.4544573}
+  - {x: -0.3580749, y: -1.5206342}
+  - {x: -1.0937551, y: -0.7663243}
+  - {x: -0.36000362, y: 1.5392842}
+  - {x: 0.035949524, y: 2.4022136}
+  - {x: 0.3955805, y: 1.4923521}
+  - {x: 0.86105055, y: -0.37587634}
+  - {x: 1.0548302, y: -0.9946524}
+  - {x: 0.40857112, y: -1.6346502}
+  - {x: -0.38626832, y: -1.6030972}
   m_AdjacentStartPoint: {x: 0, y: 0}
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
