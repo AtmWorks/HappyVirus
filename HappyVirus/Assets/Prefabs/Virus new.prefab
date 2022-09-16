@@ -1530,7 +1530,7 @@ Rigidbody2D:
   m_AngularDrag: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
@@ -1567,7 +1567,7 @@ DistanceJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}
   m_AutoConfigureDistance: 1
-  m_Distance: 0.93079466
+  m_Distance: 0.93079346
   m_MaxDistanceOnly: 0
 --- !u!231 &1374653703127428618
 SpringJoint2D:
@@ -1586,7 +1586,7 @@ SpringJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}
   m_AutoConfigureDistance: 1
-  m_Distance: 0.9380002
+  m_Distance: 0.9379997
   m_DampingRatio: 0
   m_Frequency: 5
 --- !u!231 &1374653703127428597
@@ -1606,7 +1606,7 @@ SpringJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}
   m_AutoConfigureDistance: 1
-  m_Distance: 0.93079466
+  m_Distance: 0.93079346
   m_DampingRatio: 0
   m_Frequency: 5
 --- !u!231 &1374653703127428596
@@ -1626,7 +1626,7 @@ SpringJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}
   m_AutoConfigureDistance: 1
-  m_Distance: 0.93079466
+  m_Distance: 0.93079346
   m_DampingRatio: 0
   m_Frequency: 5
 --- !u!114 &1374653703127428623
@@ -1753,7 +1753,7 @@ Rigidbody2D:
   m_AngularDrag: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
@@ -1790,7 +1790,7 @@ DistanceJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}
   m_AutoConfigureDistance: 1
-  m_Distance: 0.93079466
+  m_Distance: 0.93079346
   m_MaxDistanceOnly: 0
 --- !u!231 &1374653703137111377
 SpringJoint2D:
@@ -1809,7 +1809,7 @@ SpringJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}
   m_AutoConfigureDistance: 1
-  m_Distance: 0.9380002
+  m_Distance: 0.9379997
   m_DampingRatio: 0
   m_Frequency: 5
 --- !u!231 &1374653703137111376
@@ -1829,7 +1829,7 @@ SpringJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}
   m_AutoConfigureDistance: 1
-  m_Distance: 0.93079466
+  m_Distance: 0.93079346
   m_DampingRatio: 0
   m_Frequency: 5
 --- !u!231 &1374653703137111379
@@ -1849,7 +1849,7 @@ SpringJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}
   m_AutoConfigureDistance: 1
-  m_Distance: 0.93079466
+  m_Distance: 0.93079346
   m_DampingRatio: 0
   m_Frequency: 5
 --- !u!114 &1374653703137111402
@@ -2039,7 +2039,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1374653703271719057}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.01, y: -1.33, z: 0}
+  m_LocalPosition: {x: 0.01, y: -0.12, z: 0}
   m_LocalScale: {x: 0.99449754, y: 0.99449754, z: 0}
   m_Children: []
   m_Father: {fileID: 1374653703284074444}
@@ -2129,7 +2129,7 @@ Rigidbody2D:
   m_AngularDrag: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
@@ -2500,7 +2500,7 @@ Rigidbody2D:
   m_AngularDrag: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
@@ -2537,7 +2537,7 @@ DistanceJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}
   m_AutoConfigureDistance: 1
-  m_Distance: 0.9379997
+  m_Distance: 0.93800354
   m_MaxDistanceOnly: 0
 --- !u!231 &1374653703735055637
 SpringJoint2D:
@@ -2556,7 +2556,7 @@ SpringJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}
   m_AutoConfigureDistance: 1
-  m_Distance: 0.9307944
+  m_Distance: 0.9307954
   m_DampingRatio: 0
   m_Frequency: 5
 --- !u!231 &1374653703735055636
@@ -2576,7 +2576,7 @@ SpringJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}
   m_AutoConfigureDistance: 1
-  m_Distance: 0.9379997
+  m_Distance: 0.93800354
   m_DampingRatio: 0
   m_Frequency: 5
 --- !u!231 &1374653703735055639
@@ -2596,7 +2596,7 @@ SpringJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}
   m_AutoConfigureDistance: 1
-  m_Distance: 0.93079466
+  m_Distance: 0.93079346
   m_DampingRatio: 0
   m_Frequency: 5
 --- !u!114 &1374653703735055662
@@ -2723,7 +2723,7 @@ Rigidbody2D:
   m_AngularDrag: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
@@ -2760,7 +2760,7 @@ DistanceJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}
   m_AutoConfigureDistance: 1
-  m_Distance: 0.9379997
+  m_Distance: 0.93800354
   m_MaxDistanceOnly: 0
 --- !u!231 &1374653703812798171
 SpringJoint2D:
@@ -2779,7 +2779,7 @@ SpringJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}
   m_AutoConfigureDistance: 1
-  m_Distance: 0.9307944
+  m_Distance: 0.9307954
   m_DampingRatio: 0
   m_Frequency: 5
 --- !u!231 &1374653703812798170
@@ -2799,7 +2799,7 @@ SpringJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}
   m_AutoConfigureDistance: 1
-  m_Distance: 0.9379997
+  m_Distance: 0.93800354
   m_DampingRatio: 0
   m_Frequency: 5
 --- !u!231 &1374653703812798149
@@ -2819,7 +2819,7 @@ SpringJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}
   m_AutoConfigureDistance: 1
-  m_Distance: 0.93079466
+  m_Distance: 0.93079346
   m_DampingRatio: 0
   m_Frequency: 5
 --- !u!114 &1374653703812798172
@@ -2946,7 +2946,7 @@ Rigidbody2D:
   m_AngularDrag: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
@@ -2983,7 +2983,7 @@ DistanceJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}
   m_AutoConfigureDistance: 1
-  m_Distance: 0.93079466
+  m_Distance: 0.93079346
   m_MaxDistanceOnly: 0
 --- !u!231 &1374653704044137732
 SpringJoint2D:
@@ -3002,7 +3002,7 @@ SpringJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}
   m_AutoConfigureDistance: 1
-  m_Distance: 0.9307944
+  m_Distance: 0.9307954
   m_DampingRatio: 0
   m_Frequency: 5
 --- !u!231 &1374653704044137735
@@ -3022,7 +3022,7 @@ SpringJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}
   m_AutoConfigureDistance: 1
-  m_Distance: 0.93079466
+  m_Distance: 0.93079346
   m_DampingRatio: 0
   m_Frequency: 5
 --- !u!231 &1374653704044137734
@@ -3042,7 +3042,7 @@ SpringJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}
   m_AutoConfigureDistance: 1
-  m_Distance: 0.9379997
+  m_Distance: 0.93800354
   m_DampingRatio: 0
   m_Frequency: 5
 --- !u!114 &1374653704044137753
@@ -3278,7 +3278,7 @@ Rigidbody2D:
   m_AngularDrag: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
@@ -3315,7 +3315,7 @@ DistanceJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}
   m_AutoConfigureDistance: 1
-  m_Distance: 0.93079466
+  m_Distance: 0.93079346
   m_MaxDistanceOnly: 0
 --- !u!231 &1374653704498784138
 SpringJoint2D:
@@ -3334,7 +3334,7 @@ SpringJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}
   m_AutoConfigureDistance: 1
-  m_Distance: 0.9307944
+  m_Distance: 0.9307954
   m_DampingRatio: 0
   m_Frequency: 5
 --- !u!231 &1374653704498784117
@@ -3354,7 +3354,7 @@ SpringJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}
   m_AutoConfigureDistance: 1
-  m_Distance: 0.9379997
+  m_Distance: 0.93800354
   m_DampingRatio: 0
   m_Frequency: 5
 --- !u!231 &1374653704498784116
@@ -3374,7 +3374,7 @@ SpringJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}
   m_AutoConfigureDistance: 1
-  m_Distance: 0.93079466
+  m_Distance: 0.93079346
   m_DampingRatio: 0
   m_Frequency: 5
 --- !u!114 &1374653704498784143
@@ -3763,8 +3763,8 @@ SpriteShapeRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
