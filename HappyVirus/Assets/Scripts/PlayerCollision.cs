@@ -7,6 +7,7 @@ public class PlayerCollision : MonoBehaviour {
     public GameObject virusParent;
     public GameObject explosion;
     public GameObject spawn;
+    public HPbar hpscript;
     public static int PlayermaxHP;
     public static int PlayerHP ;
     public static float InmuneTime ;
@@ -46,7 +47,6 @@ public class PlayerCollision : MonoBehaviour {
             //Debug.Log(contactPoint);
             // Do something with that point
 
-            PlayerAnimator.GetDmg = true;
 
             Instantiate(explosion, new Vector3(contactPoint.x, contactPoint.y, 0), Quaternion.identity);
 
@@ -74,13 +74,8 @@ public class PlayerCollision : MonoBehaviour {
 
     void FixedUpdate ()
     {
-        
 
-        if (FaceTime > 0)
-        { 
-		FaceTime -= 1*Time.deltaTime;
-        }
-
+        FaceTime -= 1 * Time.deltaTime;
         if (FaceTime <= 0)
         {
             PlayerAnimator.GetDmg = false;
@@ -93,10 +88,14 @@ public class PlayerCollision : MonoBehaviour {
 
         if (gotDamage == true && PlayerStatics.inmuneTimer <= 0)
         {
-            gotDamage = false;
+            PlayerAnimator.GetDmg = true;
             PlayerStatics.inmuneTimer = 1f;
             FaceTime = 1f;
             oneDamage();
+            //hpscript.updateHP();
+            gotDamage = false;
+
+
 
         }
 

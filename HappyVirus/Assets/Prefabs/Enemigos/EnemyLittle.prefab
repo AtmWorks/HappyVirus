@@ -290,7 +290,7 @@ MonoBehaviour:
   realExplosion: {fileID: 0}
   EnemyObject: {fileID: 8486544632745153619}
   EnemyAlive: 0
-  enemyHP: 2
+  enemyHP: 1
 --- !u!1 &8486544632078798047
 GameObject:
   m_ObjectHideFlags: 0

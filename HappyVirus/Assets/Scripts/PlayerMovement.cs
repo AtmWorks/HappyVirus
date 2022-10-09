@@ -125,15 +125,16 @@ public class PlayerMovement : MonoBehaviour
 
         }
  
-        if (Input.GetKeyDown("p") && PlayerStatics.O2counter >=3 && VirusFaceCheck == false)
+       
+        if (Input.GetKey("p") && PlayerStatics.O2counter >=3 && VirusFaceCheck == false)
         {
             
 
             //VirusFace.gameObject.transform.localScale = new Vector3 (1, 1, 1) ; 
             //VirusFace.SetActive(true);
             PlayerStatics.O2counter -= 3;
-            PlayerCollision.PlayermaxHP = 10;
-            PlayerCollision.PlayerHP = 10;
+            PlayerCollision.PlayermaxHP = 6;
+            PlayerCollision.PlayerHP = PlayerCollision.PlayerHP+3;
             PlayerStatics.VirusState = 2;
             softBodyPosition();
             growingFace = true;

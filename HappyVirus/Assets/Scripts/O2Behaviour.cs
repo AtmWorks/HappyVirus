@@ -22,8 +22,9 @@ public class O2Behaviour : MonoBehaviour {
         {
             getOnce = false;
             PlayerStatics.O2counter++;
+            PlayerStatics.O2counter++;
             //Player.O2counter++;
-            Debug.Log("+1 O2");
+            //Debug.Log("+1 O2");
             Destroy(gameObject);
             
            // AmmoCounter.ammoValue += 1;

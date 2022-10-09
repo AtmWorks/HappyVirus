@@ -19,6 +19,10 @@ TagManager:
   - PlqZone
   - Spawn
   - Follow
+  - O2carry
+  - MovingEnd
+  - O2
+  - movingEnd
   layers:
   - Default
   - TransparentFX

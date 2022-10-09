@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class powerUpBehaviour : MonoBehaviour
 {
+    public GameObject parent;
     // Start is called before the first frame update
     void Start()
     {
@@ -13,7 +14,7 @@ public class powerUpBehaviour : MonoBehaviour
     {
         if (collision.tag == "Virus")
         {
-            this.gameObject.SetActive(false);
+            parent.SetActive(false);
 
         }
     }

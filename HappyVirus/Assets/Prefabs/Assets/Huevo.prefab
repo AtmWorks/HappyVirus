@@ -113,7 +113,7 @@ Transform:
   m_GameObject: {fileID: 1110859084557204}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
+  m_LocalScale: {x: 1.2, y: 1.2, z: 1}
   m_Children:
   - {fileID: 4761717120000936}
   - {fileID: 4129904939037846}
@@ -152,12 +152,12 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 0.01
+  m_Mass: 0.02
   m_LinearDrag: 2
   m_AngularDrag: 4
   m_GravityScale: 0.25
   m_Material: {fileID: 0}
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
@@ -192,7 +192,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.42913792
+  m_Radius: 0.4382839
 --- !u!114 &114024961166999144
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -205,7 +205,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1904703af7e8a74a8a4e0a9eea62e69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AttractionSpeed: 5
+  AttractionSpeed: 4
 --- !u!1 &1454285238037034
 GameObject:
   m_ObjectHideFlags: 0
@@ -533,3 +533,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainEgg: {fileID: 1110859084557204}
+  mainAttraction: {fileID: 114024961166999144}

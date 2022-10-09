@@ -9,7 +9,7 @@ public class bossDMG : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        bossHP = 30;
+        bossHP = 50;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

@@ -934,7 +934,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce57c5c40f5e555429ece82cf6feff60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Virus: {fileID: 0}
+  Virus: {fileID: 1374653703284074417, guid: f1d8d368943262a49a7a3ed9db7c6dc5, type: 3}
   Boss: {fileID: 0}
   AttractionSpeed: 0
   PlaqisChasing: 0
