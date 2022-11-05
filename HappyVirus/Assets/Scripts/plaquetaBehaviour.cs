@@ -19,7 +19,7 @@ public class plaquetaBehaviour : MonoBehaviour
         Virus = GameObject.Find("Virus");
         //timer = 4;
         PlaqisChasing = false;
-        AttractionSpeed = 4;
+        AttractionSpeed = 6;
 
     }
 
@@ -29,18 +29,29 @@ public class plaquetaBehaviour : MonoBehaviour
     //TO CHASE BOSS
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "PlaquetaSpawner" && PlaqisChasing == false)
+        /* if (collision.gameObject.tag == "PlaquetaSpawner" && PlaqisChasing == false)
         {
             transform.position = Vector3.MoveTowards(transform.position, collision.transform.position, AttractionSpeed * Time.deltaTime);
+        } */
+        if (collision.gameObject.tag == "Virus" )
+        {
+            PlaqisChasing = true;
         }
 
     }
 
+    public void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Virus")
+        {
+            PlaqisChasing = false;
+        }
+    }
 
 
-    
     void Update()
     {
+        /*
         if (BossBehaviour01.EnemyCurrentState == 3)
         {
             PlaqisChasing = true;
@@ -51,11 +62,17 @@ public class plaquetaBehaviour : MonoBehaviour
         {
             AttractionSpeed = 6f;
             transform.position = Vector3.MoveTowards(transform.position, Virus.transform.position, AttractionSpeed * Time.deltaTime);
+        }*/
+        if (PlaqisChasing == true)
+        { 
+            transform.position = Vector3.MoveTowards(transform.position, Virus.transform.position, AttractionSpeed * Time.deltaTime);
+
+        }
+        else if (PlaqisChasing == false) { 
+        
         }
 
-       
-       
-        
+
 
     }
 

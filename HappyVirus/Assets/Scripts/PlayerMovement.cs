@@ -18,6 +18,7 @@ public class PlayerMovement : MonoBehaviour
     private bool growingFace;
     private bool outOfControl;
     public VirusAttraction control;
+    public Joystick screenJoystick;
 
 
     //Posicionamiento del soft body
@@ -227,7 +228,18 @@ public class PlayerMovement : MonoBehaviour
         float moveHorizontal = Input.GetAxis("Horizontal");
         float moveVertical = Input.GetAxis("Vertical");
         Vector2 movement = new Vector2(moveHorizontal, moveVertical);
+
+        float joystickHorizontal = screenJoystick.Horizontal;
+        float joystickVertical = screenJoystick.Vertical;
+        Vector2 joyMovement = new Vector2(joystickHorizontal, joystickVertical);
+
+        //para input normal
         rig.velocity = movement * speed;
+
+
+        //para joystick de screen
+        //rig.velocity = joyMovement * speed;
+
         //rig.AddForce(movement * speed);
         //Debug.Log(rig.velocity);
         
@@ -275,7 +287,7 @@ public class PlayerMovement : MonoBehaviour
 
 
         //CONGELA PLAYER//
-        if (PlayerAnimator.IsShooting == true && PlayerStatics.VirusState == 2 || PlayerAnimator.IsCreatingEgg == true )
+        if (PlayerAnimator.IsShooting == true || PlayerAnimator.IsCreatingEgg == true )
         {
             rig.constraints = RigidbodyConstraints2D.FreezeAll;
         }

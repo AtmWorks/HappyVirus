@@ -27,7 +27,7 @@ public class EggAttraction : MonoBehaviour
         }
         if (collision.tag == "Follow" && isAbsorbing == true && isInside ==true)
         {
-            transform.position = Vector3.MoveTowards(transform.position, collision.transform.position, (AttractionSpeed/5) * Time.deltaTime);
+            transform.position = Vector3.MoveTowards(transform.position, collision.transform.position, (AttractionSpeed/2) * Time.deltaTime);
     
         }
         if (collision.tag == "EggAtractor" && isAtracting == true)

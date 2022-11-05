@@ -19,7 +19,7 @@ public class O2DealerBehaviour : MonoBehaviour
     void Start()
     {
         //this.transform.position = spawner.transform.position;
-        speed = 3.5f;
+        speed = 5f;
     }
 
     // Update is called once per frame

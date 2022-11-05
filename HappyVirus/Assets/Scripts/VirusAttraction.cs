@@ -13,7 +13,7 @@ public class VirusAttraction : MonoBehaviour {
     // Use this for initialization
     void Start () {
         isChasing = true;
-        AttractionSpeed = 4;
+        AttractionSpeed = 2;
         isOnControl = false;
 
     }
@@ -22,7 +22,7 @@ public class VirusAttraction : MonoBehaviour {
 	void Update () {
         if (isChasing == true && isOnControl == false)
         {
-            AttractionSpeed = 5f;
+            AttractionSpeed = 2f;
             transform.position = Vector3.MoveTowards(transform.position, VirusNexus.transform.position, AttractionSpeed * Time.deltaTime);
         }
         if (isChasing==false && isOnControl == false)

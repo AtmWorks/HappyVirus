@@ -206,6 +206,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AttractionSpeed: 4
+  isInside: 0
+  dedidedAtraction: 0
 --- !u!1 &1454285238037034
 GameObject:
   m_ObjectHideFlags: 0

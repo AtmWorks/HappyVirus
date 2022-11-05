@@ -4871,7 +4871,7 @@ MonoBehaviour:
     type: 3}
   proyectHit: 0
   currentTime: 0
-  speed: 8
+  speed: 12
   fireRate: 3
 --- !u!58 &58045165286729968
 CircleCollider2D:

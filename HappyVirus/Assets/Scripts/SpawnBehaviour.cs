@@ -18,7 +18,7 @@ public class SpawnBehaviour : MonoBehaviour
     {
         if (other.gameObject.tag == "Virus")
         {
-            print("owo");
+            
             bubble01.SetBool("Infected", true);
             bubble02.SetBool("Infected", true);
             bubble03.SetBool("Infected", true);
