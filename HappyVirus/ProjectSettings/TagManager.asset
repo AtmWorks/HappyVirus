@@ -23,6 +23,8 @@ TagManager:
   - MovingEnd
   - O2
   - movingEnd
+  - tentacleTarget
+  - tentacleRange
   layers:
   - Default
   - TransparentFX

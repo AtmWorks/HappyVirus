@@ -26,8 +26,9 @@ public class PlayerAnimator : MonoBehaviour {
 
         if ( IsShooting==true)
         {
+            MiniFaceAnimator.SetBool("IsShooting", true);
             FaceAnimator.SetBool("IsShooting", true);
-            MiniFaceAnimator.SetBool("IsShooting", true);    
+            
         }
         else
         {

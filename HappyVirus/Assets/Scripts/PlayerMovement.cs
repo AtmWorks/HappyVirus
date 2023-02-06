@@ -1,7 +1,9 @@
-﻿using System.Collections;
+﻿using Cubequad.Tentacles2D;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+//using Tentacle;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -20,6 +22,9 @@ public class PlayerMovement : MonoBehaviour
     public VirusAttraction control;
     public Joystick screenJoystick;
 
+    //Tentaculos
+    [SerializeField] private Tentacle tentacle1;
+    [SerializeField] private Tentacle tentacle2;
 
     //Posicionamiento del soft body
     public GameObject blob1;
@@ -52,8 +57,11 @@ public class PlayerMovement : MonoBehaviour
     public CameraBehaviour01 mainCamera;
     public EggCounter virusSelect;
 
+    public bool isOnTentacleTarget;
+
     private void Awake()
     {
+        isOnTentacleTarget = false;
         rig = this.GetComponent<Rigidbody2D>();
        // rigCopy = virusDoble.GetComponent<Rigidbody2D>();
         resting = false;
@@ -87,6 +95,43 @@ public class PlayerMovement : MonoBehaviour
         //VirusSkin.SetActive(false);
         growingFace = false;
 
+    }
+
+    public GameObject getMouseOverThing()
+    {
+        {
+            Vector2 mousePos = Input.mousePosition;
+            Vector2 worldPos = Camera.main.ScreenToWorldPoint(mousePos);
+
+            Collider2D[] hits = Physics2D.OverlapPointAll(worldPos);
+            foreach (Collider2D hit in hits)
+            {
+                if (hit.tag == "tentacleTarget")
+                {
+                    isOnTentacleTarget = true;
+                    return hit.gameObject;
+                }
+            }
+            isOnTentacleTarget = false;
+            return null;
+        }
+    }
+    public GameObject GetMouseOverEnemy()
+    {
+        Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        Collider2D hitCollider = Physics2D.OverlapPoint(mousePos);
+
+        if (hitCollider != null && hitCollider.gameObject.tag == "tentacleTarget")
+        {
+            isOnTentacleTarget = true;
+            return hitCollider.gameObject;
+
+        }
+        else
+        {
+            isOnTentacleTarget = false;
+            return null;
+        }
     }
     private void softBodyPosition()
     {
@@ -166,6 +211,7 @@ public class PlayerMovement : MonoBehaviour
         {
             EggAttraction.isAbsorbing = true;
         }
+
         else
         {
             EggAttraction.isAbsorbing = false;
@@ -176,6 +222,10 @@ public class PlayerMovement : MonoBehaviour
             EggAttraction.isAtracting = true;
 
         }
+        //LLEVAR LOS TENTACULOS A COGER ALGO
+
+        
+
         //SPRINT
         if (coolingDown == true )
         {
