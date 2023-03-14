@@ -24,13 +24,15 @@ public class EnemyHP : MonoBehaviour {
     private void OnTriggerEnter2D(Collider2D collisionTrig)
     {
         if (collisionTrig.gameObject.tag == "Proyectil")
-        { Debug.Log("ENEMY HIT"); enemyHP--; Debug.Log(enemyHP.ToString()); }
-        if (collisionTrig.gameObject.tag == "Virus")
-        {
-            Instantiate(realExplosion, new Vector3(this.gameObject.transform.position.x, this.gameObject.transform.position.y, 0), Quaternion.identity);
-
-            EnemyDies();
+        { 
+            Debug.Log("ENEMY HIT"); enemyHP--; Debug.Log(enemyHP.ToString()); 
         }
+        //if (collisionTrig.gameObject.tag == "Virus")
+        //{
+        //   // Instantiate(realExplosion, new Vector3(this.gameObject.transform.position.x, this.gameObject.transform.position.y, 0), Quaternion.identity);
+
+        //    //EnemyDies();
+        //}
 
 
     }

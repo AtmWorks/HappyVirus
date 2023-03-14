@@ -22,6 +22,7 @@ public class PlayerMovement : MonoBehaviour
     public VirusAttraction control;
     public Joystick screenJoystick;
 
+
     //Tentaculos
     [SerializeField] private Tentacle tentacle1;
     [SerializeField] private Tentacle tentacle2;
@@ -170,8 +171,6 @@ public class PlayerMovement : MonoBehaviour
             growingFace = false;
 
         }
- 
-       
         if (Input.GetKey("p") && PlayerStatics.O2counter >=3 && VirusFaceCheck == false)
         {
             
@@ -211,7 +210,6 @@ public class PlayerMovement : MonoBehaviour
         {
             EggAttraction.isAbsorbing = true;
         }
-
         else
         {
             EggAttraction.isAbsorbing = false;
@@ -224,8 +222,6 @@ public class PlayerMovement : MonoBehaviour
         }
         //LLEVAR LOS TENTACULOS A COGER ALGO
 
-        
-
         //SPRINT
         if (coolingDown == true )
         {
@@ -235,8 +231,7 @@ public class PlayerMovement : MonoBehaviour
         else
         {
             Stamina.fillAmount += 1.0f / waitTime * Time.deltaTime;
-        }
-        
+        } 
         //STAMINA
         if (Stamina.fillAmount <=0.05f )
         {
@@ -273,7 +268,6 @@ public class PlayerMovement : MonoBehaviour
             speed = 6;
         }
 
-
         //MOVIMIENTO//
         float moveHorizontal = Input.GetAxis("Horizontal");
         float moveVertical = Input.GetAxis("Vertical");
@@ -287,12 +281,13 @@ public class PlayerMovement : MonoBehaviour
         rig.velocity = movement * speed;
 
 
+
         //para joystick de screen
         //rig.velocity = joyMovement * speed;
 
         //rig.AddForce(movement * speed);
         //Debug.Log(rig.velocity);
-        
+
 
         //MOVIMIENTO AL DOBLE
         if (virusDoble.activeSelf == true) { activedobl = true; }
@@ -368,6 +363,8 @@ public class PlayerMovement : MonoBehaviour
             ParticleFire.shootMode = 4;
             Debug.Log("I SWITCHED TO MODE4");            
         }
+
+
         
     }
 }

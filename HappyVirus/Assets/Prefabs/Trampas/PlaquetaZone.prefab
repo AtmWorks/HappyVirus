@@ -156,7 +156,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 50
   m_Sprite: {fileID: 21300018, guid: 91fb6611045132d4a8d915fbc78a3f04, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0.48584908, b: 0.48584908, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -179,9 +179,11 @@ GameObject:
   - component: {fileID: 305703115636366004}
   - component: {fileID: 9021633377414313713}
   - component: {fileID: 7369625143571854467}
+  - component: {fileID: 6166157033990783462}
+  - component: {fileID: 3848569408400837351}
   m_Layer: 0
   m_Name: Plaqueta (1)
-  m_TagString: Wall
+  m_TagString: tentacleTarget
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -214,7 +216,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 10
+  m_Mass: 4
   m_LinearDrag: 1
   m_AngularDrag: 100
   m_GravityScale: 0.001
@@ -278,6 +280,41 @@ MonoBehaviour:
   inSide: 0
   ready: 0
   sourcePoint: {fileID: 6557003270217034411}
+--- !u!114 &6166157033990783462
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2751787752195623327}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 221b4172cb941a84bbdff80e664e8861, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sprite1: {fileID: 3088980319691101307}
+  sprite2: {fileID: 531672629665625572}
+  sprite3: {fileID: 2826932318006596673}
+  colorTransitionSpeed: 1
+  virusTag: Virus
+--- !u!114 &3848569408400837351
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2751787752195623327}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7146e7944aed5114db7a4ff6a04c9b35, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  explosion: {fileID: 5459446116007223409, guid: d526eccf8bb67924ea4503130961d5fb,
+    type: 3}
+  O2: {fileID: 1989663626031634, guid: 7782e397db77aef44b4f5dda57714ffa, type: 3}
+  parent: {fileID: 6557003270217034411}
+  isInfected: 0
+  anim: {fileID: 9021633377414313713}
 --- !u!1 &3016682189714602779
 GameObject:
   m_ObjectHideFlags: 0
@@ -351,7 +388,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 55
   m_Sprite: {fileID: 21300016, guid: 91fb6611045132d4a8d915fbc78a3f04, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0.48584908, b: 0.48584908, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -371,6 +408,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4269603087598244260}
   - component: {fileID: 1036294466654585590}
+  - component: {fileID: 2934840821845572528}
   m_Layer: 0
   m_Name: sprites
   m_TagString: Wall
@@ -411,6 +449,20 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.75
+--- !u!114 &2934840821845572528
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5587132443167141348}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f1be1df498aae949bc79c082883214d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RotSpeed: 0
+  WichDirection: 0
 --- !u!1 &6557003270217034411
 GameObject:
   m_ObjectHideFlags: 0
@@ -421,7 +473,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1283709491473337629}
   - component: {fileID: 680594518013370284}
-  - component: {fileID: 2182732492797493343}
+  - component: {fileID: 4449095470892520022}
   m_Layer: 0
   m_Name: PlaquetaZone
   m_TagString: PlqZone
@@ -460,21 +512,20 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
---- !u!114 &2182732492797493343
+--- !u!114 &4449095470892520022
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6557003270217034411}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7146e7944aed5114db7a4ff6a04c9b35, type: 3}
+  m_Script: {fileID: 11500000, guid: 4f1be1df498aae949bc79c082883214d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explosion: {fileID: 5459446116007223409, guid: d526eccf8bb67924ea4503130961d5fb,
-    type: 3}
-  spawn: {fileID: 0}
+  RotSpeed: 0
+  WichDirection: 0
 --- !u!1 &9177311289207655797
 GameObject:
   m_ObjectHideFlags: 0

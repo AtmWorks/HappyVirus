@@ -21,14 +21,12 @@ public class PlayerAnimator : MonoBehaviour {
 	
 	void FixedUpdate ()
     {
-
-        
-
-        if ( IsShooting==true)
+        if (IsShooting)
         {
-            MiniFaceAnimator.SetBool("IsShooting", true);
-            FaceAnimator.SetBool("IsShooting", true);
             
+            FaceAnimator.SetBool("IsShooting", true);//esto se ejecuta
+            MiniFaceAnimator.SetBool("IsShooting", true);//esto no se ejecuta
+
         }
         else
         {
@@ -37,23 +35,23 @@ public class PlayerAnimator : MonoBehaviour {
         }
         if ( GetDmg==true || IsCreatingEgg == true)
         {
-            FaceAnimator.SetBool("CreatingEgg", true);
-            
-            MiniFaceAnimator.SetBool("IsShooting", true);    
+            FaceAnimator.SetBool("CreatingEgg", true);//esto se ejecuta
+
+            MiniFaceAnimator.SetBool("IsShooting", true); //esto se ejecuta   
         }
         else
         {
-            FaceAnimator.SetBool("CreatingEgg", false);
-            MiniFaceAnimator.SetBool("IsShooting", false); 
+            FaceAnimator.SetBool("CreatingEgg", false);//esto se ejecuta
+            //MiniFaceAnimator.SetBool("IsShooting", false); //esto se ejecuta
         }
     
         if (IsInfecting == true)
         {
-            FaceAnimator.SetBool("IsInfecting", true);
+            FaceAnimator.SetBool("IsInfecting", true);//esto se ejecuta
         }
         else
         {
-            FaceAnimator.SetBool("IsInfecting", false);
+            FaceAnimator.SetBool("IsInfecting", false);//esto se ejecuta
         }
     }
     
