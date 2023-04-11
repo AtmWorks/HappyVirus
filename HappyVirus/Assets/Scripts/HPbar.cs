@@ -64,10 +64,10 @@ public class HPbar : MonoBehaviour {
         O2Counter = PlayerStatics.O2counter;
         maxHealth = PlayerCollision.PlayermaxHP;
         currentHealth = PlayerCollision.PlayerHP;
-        healthBarSlider.maxValue = maxHealth;
-        healthBarSlider.value = currentHealth;
-        HealthText.text = currentHealth.ToString() + " / " + maxHealth.ToString();
-        EggsText.text = "Eggs:" + EggCounts.ToString() ;
+        //healthBarSlider.maxValue = maxHealth;
+       // healthBarSlider.value = currentHealth;
+        //HealthText.text = currentHealth.ToString() + " / " + maxHealth.ToString();
+        EggsText.text = "" + EggCounts.ToString() ;
         O2Text.text = "" + O2Counter.ToString() ;
         updateHP();
     }

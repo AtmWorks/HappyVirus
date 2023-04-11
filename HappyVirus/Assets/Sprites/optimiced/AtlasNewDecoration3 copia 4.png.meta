@@ -1,7 +1,13 @@
 fileFormatVersion: 2
 guid: 83f72d1e0082740438a998198d451891
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: 1811540504169614512
+    second: AtlasNewDecoration3 copia 4_0
+  - first:
+      213: 1430914407836550037
+    second: AtlasNewDecoration3 copia 4_1
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -41,7 +47,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -77,7 +83,49 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: AtlasNewDecoration3 copia 4_0
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 227
+        width: 593
+        height: 212
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0bc03479d72e32910800000000000000
+      internalID: 1811540504169614512
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AtlasNewDecoration3 copia 4_1
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 6
+        width: 595
+        height: 212
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 59306179211abd310800000000000000
+      internalID: 1430914407836550037
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
