@@ -25,6 +25,7 @@ TagManager:
   - movingEnd
   - tentacleTarget
   - tentacleRange
+  - renderTag
   layers:
   - Default
   - TransparentFX

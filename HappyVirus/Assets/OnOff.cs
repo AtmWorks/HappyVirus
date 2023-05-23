@@ -8,21 +8,23 @@ public class OnOff : MonoBehaviour
     private bool onRange;
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "Virus")
+        if (collision.tag == "renderTag")
         {
             item.SetActive(true);
         }
     }
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.tag == "Virus")
+        if (collision.tag == "renderTag")
         {
             item.SetActive(true);
         }
     }
+
+
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.tag == "Virus")
+        if (collision.tag == "renderTag")
         {
             item.SetActive(false);
         }
