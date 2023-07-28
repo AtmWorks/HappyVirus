@@ -50,8 +50,8 @@ namespace Cubequad.Tentacles2D
         private HingeJoint2D tipHingeJoint;
         public enum Animations { none, wave, swing }
 
-        //[SerializeField] private Rigidbody2D parentRigidbody;
-        //[SerializeField] private Vector2 parentBodyOffset;
+        [SerializeField] private Rigidbody2D parentRigidbody;
+        [SerializeField] private Vector2 parentBodyOffset;
         [SerializeField] private new Animations animation = Animations.wave;
         [SerializeField] private Transform target;
         [SerializeField] private Rigidbody2D targetRigidbody;
@@ -602,6 +602,8 @@ namespace Cubequad.Tentacles2D
         /// <param name="rigidbody">Target rigidbody</param>
         public void Attach(Rigidbody2D rigidbody)
         {
+
+
             Pivot.bodyType = RigidbodyType2D.Dynamic;
             if (!pivotHingeJoint.enabled)
             {
@@ -616,7 +618,7 @@ namespace Cubequad.Tentacles2D
         /// </summary>
         public void Attach()
         {
-            Pivot.bodyType = RigidbodyType2D.Static;
+            Pivot.bodyType = RigidbodyType2D.Dynamic;
             if (pivotHingeJoint.enabled) pivotHingeJoint.enabled = false;
             if (pivotHingeJoint.connectedBody != null) pivotHingeJoint.connectedBody = null;
         }

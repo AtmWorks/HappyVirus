@@ -121,13 +121,11 @@ public class ParticleFire : MonoBehaviour {
             if (PlayerAnimator.IsShooting == false && PlayerStatics.O2counter >= 3 && PlayerMovement.VirusFaceCheck == true)
             {
                 currentEggTime -= 1 * Time.deltaTime;
-
             }
             else
             {
                 currentEggTime = startingEggTime;
                 Debug.Log("SE DEBERIA HABER CAMBIADO");
-
             }
         }
         else { PlayerAnimator.IsCreatingEgg = false; }

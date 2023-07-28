@@ -1,8 +1,9 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Proyectil01 : MonoBehaviour {
+public class proyectilBone : MonoBehaviour
+{
 
     public GameObject explosion;
     public bool proyectHit;
@@ -18,21 +19,18 @@ public class Proyectil01 : MonoBehaviour {
     private void OnTriggerEnter2D(Collider2D collision)
     {
 
-        if (collision.gameObject.tag=="Enemy" || collision.gameObject.tag == "Wall" || collision.gameObject.tag == "hit" )
+        if ( collision.gameObject.tag == "Wall")
         {
-        Debug.Log("PROYECTILE HIT");
+            Debug.Log("PROYECTILE HIT");
             Instantiate(explosion, new Vector3(this.gameObject.transform.position.x, this.gameObject.transform.position.y, 0), Quaternion.identity);
             Destroy(this.gameObject);
         }
 
-        
+
     }
-
-    
-
     void Update()
     {
-        
+
         currentTime -= 1 * Time.deltaTime;
         if (speed != 0)
         {

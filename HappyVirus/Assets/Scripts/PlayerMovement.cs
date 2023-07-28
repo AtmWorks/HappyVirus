@@ -72,7 +72,7 @@ public class PlayerMovement : MonoBehaviour
     {
        
 
-        VirusBody.gameObject.SetActive(false);
+        //VirusBody.gameObject.SetActive(false);
         outOfControl = false;
         //VirusFaceCheck = false;
         
@@ -197,13 +197,16 @@ public class PlayerMovement : MonoBehaviour
             PlayerStatics.VirusState = 1;
             VirusFace.gameObject.transform.localScale = new Vector3(0, 0, 0);
             //VirusSkin.gameObject.transform.localScale = new Vector3(0, 0, 0);
+            
 
-            VirusBody.gameObject.SetActive(false);
-        
             PlayerCollision.PlayermaxHP =3;
             PlayerCollision.PlayerHP = 3;
             bigLight.SetActive(false);
             VirusFaceCheck = false;
+        }
+        if (PlayerCollision.PlayerHP <= 1)
+        {
+            VirusBody.gameObject.SetActive(false);
         }
         //ATRAER HUEVOS AL PLAYER//
         if (Input.GetMouseButton(1) && PlayerAnimator.IsShooting == false)
@@ -279,7 +282,7 @@ public class PlayerMovement : MonoBehaviour
 
         //para input normal
         rig.velocity = movement * speed;
-
+        //rig.AddForce(movement * speed);
 
 
         //para joystick de screen

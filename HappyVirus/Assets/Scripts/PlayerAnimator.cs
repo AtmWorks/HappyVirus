@@ -9,23 +9,24 @@ public class PlayerAnimator : MonoBehaviour {
     public static bool IsShooting;
     public static bool IsCreatingEgg;
     public static bool GetDmg;
+    private float value ;
 
-
-	void Start ()
+    void Start ()
     {
         GetDmg = false;
-
+        value = 2f;
 
     }
-	
-	
-	void FixedUpdate ()
+
+
+    void FixedUpdate ()
     {
+        value -= Time.deltaTime;
         if (IsShooting)
         {
             
-            FaceAnimator.SetBool("IsShooting", true);//esto se ejecuta
-            MiniFaceAnimator.SetBool("IsShooting", true);//esto no se ejecuta
+            FaceAnimator.SetBool("IsShooting", true);
+            MiniFaceAnimator.SetBool("IsShooting", true);
 
         }
         else
@@ -33,25 +34,35 @@ public class PlayerAnimator : MonoBehaviour {
             FaceAnimator.SetBool("IsShooting", false);
             MiniFaceAnimator.SetBool("IsShooting", false);
         }
-        if ( GetDmg==true || IsCreatingEgg == true)
+        if ( IsCreatingEgg == true)
         {
-            FaceAnimator.SetBool("CreatingEgg", true);//esto se ejecuta
-
-            MiniFaceAnimator.SetBool("IsShooting", true); //esto se ejecuta   
+            FaceAnimator.SetBool("CreatingEgg", true);
+            MiniFaceAnimator.SetBool("IsShooting", true);    
         }
         else
         {
-            FaceAnimator.SetBool("CreatingEgg", false);//esto se ejecuta
-            //MiniFaceAnimator.SetBool("IsShooting", false); //esto se ejecuta
+            FaceAnimator.SetBool("CreatingEgg", false);
+            //MiniFaceAnimator.SetBool("IsShooting", false); 
         }
-    
+
+        if (GetDmg == true && value < 0)
+        {
+            FaceAnimator.SetBool("CreatingEgg", true);
+            MiniFaceAnimator.SetBool("isDamage", true); 
+            value = 1f;
+        }
+        else
+        {
+            //FaceAnimator.SetBool("CreatingEgg", false);
+            MiniFaceAnimator.SetBool("isDamage", false);   
+        }
         if (IsInfecting == true)
         {
-            FaceAnimator.SetBool("IsInfecting", true);//esto se ejecuta
+            FaceAnimator.SetBool("IsInfecting", true);
         }
         else
         {
-            FaceAnimator.SetBool("IsInfecting", false);//esto se ejecuta
+            FaceAnimator.SetBool("IsInfecting", false);
         }
     }
     

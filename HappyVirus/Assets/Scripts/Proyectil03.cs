@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Proyectil01 : MonoBehaviour {
+public class proyectilHueso : MonoBehaviour {
 
     public GameObject explosion;
     public bool proyectHit;
@@ -15,10 +15,11 @@ public class Proyectil01 : MonoBehaviour {
         proyectHit = false;
         currentTime = 5f;
     }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
 
-        if (collision.gameObject.tag=="Enemy" || collision.gameObject.tag == "Wall" || collision.gameObject.tag == "hit" )
+        if (collision.gameObject.tag=="Virus" || collision.gameObject.tag == "Wall" ) 
         {
         Debug.Log("PROYECTILE HIT");
             Instantiate(explosion, new Vector3(this.gameObject.transform.position.x, this.gameObject.transform.position.y, 0), Quaternion.identity);

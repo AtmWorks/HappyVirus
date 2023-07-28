@@ -5,10 +5,11 @@ using UnityEngine;
 public class Enemy01Face : MonoBehaviour {
 
     private SpriteRenderer rend;
-    public Sprite normalFace, followFace;
-    //public static int enemy01FaceState;
+    public SpriteRenderer bodyrend;
+    public Sprite normalFace, followFace, deadFace, normalBody, deadBody;
     public GameObject thisEnemy;
     private ChasePlayer chasePlayer;
+    public EnemyHP enemyHp;
 
     void Start ()
     {
@@ -20,12 +21,24 @@ public class Enemy01Face : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (chasePlayer.isChasing == true)
+        if (chasePlayer.isChasing == true && enemyHp.EnemyAlive == true)
         { rend.sprite = followFace; }
         else { rend.sprite = normalFace; }
-        
-        //if (enemy01FaceState == 1) { rend.sprite = normalFace; }
-        //if (enemy01FaceState == 2) { rend.sprite = followFace; }
+        if (enemyHp.EnemyAlive == false)
+        { 
+            rend.sprite = deadFace; 
+            bodyrend.sprite = deadBody;
+            chasePlayer.enabled = false;
+            this.gameObject.tag = "tentacleTarget";
+            //TO DO: DESACTIVA EL CIRCLE COLLIDER 2D DE ESTE OBJETO
+            GetComponent<CircleCollider2D>().enabled = false;
+
+        }
+        else
+        {
+            bodyrend.sprite = normalBody;
+            chasePlayer.enabled = true;
+        }
 		
 	}
 }

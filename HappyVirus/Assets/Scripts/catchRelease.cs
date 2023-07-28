@@ -16,12 +16,13 @@ public class catchRelease : MonoBehaviour
     bool noColliders = false;
     float checkInterval = 2f;
 
+
     public void OnTriggerStay2D(Collider2D collision)
     {
 
         if (collision.tag == "tentacleTarget")
         {
-
+            //Tentaculo encuentra un objetivo y lo guarda
             isOnTentacleTarget = true;
             tentacleTarget = collision.gameObject;
         }
@@ -29,48 +30,27 @@ public class catchRelease : MonoBehaviour
     }
     public void OnTriggerExit2D(Collider2D collision)
     {
-        Debug.Log("TRIGGER EXITED");
+
         if (collision.tag == "tentacleRange")
         {
-            Debug.Log("TRIGGER EXITED TENTACLE");
-
+            //si salimos del rango devolvemos el target
+            tentacle1.Release();
             tentacle1.TargetRigidbody = spawnTarget;
             isOnTentacleTarget = false;
-            //tentacle1.Release();
-
         }
         if (collision.tag == "tentacleTarget" && tentacle1.IsHoldingTarget==false)
         {
 
             tentacle1.TargetRigidbody = spawnTarget;
             isOnTentacleTarget = false;
-            //tentacle1.Release();
-
         }
-
     }
-    /*
-    private bool CheckForTentacleRange()
-    {
-        float radius = GetComponent<CircleCollider2D>().radius;
-        Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, radius);
-        foreach (Collider2D col in colliders)
-        {
-            if (col.CompareTag("tentacleRange"))
-            {
-                return false;
-            }
-        }
-        return true;
-    }
-    */
 
     void Start()
     {
         releaseAll = false;
         isOnTentacleTarget = false;
-        //threshold = 2f;
-        // Inicializa radius con el valor del radio del collider del trigger de este gameObject
+
         radius = GetComponent<CircleCollider2D>().radius;
         StartCoroutine(CheckForColliders());
     }
