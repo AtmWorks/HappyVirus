@@ -59,6 +59,15 @@ TextureImporter:
   - first:
       213: 170763159212241326
     second: newEnem_18
+  - first:
+      213: 6531529463601563528
+    second: newEnem_19
+  - first:
+      213: -4726794950464790681
+    second: newEnem_20
+  - first:
+      213: -8604004611323652952
+    second: newEnem_21
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -175,8 +184,8 @@ TextureImporter:
       name: newEnem_0
       rect:
         serializedVersion: 2
-        x: 129
-        y: 786
+        x: 74
+        y: 819
         width: 180
         height: 77
       alignment: 0
@@ -196,8 +205,8 @@ TextureImporter:
       name: newEnem_1
       rect:
         serializedVersion: 2
-        x: 61
-        y: 484
+        x: 8
+        y: 523
         width: 318
         height: 297
       alignment: 0
@@ -217,7 +226,7 @@ TextureImporter:
       name: newEnem_2
       rect:
         serializedVersion: 2
-        x: 466
+        x: 331
         y: 464
         width: 179
         height: 176
@@ -238,7 +247,7 @@ TextureImporter:
       name: newEnem_3
       rect:
         serializedVersion: 2
-        x: 479
+        x: 349
         y: 801
         width: 99
         height: 60
@@ -259,7 +268,7 @@ TextureImporter:
       name: newEnem_4
       rect:
         serializedVersion: 2
-        x: 479
+        x: 349
         y: 728
         width: 99
         height: 60
@@ -280,7 +289,7 @@ TextureImporter:
       name: newEnem_5
       rect:
         serializedVersion: 2
-        x: 479
+        x: 349
         y: 659
         width: 99
         height: 60
@@ -301,7 +310,7 @@ TextureImporter:
       name: newEnem_6
       rect:
         serializedVersion: 2
-        x: 593
+        x: 463
         y: 801
         width: 99
         height: 60
@@ -322,7 +331,7 @@ TextureImporter:
       name: newEnem_7
       rect:
         serializedVersion: 2
-        x: 593
+        x: 463
         y: 728
         width: 99
         height: 60
@@ -343,7 +352,7 @@ TextureImporter:
       name: newEnem_8
       rect:
         serializedVersion: 2
-        x: 593
+        x: 463
         y: 659
         width: 99
         height: 60
@@ -364,8 +373,8 @@ TextureImporter:
       name: newEnem_9
       rect:
         serializedVersion: 2
-        x: 662
-        y: 464
+        x: 570
+        y: 527
         width: 179
         height: 176
       alignment: 0
@@ -406,8 +415,8 @@ TextureImporter:
       name: newEnem_11
       rect:
         serializedVersion: 2
-        x: 748
-        y: 64
+        x: 760
+        y: 739
         width: 171
         height: 162
       alignment: 9
@@ -427,12 +436,12 @@ TextureImporter:
       name: newEnem_12
       rect:
         serializedVersion: 2
-        x: 515
-        y: 262
+        x: 249
+        y: 298
         width: 209
         height: 102
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.495636, y: 0.52682555}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -448,9 +457,9 @@ TextureImporter:
       name: newEnem_13
       rect:
         serializedVersion: 2
-        x: 752
-        y: 260
-        width: 159
+        x: 769
+        y: 523
+        width: 151
         height: 202
       alignment: 9
       pivot: {x: 0.5139824, y: 0.5059751}
@@ -469,8 +478,8 @@ TextureImporter:
       name: newEnem_14
       rect:
         serializedVersion: 2
-        x: 66
-        y: 318
+        x: 786
+        y: 71
         width: 139
         height: 125
       alignment: 9
@@ -532,8 +541,8 @@ TextureImporter:
       name: newEnem_15
       rect:
         serializedVersion: 2
-        x: 211
-        y: 263
+        x: 23
+        y: 290
         width: 209
         height: 114
       alignment: 9
@@ -553,12 +562,12 @@ TextureImporter:
       name: newEnem_18
       rect:
         serializedVersion: 2
-        x: 208
-        y: 376
+        x: 23
+        y: 403
         width: 209
         height: 114
       alignment: 9
-      pivot: {x: 0.5141911, y: 0.53577626}
+      pivot: {x: 0.5010992, y: 0.5277755}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -566,6 +575,69 @@ TextureImporter:
       bones: []
       spriteID: ea1b195403cae5200800000000000000
       internalID: 170763159212241326
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: newEnem_19
+      rect:
+        serializedVersion: 2
+        x: 577
+        y: 739
+        width: 171
+        height: 162
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88708fd0177a4aa50800000000000000
+      internalID: 6531529463601563528
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: newEnem_20
+      rect:
+        serializedVersion: 2
+        x: 770
+        y: 313
+        width: 150
+        height: 202
+      alignment: 9
+      pivot: {x: 0.4962097, y: 0.4983942}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 76f9f63490d076eb0800000000000000
+      internalID: -4726794950464790681
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: newEnem_21
+      rect:
+        serializedVersion: 2
+        x: 505
+        y: 260
+        width: 234
+        height: 236
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a41b38546f689880800000000000000
+      internalID: -8604004611323652952
       vertices: []
       indices: 
       edges: []

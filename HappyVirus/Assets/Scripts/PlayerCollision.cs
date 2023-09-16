@@ -25,7 +25,8 @@ public class PlayerCollision : MonoBehaviour {
     void PlayerDies ()
     {
         //this.gameObject.SetActive(false);
-        virusParent.transform.position = spawn.transform.position;
+       //SPAWN:
+        //virusParent.transform.position = spawn.transform.position;
         //this.transform.parent.transform.position = spawn.transform.position;
         PlayerHP = 3;
     }

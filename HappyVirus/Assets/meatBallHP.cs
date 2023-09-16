@@ -5,20 +5,31 @@ using UnityEngine;
 public class meatBallHP : MonoBehaviour
 {
     public GameObject explosion;
+    //Sprites de enfermo
+
+    public SpriteRenderer bodyrend;
+    public Sprite normalBody, infectedBody, infectedPlusBody,deadBody;
+
     //public GameObject EnemyObject;
     public Animator animator;
-    public bool EnemyAlive;
+    public bool Alive;
     public int enemyHP;
+    public meatBall meatBall;
     // Use this for initialization
     void Start()
     {
-        EnemyAlive = true;
-        enemyHP = 6;
+        Alive = true;
+        enemyHP = 10;
     }
 
     void EnemyDies()
     {
-        EnemyAlive = false;
+        
+
+        //Instantiate(explosion, new Vector3(this.gameObject.transform.position.x, this.gameObject.transform.position.y, 0), Quaternion.identity);
+
+
+       Alive = false;
     }
 
     private void OnTriggerEnter2D(Collider2D collisionTrig)
@@ -32,12 +43,23 @@ public class meatBallHP : MonoBehaviour
     void Update()
     {
 
-        if (enemyHP <= 3) { animator.SetBool("isInfected", true); }
-
-        if (enemyHP <= 0 && EnemyAlive == true)
+        if (enemyHP <= 7 && enemyHP> 4) { 
+            bodyrend.sprite = infectedBody;
+            Debug.Log("I CHANGED SPRITE");
+        }
+        if (enemyHP <= 4 && enemyHP > 0)  
         {
-            Instantiate(explosion, new Vector3(this.gameObject.transform.position.x, this.gameObject.transform.position.y, 0), Quaternion.identity);
+            bodyrend.sprite = infectedPlusBody;
+            animator.SetBool("isInfected", true);
 
+        }
+
+        if (enemyHP <= 0 && Alive == true)
+        {
+            bodyrend.sprite = deadBody;
+
+            animator.SetBool("isDead", true);
+            meatBall.enabled = false;
             EnemyDies();
         }
 

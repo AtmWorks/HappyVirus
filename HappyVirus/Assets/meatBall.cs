@@ -18,6 +18,7 @@ public class meatBall : MonoBehaviour
     public Animator animatorP;
     public float timer;
     private Coroutine dashCoroutine;
+    public bool canAttack;
 
     [SerializeField]
     private float velocidadRotacion = 1f;
@@ -26,6 +27,7 @@ public class meatBall : MonoBehaviour
     {
         timer = Random.Range(0f, -3f);
         rb = GetComponent<Rigidbody2D>();
+        canAttack = false;
         isChasing = false;
         isAttack = false;
         timeSinceLastSpeedIncrease = 0f;
@@ -39,6 +41,7 @@ public class meatBall : MonoBehaviour
         {
             isChasing = true;
             moveTo = collision.transform;
+            canAttack = true;
         }
     }
 
@@ -47,6 +50,7 @@ public class meatBall : MonoBehaviour
         if (col.tag == "Virus" && isChasing == true)
         {
             isChasing = false;
+            canAttack = false;
         }
     }
 
@@ -66,15 +70,19 @@ public class meatBall : MonoBehaviour
                 rb.MovePosition(movement);
 
         }
-        if (timer >= 3.3f && isAttack == true)
+        if (timer >= 3.3f && isAttack == true )
         {
             dashToVirus();
         }
         if (timer > 4f)
         {
-            isAttack = true;
-            animatorP.SetBool("isAttack", true);
-            timer = 0;
+            if (canAttack == true)
+            {
+                isAttack = true;
+                animatorP.SetBool("isAttack", true);
+                timer = 0;
+            }
+            
         }
 
         //mantener la rotacion

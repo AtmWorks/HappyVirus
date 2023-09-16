@@ -604,10 +604,10 @@ namespace Cubequad.Tentacles2D
         {
 
 
-            Pivot.bodyType = RigidbodyType2D.Dynamic;
+            Pivot.bodyType = RigidbodyType2D.Kinematic;
             if (!pivotHingeJoint.enabled)
             {
-                pivotHingeJoint.enabled = true;
+                pivotHingeJoint.enabled = false;
                 pivotHingeJoint.connectedAnchor = Vector2.zero;
             }
             pivotHingeJoint.connectedBody = rigidbody;
