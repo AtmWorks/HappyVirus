@@ -281,12 +281,12 @@ public class PlayerMovement : MonoBehaviour
         Vector2 joyMovement = new Vector2(joystickHorizontal, joystickVertical);
 
         //para input normal
-        rig.velocity = movement * speed;
-        //rig.AddForce(movement * speed);
+        //rig.velocity = movement * speed;
+        //rig.AddForce(movement * speed * 3);
 
 
         //para joystick de screen
-        //rig.velocity = joyMovement * speed;
+        rig.velocity = joyMovement * speed;
 
         //rig.AddForce(movement * speed);
         //Debug.Log(rig.velocity);
