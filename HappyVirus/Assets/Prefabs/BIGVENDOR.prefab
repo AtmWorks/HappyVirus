@@ -5177,8 +5177,8 @@ MonoBehaviour:
   Espam: {fileID: 1505968451}
   didActive: 0
   counter: 0
+  pacing: 0
   timer: 0
-  inside: 0
 --- !u!1 &5627291166864999383
 GameObject:
   m_ObjectHideFlags: 0

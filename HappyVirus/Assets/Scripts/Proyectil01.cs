@@ -20,14 +20,12 @@ public class Proyectil01 : MonoBehaviour {
 
         if (collision.gameObject.tag=="Enemy" || collision.gameObject.tag == "Wall" || collision.gameObject.tag == "hit" )
         {
-        Debug.Log("PROYECTILE HIT");
             Instantiate(explosion, new Vector3(this.gameObject.transform.position.x, this.gameObject.transform.position.y, 0), Quaternion.identity);
             Destroy(this.gameObject);
         }
 
         
     }
-
     
 
     void Update()

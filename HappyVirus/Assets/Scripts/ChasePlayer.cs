@@ -1,20 +1,23 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 
 public class ChasePlayer : MonoBehaviour
 {
     public string virusTag = "Virus";
     public float maxChaseSpeed = 5f;
-    public float minChaseTimer = 4f;
-    public float maxChaseTimer = 6f;
-    public float attackTimerDuration = 4f;
+    //public float minChaseTimer = 4f;
+    //public float maxChaseTimer = 6f;
+    //public float attackTimerDuration = 4f;
     private Quaternion rotacionInicial;
     private float velocidadRotacion = 1f;
 
     public bool canChase = false;
-    public bool canAttack = false;
+    //public bool canAttack = false;
+
     private float chaseSpeed = 1f;
-    private float chaseTimer = 0f;
-    private float attackTimer = 0f;
+    //private float chaseTimer = 0f;
+    //private float attackTimer = 0f;
 
     private Transform virusTransform;
     private Rigidbody2D rb;
@@ -27,15 +30,29 @@ public class ChasePlayer : MonoBehaviour
        // animatorP = GetComponent<Animator>();
     }
 
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag(virusTag))
+        {
+            virusTransform = other.transform;
+            //canChase = true;
+        }
+    }
     private void OnTriggerStay2D(Collider2D other)
     {
         if (other.CompareTag(virusTag))
         {
             virusTransform = other.transform;
-            if (canAttack == false) canChase = true;
+            //canChase = true;
         }
     }
-
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Virus")
+        {
+            Attack();
+        }
+    }
     private void OnTriggerExit2D(Collider2D other)
     {
         if (other.CompareTag(virusTag))
@@ -50,13 +67,10 @@ public class ChasePlayer : MonoBehaviour
     {
         if (canChase)
         {
-            Chase();
+           Chase();
         }
 
-        if (canAttack)
-        {
-            Attack();
-        }
+        
         float anguloActual = transform.rotation.eulerAngles.z;
         if (anguloActual != rotacionInicial.eulerAngles.z)
         {
@@ -77,56 +91,35 @@ public class ChasePlayer : MonoBehaviour
             return;
         }
 
+
         Vector2 direction = (virusTransform.position - transform.position).normalized;
         rb.velocity = direction * chaseSpeed;
 
         // Increment chase speed gradually up to maxChaseSpeed
         chaseSpeed = Mathf.Min(chaseSpeed + Time.deltaTime, maxChaseSpeed);
 
-        // Check if we should activate canAttack
-        chaseTimer += Time.deltaTime;
-        if (chaseTimer >= Random.Range(minChaseTimer, maxChaseTimer))
-        {
-            canAttack = true;
-        }
     }
 
     private void Attack()
     {
-        // 1. Stop chasing
-        //chaseSpeed = 0;
-        // 2. Activate animator and set trigger
-        //animatorP.enabled = true;
+
         animatorP.SetBool("isAttack", true);
-
-        // 3. Start attack timer
-        attackTimer += Time.deltaTime;
-        if (attackTimer >= attackTimerDuration/3)
-        {
-            canChase = false;
-        }
-        if (attackTimer >= attackTimerDuration)
-        {
-
-
-            // Re-enable chasing
-            ResetChase();
-
-        }
+        StartCoroutine(dateUnRespiro());
     }
 
-    private void ResetChase()
+    IEnumerator dateUnRespiro()
     {
-        // Reset variables when virus exits the trigger area
-        chaseSpeed = 0f;
-        chaseTimer = 0f;
-        attackTimer = 0;
-        canAttack = false;
-        animatorP.SetBool("isAttack", false);
-        canChase = true;
+        yield return new WaitForSeconds(0.5f);
 
-        //animatorP.enabled = false;
+        chaseSpeed = 1f;
+        animatorP.SetBool("isAttack", false);
+        Debug.Log("Pase la corrutina");
+
     }
+
+
+    
+
 }
 
 //using System.Collections;

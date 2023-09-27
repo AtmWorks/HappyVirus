@@ -4,8 +4,12 @@ using UnityEngine;
 
 public class SpriteFlip : MonoBehaviour {
 
-	// Use this for initialization
-	void Start ()
+    public Joystick screenJoystick;
+
+    public bool inPC;
+    public bool inMobile;
+    // Use this for initialization
+    void Start ()
     {
 		
 	}
@@ -14,14 +18,32 @@ public class SpriteFlip : MonoBehaviour {
 	void Update ()
     {
         Vector3 characterScale = transform.localScale;
-        if (Input.GetAxis("Horizontal") < 0)
+        if (inPC)
         {
-            characterScale.x = -1;
+            if (Input.GetAxis("Horizontal") < 0)
+            {
+                characterScale.x = -1;
+            }
+            if (Input.GetAxis("Horizontal") > 0)
+            {
+                characterScale.x = 1;
+            }
         }
-        if (Input.GetAxis("Horizontal") > 0)
+
+        if (inMobile)
         {
-            characterScale.x = 1;
+            float joystickHorizontalInput = screenJoystick.Horizontal;
+
+            if (joystickHorizontalInput < 0)
+            {
+                characterScale.x = -1;
+            }
+            else if (joystickHorizontalInput > 0)
+            {
+                characterScale.x = 1;
+            }
+            transform.localScale = characterScale;
         }
-        transform.localScale = characterScale;
+
     }
 }

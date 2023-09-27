@@ -10,12 +10,14 @@ public class disablePlaquetas : MonoBehaviour
     public GameObject parent;
     private float timer = 0.0f;
     public bool isInfected;
+    public bool gotTouch;
     public Animator anim;
     // Start is called before the first frame update
     void Start()
     {
         isInfected = false;
-      
+        gotTouch = false;
+
         //isInfected = false;
     }
 
@@ -27,6 +29,10 @@ public class disablePlaquetas : MonoBehaviour
         parent.gameObject.SetActive(false);
     }
 
+    private void FixedUpdate()
+    {
+        
+    }
 
     public void OnCollisionEnter2D(Collision2D collision)
     {
@@ -41,15 +47,15 @@ public class disablePlaquetas : MonoBehaviour
     {
         if (collision.gameObject.tag == "Virus")
         {
-            timer += Time.deltaTime;
+            gotTouch = true;
         }
     }    
     public void OnCollisionExit2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Virus")
         {
-            timer -= Time.deltaTime;
-            anim.SetBool("infection", false);
+            //timer -= Time.deltaTime;
+            //anim.SetBool("infection", false);
 
         }
     }
@@ -57,8 +63,10 @@ public class disablePlaquetas : MonoBehaviour
     private void Update()
     {
         //if ()
-        if (timer < 0) { timer = 0; }
-        if (timer > 2) { isInfected= true; }
+        //if (timer < 0) { timer = 0; }
+        if (!gotTouch) { timer = 0; }
+        if (gotTouch) {timer += Time.deltaTime;}
+        if (timer > 2.5f) { isInfected= true; }
         if (isInfected) explode();
     }
 }

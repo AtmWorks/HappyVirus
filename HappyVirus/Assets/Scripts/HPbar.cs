@@ -29,8 +29,8 @@ public class HPbar : MonoBehaviour {
 
     public void updateHP()
     {
-        Debug.Log("CURRENT HP LENGHT IS " + CurrentHPS.Length);
-        Debug.Log("MAX LENGHT IS " + MaxHPS.Length);
+        //Debug.Log("CURRENT HP LENGHT IS " + CurrentHPS.Length);
+        //Debug.Log("MAX LENGHT IS " + MaxHPS.Length);
 
         for (int i = 0; i < CurrentHPS.Length; i++)
         {
@@ -55,7 +55,7 @@ public class HPbar : MonoBehaviour {
 
         if (currentHealth < 0 || currentHealth > CurrentHPS.Length - 1 || maxHealth < 0 || maxHealth > MaxHPS.Length - 1)
         {
-            Debug.Log("health exception");
+            //Debug.Log("health exception");
         }
     }
     void Update ()

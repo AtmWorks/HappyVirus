@@ -1,6 +1,7 @@
 ﻿using Cubequad.Tentacles2D;
 using System.Collections;
 using System.Collections.Generic;
+using System.Drawing;
 using UnityEngine;
 using UnityEngine.UI;
 //using Tentacle;
@@ -9,19 +10,30 @@ public class PlayerMovement : MonoBehaviour
 {
     public static bool VirusFaceCheck;
     //public bool VirusFaceCheck;
+
     public GameObject bigLight;
     public GameObject VirusFace;
     public GameObject VirusSkin;
     public GameObject VirusBody;
     public GameObject virusDoble;
+    public GameObject tentacles;
     public float speed;
     private Rigidbody2D rig;
     private Rigidbody2D rigCopy;
     private bool growingFace;
     private bool outOfControl;
+    public bool isSprinting;
+    
+    public bool isAttractingEgg;
+
+    public isButtonPressed sprintButton;
+    public isButtonPressed EggFollowButton;
+
     public VirusAttraction control;
     public Joystick screenJoystick;
 
+    public UnityEngine.UI.Button boton01;
+    public UnityEngine.UI.Button boton02;
 
     //Tentaculos
     [SerializeField] private Tentacle tentacle1;
@@ -49,6 +61,7 @@ public class PlayerMovement : MonoBehaviour
 
     //
     public Image Stamina;
+    public Image blobCircle;
     public bool coolingDown;
     public float waitTime = 1.0f;
     public bool resting;
@@ -66,11 +79,11 @@ public class PlayerMovement : MonoBehaviour
         rig = this.GetComponent<Rigidbody2D>();
        // rigCopy = virusDoble.GetComponent<Rigidbody2D>();
         resting = false;
+        isSprinting = false;
     }
 
     void Start ()
     {
-       
 
         //VirusBody.gameObject.SetActive(false);
         outOfControl = false;
@@ -95,6 +108,8 @@ public class PlayerMovement : MonoBehaviour
         VirusFace.gameObject.transform.localScale = new Vector3(0, 0, 0);
         //VirusSkin.SetActive(false);
         growingFace = false;
+        boton01.onClick.AddListener(growFaceOver);
+        blobCircle.fillAmount = 0f;
 
     }
 
@@ -134,7 +149,8 @@ public class PlayerMovement : MonoBehaviour
             return null;
         }
     }
-    private void softBodyPosition()
+
+    public void softBodyPosition()
     {
         VirusBody.SetActive(true);
         //VirusSkin.SetActive(true);
@@ -157,8 +173,41 @@ public class PlayerMovement : MonoBehaviour
 
     }
 
+    private void growFaceOver()
+    {
+        if(PlayerStatics.O2counter >= 3 && VirusFaceCheck == false)
+        {
+
+            //VirusFace.gameObject.transform.localScale = new Vector3 (1, 1, 1) ; 
+            //VirusFace.SetActive(true);
+            PlayerStatics.O2counter -= 3;
+            PlayerCollision.PlayermaxHP = 6;
+            PlayerCollision.PlayerHP = PlayerCollision.PlayerHP + 3;
+            PlayerStatics.VirusState = 2;
+            softBodyPosition();
+            growingFace = true;
+            Debug.Log("Face Growing");
+            bigLight.SetActive(true);
+            VirusFaceCheck = true;
+            //tentacles.SetActive(true);
+        }
+        else { 
+        Debug.Log("Not enough O2");
+
+        }
+        if (blobCircle.fillAmount >= 1.0f) {
+            softBodyPosition();
+
+        }
+
+    }
+
     void FixedUpdate ()
     {
+        //CANVAS BUTTON INPUTS
+
+        isAttractingEgg = EggFollowButton.buttonPressed;
+        isSprinting = sprintButton.buttonPressed;
 
         //MECANICA DE CAMBIAR DE FORMA
         if (growingFace == true)
@@ -171,26 +220,14 @@ public class PlayerMovement : MonoBehaviour
             growingFace = false;
 
         }
-        if (Input.GetKey("p") && PlayerStatics.O2counter >=3 && VirusFaceCheck == false)
+        if (Input.GetKey("p"))
         {
-            
-
-            //VirusFace.gameObject.transform.localScale = new Vector3 (1, 1, 1) ; 
-            //VirusFace.SetActive(true);
-            PlayerStatics.O2counter -= 3;
-            PlayerCollision.PlayermaxHP = 6;
-            PlayerCollision.PlayerHP = PlayerCollision.PlayerHP+3;
-            PlayerStatics.VirusState = 2;
-            softBodyPosition();
-            growingFace = true;
-            Debug.Log("Face Growing");
-            bigLight.SetActive(true);
-            VirusFaceCheck = true;
-            
 
 
+            growFaceOver();
 
-        }
+        }     
+
         if (PlayerCollision.PlayerHP <= 3 && VirusFaceCheck == true)
         {
             //VirusFace.SetActive(false);
@@ -202,14 +239,25 @@ public class PlayerMovement : MonoBehaviour
             PlayerCollision.PlayermaxHP =3;
             PlayerCollision.PlayerHP = 3;
             bigLight.SetActive(false);
+            tentacles.SetActive(false);
             VirusFaceCheck = false;
         }
-        if (PlayerCollision.PlayerHP <= 1)
+        if (PlayerCollision.PlayerHP <= 0)
         {
             VirusBody.gameObject.SetActive(false);
+            blobCircle.color = new Color32(95, 255, 100, 90);
+            blobCircle.fillAmount += 1.0f / (waitTime*2) * Time.deltaTime;
+            if(blobCircle.fillAmount >= 1.0f) 
+            {
+                blobCircle.fillAmount = 0f;
+                softBodyPosition();
+                blobCircle.color = new Color32(95, 255, 100, 255);
+                PlayerCollision.PlayerHP = 1;
+            }
+
         }
         //ATRAER HUEVOS AL PLAYER//
-        if (Input.GetMouseButton(1) && PlayerAnimator.IsShooting == false)
+        if ((/*Input.GetMouseButton(1)||*/isAttractingEgg) && PlayerAnimator.IsShooting == false)
         {
             EggAttraction.isAbsorbing = true;
         }
@@ -252,17 +300,17 @@ public class PlayerMovement : MonoBehaviour
         }
         if (Stamina.fillAmount >= 1f)
         {
-            Stamina.color = new Color(255, 246, 95, 0f);
+            Stamina.color = new Color32(255, 246, 95, 0);
         } 
         else if (Stamina.fillAmount <= 1f && Stamina.fillAmount >= 0.5f)
         {
             Stamina.color = new Color32(255, 246, 95, 255);
         }
-        if (Input.GetKey("left shift") && Stamina.fillAmount >= 0.05f && resting == false)
+        if ((Input.GetKey("left shift")||isSprinting) && Stamina.fillAmount >= 0.05f && resting == false)
         {
 
             coolingDown = true;
-            speed = 10;
+            speed = 14;
 
         }
         else

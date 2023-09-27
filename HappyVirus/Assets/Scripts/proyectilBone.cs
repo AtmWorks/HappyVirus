@@ -2,8 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class proyectilBone : MonoBehaviour
-{
+public class proyectilBone : MonoBehaviour{
 
     public GameObject explosion;
     public bool proyectHit;
@@ -21,7 +20,17 @@ public class proyectilBone : MonoBehaviour
 
         if ( collision.gameObject.tag == "Wall")
         {
-            Debug.Log("PROYECTILE HIT");
+            Instantiate(explosion, new Vector3(this.gameObject.transform.position.x, this.gameObject.transform.position.y, 0), Quaternion.identity);
+            Destroy(this.gameObject);
+        }
+
+
+    }  
+    private void OnColliderEnter2D(Collider2D collision)
+    {
+
+        if ( collision.gameObject.tag == "Wall" )
+        {
             Instantiate(explosion, new Vector3(this.gameObject.transform.position.x, this.gameObject.transform.position.y, 0), Quaternion.identity);
             Destroy(this.gameObject);
         }

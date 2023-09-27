@@ -716,7 +716,7 @@ Transform:
   m_GameObject: {fileID: 7039299101073398237}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 203.5, y: -1242.3, z: -2.102824}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 7039299102749856301}
   - {fileID: 7039299101049917322}
@@ -765,6 +765,10 @@ MonoBehaviour:
   plaqSpawner2: {fileID: 7039299102156987837}
   plaqSpawner3: {fileID: 7039299101175699771}
   plaqSpawner4: {fileID: 7039299102360358558}
+  plaqSpawner5: {fileID: 0}
+  plaqSpawner6: {fileID: 0}
+  plaqSpawner7: {fileID: 0}
+  plaqSpawner8: {fileID: 0}
   plaqueta: {fileID: 5913506124721555599, guid: 3c47b6138a3b58d4dbd2509cb4d9ff29,
     type: 3}
   currentTime: 0

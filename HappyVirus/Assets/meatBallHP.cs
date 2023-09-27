@@ -19,7 +19,7 @@ public class meatBallHP : MonoBehaviour
     void Start()
     {
         Alive = true;
-        enemyHP = 10;
+        enemyHP = 8;
     }
 
     void EnemyDies()
@@ -43,7 +43,7 @@ public class meatBallHP : MonoBehaviour
     void Update()
     {
 
-        if (enemyHP <= 7 && enemyHP> 4) { 
+        if (enemyHP <= 6 && enemyHP> 4) { 
             bodyrend.sprite = infectedBody;
             Debug.Log("I CHANGED SPRITE");
         }

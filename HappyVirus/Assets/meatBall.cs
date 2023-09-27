@@ -12,7 +12,7 @@ public class meatBall : MonoBehaviour
     public float maxSpeed;
     public bool isChasing;
     public bool isAttack;
-    private float speedIncreaseInterval = 1f;
+    private float speedIncreaseInterval = 0.5f;
     private float timeSinceLastSpeedIncrease;
     private Quaternion rotacionInicial;
     public Animator animatorP;

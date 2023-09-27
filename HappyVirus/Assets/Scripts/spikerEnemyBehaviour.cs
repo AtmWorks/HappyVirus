@@ -19,6 +19,10 @@ public class spikerEnemyBehaviour : MonoBehaviour
     public float minimumDistance;
 
     public bool retreat;
+    public bool canShoot;
+    public bool isShooting;
+    public bool canRotate;
+    public bool isVirusInRange;
 
     public List<GameObject> vfx = new List<GameObject>();
 
@@ -28,7 +32,6 @@ public class spikerEnemyBehaviour : MonoBehaviour
     public float resetTime;
     public float nextTime;
 
-    public bool canAttack;
 
     private Quaternion rotacionInicial;
 
@@ -41,10 +44,14 @@ public class spikerEnemyBehaviour : MonoBehaviour
         retreat = false;
         timer = Random.Range(-10f, -5f); ;
         resetTime = 2f;
-        nextTime = 0f;
+        nextTime = -4f;
         effectToSpawn = vfx[0];
         speed = 3;
         rotacionInicial = Quaternion.Euler(0f, 0f, transform.rotation.eulerAngles.z);
+        canShoot = false;
+        canRotate = false;
+        isShooting = false;
+        isVirusInRange = false;
     }
 
     // Update is called once per frame
@@ -52,13 +59,29 @@ public class spikerEnemyBehaviour : MonoBehaviour
     {
         //triger animetion
         //wait 2 secs
+        if (isShooting)
+        {
+            if (canShoot)
+            {
+                SpawnVFX();
+                isShooting = false;
+            }
+        }
         timer += Time.deltaTime;
         if (timer > 0f)
         {
-            _animator.SetBool("imShooting", true);
+            if(canShoot)
+            {
+                _animator.SetBool("imShooting", true);
+            }
 
         }
-        if (timer > 2f)
+        if (canRotate)
+        {
+            rotationParent.GetComponent<Rotation>().enabled = true; // Desactivar el script
+
+        }
+        if (!canRotate)
         {
             rotationParent.GetComponent<Rotation>().enabled = false; // Desactivar el script
 
@@ -66,19 +89,21 @@ public class spikerEnemyBehaviour : MonoBehaviour
         if (timer > 2.25f)
         {
             _animator.SetBool("imShooting", false);
-            SpawnVFX();
-            //   rotationParent.GetComponent<Rotation>().enabled = true; // Desactivar el script
-            timer = -6f;
+            
+
+            timer = Random.Range(-3f, -6f);
+           
         }
-        if (timer > -5f && timer < 1.8f)
+        if (retreat)
         {
-            rotationParent.GetComponent<Rotation>().enabled = true; // Desactivar el script
-            if (retreat == true)
+            if (isVirusInRange) 
             {
                 Vector2 direction = (target.gameObject.transform.position - transform.position).normalized;
                 rb.velocity = -direction * speed;
             }
+            
         }
+        
         // Obtenemos el ángulo de rotación actual en el eje Z
         float anguloActual = transform.rotation.eulerAngles.z;
         // Si la rotación actual es diferente de la rotación inicial en el eje Z
@@ -104,7 +129,9 @@ public class spikerEnemyBehaviour : MonoBehaviour
         if (collision.tag == "Virus")
         {
             target = collision.gameObject;
+            canShoot = true;
             retreat = true;
+            isVirusInRange = true;
         }
     }
     public void OnTriggerExit2D(Collider2D collision)
@@ -112,10 +139,16 @@ public class spikerEnemyBehaviour : MonoBehaviour
         if (collision.tag == "Virus")
         {
             retreat = false;
+            isVirusInRange = false;
+
+            //canShoot = false;
+
         }
     }
-    void triggerAnim(bool state)
+    IEnumerator disableShooting()
     {
+        yield return new WaitForSeconds(6f);
+        //canShoot = false;
 
     }
 
