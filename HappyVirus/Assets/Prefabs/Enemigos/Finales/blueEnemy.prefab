@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4287426007701136392}
   - component: {fileID: 6115452725965213132}
+  - component: {fileID: 3558851312676025827}
   m_Layer: 0
   m_Name: eye_R
   m_TagString: Untagged
@@ -84,6 +85,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &3558851312676025827
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1163955760839296001}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 854be559b79683345bac5722a949d684, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flashMaterial: {fileID: 2100000, guid: d9c0d1c6573b0a447b87d716c1366f77, type: 2}
+  duration: 0.1
 --- !u!1 &3341360367510751800
 GameObject:
   m_ObjectHideFlags: 0
@@ -94,6 +109,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7311188668074724055}
   - component: {fileID: 3449611190180706576}
+  - component: {fileID: 1133549522368972811}
   m_Layer: 0
   m_Name: eye_L
   m_TagString: Untagged
@@ -168,6 +184,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1133549522368972811
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3341360367510751800}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 854be559b79683345bac5722a949d684, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flashMaterial: {fileID: 2100000, guid: d9c0d1c6573b0a447b87d716c1366f77, type: 2}
+  duration: 0.1
 --- !u!1 &5328101570530304704
 GameObject:
   m_ObjectHideFlags: 0
@@ -368,6 +398,11 @@ MonoBehaviour:
   thisAnim: {fileID: 5328101571809632611}
   chaseScript: {fileID: 5328101571161128674}
   deadlyTimer: 0
+  flashList:
+  - {fileID: 5427901302609592103}
+  - {fileID: 3440073728121844328}
+  - {fileID: 1133549522368972811}
+  - {fileID: 3558851312676025827}
   flashEffectbody: {fileID: 5427901302609592103}
   flashEffectface: {fileID: 3440073728121844328}
   EnemyAlive: 0

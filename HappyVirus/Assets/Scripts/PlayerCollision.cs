@@ -20,10 +20,8 @@ public class PlayerCollision : MonoBehaviour {
 
     public FadeToBlack thisTeleport;
 
-    [SerializeField] private SimpleFlash flashEffect;
-    [SerializeField] private SimpleFlash flashEffectPiedra1;
-    [SerializeField] private SimpleFlash flashEffectPiedra2;
-    [SerializeField] private SimpleFlash flashEffectPiedra3;
+
+    [SerializeField]private List <SimpleFlash> flashList;
 
     //PARA EFECTO DE DAÑO
 
@@ -68,6 +66,27 @@ public class PlayerCollision : MonoBehaviour {
     void oneDamage()
     {
         PlayerHP -= 1;
+    }
+
+    IEnumerator flashDMG()
+    {
+
+        //flashEffect.Flash();
+        //flashEffectPiedra1.Flash();
+        //flashEffectPiedra2.Flash();
+        //flashEffectPiedra3.Flash();
+
+        //flashEffectBoca.Flash();
+        //flashEffectEyeL.Flash();
+        //flashEffectEyeR.Flash();
+        Debug.Log("ENTRO EN EL METODO FLASH");
+        foreach (SimpleFlash flash in flashList)
+        {
+            Debug.Log("ENTRO EN EL BUCLE FLASH");
+            flash.Flash();
+
+        }
+        yield return null;
     }
     private void OnCollisionStay2D(Collision2D PlayerCol )
     {
@@ -124,14 +143,14 @@ public class PlayerCollision : MonoBehaviour {
 
         if (gotDamage == true && PlayerStatics.inmuneTimer <= 0)
         {
-            flashEffect.Flash();
-            flashEffectPiedra1.Flash();
-            flashEffectPiedra2.Flash();
-            flashEffectPiedra3.Flash();
+
+            
+
             PlayerAnimator.GetDmg = true;
             PlayerStatics.inmuneTimer = 1f;
             FaceTime = 1f;
             oneDamage();
+            StartCoroutine(flashDMG());
             //hpscript.updateHP();
             gotDamage = false;
 

@@ -13,6 +13,8 @@ public class EnemyHP : MonoBehaviour {
     public ChasePlayer chaseScript;
     public float deadlyTimer;
 
+    public List<SimpleFlash> flashList;
+
     [SerializeField] private SimpleFlash flashEffectbody;
     [SerializeField] private SimpleFlash flashEffectface;
 
@@ -45,9 +47,13 @@ public class EnemyHP : MonoBehaviour {
     {
         if (collisionTrig.gameObject.tag == "Proyectil")
         {
+            foreach (SimpleFlash flash in flashList)
+            {
+                flash.Flash();
+            }
             //Debug.Log("ENEMY HIT"); 
-            flashEffectface.Flash();
-            flashEffectbody.Flash();
+            //flashEffectface.Flash();
+            //flashEffectbody.Flash();
             enemyHP--; 
             //Debug.Log(enemyHP.ToString()); 
         }

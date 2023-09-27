@@ -23,6 +23,9 @@ public class ChasePlayer : MonoBehaviour
     private Rigidbody2D rb;
     public Animator animatorP;
 
+    private Vector3 playerLastPosition;
+    private float lastUpdateTime;
+
 
     private void Start()
     {
@@ -70,7 +73,7 @@ public class ChasePlayer : MonoBehaviour
            Chase();
         }
 
-        
+        //Para mantener la rotacion firme
         float anguloActual = transform.rotation.eulerAngles.z;
         if (anguloActual != rotacionInicial.eulerAngles.z)
         {
@@ -83,6 +86,7 @@ public class ChasePlayer : MonoBehaviour
             rb.AddTorque(rotacion * velocidadRotacion);
         }
     }
+
 
     private void Chase()
     {
@@ -113,13 +117,8 @@ public class ChasePlayer : MonoBehaviour
 
         chaseSpeed = 1f;
         animatorP.SetBool("isAttack", false);
-        Debug.Log("Pase la corrutina");
 
     }
-
-
-    
-
 }
 
 //using System.Collections;
