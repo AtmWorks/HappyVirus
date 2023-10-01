@@ -7023,6 +7023,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   screenJoystick: {fileID: 0}
+  screenJoystick2: {fileID: 0}
   inPC: 0
   inMobile: 0
 --- !u!1 &1373689432060467280
@@ -7793,7 +7794,7 @@ DistanceJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}
   m_AutoConfigureDistance: 1
-  m_Distance: 0.9724712
+  m_Distance: 0.9724707
   m_MaxDistanceOnly: 0
 --- !u!231 &1374653703127428618
 SpringJoint2D:
@@ -7812,7 +7813,7 @@ SpringJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}
   m_AutoConfigureDistance: 1
-  m_Distance: 0.97999996
+  m_Distance: 0.98000336
   m_DampingRatio: 0
   m_Frequency: 5
 --- !u!231 &1374653703127428597
@@ -7832,7 +7833,7 @@ SpringJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}
   m_AutoConfigureDistance: 1
-  m_Distance: 0.9724712
+  m_Distance: 0.9724707
   m_DampingRatio: 0
   m_Frequency: 3
 --- !u!231 &1374653703127428596
@@ -7852,7 +7853,7 @@ SpringJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}
   m_AutoConfigureDistance: 1
-  m_Distance: 0.9724712
+  m_Distance: 0.9724707
   m_DampingRatio: 0
   m_Frequency: 3
 --- !u!114 &1374653703127428623
@@ -8028,7 +8029,7 @@ DistanceJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}
   m_AutoConfigureDistance: 1
-  m_Distance: 0.9724712
+  m_Distance: 0.9724707
   m_MaxDistanceOnly: 0
 --- !u!231 &1374653703137111377
 SpringJoint2D:
@@ -8047,7 +8048,7 @@ SpringJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}
   m_AutoConfigureDistance: 1
-  m_Distance: 0.97999996
+  m_Distance: 0.98000336
   m_DampingRatio: 0
   m_Frequency: 5
 --- !u!231 &1374653703137111376
@@ -8067,7 +8068,7 @@ SpringJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}
   m_AutoConfigureDistance: 1
-  m_Distance: 0.9724712
+  m_Distance: 0.9724707
   m_DampingRatio: 0
   m_Frequency: 3
 --- !u!231 &1374653703137111379
@@ -8087,7 +8088,7 @@ SpringJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}
   m_AutoConfigureDistance: 1
-  m_Distance: 0.9724712
+  m_Distance: 0.9724707
   m_DampingRatio: 0
   m_Frequency: 3
 --- !u!114 &1374653703137111402
@@ -8853,7 +8854,7 @@ DistanceJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}
   m_AutoConfigureDistance: 1
-  m_Distance: 0.97999996
+  m_Distance: 0.9799957
   m_MaxDistanceOnly: 0
 --- !u!231 &1374653703735055637
 SpringJoint2D:
@@ -8872,7 +8873,7 @@ SpringJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}
   m_AutoConfigureDistance: 1
-  m_Distance: 0.9724712
+  m_Distance: 0.9724668
   m_DampingRatio: 0
   m_Frequency: 5
 --- !u!231 &1374653703735055636
@@ -8892,7 +8893,7 @@ SpringJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}
   m_AutoConfigureDistance: 1
-  m_Distance: 0.97999996
+  m_Distance: 0.9799957
   m_DampingRatio: 0
   m_Frequency: 3
 --- !u!231 &1374653703735055639
@@ -8912,7 +8913,7 @@ SpringJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}
   m_AutoConfigureDistance: 1
-  m_Distance: 0.9724712
+  m_Distance: 0.9724707
   m_DampingRatio: 0
   m_Frequency: 3
 --- !u!114 &1374653703735055662
@@ -9088,7 +9089,7 @@ DistanceJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}
   m_AutoConfigureDistance: 1
-  m_Distance: 0.97999996
+  m_Distance: 0.9799957
   m_MaxDistanceOnly: 0
 --- !u!231 &1374653703812798171
 SpringJoint2D:
@@ -9107,7 +9108,7 @@ SpringJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}
   m_AutoConfigureDistance: 1
-  m_Distance: 0.9724712
+  m_Distance: 0.9724668
   m_DampingRatio: 0
   m_Frequency: 5
 --- !u!231 &1374653703812798170
@@ -9127,7 +9128,7 @@ SpringJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}
   m_AutoConfigureDistance: 1
-  m_Distance: 0.97999996
+  m_Distance: 0.9799957
   m_DampingRatio: 0
   m_Frequency: 3
 --- !u!231 &1374653703812798149
@@ -9147,7 +9148,7 @@ SpringJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}
   m_AutoConfigureDistance: 1
-  m_Distance: 0.9724712
+  m_Distance: 0.9724707
   m_DampingRatio: 0
   m_Frequency: 3
 --- !u!114 &1374653703812798172
@@ -9323,7 +9324,7 @@ DistanceJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}
   m_AutoConfigureDistance: 1
-  m_Distance: 0.9724712
+  m_Distance: 0.9724707
   m_MaxDistanceOnly: 0
 --- !u!231 &1374653704044137732
 SpringJoint2D:
@@ -9342,7 +9343,7 @@ SpringJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}
   m_AutoConfigureDistance: 1
-  m_Distance: 0.9724712
+  m_Distance: 0.9724668
   m_DampingRatio: 0
   m_Frequency: 5
 --- !u!231 &1374653704044137735
@@ -9362,7 +9363,7 @@ SpringJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}
   m_AutoConfigureDistance: 1
-  m_Distance: 0.9724712
+  m_Distance: 0.9724707
   m_DampingRatio: 0
   m_Frequency: 3
 --- !u!231 &1374653704044137734
@@ -9382,7 +9383,7 @@ SpringJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}
   m_AutoConfigureDistance: 1
-  m_Distance: 0.97999996
+  m_Distance: 0.9799957
   m_DampingRatio: 0
   m_Frequency: 3
 --- !u!114 &1374653704044137753
@@ -9667,7 +9668,7 @@ DistanceJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}
   m_AutoConfigureDistance: 1
-  m_Distance: 0.9724712
+  m_Distance: 0.9724707
   m_MaxDistanceOnly: 0
 --- !u!231 &1374653704498784138
 SpringJoint2D:
@@ -9686,7 +9687,7 @@ SpringJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}
   m_AutoConfigureDistance: 1
-  m_Distance: 0.9724712
+  m_Distance: 0.9724668
   m_DampingRatio: 0
   m_Frequency: 5
 --- !u!231 &1374653704498784117
@@ -9706,7 +9707,7 @@ SpringJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}
   m_AutoConfigureDistance: 1
-  m_Distance: 0.97999996
+  m_Distance: 0.9799957
   m_DampingRatio: 0
   m_Frequency: 3
 --- !u!231 &1374653704498784116
@@ -9726,7 +9727,7 @@ SpringJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}
   m_AutoConfigureDistance: 1
-  m_Distance: 0.9724712
+  m_Distance: 0.9724707
   m_DampingRatio: 0
   m_Frequency: 3
 --- !u!114 &1374653704498784143
@@ -11975,6 +11976,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   screenJoystick: {fileID: 3881087803045384472}
+  screenJoystick2: {fileID: 3881087803226419336}
   inPC: 0
   inMobile: 1
 --- !u!1 &1375161124166177776
@@ -14023,6 +14025,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   screenJoystick: {fileID: 0}
+  screenJoystick2: {fileID: 0}
   inPC: 0
   inMobile: 0
 --- !u!1 &1375432589670121200
@@ -15547,6 +15550,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   screenJoystick: {fileID: 0}
+  screenJoystick2: {fileID: 0}
   inPC: 0
   inMobile: 0
 --- !u!1 &1375574182088432368
@@ -17687,6 +17691,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   screenJoystick: {fileID: 0}
+  screenJoystick2: {fileID: 0}
   inPC: 0
   inMobile: 0
 --- !u!1 &1375789712069819074

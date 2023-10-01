@@ -5,6 +5,7 @@ using UnityEngine;
 public class SpriteFlip : MonoBehaviour {
 
     public Joystick screenJoystick;
+    public Joystick screenJoystick2;
 
     public bool inPC;
     public bool inMobile;
@@ -33,12 +34,13 @@ public class SpriteFlip : MonoBehaviour {
         if (inMobile)
         {
             float joystickHorizontalInput = screenJoystick.Horizontal;
+            float joystickHorizontalInput2 = screenJoystick2.Horizontal;
 
-            if (joystickHorizontalInput < 0)
+            if (joystickHorizontalInput < 0 || joystickHorizontalInput2 < 0)
             {
                 characterScale.x = -1;
             }
-            else if (joystickHorizontalInput > 0)
+            else if (joystickHorizontalInput > 0 || joystickHorizontalInput2 > 0)
             {
                 characterScale.x = 1;
             }
