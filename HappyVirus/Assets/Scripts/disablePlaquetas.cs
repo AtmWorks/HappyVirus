@@ -36,20 +36,15 @@ public class disablePlaquetas : MonoBehaviour
 
     public void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Virus") 
+        if (collision.gameObject.tag == "Virus"|| collision.gameObject.tag == "Proyectil") 
         {
             anim.SetBool("infection", true);
+            gotTouch = true;
 
         }
     }
 
-    public void OnCollisionStay2D(Collision2D collision)
-    {
-        if (collision.gameObject.tag == "Virus")
-        {
-            gotTouch = true;
-        }
-    }    
+     
     public void OnCollisionExit2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Virus")
@@ -66,7 +61,7 @@ public class disablePlaquetas : MonoBehaviour
         //if (timer < 0) { timer = 0; }
         if (!gotTouch) { timer = 0; }
         if (gotTouch) {timer += Time.deltaTime;}
-        if (timer > 2.5f) { isInfected= true; }
+        if (timer > 1f) { isInfected= true; }
         if (isInfected) explode();
     }
 }

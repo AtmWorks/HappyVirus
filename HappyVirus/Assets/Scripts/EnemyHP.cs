@@ -8,12 +8,16 @@ public class EnemyHP : MonoBehaviour {
     public GameObject explosion;
     public GameObject realExplosion;
     public GameObject EnemyObject;
+    public SpriteRenderer bodyRend;
     public GameObject corpse;
     public Animator thisAnim;
     public ChasePlayer chaseScript;
     public float deadlyTimer;
 
+    public bool isInfected;
     public List<SimpleFlash> flashList;
+
+    public Material flashMaterial;
 
     [SerializeField] private SimpleFlash flashEffectbody;
     [SerializeField] private SimpleFlash flashEffectface;
@@ -30,11 +34,16 @@ public class EnemyHP : MonoBehaviour {
 
         deadlyTimer = 1.5f;
         //enemyHP = 2;
+        if (isInfected)
+        {
+            StartCoroutine(infectDelay());
+        }
     }
 
     void EnemyDies()
     {
         EnemyAlive = false;
+
         thisAnim.SetBool("isDead", true);
         thisAnim.SetBool("isAttack", false);
 
@@ -59,9 +68,17 @@ public class EnemyHP : MonoBehaviour {
         }
     }
 
-    void Update () {
+    public IEnumerator infectDelay()
+    {
+        thisAnim.SetBool("isDead", true);
+        yield return new WaitForSeconds(Random.Range(0.5f, 2f));
+        thisAnim.SetBool("isInfected", true);
 
-   
+
+    }
+    void Update () {
+        
+
         if (enemyHP <= 0 && EnemyAlive == true)
         {
             Instantiate(explosion, new Vector3(this.gameObject.transform.position.x, this.gameObject.transform.position.y, 0), Quaternion.identity);
@@ -71,6 +88,7 @@ public class EnemyHP : MonoBehaviour {
         }
         if (EnemyAlive == false)
         {
+            bodyRend.material = flashMaterial;
             deadlyTimer -= Time.deltaTime;
         }
 

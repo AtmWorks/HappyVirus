@@ -147,7 +147,7 @@ public class PlayerCollision : MonoBehaviour {
             
 
             PlayerAnimator.GetDmg = true;
-            PlayerStatics.inmuneTimer = 1f;
+            PlayerStatics.inmuneTimer = 0.8f;
             FaceTime = 1f;
             oneDamage();
             StartCoroutine(flashDMG());

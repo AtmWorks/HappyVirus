@@ -68,7 +68,7 @@ public class HPbar : MonoBehaviour {
        // healthBarSlider.value = currentHealth;
         //HealthText.text = currentHealth.ToString() + " / " + maxHealth.ToString();
         EggsText.text = "" + EggCounts.ToString() ;
-        O2Text.text = "" + O2Counter.ToString() ;
+        O2Text.text = "" + O2Counter.ToString() + "/" + PlayerStatics.maxO2counter ;
         updateHP();
     }
 }

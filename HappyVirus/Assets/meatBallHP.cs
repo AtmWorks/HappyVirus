@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using BarthaSzabolcs.Tutorial_SpriteFlash;
 using UnityEngine;
 
 public class meatBallHP : MonoBehaviour
@@ -15,11 +16,13 @@ public class meatBallHP : MonoBehaviour
     public bool Alive;
     public int enemyHP;
     public meatBall meatBall;
+    [SerializeField] private List<SimpleFlash> flashList;
+
     // Use this for initialization
     void Start()
     {
         Alive = true;
-        enemyHP = 8;
+        enemyHP = 9;
     }
 
     void EnemyDies()
@@ -31,23 +34,33 @@ public class meatBallHP : MonoBehaviour
 
        Alive = false;
     }
+    IEnumerator flashDMG()
+    {
 
+        foreach (SimpleFlash flash in flashList)
+        {
+            flash.Flash();
+
+        }
+        yield return null;
+    }
     private void OnTriggerEnter2D(Collider2D collisionTrig)
     {
         if (collisionTrig.gameObject.tag == "Proyectil")
         {
-            Debug.Log("ENEMY HIT"); enemyHP--; Debug.Log(enemyHP.ToString());
+
+            enemyHP--; 
+            StartCoroutine(flashDMG());
         }
     }
 
     void Update()
     {
 
-        if (enemyHP <= 6 && enemyHP> 4) { 
+        if (enemyHP <= 7 && enemyHP> 5) { 
             bodyrend.sprite = infectedBody;
-            Debug.Log("I CHANGED SPRITE");
         }
-        if (enemyHP <= 4 && enemyHP > 0)  
+        if (enemyHP <= 3 && enemyHP > 0)  
         {
             bodyrend.sprite = infectedPlusBody;
             animator.SetBool("isInfected", true);

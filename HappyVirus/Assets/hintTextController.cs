@@ -27,7 +27,7 @@ public class hintTextController : MonoBehaviour
         GameIsPaused = false;
         okButton.onClick.AddListener(removeHint);
         hintBoxRenderer = hintBox.GetComponent<SpriteRenderer>();
-        startBoxColor = hintBoxRenderer.color;
+        startBoxColor = new Color32(0,0,0,156);
     }
 
     // Update is called once per frame

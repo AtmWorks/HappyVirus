@@ -956,13 +956,13 @@ GameObject:
   m_Component:
   - component: {fileID: 6717552693183738437}
   - component: {fileID: 6717552693183738438}
+  - component: {fileID: 593384247}
   - component: {fileID: 593384248}
   - component: {fileID: 593384249}
   - component: {fileID: 593384251}
-  - component: {fileID: 593384247}
   - component: {fileID: 593384250}
   m_Layer: 0
-  m_Name: NewEnem
+  m_Name: yellowEnemy
   m_TagString: Damage
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1006,6 +1006,39 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &593384247
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6717552693183738439}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d510d72d292f33c4996a65e92d81b727, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _animator: {fileID: 6717552693183738438}
+  source1: {fileID: 6717552693295598822}
+  source2: {fileID: 6717552692254424307}
+  source3: {fileID: 6717552692492189622}
+  source4: {fileID: 6717552693244358221}
+  rotationParent: {fileID: 6717552692655115080}
+  target: {fileID: 0}
+  rb: {fileID: 593384248}
+  speed: 0
+  minimumDistance: 0
+  retreat: 0
+  canShoot: 0
+  isShooting: 0
+  canRotate: 0
+  isVirusInRange: 0
+  vfx:
+  - {fileID: 1719886368425528, guid: 969b9e9555df99f44869b3dea5bad263, type: 3}
+  timer: 0
+  resetTime: 0
+  nextTime: 0
+  velocidadRotacion: 1
 --- !u!50 &593384248
 Rigidbody2D:
   serializedVersion: 4
@@ -1059,39 +1092,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 1.2169237
---- !u!114 &593384247
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6717552693183738439}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d510d72d292f33c4996a65e92d81b727, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _animator: {fileID: 6717552693183738438}
-  source1: {fileID: 6717552693295598822}
-  source2: {fileID: 6717552692254424307}
-  source3: {fileID: 6717552692492189622}
-  source4: {fileID: 6717552693244358221}
-  rotationParent: {fileID: 6717552692655115080}
-  target: {fileID: 0}
-  rb: {fileID: 593384248}
-  speed: 0
-  minimumDistance: 0
-  retreat: 0
-  canShoot: 0
-  isShooting: 0
-  canRotate: 0
-  isVirusInRange: 0
-  vfx:
-  - {fileID: 1719886368425528, guid: 969b9e9555df99f44869b3dea5bad263, type: 3}
-  timer: 0
-  resetTime: 0
-  nextTime: 0
-  velocidadRotacion: 1
 --- !u!114 &593384250
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1106,11 +1106,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   virusTag: Virus
   maxChaseSpeed: 5
-  minChaseTimer: 4
-  maxChaseTimer: 6
-  attackTimerDuration: 4
   canChase: 0
-  canAttack: 0
   animatorP: {fileID: 0}
 --- !u!1 &6717552693244358221
 GameObject:

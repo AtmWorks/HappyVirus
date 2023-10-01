@@ -4871,7 +4871,7 @@ MonoBehaviour:
     type: 3}
   proyectHit: 0
   currentTime: 0
-  speed: 7
+  speed: 10
   fireRate: 3
 --- !u!68 &2792047369521318231
 EdgeCollider2D:
@@ -4998,7 +4998,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: -20
+  m_SortingOrder: 5
   m_Sprite: {fileID: -5657734122908620710, guid: 032b2a6eb2345d34da8a06452d095bc3,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

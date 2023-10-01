@@ -394,20 +394,23 @@ MonoBehaviour:
     type: 3}
   realExplosion: {fileID: 0}
   EnemyObject: {fileID: 5328101571809632606}
+  bodyRend: {fileID: 5328101570895438535}
   corpse: {fileID: 1989663626031634, guid: 7782e397db77aef44b4f5dda57714ffa, type: 3}
   thisAnim: {fileID: 5328101571809632611}
   chaseScript: {fileID: 5328101571161128674}
   deadlyTimer: 0
+  isInfected: 0
   flashList:
   - {fileID: 5427901302609592103}
   - {fileID: 3440073728121844328}
   - {fileID: 1133549522368972811}
   - {fileID: 3558851312676025827}
+  flashMaterial: {fileID: 2100000, guid: d9c0d1c6573b0a447b87d716c1366f77, type: 2}
   flashEffectbody: {fileID: 5427901302609592103}
   flashEffectface: {fileID: 3440073728121844328}
   EnemyAlive: 0
   isSpawned: 0
-  enemyHP: 2
+  enemyHP: 4
 --- !u!1 &5328101570895438528
 GameObject:
   m_ObjectHideFlags: 0
@@ -560,7 +563,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   virusTag: Virus
-  maxChaseSpeed: 7
+  maxChaseSpeed: 8
   canChase: 0
   animatorP: {fileID: 5328101571809632611}
 --- !u!60 &5328101571161128677
@@ -617,8 +620,8 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 2
-  m_LinearDrag: 0.5
-  m_AngularDrag: 2
+  m_LinearDrag: 5
+  m_AngularDrag: 5
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 1
@@ -683,19 +686,19 @@ EdgeCollider2D:
   m_EdgeRadius: 0
   m_Points:
   - {x: -1.0118408, y: 0.12796092}
-  - {x: -2.3373566, y: 1.6777117}
+  - {x: -2.5962067, y: 1.8071274}
   - {x: -0.27404785, y: 0.6775018}
-  - {x: 0.4883423, y: 1.9955297}
-  - {x: 0.5362549, y: 0.65476775}
-  - {x: 2.499939, y: 1.951438}
-  - {x: 0.7121277, y: 0.24902868}
-  - {x: 2.0461884, y: -0.08816981}
+  - {x: 0.58540344, y: 2.2543612}
+  - {x: 0.58477783, y: 0.73565257}
+  - {x: 2.9852524, y: 2.3396852}
+  - {x: 1.035675, y: 0.20049787}
+  - {x: 2.3535461, y: -0.15287781}
   - {x: 0.84428406, y: -0.4429183}
-  - {x: 1.9930267, y: -1.8784919}
+  - {x: 2.3165665, y: -2.2505622}
   - {x: 0.19262695, y: -0.7647829}
-  - {x: -1.5627899, y: -2.5063088}
-  - {x: -0.9099579, y: -0.5749335}
-  - {x: -2.3624115, y: -0.52809}
+  - {x: -1.8377991, y: -2.9916184}
+  - {x: -0.9099579, y: -0.7205262}
+  - {x: -2.6374054, y: -0.6251519}
   - {x: -1.0070801, y: -0.056871653}
   m_AdjacentStartPoint: {x: 0, y: 0}
   m_AdjacentEndPoint: {x: 0, y: 0}

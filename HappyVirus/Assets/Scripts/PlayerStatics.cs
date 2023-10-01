@@ -6,6 +6,7 @@ public class PlayerStatics : MonoBehaviour {
 
     public static int creationState;
     public static int O2counter;
+    public static int maxO2counter;
     public static int EggsCounterPubl;
     public static int VirusState;
     public static float inmuneTimer;//
@@ -15,7 +16,7 @@ public class PlayerStatics : MonoBehaviour {
         creationState = 0;
         O2counter = 0;
         VirusState = 1;
-
+        maxO2counter = 20;
     }
 	
 	// Update is called once per frame
@@ -24,6 +25,10 @@ public class PlayerStatics : MonoBehaviour {
         if (PlayerStatics.inmuneTimer > 0)
         {
             PlayerStatics.inmuneTimer -= 1 * Time.deltaTime;
+        }
+        if(O2counter > maxO2counter)
+        {
+            O2counter = maxO2counter;
         }
     }
 }

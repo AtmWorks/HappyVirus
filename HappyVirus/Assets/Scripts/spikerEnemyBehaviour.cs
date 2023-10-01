@@ -23,6 +23,7 @@ public class spikerEnemyBehaviour : MonoBehaviour
     public bool isShooting;
     public bool canRotate;
     public bool isVirusInRange;
+    public bool alreadyShoot;
 
     public List<GameObject> vfx = new List<GameObject>();
 
@@ -52,6 +53,8 @@ public class spikerEnemyBehaviour : MonoBehaviour
         canRotate = false;
         isShooting = false;
         isVirusInRange = false;
+        alreadyShoot = false;
+
     }
 
     // Update is called once per frame
@@ -61,10 +64,11 @@ public class spikerEnemyBehaviour : MonoBehaviour
         //wait 2 secs
         if (isShooting)
         {
-            if (canShoot)
+            if (canShoot && !alreadyShoot)
             {
                 SpawnVFX();
                 isShooting = false;
+                alreadyShoot=true;
             }
         }
         timer += Time.deltaTime;
@@ -89,7 +93,8 @@ public class spikerEnemyBehaviour : MonoBehaviour
         if (timer > 2.25f)
         {
             _animator.SetBool("imShooting", false);
-            
+            alreadyShoot = false;
+
 
             timer = Random.Range(-3f, -6f);
            

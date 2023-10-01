@@ -1,21 +1,22 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+//using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class ChasePlayer : MonoBehaviour
 {
     public string virusTag = "Virus";
-    public float maxChaseSpeed = 5f;
+    public float maxChaseSpeed = 3f;
     //public float minChaseTimer = 4f;
     //public float maxChaseTimer = 6f;
     //public float attackTimerDuration = 4f;
     private Quaternion rotacionInicial;
-    private float velocidadRotacion = 1f;
+    private float velocidadRotacion = 5f;
 
     public bool canChase = false;
     //public bool canAttack = false;
 
-    private float chaseSpeed = 1f;
+    private float chaseSpeed = 1.5f;
     //private float chaseTimer = 0f;
     //private float attackTimer = 0f;
 
@@ -25,6 +26,9 @@ public class ChasePlayer : MonoBehaviour
 
     private Vector3 playerLastPosition;
     private float lastUpdateTime;
+
+    private float rotationTimer = 0f; // Timer for switching between rotation modes
+    private bool rotateClockwise = true; // Indicates the current rotation mode
 
 
     private void Start()
@@ -53,7 +57,7 @@ public class ChasePlayer : MonoBehaviour
     {
         if (collision.gameObject.tag == "Virus")
         {
-            Attack();
+            //Attack();
         }
     }
     private void OnTriggerExit2D(Collider2D other)
@@ -72,7 +76,20 @@ public class ChasePlayer : MonoBehaviour
         {
            Chase();
         }
+        if (virusTransform != null)
+        {
+            float distance = Vector2.Distance(transform.position, virusTransform.position);
 
+            // Si la distancia es menor que cierto valor (por ejemplo, 1 unidad), realiza un ataque
+            if (distance < 5f)
+            {
+                Attack();
+            }
+        }
+        else if (!canChase)
+        {
+            rb.velocity = Vector2.Lerp(rb.velocity, Vector2.zero, 0.1f * Time.deltaTime);
+        }
         //Para mantener la rotacion firme
         float anguloActual = transform.rotation.eulerAngles.z;
         if (anguloActual != rotacionInicial.eulerAngles.z)
@@ -95,14 +112,44 @@ public class ChasePlayer : MonoBehaviour
             return;
         }
 
+        rotationTimer += Time.deltaTime;
+
+        if (rotationTimer >= Random.Range(0.5f, 2f)) // Change rotation mode every 1 second
+        {
+            rotationTimer = 0f;
+            rotateClockwise = !rotateClockwise; // Switch rotation direction
+        }
 
         Vector2 direction = (virusTransform.position - transform.position).normalized;
+
+        // Rotate the direction vector by 15 degrees in either direction based on the mode
+        float rotationAmount = rotateClockwise ? 30f : -30f;
+
+        //TODO: direction has to reach rotationAmount Gradually instead this:
+        //direction = Quaternion.Euler(0f, 0f, rotationAmount) * direction;
+        float rotationSpeed = 20f;
+        direction = Vector2.Lerp(direction, Quaternion.Euler(0f, 0f, rotationAmount) * direction, rotationSpeed * Time.deltaTime);
         rb.velocity = direction * chaseSpeed;
 
         // Increment chase speed gradually up to maxChaseSpeed
         chaseSpeed = Mathf.Min(chaseSpeed + Time.deltaTime, maxChaseSpeed);
-
     }
+
+    //private void Chase()
+    //{
+    //    if (virusTransform == null)
+    //    {
+    //        return;
+    //    }
+
+
+    //    Vector2 direction = (virusTransform.position - transform.position).normalized;
+    //    rb.velocity = direction * chaseSpeed;
+
+    //    // Increment chase speed gradually up to maxChaseSpeed
+    //    chaseSpeed = Mathf.Min(chaseSpeed + Time.deltaTime, maxChaseSpeed);
+
+    //}
 
     private void Attack()
     {
@@ -113,9 +160,9 @@ public class ChasePlayer : MonoBehaviour
 
     IEnumerator dateUnRespiro()
     {
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(1.5f);
 
-        chaseSpeed = 1f;
+        chaseSpeed = chaseSpeed/2;
         animatorP.SetBool("isAttack", false);
 
     }

@@ -310,9 +310,9 @@ TextureImporter:
         x: 478
         y: 599
         width: 56
-        height: 59
+        height: 54
       alignment: 9
-      pivot: {x: 0.4745069, y: 0.43950796}
+      pivot: {x: 0.46609768, y: 0.5005516}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -328,9 +328,9 @@ TextureImporter:
       name: newEnem1_15
       rect:
         serializedVersion: 2
-        x: 404
+        x: 403
         y: 525
-        width: 75
+        width: 76
         height: 59
       alignment: 9
       pivot: {x: 0.28585815, y: 0.46975347}
@@ -374,8 +374,8 @@ TextureImporter:
         y: 449
         width: 22
         height: 48
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.6487871, y: 0.12292989}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -395,8 +395,8 @@ TextureImporter:
         y: 448
         width: 33
         height: 51
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.15575154, y: 0.13756008}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -479,8 +479,8 @@ TextureImporter:
         y: 415
         width: 44
         height: 33
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.071147226, y: 0.12657674}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -593,6 +593,27 @@ TextureImporter:
       bones: []
       spriteID: 4007012a23d3c9020800000000000000
       internalID: 2349820393257201668
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: newEnem1_2
+      rect:
+        serializedVersion: 2
+        x: 458
+        y: 726
+        width: 48
+        height: 38
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5dd81fbc508a7e150800000000000000
+      internalID: 5901870579542232533
       vertices: []
       indices: 
       edges: []

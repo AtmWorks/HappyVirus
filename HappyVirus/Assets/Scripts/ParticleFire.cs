@@ -71,7 +71,7 @@ public class ParticleFire : MonoBehaviour {
                 {
                     PlayerStatics.O2counter--;
                     effectToSpawn = vfx[3];
-                    timeToFire = Time.time + 1 / effectToSpawn.GetComponent<Bomb01>().fireRate;
+                    timeToFire = Time.time + 1;
                     SpawnVFX();
 
 
@@ -104,6 +104,8 @@ public class ParticleFire : MonoBehaviour {
             {
                 float angle = Mathf.Atan2(joystickDirection.y, joystickDirection.x) * Mathf.Rad2Deg;
                 transform.rotation = Quaternion.Euler(0f, 0f, angle + offset);
+                PlayerAnimator.IsShooting = true;
+
 
                 // To fire - SHOOT MODE 1
                 if (shootMode == 1 && PlayerStatics.O2counter >= 1 && Time.time >= timeToFire)
@@ -114,8 +116,33 @@ public class ParticleFire : MonoBehaviour {
                     SpawnVFX();
                 }
                 // Add similar conditions for other shoot modes (2, 3, and 4) here.
+                if (shootMode == 2 && PlayerStatics.O2counter >= 1 && Time.time >= timeToFire)
+                {
+                    PlayerStatics.O2counter--;
+                    effectToSpawn = vfx[2];
+                    timeToFire = Time.time + 1 / effectToSpawn.GetComponent<Proyectil02>().fireRate;
+                    SpawnVFX();
 
-                PlayerAnimator.IsShooting = true;
+                }
+                if (shootMode == 3 && PlayerStatics.O2counter >= 1 && Time.time >= timeToFire) //DISPARO TRIPLE
+                {
+                    PlayerStatics.O2counter--;
+                    effectToSpawn = vfx[0];
+                    timeToFire = Time.time + 1 / effectToSpawn.GetComponent<Proyectil01>().fireRate;
+                    SpawnVFX(transform.rotation);
+                    Quaternion newRotation = transform.rotation * Quaternion.Euler(0, 0, 15);
+                    SpawnVFX(newRotation);
+                    newRotation = transform.rotation * Quaternion.Euler(0, 0, -15);
+                    SpawnVFX(newRotation);
+                }
+                if (shootMode == 4 && PlayerStatics.O2counter >= 1)
+                {
+                    PlayerStatics.O2counter--;
+                    effectToSpawn = vfx[4];
+                    timeToFire = Time.time + 1 / effectToSpawn.GetComponent<Bomb02>().fireRate;
+                    SpawnVFX();
+
+                }
             }
             else
             {
@@ -163,6 +190,16 @@ public class ParticleFire : MonoBehaviour {
 
         if (firePoint != null)
         { vfx = Instantiate(effectToSpawn, firePoint.transform.position, transform.rotation); }
+
+        else
+        { Debug.Log("No Fire Point"); }
+    }
+    void SpawnVFX (Quaternion rotation)
+    {
+        GameObject vfx;
+
+        if (firePoint != null)
+        { vfx = Instantiate(effectToSpawn, firePoint.transform.position, rotation); }
 
         else
         { Debug.Log("No Fire Point"); }
