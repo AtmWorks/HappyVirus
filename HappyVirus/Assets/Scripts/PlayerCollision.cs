@@ -19,7 +19,9 @@ public class PlayerCollision : MonoBehaviour {
     public PlayerMovement player;
 
     public FadeToBlack thisTeleport;
-
+    public ParticleSystem hitParticles;
+    public GameObject hitParticlesObj;
+    //public ParticleSystem healParticles;
 
     [SerializeField]private List <SimpleFlash> flashList;
 
@@ -56,8 +58,8 @@ public class PlayerCollision : MonoBehaviour {
         // Espera 1 segundo.
         yield return new WaitForSeconds(1f);
         PlayerHP = 3;
+
         player.blobCircle.fillAmount = 0;
-        
         player.blobCircle.color = new Color32(95, 255, 100, 255);
 
         spawnController.spawnProcess();
@@ -65,7 +67,20 @@ public class PlayerCollision : MonoBehaviour {
     }
     void oneDamage()
     {
+
         PlayerHP -= 1;
+        // Asegurarse de que el sistema de partículas no sea nulo
+
+        if (hitParticles != null)
+        {
+            // Reiniciar y reproducir el sistema de partículas
+            hitParticles.Stop();
+            hitParticles.Play();
+        }
+        else
+        {
+            Debug.Log("El sistema de partículas no está asignado en el inspector.");
+        }
     }
 
     IEnumerator flashDMG()
@@ -79,10 +94,8 @@ public class PlayerCollision : MonoBehaviour {
         //flashEffectBoca.Flash();
         //flashEffectEyeL.Flash();
         //flashEffectEyeR.Flash();
-        Debug.Log("ENTRO EN EL METODO FLASH");
         foreach (SimpleFlash flash in flashList)
         {
-            Debug.Log("ENTRO EN EL BUCLE FLASH");
             flash.Flash();
 
         }
@@ -135,7 +148,7 @@ public class PlayerCollision : MonoBehaviour {
             PlayerAnimator.GetDmg = false;
         }
 
-        if(PlayerHP < 0)
+        if(PlayerHP <= 0)
         { 
             PlayerDies();
             Debug.Log("I DIED");

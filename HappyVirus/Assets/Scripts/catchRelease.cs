@@ -2,16 +2,24 @@ using Cubequad.Tentacles2D;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+
 
 public class catchRelease : MonoBehaviour
 {
 
     [SerializeField] private Tentacle tentacle1;
     public Rigidbody2D spawnTarget;
+    public GameObject indicator;
+    public GameObject spawnTransform;
+
+    public UnityEngine.UI.Button boton01;
+
+
     public bool isOnTentacleTarget;
     public static bool releaseAll;
     public GameObject tentacleTarget;
-    private bool LostTentacleRange = false;
+    //private bool LostTentacleRange = false;
     float radius;
     bool noColliders = false;
     float checkInterval = 2f;
@@ -25,6 +33,7 @@ public class catchRelease : MonoBehaviour
             //Tentaculo encuentra un objetivo y lo guarda
             isOnTentacleTarget = true;
             tentacleTarget = collision.gameObject;
+            indicator.SetActive(true);
         }
 
     }
@@ -34,15 +43,22 @@ public class catchRelease : MonoBehaviour
         if (collision.tag == "tentacleRange")
         {
             //si salimos del rango devolvemos el target
-            tentacle1.Release();
+            if(tentacle1.IsHoldingTarget && tentacleTarget != null)
+            {
+                tentacle1.Release();
+            }
             tentacle1.TargetRigidbody = spawnTarget;
             isOnTentacleTarget = false;
+            tentacleTarget = null;
         }
         if (collision.tag == "tentacleTarget" && tentacle1.IsHoldingTarget==false)
         {
 
             tentacle1.TargetRigidbody = spawnTarget;
             isOnTentacleTarget = false;
+            tentacleTarget = null;
+
+
         }
     }
 
@@ -50,9 +66,11 @@ public class catchRelease : MonoBehaviour
     {
         releaseAll = false;
         isOnTentacleTarget = false;
-
+        tentacleTarget=null;
         radius = GetComponent<CircleCollider2D>().radius;
         StartCoroutine(CheckForColliders());
+        boton01.onClick.AddListener(catchIt);
+
     }
 
     IEnumerator CheckForColliders()
@@ -80,11 +98,11 @@ public class catchRelease : MonoBehaviour
             yield return new WaitForSeconds(checkInterval);
         }
     }
-    void FixedUpdate()
-    {
-        if (Input.GetMouseButtonDown(1) && isOnTentacleTarget == true)
-        {
 
+    public void catchIt()
+    {
+        if (isOnTentacleTarget == true)
+        {
             releaseAll = true;
             if (tentacleTarget != null)
             {
@@ -107,6 +125,21 @@ public class catchRelease : MonoBehaviour
                 isOnTentacleTarget = false;
                 releaseAll = true;
             }
+        }
+        
+        
+    }
+    void FixedUpdate()
+    {
+        if (tentacleTarget==null && tentacle1.IsHoldingTarget == false)
+        {
+            indicator.SetActive(false);
+        }
+        else { indicator.SetActive(true); }
+        if (Input.GetMouseButtonDown(1) && isOnTentacleTarget == true)
+        {
+
+            catchIt();
         }
 
         if (isOnTentacleTarget == true)

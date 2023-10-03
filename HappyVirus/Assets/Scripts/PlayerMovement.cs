@@ -18,6 +18,7 @@ public class PlayerMovement : MonoBehaviour
     public GameObject virusDoble;
     public GameObject tentacles;
     public float speed;
+    public float baseSpeed;
     private Rigidbody2D rig;
     private Rigidbody2D rigCopy;
     private bool growingFace;
@@ -34,6 +35,7 @@ public class PlayerMovement : MonoBehaviour
 
     public UnityEngine.UI.Button boton01;
     public UnityEngine.UI.Button boton02;
+    public UnityEngine.UI.Button boton03;
 
     //Tentaculos
     [SerializeField] private Tentacle tentacle1;
@@ -84,15 +86,13 @@ public class PlayerMovement : MonoBehaviour
 
     void Start ()
     {
-
+        baseSpeed = speed;
         //VirusBody.gameObject.SetActive(false);
         outOfControl = false;
         //VirusFaceCheck = false;
-        
         waitTime = 2f;
 
-        //guardamos posiciones del soft body
-
+        //guardamos posiciones del soft 
         softPos1 = blob1.transform.localPosition;
         softPos2 = blob2.transform.localPosition;
         softPos3 = blob3.transform.localPosition;
@@ -108,7 +108,11 @@ public class PlayerMovement : MonoBehaviour
         VirusFace.gameObject.transform.localScale = new Vector3(0, 0, 0);
         //VirusSkin.SetActive(false);
         growingFace = false;
+
         boton01.onClick.AddListener(growFaceOver);
+        boton02.onClick.AddListener(showTentacles);
+        boton03.onClick.AddListener(getO2);
+
         blobCircle.fillAmount = 0f;
 
     }
@@ -132,29 +136,27 @@ public class PlayerMovement : MonoBehaviour
             return null;
         }
     }
-    public GameObject GetMouseOverEnemy()
-    {
-        Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        Collider2D hitCollider = Physics2D.OverlapPoint(mousePos);
+    //public GameObject GetMouseOverEnemy()
+    //{
+    //    Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+    //    Collider2D hitCollider = Physics2D.OverlapPoint(mousePos);
 
-        if (hitCollider != null && hitCollider.gameObject.tag == "tentacleTarget")
-        {
-            isOnTentacleTarget = true;
-            return hitCollider.gameObject;
+    //    if (hitCollider != null && hitCollider.gameObject.tag == "tentacleTarget")
+    //    {
+    //        isOnTentacleTarget = true;
+    //        return hitCollider.gameObject;
 
-        }
-        else
-        {
-            isOnTentacleTarget = false;
-            return null;
-        }
-    }
+    //    }
+    //    else
+    //    {
+    //        isOnTentacleTarget = false;
+    //        return null;
+    //    }
+    //}
 
     public void softBodyPosition()
     {
         VirusBody.SetActive(true);
-        //VirusSkin.SetActive(true);
-
         blob1.transform.localPosition = softPos1;
         blob2.transform.localPosition = softPos2;
         blob3.transform.localPosition = softPos3;
@@ -189,7 +191,6 @@ public class PlayerMovement : MonoBehaviour
             Debug.Log("Face Growing");
             bigLight.SetActive(true);
             VirusFaceCheck = true;
-            //tentacles.SetActive(true);
         }
         else { 
         Debug.Log("Not enough O2");
@@ -200,6 +201,24 @@ public class PlayerMovement : MonoBehaviour
 
         }
 
+    }
+
+    void showTentacles()
+    {
+        if(tentacles.activeSelf==false)
+        {
+            tentacles.SetActive(true);
+        }
+        else
+        {
+            tentacles.SetActive(false);
+
+        }
+
+    }
+    void getO2()
+    {
+        PlayerStatics.O2counter += 5;
     }
 
     void FixedUpdate ()
@@ -316,7 +335,7 @@ public class PlayerMovement : MonoBehaviour
         else
         {
             coolingDown = false;
-            speed = 6;
+            speed = baseSpeed;
         }
 
         //MOVIMIENTO//

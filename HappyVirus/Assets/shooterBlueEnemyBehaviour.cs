@@ -13,14 +13,21 @@ public class shooterBlueEnemyBehaviour : MonoBehaviour
     public float moveSpeed;
     public float startSpeed;
     public float sinusSpeed;
-    public float rotationSpeed = 5.0f;
+    public float rotationSpeed = 10f;
     public float yOffset = 1.0f;
+
+    public bool isShooting;
+    public bool shootDelayed;
+    public GameObject proyectil;
+    public GameObject firePoint;
+
+    public float confyTimer;
 
     public Animator animator;
 
     public bool isY;
     private Transform virusTransform;
-    private bool isMovingSinusoidal = false;
+    //private bool isMovingSinusoidal = false;
 
     private Rigidbody2D rb;
 
@@ -29,14 +36,36 @@ public class shooterBlueEnemyBehaviour : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         startSpeed = moveSpeed;
         animator = gameObject.GetComponent<Animator>();
+        isShooting = false;
+        shootDelayed = false;
     }
 
+    private IEnumerator DisparoConRetrasoCoroutine()
+    {
+        // Instancia el objeto "proyectil" en la posición y rotación de "firePoint"
+        Instantiate(proyectil, firePoint.transform.position, firePoint.transform.rotation);
+
+        // Establece la booleana "shootDelayed" en true
+        shootDelayed = true;
+
+        // Espera 0.5 segundos
+        yield return new WaitForSeconds(0.5f);
+
+        // Establece la booleana "shootDelayed" en false
+        shootDelayed = false;
+    }
     void FixedUpdate()
     {
+        confyTimer += Time.deltaTime;
 
-    float rotationZ = this.gameObject.transform.rotation.eulerAngles.z;
+
+        if (isShooting && !shootDelayed)
+        {
+            StartCoroutine(DisparoConRetrasoCoroutine());
+        }
+        float rotationZ = this.gameObject.transform.rotation.eulerAngles.z;
     
-    //TODO: Si el objeto virus esta a mi derecha, mi scale.y sera negativa. Si esta a mi izquierda sera positiva
+    
    
 
         ////////////////////////
@@ -58,66 +87,39 @@ public class shooterBlueEnemyBehaviour : MonoBehaviour
         float distanceToVirus = virusDirection.magnitude;
 
 
-        //if (virusTransform != null)
-        //{
-        //    float angleToVirus = Mathf.Atan2(virusDirection.y, virusDirection.x) * Mathf.Rad2Deg;
-
-        //    // Compara el ángulo entre el enemigo y el virus para determinar la escala en Y
-        //    if (angleToVirus > 90f || angleToVirus < -90f)
-        //    {
-        //        // Si el virus está a la derecha del enemigo, establece la escala en Y como negativa.
-        //        Vector3 newScale = transform.localScale;
-        //        newScale.y = -Mathf.Abs(newScale.y);
-        //        transform.localScale = newScale;
-        //    }
-        //    else
-        //    {
-        //        // Si el virus está a la izquierda del enemigo, establece la escala en Y como positiva.
-        //        Vector3 newScale = transform.localScale;
-        //        newScale.y = Mathf.Abs(newScale.y);
-        //        transform.localScale = newScale;
-        //    }
-        //}
-        if (virusTransform != null)
-        {
-            float angleToVirus = Mathf.Atan2(virusDirection.y, virusDirection.x) * Mathf.Rad2Deg;
-
-            // Compara el ángulo entre el enemigo y el virus para determinar la escala en Y
-            if (angleToVirus > 90f || angleToVirus < -90f)
-            {
-                // Si el virus está a la derecha del enemigo, establece la escala en Y como negativa.
-                //animator.SetBool("isRight", true);
-                
-            }
-            else
-            {
-                // Si el virus está a la izquierda del enemigo, establece la escala en Y como positiva.
-                //animator.SetBool("isRight", false);
-
-
-            }
-        }
 
         // Rotate towards the virus
-        float angle = Mathf.Atan2(virusDirection.y, virusDirection.x) * Mathf.Rad2Deg;
+        float angle = Mathf.Atan2(-virusDirection.y, -virusDirection.x) * Mathf.Rad2Deg;
         Quaternion targetRotation = Quaternion.AngleAxis(angle, Vector3.forward);
         transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
 
         if (distanceToVirus > safeDistanceMax)
         {
-            isMovingSinusoidal = false;
+            //isMovingSinusoidal = false;
 
             // Move towards the virus if too far away
             moveSpeed = startSpeed;
-            
+            animator.SetBool("isShooting", false);
+            confyTimer = 0;
+
+
         }
         else if (distanceToVirus < safeDistanceMin)
         {
-            isMovingSinusoidal = false;
+            //isMovingSinusoidal = false;
 
             moveSpeed = -startSpeed;
+            animator.SetBool("isShooting", false);
 
+            confyTimer = 0;
             // Move away from the virus if too close
+        }
+
+        if (distanceToVirus <= safeDistanceMax && distanceToVirus >= safeDistanceMin)
+        {
+            if (confyTimer > 0.5f) {
+            animator.SetBool("isShooting", true);
+            }
         }
 
         SmoothMoveTowards(virusTransform.position, moveSpeed);
@@ -127,11 +129,11 @@ public class shooterBlueEnemyBehaviour : MonoBehaviour
             moveSpeed = 0;
         }
 
-        if (isMovingSinusoidal)
-            {
-                StartCoroutine(MoveSinusoidal());
+        //if (isMovingSinusoidal)
+        //    {
+        //        StartCoroutine(MoveSinusoidal());
 
-            }
+        //    }
 
 
         
@@ -155,41 +157,41 @@ public class shooterBlueEnemyBehaviour : MonoBehaviour
         rb.velocity = Vector2.Lerp(rb.velocity*1.1f, targetVelocity, Time.deltaTime);
     }
 
-    IEnumerator MoveSinusoidal()
-    {
-       if (isY)
-        {
-            isMovingSinusoidal = true;
-            float initialY = transform.localPosition.y; // Usar transform.localPosition.y para el eje local Y
-            float time = 0.0f;
+    //IEnumerator MoveSinusoidal()
+    //{
+    //   if (isY)
+    //    {
+    //        isMovingSinusoidal = true;
+    //        float initialY = transform.localPosition.y; // Usar transform.localPosition.y para el eje local Y
+    //        float time = 0.0f;
 
-            while (isMovingSinusoidal)
-            {
-                time += Time.deltaTime;
-                float newY = initialY + Mathf.Sin(time * sinusSpeed) * yOffset;
-                Vector3 localPosition = transform.localPosition; // Obtener la posición local actual
-                localPosition.y = newY; // Actualizar solo el componente Y en el espacio local
-                transform.localPosition = localPosition; // Asignar la nueva posición local
-                yield return null;
-            }
-        }
-        if (!isY) 
-        {
-            isMovingSinusoidal = true;
-            float initialX = transform.localPosition.x; // Usar transform.localPosition.y para el eje local Y
-            float time = 0.0f;
+    //        while (isMovingSinusoidal)
+    //        {
+    //            time += Time.deltaTime;
+    //            float newY = initialY + Mathf.Sin(time * sinusSpeed) * yOffset;
+    //            Vector3 localPosition = transform.localPosition; // Obtener la posición local actual
+    //            localPosition.y = newY; // Actualizar solo el componente Y en el espacio local
+    //            transform.localPosition = localPosition; // Asignar la nueva posición local
+    //            yield return null;
+    //        }
+    //    }
+    //    if (!isY) 
+    //    {
+    //        isMovingSinusoidal = true;
+    //        float initialX = transform.localPosition.x; // Usar transform.localPosition.y para el eje local Y
+    //        float time = 0.0f;
 
-            while (isMovingSinusoidal)
-            {
-                time += Time.deltaTime;
-                float newX = initialX + Mathf.Sin(time * sinusSpeed) * yOffset;
-                Vector3 localPosition = transform.localPosition; // Obtener la posición local actual
-                localPosition.x = newX; // Actualizar solo el componente Y en el espacio local
-                transform.localPosition = localPosition; // Asignar la nueva posición local
-                yield return null;
-            }
-        }
-    }
+    //        while (isMovingSinusoidal)
+    //        {
+    //            time += Time.deltaTime;
+    //            float newX = initialX + Mathf.Sin(time * sinusSpeed) * yOffset;
+    //            Vector3 localPosition = transform.localPosition; // Obtener la posición local actual
+    //            localPosition.x = newX; // Actualizar solo el componente Y en el espacio local
+    //            transform.localPosition = localPosition; // Asignar la nueva posición local
+    //            yield return null;
+    //        }
+    //    }
+    //}
 }
 
 //THE BEST SO FAR

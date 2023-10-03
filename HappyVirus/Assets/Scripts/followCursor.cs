@@ -10,6 +10,7 @@ public class followCursor : MonoBehaviour
     public Vector2 mousePositionIngame ;
     public Vector2 mousePositionInCamera;
     public Vector2 mousePositionInScreen;
+
     private bool insideRange;
     public Vector2 referencePoint;
 

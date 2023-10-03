@@ -19,8 +19,8 @@ public class EnemyHP : MonoBehaviour {
 
     public Material flashMaterial;
 
-    [SerializeField] private SimpleFlash flashEffectbody;
-    [SerializeField] private SimpleFlash flashEffectface;
+    //[SerializeField] private SimpleFlash flashEffectbody;
+    //[SerializeField] private SimpleFlash flashEffectface;
 
     public bool EnemyAlive;
     public bool isSpawned;

@@ -26,7 +26,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1079301632391436}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.2, y: 2.41, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4289735024560764}
@@ -4828,7 +4828,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4289735024560764}
   - component: {fileID: 114315706335621592}
+  - component: {fileID: 8398635781586992274}
   - component: {fileID: 58045165286729968}
+  - component: {fileID: 7934850428481384467}
   m_Layer: 0
   m_Name: ProyectilBlue
   m_TagString: Damage
@@ -4861,16 +4863,34 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1719886368425528}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0888eac37b2ff9946a0b97499b92929e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explosion: {fileID: 5459446116007223409, guid: d526eccf8bb67924ea4503130961d5fb,
+  explosion: {fileID: 5459446116007223409, guid: 69ada58f03867024aa748d198bc627e8,
     type: 3}
   proyectHit: 0
   currentTime: 0
   speed: 12
+  fireRate: 3
+--- !u!114 &8398635781586992274
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1719886368425528}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9a1233cd75c59e4097a828d8d903d90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  explosion: {fileID: 5459446116007223409, guid: 69ada58f03867024aa748d198bc627e8,
+    type: 3}
+  proyectHit: 0
+  currentTime: 0
+  speed: 10
   fireRate: 3
 --- !u!58 &58045165286729968
 CircleCollider2D:
@@ -4888,6 +4908,22 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.15
+--- !u!58 &7934850428481384467
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1719886368425528}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5
 --- !u!1 &1738561311533164
 GameObject:
   m_ObjectHideFlags: 0
@@ -4961,7 +4997,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 60
   m_Sprite: {fileID: 21300066, guid: c196489318a518e498626fbc4cc0a006, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.08270788, g: 0, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

@@ -406,11 +406,9 @@ MonoBehaviour:
   - {fileID: 1133549522368972811}
   - {fileID: 3558851312676025827}
   flashMaterial: {fileID: 2100000, guid: d9c0d1c6573b0a447b87d716c1366f77, type: 2}
-  flashEffectbody: {fileID: 5427901302609592103}
-  flashEffectface: {fileID: 3440073728121844328}
   EnemyAlive: 0
   isSpawned: 0
-  enemyHP: 4
+  enemyHP: 3
 --- !u!1 &5328101570895438528
 GameObject:
   m_ObjectHideFlags: 0
