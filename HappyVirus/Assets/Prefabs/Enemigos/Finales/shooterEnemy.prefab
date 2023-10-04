@@ -446,9 +446,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1971774245489348932}
+  - component: {fileID: 1971774245489348935}
   - component: {fileID: 1971774245489348953}
   - component: {fileID: 1971774245489348934}
-  - component: {fileID: 1971774245489348935}
   - component: {fileID: 1971774245489348952}
   m_Layer: 0
   m_Name: shooterEnemy
@@ -472,6 +472,33 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1971774245489348935
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1971774245489348933}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f0620de1db999744b57765efc8912be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  virusTag: Virus
+  safeDistanceMin: 10
+  safeDistanceMax: 15
+  moveSpeed: 50
+  startSpeed: 0
+  sinusSpeed: 2
+  rotationSpeed: 5
+  yOffset: 1
+  isShooting: 0
+  shootDelayed: 0
+  proyectil: {fileID: 1719886368425528, guid: 258d72b4ccbd63247ac2090c0404a19c, type: 3}
+  firePoint: {fileID: 1971774245192346191}
+  confyTimer: 0
+  animator: {fileID: 0}
+  isY: 1
 --- !u!50 &1971774245489348953
 Rigidbody2D:
   serializedVersion: 4
@@ -509,33 +536,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 24.23021
---- !u!114 &1971774245489348935
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1971774245489348933}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8f0620de1db999744b57765efc8912be, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  virusTag: Virus
-  safeDistanceMin: 10
-  safeDistanceMax: 15
-  moveSpeed: 10
-  startSpeed: 0
-  sinusSpeed: 2
-  rotationSpeed: 5
-  yOffset: 1
-  isShooting: 0
-  shootDelayed: 0
-  proyectil: {fileID: 1719886368425528, guid: 258d72b4ccbd63247ac2090c0404a19c, type: 3}
-  firePoint: {fileID: 1971774245192346191}
-  confyTimer: 0
-  animator: {fileID: 0}
-  isY: 1
 --- !u!95 &1971774245489348952
 Animator:
   serializedVersion: 3

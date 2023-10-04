@@ -33,9 +33,10 @@ public class PlayerMovement : MonoBehaviour
     public VirusAttraction control;
     public Joystick screenJoystick;
 
-    public UnityEngine.UI.Button boton01;
-    public UnityEngine.UI.Button boton02;
-    public UnityEngine.UI.Button boton03;
+    public UnityEngine.UI.Button faceButton;
+    public UnityEngine.UI.Button tentacleButton;
+    public UnityEngine.UI.Button addO2Button;
+    public GameObject catchTentacleButton;
 
     //Tentaculos
     [SerializeField] private Tentacle tentacle1;
@@ -109,9 +110,9 @@ public class PlayerMovement : MonoBehaviour
         //VirusSkin.SetActive(false);
         growingFace = false;
 
-        boton01.onClick.AddListener(growFaceOver);
-        boton02.onClick.AddListener(showTentacles);
-        boton03.onClick.AddListener(getO2);
+        faceButton.onClick.AddListener(growFaceOver);
+        tentacleButton.onClick.AddListener(showTentacles);
+        addO2Button.onClick.AddListener(getO2);
 
         blobCircle.fillAmount = 0f;
 
@@ -208,10 +209,14 @@ public class PlayerMovement : MonoBehaviour
         if(tentacles.activeSelf==false)
         {
             tentacles.SetActive(true);
+            catchTentacleButton.SetActive(true);
+
         }
         else
         {
             tentacles.SetActive(false);
+            catchTentacleButton.SetActive(false);
+
 
         }
 
@@ -259,6 +264,8 @@ public class PlayerMovement : MonoBehaviour
             PlayerCollision.PlayerHP = 3;
             bigLight.SetActive(false);
             tentacles.SetActive(false);
+            catchTentacleButton.SetActive(false);
+
             VirusFaceCheck = false;
         }
         if (PlayerCollision.PlayerHP <= 0)
@@ -329,7 +336,7 @@ public class PlayerMovement : MonoBehaviour
         {
 
             coolingDown = true;
-            speed = 14;
+            speed = 12;
 
         }
         else

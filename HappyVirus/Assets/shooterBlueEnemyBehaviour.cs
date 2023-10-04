@@ -18,6 +18,8 @@ public class shooterBlueEnemyBehaviour : MonoBehaviour
 
     public bool isShooting;
     public bool shootDelayed;
+    
+
     public GameObject proyectil;
     public GameObject firePoint;
 
@@ -38,6 +40,8 @@ public class shooterBlueEnemyBehaviour : MonoBehaviour
         animator = gameObject.GetComponent<Animator>();
         isShooting = false;
         shootDelayed = false;
+   
+
     }
 
     private IEnumerator DisparoConRetrasoCoroutine()
@@ -56,7 +60,10 @@ public class shooterBlueEnemyBehaviour : MonoBehaviour
     }
     void FixedUpdate()
     {
-        confyTimer += Time.deltaTime;
+
+
+
+        confyTimer += Time.fixedTime;
 
 
         if (isShooting && !shootDelayed)
@@ -154,7 +161,7 @@ public class shooterBlueEnemyBehaviour : MonoBehaviour
         Vector2 targetVelocity = direction * speed;
 
         // Interpola la velocidad actual hacia la velocidad objetivo
-        rb.velocity = Vector2.Lerp(rb.velocity*1.1f, targetVelocity, Time.deltaTime);
+        rb.velocity = Vector2.Lerp(rb.velocity*1.01f, targetVelocity, Time.deltaTime/2);
     }
 
     //IEnumerator MoveSinusoidal()

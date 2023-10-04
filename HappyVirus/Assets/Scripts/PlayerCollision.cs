@@ -20,8 +20,6 @@ public class PlayerCollision : MonoBehaviour {
 
     public FadeToBlack thisTeleport;
     public ParticleSystem hitParticles;
-    public GameObject hitParticlesObj;
-    //public ParticleSystem healParticles;
 
     [SerializeField]private List <SimpleFlash> flashList;
 
@@ -70,12 +68,11 @@ public class PlayerCollision : MonoBehaviour {
 
         PlayerHP -= 1;
         // Asegurarse de que el sistema de partículas no sea nulo
-
+        hitParticles.Play();
         if (hitParticles != null)
         {
             // Reiniciar y reproducir el sistema de partículas
-            hitParticles.Stop();
-            hitParticles.Play();
+            
         }
         else
         {

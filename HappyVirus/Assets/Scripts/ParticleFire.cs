@@ -69,7 +69,7 @@ public class ParticleFire : MonoBehaviour {
                 }
                 if (shootMode == 3 && PlayerStatics.O2counter >= 1)
                 {
-                    PlayerStatics.O2counter--;
+                    PlayerStatics.O2counter-=3;
                     effectToSpawn = vfx[3];
                     timeToFire = Time.time + 1;
                     SpawnVFX();
