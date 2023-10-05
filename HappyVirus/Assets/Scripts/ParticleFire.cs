@@ -69,7 +69,7 @@ public class ParticleFire : MonoBehaviour {
                 }
                 if (shootMode == 3 && PlayerStatics.O2counter >= 1)
                 {
-                    PlayerStatics.O2counter-=3;
+                    
                     effectToSpawn = vfx[3];
                     timeToFire = Time.time + 1;
                     SpawnVFX();
@@ -124,9 +124,9 @@ public class ParticleFire : MonoBehaviour {
                     SpawnVFX();
 
                 }
-                if (shootMode == 3 && PlayerStatics.O2counter >= 1 && Time.time >= timeToFire) //DISPARO TRIPLE
+                if (shootMode == 3 && PlayerStatics.O2counter >= 3 && Time.time >= timeToFire) //DISPARO TRIPLE
                 {
-                    PlayerStatics.O2counter--;
+                    PlayerStatics.O2counter-=3;
                     effectToSpawn = vfx[0];
                     timeToFire = Time.time + 1 / effectToSpawn.GetComponent<Proyectil01>().fireRate;
                     SpawnVFX(transform.rotation);

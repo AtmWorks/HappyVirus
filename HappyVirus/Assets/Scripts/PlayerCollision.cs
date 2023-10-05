@@ -65,19 +65,11 @@ public class PlayerCollision : MonoBehaviour {
     }
     void oneDamage()
     {
-
+        PlayerAnimator.GetDmg = true;
+        PlayerStatics.inmuneTimer = 0.8f;
+        FaceTime = 1f;
         PlayerHP -= 1;
-        // Asegurarse de que el sistema de partículas no sea nulo
         hitParticles.Play();
-        if (hitParticles != null)
-        {
-            // Reiniciar y reproducir el sistema de partículas
-            
-        }
-        else
-        {
-            Debug.Log("El sistema de partículas no está asignado en el inspector.");
-        }
     }
 
     IEnumerator flashDMG()
@@ -139,7 +131,7 @@ public class PlayerCollision : MonoBehaviour {
     void FixedUpdate ()
     {
 
-        FaceTime -= 1 * Time.deltaTime;
+        FaceTime -= Time.deltaTime;
         if (FaceTime <= 0)
         {
             PlayerAnimator.GetDmg = false;
@@ -153,20 +145,14 @@ public class PlayerCollision : MonoBehaviour {
 
         if (gotDamage == true && PlayerStatics.inmuneTimer <= 0)
         {
-
-            
-
-            PlayerAnimator.GetDmg = true;
-            PlayerStatics.inmuneTimer = 0.8f;
-            FaceTime = 1f;
             oneDamage();
             StartCoroutine(flashDMG());
             //hpscript.updateHP();
             gotDamage = false;
-
-
-
         }
-
+        if (gotDamage == true && PlayerStatics.inmuneTimer >= 0)
+        {
+            gotDamage = false;
+        }
     }
 }

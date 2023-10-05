@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class ChasePlayer : MonoBehaviour
 {
+
+    public bool isDmg;
     public string virusTag = "Virus";
     public float maxChaseSpeed = 3f;
     //public float minChaseTimer = 4f;
@@ -24,8 +26,6 @@ public class ChasePlayer : MonoBehaviour
     private Rigidbody2D rb;
     public Animator animatorP;
 
-    private Vector3 playerLastPosition;
-    private float lastUpdateTime;
 
     private float rotationTimer = 0f; // Timer for switching between rotation modes
     private bool rotateClockwise = true; // Indicates the current rotation mode
@@ -34,7 +34,20 @@ public class ChasePlayer : MonoBehaviour
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        isDmg = false;
        // animatorP = GetComponent<Animator>();
+    }
+    public void Update()
+    {
+        if (isDmg)
+        {
+            this.gameObject.tag = "Damage";
+        }
+        else if (!isDmg)
+        {
+            this.gameObject.tag = "Neutral";
+
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -70,11 +83,14 @@ public class ChasePlayer : MonoBehaviour
         }
     }
 
+
     private void FixedUpdate()
     {
         if (canChase)
         {
-           Chase();
+ 
+            //rb.constraints = RigidbodyConstraints2D.None;
+            Chase();
         }
         if (virusTransform != null)
         {
@@ -88,7 +104,9 @@ public class ChasePlayer : MonoBehaviour
         }
         else if (!canChase)
         {
-            rb.velocity = Vector2.Lerp(rb.velocity, Vector2.zero, 0.1f * Time.deltaTime);
+
+            rb.velocity = Vector2.Lerp(rb.velocity, Vector2.zero, Time.deltaTime);
+            //rb.constraints = RigidbodyConstraints2D.FreezePosition;
         }
         //Para mantener la rotacion firme
         float anguloActual = transform.rotation.eulerAngles.z;

@@ -27,6 +27,7 @@ TagManager:
   - tentacleRange
   - renderTag
   - hit
+  - Neutral
   layers:
   - Default
   - TransparentFX
