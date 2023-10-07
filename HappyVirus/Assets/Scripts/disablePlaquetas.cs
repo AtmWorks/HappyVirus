@@ -26,7 +26,7 @@ public class disablePlaquetas : MonoBehaviour
         Instantiate(explosion, new Vector3(this.gameObject.transform.position.x, this.gameObject.transform.position.y, 0), Quaternion.identity);
         Instantiate(O2, new Vector3(this.gameObject.transform.position.x, this.gameObject.transform.position.y, 0), Quaternion.identity);
 
-        parent.gameObject.SetActive(false);
+        Destroy(parent.gameObject);
     }
 
     private void FixedUpdate()
@@ -43,8 +43,16 @@ public class disablePlaquetas : MonoBehaviour
 
         }
     }
+    public void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Proyectil")
+        {
+            anim.SetBool("infection", true);
+            gotTouch = true;
 
-     
+        }
+    }
+
     public void OnCollisionExit2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Virus")

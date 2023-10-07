@@ -144,8 +144,12 @@ public class catchRelease : MonoBehaviour
 
         if (isOnTentacleTarget == true)
         {
-            Rigidbody2D targetRigidbody = tentacleTarget.GetComponent<Rigidbody2D>();
-            tentacle1.TargetRigidbody = targetRigidbody;
+            if(tentacleTarget!=null)
+            {
+                Rigidbody2D targetRigidbody = tentacleTarget.GetComponent<Rigidbody2D>();
+                tentacle1.TargetRigidbody = targetRigidbody;
+
+            }
 
 
         }

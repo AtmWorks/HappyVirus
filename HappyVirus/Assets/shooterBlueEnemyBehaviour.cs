@@ -40,7 +40,7 @@ public class shooterBlueEnemyBehaviour : MonoBehaviour
         animator = gameObject.GetComponent<Animator>();
         isShooting = false;
         shootDelayed = false;
-   
+        animator.enabled = true;
 
     }
 

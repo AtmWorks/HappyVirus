@@ -8,6 +8,7 @@ public class FollowJoystick : MonoBehaviour
     public float radius;
     public Joystick rightJoystick;
     public GameObject cursor;
+    public GameObject limitCursor;
 
     // Update is called once per frame
     void Update()
@@ -20,6 +21,7 @@ public class FollowJoystick : MonoBehaviour
         if (joystickInput != Vector2.zero)
         {
             cursor.SetActive(true);
+            limitCursor.SetActive(true);
             // Calcula la posición objetivo
             Vector3 targetPosition = Player2.transform.position + new Vector3(joystickInput.x, joystickInput.y, 0) * radius;
 
@@ -33,6 +35,6 @@ public class FollowJoystick : MonoBehaviour
             // Establece la posición del objeto actual al objetivo
             transform.position = targetPosition;
         }
-        else { cursor.SetActive(false); }
+        else { cursor.SetActive(false); limitCursor.SetActive(false); }
     }
 }

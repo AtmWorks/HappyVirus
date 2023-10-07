@@ -11,17 +11,14 @@ public class ResetObjectsToDefault : MonoBehaviour
     public List<Vector2> positionsList;
     //public List<GameObject> gameObjectsList;
     public List<GameObject> prefabsList;
-    public GameObject prefab;
+    //public GameObject prefab;
     public bool firstTime;
 
     // Método para guardar posiciones y GameObjects en la lista doble en Start
     private void Start()
     {
-        
         firstTime = true;
         makeList();
-
-
     }
 
     public void makeList()
@@ -32,12 +29,13 @@ public class ResetObjectsToDefault : MonoBehaviour
         foreach (GameObject obj in currentObjects)
         {
             positionsList.Add(obj.transform.position);
-            //gameObjectsList.Add(obj);
             // Crear un prefab temporal por cada objeto de currentObjects
             GameObject prefab = Instantiate(obj, Vector2.zero, Quaternion.identity);
-            //prefab.SetActive(false);
+            prefab.SetActive(false);
+            prefab.transform.parent = transform;
             prefabsList.Add(prefab);
         }
+        DestroyObjects();
         firstTime = false;
     }
     // Método para destruir objetos en la lista currentObjects y vaciar la lista
@@ -68,6 +66,7 @@ public class ResetObjectsToDefault : MonoBehaviour
                 newObj.transform.parent = transform;
                 newObj.SetActive(true);
                 currentObjects.Add(newObj);
+
             }
         }
         

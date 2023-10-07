@@ -17,20 +17,27 @@ public class HPbar : MonoBehaviour {
     bool isDead;
     public GameObject[] MaxHPS;
     public GameObject[] CurrentHPS;
+    
+    public GameObject healEffect;
+    public isButtonPressed healButton;
+    public bool isHealButtonPress;
+    public bool isHealing;
+    public Transform finalTransform;
+    public float healTime;
 
 
-	void Start ()
+    void Start ()
     {
+        isHealButtonPress = false;
+        //finalTransform = healEffect.transform;
+        //healEffect.transform.localScale = Vector2.zero;
+        healEffect.SetActive(false);
 
-        
-        //maxHealth = PlayerCollision.PlayermaxHP;
-        
-	}
+    }
 
     public void updateHP()
     {
-        //Debug.Log("CURRENT HP LENGHT IS " + CurrentHPS.Length);
-        //Debug.Log("MAX LENGHT IS " + MaxHPS.Length);
+
 
         for (int i = 0; i < CurrentHPS.Length; i++)
         {
@@ -64,11 +71,48 @@ public class HPbar : MonoBehaviour {
         O2Counter = PlayerStatics.O2counter;
         maxHealth = PlayerCollision.PlayermaxHP;
         currentHealth = PlayerCollision.PlayerHP;
-        //healthBarSlider.maxValue = maxHealth;
-       // healthBarSlider.value = currentHealth;
-        //HealthText.text = currentHealth.ToString() + " / " + maxHealth.ToString();
         EggsText.text = "" + EggCounts.ToString() ;
         O2Text.text = "" + O2Counter.ToString() + "/" + PlayerStatics.maxO2counter ;
         updateHP();
+        isHealButtonPress = healButton.buttonPressed;
+        if (isHealButtonPress)
+        {
+            Debug.Log("BUTTON HEAL IS PRESSED");
+            if(PlayerCollision.PlayerHP < PlayerCollision.PlayermaxHP && O2Counter >= 5) 
+            {
+                Debug.Log("STARTING TO HEAL");
+                healEffect.SetActive(true);
+                PlayerAnimator.IsInfecting= true;
+                healTime += Time.deltaTime;
+
+                if (healTime > 3)
+                {
+                    PlayerAnimator.IsInfecting = false;
+                    healOnce();
+                    healTime = 0;
+                    healEffect.SetActive(false);
+                }
+            }
+        }
+        else if (!isHealButtonPress) {
+            healTime = 0;
+
+            if(healEffect.activeSelf)
+            {
+                PlayerAnimator.IsInfecting = false;
+                healEffect.SetActive(false);
+
+            }
+        }
+
+    }
+    public void healOnce()
+    {
+        Debug.Log("HEALED ONE");
+
+        PlayerCollision.PlayerHP++;
+        PlayerStatics.O2counter -= 5;
+        popScore.popText = "-5";
+        popScore.isPoping = true;
     }
 }

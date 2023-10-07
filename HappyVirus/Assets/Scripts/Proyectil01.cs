@@ -9,11 +9,13 @@ public class Proyectil01 : MonoBehaviour {
     public float currentTime;
     public float speed;
     public float fireRate;
-
+   // public GameObject shockCollider;
     void Start()
     {
+        //shockCollider.SetActive(false);
         proyectHit = false;
         currentTime = 5f;
+        StartCoroutine(enableHitCollider());
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -26,7 +28,12 @@ public class Proyectil01 : MonoBehaviour {
 
         
     }
-    
+   
+    IEnumerator enableHitCollider()
+    {
+        yield return new WaitForSeconds(0.1f);
+       // shockCollider.SetActive(true);
+    }
 
     void Update()
     {

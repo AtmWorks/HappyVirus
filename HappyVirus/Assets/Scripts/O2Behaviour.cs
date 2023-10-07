@@ -7,29 +7,51 @@ public class O2Behaviour : MonoBehaviour {
     
     //public PlayerStatics Static;
     private bool getOnce;
-    
-
+    public bool canChase;
+    private bool isChasing;
+    private GameObject target;
+    public Collider2D thisCollider;
+    public float chaseSpeed = 3.0f;
     void Start () {
         getOnce = true;
-       
+        target = null;
         this.transform.rotation = new Quaternion(0, 0, 0, 0); ;
 	}
-
-    // Update is called once per frame
+    void Update ()
+    {
+        if (isChasing)
+            {
+            // Calcula la dirección hacia el objetivo
+            Vector3 direction = (target.transform.position - transform.position).normalized;
+            // Mueve el objeto suavemente hacia el objetivo
+            transform.position += direction * chaseSpeed * Time.deltaTime;
+            chaseSpeed += Time.deltaTime;
+        }
+    }
     private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.tag == "Virus" && getOnce == true && canChase == true)
+        {
+            target = other.gameObject;
+            isChasing = true;
+            thisCollider.enabled = true;
+        }
+    }
+    private void OnCollisionEnter2D(Collision2D other)
     {
         if (other.gameObject.tag == "Virus" && getOnce == true)
         {
-            getOnce = false;
-            PlayerStatics.O2counter++;
-            PlayerStatics.O2counter++;
-            //Player.O2counter++;
-            //Debug.Log("+1 O2");
-            Destroy(gameObject);
-            
-           // AmmoCounter.ammoValue += 1;
-
-
+            StartCoroutine(destroyDelay());
         }
+    }
+
+    IEnumerator destroyDelay()
+    {
+        yield return new WaitForSeconds(0.02f);
+        getOnce = false;
+        PlayerStatics.O2counter += 2;
+        popScore.popText= "+2";
+        popScore.isPoping = true;
+        Destroy(gameObject);
     }
 }

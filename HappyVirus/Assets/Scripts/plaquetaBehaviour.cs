@@ -9,7 +9,7 @@ public class plaquetaBehaviour : MonoBehaviour
     public float AttractionSpeed;
     public bool PlaqisChasing;
     public float timer;
-
+    public Animator animator;
     
 
     // Use this for initialization
@@ -20,6 +20,7 @@ public class plaquetaBehaviour : MonoBehaviour
         //timer = 4;
         PlaqisChasing = false;
         AttractionSpeed = 6;
+        animator = GetComponent<Animator>();
 
     }
 
@@ -40,38 +41,28 @@ public class plaquetaBehaviour : MonoBehaviour
 
     }
 
-    public void OnTriggerExit2D(Collider2D collision)
-    {
-        if (collision.gameObject.tag == "Virus")
-        {
-            PlaqisChasing = false;
-        }
-    }
+
 
 
     void Update()
     {
-        /*
-        if (BossBehaviour01.EnemyCurrentState == 3)
-        {
-            PlaqisChasing = true;
-        }
 
-        //TO CHASE VIRUS
         if (PlaqisChasing == true)
         {
-            AttractionSpeed = 6f;
+            AttractionSpeed += (Time.deltaTime/2);
             transform.position = Vector3.MoveTowards(transform.position, Virus.transform.position, AttractionSpeed * Time.deltaTime);
-        }*/
-        if (PlaqisChasing == true)
+
+        }
+        else if (PlaqisChasing == false) 
         { 
-            transform.position = Vector3.MoveTowards(transform.position, Virus.transform.position, AttractionSpeed * Time.deltaTime);
-
-        }
-        else if (PlaqisChasing == false) { 
         
         }
+        float distance = Vector3.Distance(Virus.transform.position, this.transform.position);
+        if(distance < 2 ) 
+        {
+            animator.SetBool("isExplode", true);
 
+        }
 
 
     }

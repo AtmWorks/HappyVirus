@@ -78,7 +78,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 3.65, y: 1.28}
+  m_Size: {x: 4.5, y: 1.925}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -223,7 +223,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 5.77, y: 6.09}
+  m_Size: {x: 7.95, y: 7.425}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -241,6 +241,7 @@ GameObject:
   - component: {fileID: 7784272741183329528}
   - component: {fileID: 7784272741183329531}
   - component: {fileID: -6428546399619394337}
+  - component: {fileID: 1427704346}
   m_Layer: 0
   m_Name: Bolsa (1)
   m_TagString: Wall
@@ -358,3 +359,58 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!60 &1427704346
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7784272741183329530}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 1.1760179, y: 3.5114594}
+      - {x: 0.4946357, y: 3.2084138}
+      - {x: 0.44333923, y: 3.1855998}
+      - {x: 1.9384911, y: 0.80415654}
+      - {x: 2.5532176, y: -0.4114287}
+      - {x: 1.9445436, y: -2.0912638}
+      - {x: -0.07692474, y: -2.7030926}
+      - {x: -1.4541241, y: -2.3102913}
+      - {x: -2.4708214, y: -1.0301322}
+      - {x: -1.9750626, y: 0.81743884}
+      - {x: -0.50317013, y: 3.2187326}
+      - {x: -0.9658833, y: 3.5035007}
+      - {x: -1.3319203, y: 3.6261168}
+      - {x: -1.7168218, y: 3.55487}
+      - {x: -2.01177, y: 3.350848}
+      - {x: -1.8860489, y: 2.7884793}
+      - {x: -2.6518261, y: 1.380865}
+      - {x: -3.4254382, y: 0.4000541}
+      - {x: -3.5724883, y: -0.7234957}
+      - {x: -2.963858, y: -2.4162183}
+      - {x: -1.7077757, y: -3.317502}
+      - {x: 0.995812, y: -3.351045}
+      - {x: 2.6251621, y: -2.8502314}
+      - {x: 3.5079713, y: -1.790229}
+      - {x: 3.4188778, y: 0.22658277}
+      - {x: 2.5768774, y: 1.1496292}
+      - {x: 2.3180468, y: 2.0892677}
+      - {x: 1.7632886, y: 2.6006343}
+      - {x: 2.0074456, y: 2.9963691}
+      - {x: 1.7604724, y: 3.4681954}

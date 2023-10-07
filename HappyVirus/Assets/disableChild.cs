@@ -1,0 +1,41 @@
+
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class disableChild : MonoBehaviour
+{
+    public GameObject Virus;
+    public GameObject Child;
+
+    void Start()
+    {
+        // Encuentra el objeto con la etiqueta "Virus" y asígnalo a la variable Virus
+        Virus = GameObject.FindWithTag("Virus");
+        // Asigna el objeto hijo de este GameObject a la variable Child
+        Child = transform.GetChild(0).gameObject;
+    }
+
+    void Update()
+    {
+        // Calcula la distancia entre Virus y el objeto hijo (Child)
+
+        // Si la distancia entre Virus y el objeto hijo es mayor que 20, desactiva el objeto hijo
+        if (Child != null)
+        {
+            float distance = Vector3.Distance(Virus.transform.position, Child.transform.position);
+
+            if (distance > 50)
+            {
+                Child.SetActive(false);
+            }
+            // Si la distancia entre Virus y el objeto hijo es menor o igual a 20, activa el objeto hijo
+            else
+            {
+                Child.SetActive(true);
+            }
+        }
+        else { Destroy(this.gameObject); }
+        
+    }
+}

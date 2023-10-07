@@ -19,6 +19,7 @@ public class ParticleFire : MonoBehaviour {
 
     public bool isOnPC;
     public bool isOnMobile;
+    public bool isEggDisabled;
 
     public Joystick rightJoy;
 
@@ -31,7 +32,9 @@ public class ParticleFire : MonoBehaviour {
     {
         shootMode = 1;
         currentEggTime = startingEggTime;
-	}
+        isEggDisabled = true;
+
+    }
 
     void FixedUpdate()
     {
@@ -155,7 +158,7 @@ public class ParticleFire : MonoBehaviour {
         if (Input.GetKey("space")|| isLayingEgg)
         {
             PlayerAnimator.IsCreatingEgg = true;
-
+            isEggDisabled = false;
             if (PlayerAnimator.IsShooting == false && PlayerStatics.O2counter >= 3 && PlayerMovement.VirusFaceCheck == true)
             {
                 currentEggTime -= 1 * Time.deltaTime;
@@ -166,7 +169,15 @@ public class ParticleFire : MonoBehaviour {
                 Debug.Log("SE DEBERIA HABER CAMBIADO");
             }
         }
-        else { PlayerAnimator.IsCreatingEgg = false; }
+        else 
+        { 
+            if (!isEggDisabled) 
+            { 
+                StartCoroutine(disableEggFace());
+                isEggDisabled = true;
+            } 
+        
+        }
 
 
         if (currentEggTime <= 0)
@@ -183,7 +194,11 @@ public class ParticleFire : MonoBehaviour {
 
     }
 
-    //Function to spawn Visual effects from a list. 
+    IEnumerator disableEggFace()
+    {
+        yield return new WaitForSeconds(0.5f);
+        PlayerAnimator.IsCreatingEgg = false;
+    }
     void SpawnVFX ()
     {
         GameObject vfx;

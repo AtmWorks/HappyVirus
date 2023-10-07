@@ -11,6 +11,7 @@ public class PlayerMovement : MonoBehaviour
     public static bool VirusFaceCheck;
     //public bool VirusFaceCheck;
 
+    public GameObject smoke;
     public GameObject bigLight;
     public GameObject VirusFace;
     public GameObject VirusSkin;
@@ -36,6 +37,7 @@ public class PlayerMovement : MonoBehaviour
     public UnityEngine.UI.Button faceButton;
     public UnityEngine.UI.Button tentacleButton;
     public UnityEngine.UI.Button addO2Button;
+    public UnityEngine.UI.Button smokeButton;
     public GameObject catchTentacleButton;
 
     //Tentaculos
@@ -113,6 +115,7 @@ public class PlayerMovement : MonoBehaviour
         faceButton.onClick.AddListener(growFaceOver);
         tentacleButton.onClick.AddListener(showTentacles);
         addO2Button.onClick.AddListener(getO2);
+        smokeButton.onClick.AddListener(useSmoke);
 
         blobCircle.fillAmount = 0f;
 
@@ -178,14 +181,13 @@ public class PlayerMovement : MonoBehaviour
 
     private void growFaceOver()
     {
-        if(PlayerStatics.O2counter >= 3 && VirusFaceCheck == false)
+        if(VirusFaceCheck == false)
         {
 
             //VirusFace.gameObject.transform.localScale = new Vector3 (1, 1, 1) ; 
             //VirusFace.SetActive(true);
-            PlayerStatics.O2counter -= 3;
             PlayerCollision.PlayermaxHP = 6;
-            PlayerCollision.PlayerHP = PlayerCollision.PlayerHP + 3;
+            PlayerCollision.PlayerHP = PlayerCollision.PlayermaxHP;
             PlayerStatics.VirusState = 2;
             softBodyPosition();
             growingFace = true;
@@ -225,7 +227,21 @@ public class PlayerMovement : MonoBehaviour
     {
         PlayerStatics.O2counter += 5;
     }
+    public void useSmoke()
+    {
+        PlayerAnimator.GetDmg = true;
+        StartCoroutine(spawnSmoke());
+        
+    }
+    IEnumerator spawnSmoke()
+    {
+        GameObject smokeInstance = Instantiate(smoke, transform.position, Quaternion.identity);
+        smokeInstance.transform.SetParent(transform);
+        yield return new WaitForSeconds(1.5f);
+        PlayerAnimator.GetDmg = false;
 
+
+    }
     void FixedUpdate ()
     {
         //CANVAS BUTTON INPUTS
