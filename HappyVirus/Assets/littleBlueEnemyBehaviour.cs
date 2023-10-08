@@ -17,6 +17,7 @@ public class littleBlueEnemyBehaviour : MonoBehaviour
     {
         if (collision.gameObject.tag == "Virus"|| collision.gameObject.tag == "Damage"|| collision.gameObject.tag == "Enemy")
         {
+            StartCoroutine(changeTag());
             animator.SetBool("isExploding", true);
         }
     }
@@ -27,5 +28,11 @@ public class littleBlueEnemyBehaviour : MonoBehaviour
         {
             Destroy(this.gameObject);
         }
+    }
+    IEnumerator changeTag()
+    {
+        yield return new WaitForSeconds(0.4f);
+        this.gameObject.tag = "Damage";
+
     }
 }

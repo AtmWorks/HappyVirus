@@ -57,11 +57,13 @@ public class spikerEnemyBehaviour : MonoBehaviour
 
     }
 
+
+
     // Update is called once per frame
     void FixedUpdate()
     {
-        //triger animetion
-        //wait 2 secs
+        timer += Time.deltaTime;
+
         if (isShooting)
         {
             if (canShoot && !alreadyShoot)
@@ -71,8 +73,8 @@ public class spikerEnemyBehaviour : MonoBehaviour
                 alreadyShoot=true;
             }
         }
-        timer += Time.deltaTime;
-        if (timer > 0f)
+
+        if (timer > 0f )
         {
             if(canShoot)
             {
@@ -90,7 +92,7 @@ public class spikerEnemyBehaviour : MonoBehaviour
             rotationParent.GetComponent<Rotation>().enabled = false; // Desactivar el script
 
         }
-        if (timer > 2.25f)
+        if (timer > 2.25f )
         {
             _animator.SetBool("imShooting", false);
             alreadyShoot = false;
@@ -149,12 +151,6 @@ public class spikerEnemyBehaviour : MonoBehaviour
             //canShoot = false;
 
         }
-    }
-    IEnumerator disableShooting()
-    {
-        yield return new WaitForSeconds(6f);
-        //canShoot = false;
-
     }
 
     void SpawnVFX()

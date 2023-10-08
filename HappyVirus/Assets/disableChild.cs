@@ -11,7 +11,7 @@ public class disableChild : MonoBehaviour
     void Start()
     {
         // Encuentra el objeto con la etiqueta "Virus" y asígnalo a la variable Virus
-        Virus = GameObject.FindWithTag("Virus");
+        Virus = GameObject.FindWithTag("Player");
         // Asigna el objeto hijo de este GameObject a la variable Child
         Child = transform.GetChild(0).gameObject;
     }

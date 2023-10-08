@@ -58,7 +58,7 @@ public class plaquetaBehaviour : MonoBehaviour
         
         }
         float distance = Vector3.Distance(Virus.transform.position, this.transform.position);
-        if(distance < 2 ) 
+        if(distance < 5 ) 
         {
             animator.SetBool("isExplode", true);
 

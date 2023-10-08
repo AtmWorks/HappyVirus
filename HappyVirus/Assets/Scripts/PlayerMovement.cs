@@ -26,7 +26,7 @@ public class PlayerMovement : MonoBehaviour
     private bool outOfControl;
     public bool isSprinting;
     
-    public bool isAttractingEgg;
+    public static bool isAttractingEgg;
 
     public isButtonPressed sprintButton;
     public isButtonPressed EggFollowButton;
@@ -38,7 +38,12 @@ public class PlayerMovement : MonoBehaviour
     public UnityEngine.UI.Button tentacleButton;
     public UnityEngine.UI.Button addO2Button;
     public UnityEngine.UI.Button smokeButton;
+    public UnityEngine.UI.Button eggFollowSwitch;
+    public UnityEngine.UI.Button smokeButtonEnable;
     public GameObject catchTentacleButton;
+    public GameObject smokeButtonObject;
+    public GameObject creatteEggButtonObject;
+    public GameObject followEggButtonObject;
 
     //Tentaculos
     [SerializeField] private Tentacle tentacle1;
@@ -116,6 +121,8 @@ public class PlayerMovement : MonoBehaviour
         tentacleButton.onClick.AddListener(showTentacles);
         addO2Button.onClick.AddListener(getO2);
         smokeButton.onClick.AddListener(useSmoke);
+        eggFollowSwitch.onClick.AddListener(switchEggAttract);
+        smokeButtonEnable.onClick.AddListener(switchSmoke);
 
         blobCircle.fillAmount = 0f;
 
@@ -193,6 +200,8 @@ public class PlayerMovement : MonoBehaviour
             growingFace = true;
             Debug.Log("Face Growing");
             bigLight.SetActive(true);
+            creatteEggButtonObject.SetActive(true);
+            followEggButtonObject.SetActive(true);
             VirusFaceCheck = true;
         }
         else { 
@@ -225,7 +234,7 @@ public class PlayerMovement : MonoBehaviour
     }
     void getO2()
     {
-        PlayerStatics.O2counter += 5;
+        PlayerStatics.O2counter = PlayerStatics.maxO2counter;
     }
     public void useSmoke()
     {
@@ -242,11 +251,35 @@ public class PlayerMovement : MonoBehaviour
 
 
     }
+    void switchEggAttract()
+    {
+        if(isAttractingEgg)
+        {
+            isAttractingEgg = false;
+        }
+        else if(!isAttractingEgg)
+        {
+            isAttractingEgg= true;
+        }
+    }
+
+    void switchSmoke()
+    {
+        if (smokeButtonObject.activeSelf == true)
+        {
+            smokeButtonObject.SetActive(false);
+        }
+        else if (smokeButtonObject.activeSelf == false)
+        {
+            smokeButtonObject.SetActive(true);
+        }
+    }
     void FixedUpdate ()
     {
         //CANVAS BUTTON INPUTS
 
-        isAttractingEgg = EggFollowButton.buttonPressed;
+        //PARA HUEVOS MANTENIDO
+        //isAttractingEgg = EggFollowButton.buttonPressed;
         isSprinting = sprintButton.buttonPressed;
 
         //MECANICA DE CAMBIAR DE FORMA
@@ -268,7 +301,7 @@ public class PlayerMovement : MonoBehaviour
 
         }     
 
-        if (PlayerCollision.PlayerHP <= 3 && VirusFaceCheck == true)
+        if (PlayerCollision.PlayerHP <= 1 && VirusFaceCheck == true)
         {
             //VirusFace.SetActive(false);
             PlayerStatics.VirusState = 1;
@@ -276,12 +309,13 @@ public class PlayerMovement : MonoBehaviour
             //VirusSkin.gameObject.transform.localScale = new Vector3(0, 0, 0);
             
 
-            PlayerCollision.PlayermaxHP =3;
-            PlayerCollision.PlayerHP = 3;
+            //PlayerCollision.PlayermaxHP =3;
+            //PlayerCollision.PlayerHP = 3;
             bigLight.SetActive(false);
             tentacles.SetActive(false);
             catchTentacleButton.SetActive(false);
-
+            creatteEggButtonObject.SetActive(false);
+            followEggButtonObject.SetActive(false);
             VirusFaceCheck = false;
         }
         if (PlayerCollision.PlayerHP <= 0)
@@ -427,7 +461,8 @@ public class PlayerMovement : MonoBehaviour
         //CONGELA PLAYER//
         if (PlayerAnimator.IsShooting == true || PlayerAnimator.IsCreatingEgg == true )
         {
-            rig.constraints = RigidbodyConstraints2D.FreezeAll;
+            //rig.constraints = RigidbodyConstraints2D.FreezeAll;
+            rig.velocity = rig.velocity/3;
         }
         else
         {
