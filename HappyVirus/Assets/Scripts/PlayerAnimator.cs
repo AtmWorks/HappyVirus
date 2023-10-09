@@ -9,19 +9,16 @@ public class PlayerAnimator : MonoBehaviour {
     public static bool IsShooting;
     public static bool IsCreatingEgg;
     public static bool GetDmg;
-    private float value ;
 
     void Start ()
     {
         GetDmg = false;
-        value = 2f;
 
     }
 
 
     void FixedUpdate ()
     {
-        value -= Time.deltaTime;
         if (IsShooting)
         {
             
@@ -45,11 +42,10 @@ public class PlayerAnimator : MonoBehaviour {
             //MiniFaceAnimator.SetBool("IsShooting", false); 
         }
 
-        if (GetDmg == true && value < 0)
+        if (GetDmg == true)
         {
             FaceAnimator.SetBool("CreatingEgg", true);
             MiniFaceAnimator.SetBool("isDamage", true); 
-            value = 1f;
         }
         else
         {

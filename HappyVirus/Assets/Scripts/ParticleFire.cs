@@ -158,6 +158,7 @@ public class ParticleFire : MonoBehaviour {
         if (Input.GetKey("space")|| isLayingEgg)
         {
             PlayerAnimator.IsCreatingEgg = true;
+
             PlayerMovement.isAttractingEgg = false;
             isEggDisabled = false;
             if (PlayerAnimator.IsShooting == false && PlayerStatics.O2counter >= 3 && PlayerMovement.VirusFaceCheck == true)
@@ -198,7 +199,11 @@ public class ParticleFire : MonoBehaviour {
     IEnumerator disableEggFace()
     {
         yield return new WaitForSeconds(0.5f);
-        PlayerAnimator.IsCreatingEgg = false;
+        if (PlayerAnimator.GetDmg == false)
+        {
+            PlayerAnimator.IsCreatingEgg = false;
+        }
+        else StartCoroutine(disableEggFace());
     }
     void SpawnVFX ()
     {

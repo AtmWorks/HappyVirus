@@ -25,6 +25,7 @@ public class meatBall : MonoBehaviour
 
     void Start()
     {
+        this.gameObject.tag = "Neutral";
         timer = Random.Range(0f, -3f);
         rb = GetComponent<Rigidbody2D>();
         canAttack = false;
@@ -49,6 +50,7 @@ public class meatBall : MonoBehaviour
     {
         if (col.tag == "Virus" && isChasing == true)
         {
+
             isChasing = false;
             canAttack = false;
         }
@@ -116,14 +118,15 @@ public class meatBall : MonoBehaviour
             StopCoroutine(dashCoroutine); // Detener la corutina anterior si ya estaba en progreso
         }
         dashCoroutine = StartCoroutine(DashCoroutine());
-        timer = Random.Range(-5f, 0f);
+        timer = Random.Range(-1f, 1f);
         animatorP.SetBool("isAttack", false);
         isAttack = false;
     }
 
     private IEnumerator DashCoroutine()
     {
-
+        this.gameObject.tag = "Damage";
+        StartCoroutine(stopDmg());
         ChaseSpeed = 20f; // Ajusta la velocidad del dash según sea necesario
         Debug.Log("ENEMY DASHED");
         // Establecer la velocidad deseada
@@ -134,5 +137,13 @@ public class meatBall : MonoBehaviour
 
         // Después de la duración del dash, detener el movimiento
         ChaseSpeed=1f;
+    }
+    private IEnumerator stopDmg()
+    {
+        yield return new WaitForSeconds(1f);
+
+        this.gameObject.tag = "Neutral";
+       
+
     }
 }

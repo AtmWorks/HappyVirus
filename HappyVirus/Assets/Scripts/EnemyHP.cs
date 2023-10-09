@@ -70,10 +70,9 @@ public class EnemyHP : MonoBehaviour {
 
     public IEnumerator infectDelay()
     {
-        thisAnim.SetBool("isDead", true);
-        yield return new WaitForSeconds(Random.Range(0.5f, 2f));
-        thisAnim.SetBool("isInfected", true);
 
+        thisAnim.SetBool("isInfected", true);
+        yield return null;
 
     }
     void Update () {

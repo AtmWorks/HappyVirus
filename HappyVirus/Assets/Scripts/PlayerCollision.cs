@@ -17,7 +17,6 @@ public class PlayerCollision : MonoBehaviour {
     public static bool gotDamage;
     public spawnController spawnController;
     public PlayerMovement player;
-    public bool isDisabled;
 
     public FadeToBlack thisTeleport;
     public ParticleSystem hitParticles;
@@ -32,7 +31,6 @@ public class PlayerCollision : MonoBehaviour {
 
     void Start ()
     {
-        isDisabled = true;
         PlayermaxHP = 3;
         PlayerHP = 3;
         gotDamage = false;
@@ -68,7 +66,6 @@ public class PlayerCollision : MonoBehaviour {
     void oneDamage()
     {
         PlayerAnimator.GetDmg = true;
-        isDisabled = false;
         PlayerStatics.inmuneTimer = 0.8f;
         FaceTime = 1f;
         PlayerHP -= 1;
@@ -141,14 +138,6 @@ public class PlayerCollision : MonoBehaviour {
     {
 
         FaceTime -= Time.deltaTime;
-        if (FaceTime <= 0)
-        {
-            if (!isDisabled)
-            {
-                StartCoroutine(disableGetDmg());
-                isDisabled=true;
-            }
-        }
 
         if(PlayerHP <= 0)
         { 
@@ -160,6 +149,7 @@ public class PlayerCollision : MonoBehaviour {
         {
             oneDamage();
             StartCoroutine(flashDMG());
+            StartCoroutine(disableGetDmg());
             //hpscript.updateHP();
             gotDamage = false;
         }

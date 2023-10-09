@@ -8,6 +8,7 @@ public class meatBallHP : MonoBehaviour
     public GameObject explosion;
     //Sprites de enfermo
 
+    public GameObject parent;
     public SpriteRenderer bodyrend;
     public Sprite normalBody, infectedBody, infectedPlusBody,deadBody;
 
@@ -16,24 +17,17 @@ public class meatBallHP : MonoBehaviour
     public bool Alive;
     public int enemyHP;
     public meatBall meatBall;
+    public Material whiteMat;
     [SerializeField] private List<SimpleFlash> flashList;
 
     // Use this for initialization
     void Start()
     {
         Alive = true;
-        enemyHP = 9;
+        enemyHP = 12;
     }
 
-    void EnemyDies()
-    {
-        
 
-        //Instantiate(explosion, new Vector3(this.gameObject.transform.position.x, this.gameObject.transform.position.y, 0), Quaternion.identity);
-
-
-       Alive = false;
-    }
     IEnumerator flashDMG()
     {
 
@@ -57,24 +51,37 @@ public class meatBallHP : MonoBehaviour
     void Update()
     {
 
-        if (enemyHP <= 7 && enemyHP> 5) { 
+        if (enemyHP <= 9 && enemyHP> 6) { 
             bodyrend.sprite = infectedBody;
         }
-        if (enemyHP <= 3 && enemyHP > 0)  
+        if (enemyHP <= 6 && enemyHP > 3)  
         {
             bodyrend.sprite = infectedPlusBody;
             animator.SetBool("isInfected", true);
 
         }
 
-        if (enemyHP <= 0 && Alive == true)
+        if (enemyHP <= 3 )
         {
             bodyrend.sprite = deadBody;
+            animator.SetBool("isVeryInfected", true);
 
+        }
+        if (enemyHP <= 0 )
+        {
             animator.SetBool("isDead", true);
             meatBall.enabled = false;
-            EnemyDies();
+            StartCoroutine(EnemyDies());
         }
+
+    }
+
+    IEnumerator EnemyDies()
+    {
+
+            bodyrend.material = whiteMat;
+            yield return new WaitForSeconds(2.5f);
+            Destroy(parent);
 
     }
 }

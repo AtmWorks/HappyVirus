@@ -806,7 +806,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0
+        value: 36
         inSlope: Infinity
         outSlope: Infinity
         tangentMode: 103
@@ -816,9 +816,9 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    attribute: m_IsActive
-    path: parent/body/Pinchos
-    classID: 1
+    attribute: m_SortingOrder
+    path: parent/body/face
+    classID: 212
     script: {fileID: 0}
   m_PPtrCurves:
   - curve:
@@ -847,18 +847,6 @@ AnimationClip:
   - curve:
     - time: 0
       value: {fileID: -233850793546587920, guid: ffb0994ce35279049b27bf9cb772e89e,
-        type: 3}
-    - time: 2.6666667
-      value: {fileID: -3843389410171349048, guid: ffb0994ce35279049b27bf9cb772e89e,
-        type: 3}
-    - time: 4.4666667
-      value: {fileID: -3843389410171349048, guid: ffb0994ce35279049b27bf9cb772e89e,
-        type: 3}
-    - time: 5.95
-      value: {fileID: -3843389410171349048, guid: ffb0994ce35279049b27bf9cb772e89e,
-        type: 3}
-    - time: 7.9666667
-      value: {fileID: -3843389410171349048, guid: ffb0994ce35279049b27bf9cb772e89e,
         type: 3}
     - time: 10
       value: {fileID: -233850793546587920, guid: ffb0994ce35279049b27bf9cb772e89e,
@@ -1023,11 +1011,11 @@ AnimationClip:
       customType: 24
       isPPtrCurve: 0
     - serializedVersion: 2
-      path: 1547844928
-      attribute: 2086281974
+      path: 2923466172
+      attribute: 3762991556
       script: {fileID: 0}
-      typeID: 1
-      customType: 0
+      typeID: 212
+      customType: 26
       isPPtrCurve: 0
     - serializedVersion: 2
       path: 530177481
@@ -1093,10 +1081,6 @@ AnimationClip:
     - {fileID: -2668427417100682915, guid: ffb0994ce35279049b27bf9cb772e89e, type: 3}
     - {fileID: -2668427417100682915, guid: ffb0994ce35279049b27bf9cb772e89e, type: 3}
     - {fileID: -233850793546587920, guid: ffb0994ce35279049b27bf9cb772e89e, type: 3}
-    - {fileID: -3843389410171349048, guid: ffb0994ce35279049b27bf9cb772e89e, type: 3}
-    - {fileID: -3843389410171349048, guid: ffb0994ce35279049b27bf9cb772e89e, type: 3}
-    - {fileID: -3843389410171349048, guid: ffb0994ce35279049b27bf9cb772e89e, type: 3}
-    - {fileID: -3843389410171349048, guid: ffb0994ce35279049b27bf9cb772e89e, type: 3}
     - {fileID: -233850793546587920, guid: ffb0994ce35279049b27bf9cb772e89e, type: 3}
     - {fileID: -2199154756788617447, guid: ffb0994ce35279049b27bf9cb772e89e, type: 3}
     - {fileID: -2199154756788617447, guid: ffb0994ce35279049b27bf9cb772e89e, type: 3}
@@ -2829,7 +2813,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0
+        value: 36
         inSlope: Infinity
         outSlope: Infinity
         tangentMode: 103
@@ -2839,9 +2823,9 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    attribute: m_IsActive
-    path: parent/body/Pinchos
-    classID: 1
+    attribute: m_SortingOrder
+    path: parent/body/face
+    classID: 212
     script: {fileID: 0}
   m_EulerEditorCurves: []
   m_HasGenericRootTransform: 0
