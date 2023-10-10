@@ -205,9 +205,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1904703af7e8a74a8a4e0a9eea62e69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AttractionSpeed: 8
+  AttractionSpeed: 10
   isInside: 0
-  dedidedAtraction: 0
   maxDistance: 5
 --- !u!1 &1454285238037034
 GameObject:

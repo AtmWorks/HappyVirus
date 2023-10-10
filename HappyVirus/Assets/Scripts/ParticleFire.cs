@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class ParticleFire : MonoBehaviour {
 
+    public AudioSource audioSource;
+    public AudioClip sfx1, sfx2, sfx3;
+    public List<AudioClip> sfxList;
+
     public static int shootMode;
     public GameObject firePoint;
     public GameObject firePoint2;
@@ -113,6 +117,7 @@ public class ParticleFire : MonoBehaviour {
                 // To fire - SHOOT MODE 1
                 if (shootMode == 1 && PlayerStatics.O2counter >= 1 && Time.time >= timeToFire)
                 {
+                    reproduceSound();
                     PlayerStatics.O2counter--;
                     effectToSpawn = vfx[0];
                     timeToFire = Time.time + 1 / effectToSpawn.GetComponent<Proyectil01>().fireRate;
@@ -121,6 +126,7 @@ public class ParticleFire : MonoBehaviour {
                 // Add similar conditions for other shoot modes (2, 3, and 4) here.
                 if (shootMode == 2 && PlayerStatics.O2counter >= 1 && Time.time >= timeToFire)
                 {
+                    reproduceSound();
                     PlayerStatics.O2counter--;
                     effectToSpawn = vfx[2];
                     timeToFire = Time.time + 1 / effectToSpawn.GetComponent<Proyectil02>().fireRate;
@@ -129,6 +135,7 @@ public class ParticleFire : MonoBehaviour {
                 }
                 if (shootMode == 3 && PlayerStatics.O2counter >= 3 && Time.time >= timeToFire) //DISPARO TRIPLE
                 {
+                    reproduceSound();
                     PlayerStatics.O2counter-=3;
                     effectToSpawn = vfx[0];
                     timeToFire = Time.time + 1 / effectToSpawn.GetComponent<Proyectil01>().fireRate;
@@ -210,10 +217,20 @@ public class ParticleFire : MonoBehaviour {
         GameObject vfx;
 
         if (firePoint != null)
-        { vfx = Instantiate(effectToSpawn, firePoint.transform.position, transform.rotation); }
+        {
+            vfx = Instantiate(effectToSpawn, firePoint.transform.position, transform.rotation);
+
+        }
 
         else
         { Debug.Log("No Fire Point"); }
+    }
+
+    void reproduceSound()
+    {
+        int clipSelected = Random.Range(0, 7);
+        audioSource.clip = sfxList[clipSelected];
+        audioSource.Play();
     }
     void SpawnVFX (Quaternion rotation)
     {

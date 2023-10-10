@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class O2Behaviour : MonoBehaviour {
 
-    
+
     //public PlayerStatics Static;
+    private bool didSound;
     private bool getOnce;
     public bool canChase;
     private bool isChasing;
@@ -13,6 +14,7 @@ public class O2Behaviour : MonoBehaviour {
     public Collider2D thisCollider;
     public float chaseSpeed = 3.0f;
     void Start () {
+        didSound = false;
         getOnce = true;
         target = null;
         this.transform.rotation = new Quaternion(0, 0, 0, 0); ;
@@ -41,6 +43,12 @@ public class O2Behaviour : MonoBehaviour {
     {
         if (other.gameObject.tag == "Virus" && getOnce == true)
         {
+            PlayerCollision audioTime = other.gameObject.GetComponent<PlayerCollision>();
+            if (!didSound)
+            {
+                didSound = true;
+                audioTime.reproduceO2Sound();
+            }
             StartCoroutine(destroyDelay());
         }
     }

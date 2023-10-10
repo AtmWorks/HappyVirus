@@ -10,13 +10,11 @@ public class EggAttraction : MonoBehaviour
     public static bool isAbsorbing;
     public static bool isAtracting;
     public bool isInside;
-    public float dedidedAtraction;
     public float maxDistance;
 
     private void Start()
     {
         isInside = false;
-        dedidedAtraction = AttractionSpeed;
     }
 
     private void OnTriggerStay2D(Collider2D collision)
@@ -37,7 +35,7 @@ public class EggAttraction : MonoBehaviour
             else
             {
                 // Si está a 25 unidades de distancia o menos, reduce la velocidad a cero utilizando Lerp.
-                float lerpSpeed = Mathf.Lerp(AttractionSpeed, 0f, (maxDistance - distanceToTarget) / maxDistance);
+                float lerpSpeed = Mathf.Lerp(AttractionSpeed, -4f, (maxDistance - distanceToTarget) / maxDistance);
                 transform.position = Vector3.MoveTowards(transform.position, targetPosition, lerpSpeed * Time.deltaTime);
             }
         }

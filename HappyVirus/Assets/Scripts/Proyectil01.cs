@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Proyectil01 : MonoBehaviour {
 
+    //public GameObject audioCarry;
+    //public audioAndDestroy audioAndDestroy;
     public GameObject explosion;
     public bool proyectHit;
     public float currentTime;
@@ -12,23 +14,33 @@ public class Proyectil01 : MonoBehaviour {
    // public GameObject shockCollider;
     void Start()
     {
-        //shockCollider.SetActive(false);
+        instanceSound();
         proyectHit = false;
         currentTime = 5f;
         StartCoroutine(enableHitCollider());
+    }
+
+    void instanceSound()
+    {
+        // Instanciar el objeto audioCarry
+        //GameObject audioInstance = Instantiate(audioCarry, transform.position, Quaternion.identity);
+
+        // Obtener el componente audioAndDestroy del objeto audioCarry instanciado
+        //audioAndDestroy = audioInstance.GetComponent<audioAndDestroy>();
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
 
         if (collision.gameObject.tag=="Enemy" || collision.gameObject.tag == "Wall" || collision.gameObject.tag == "hit" )
         {
+            audioAndDestroy.proyectilSound = true;
             Instantiate(explosion, new Vector3(this.gameObject.transform.position.x, this.gameObject.transform.position.y, 0), Quaternion.identity);
             Destroy(this.gameObject);
         }
 
         
     }
-   
+
     IEnumerator enableHitCollider()
     {
         yield return new WaitForSeconds(0.1f);
@@ -37,7 +49,7 @@ public class Proyectil01 : MonoBehaviour {
 
     void Update()
     {
-        
+        //audioCarry.transform.position=this.transform.position;  
         currentTime -= 1 * Time.deltaTime;
         if (speed != 0)
         {

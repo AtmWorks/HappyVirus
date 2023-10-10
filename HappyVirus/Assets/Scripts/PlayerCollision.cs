@@ -6,6 +6,20 @@ using UnityEngine.SceneManagement;
 
 public class PlayerCollision : MonoBehaviour {
 
+
+
+    private int lastSoundPos;
+    private int lastSoundPosO2;
+    public bool isSpeaker;
+    public bool nextSound;
+    public AudioSource audioSource;
+    public AudioSource audioSourceSecondary;
+    public AudioClip dmgClip;
+    public List<AudioClip>sfxList;
+    public List<AudioClip>o2sfxList;
+    private static bool isPlaying = false;
+    public bool thisPlayed;
+
     public GameObject virusParent;
     public GameObject explosion;
     public GameObject spawn;
@@ -31,6 +45,7 @@ public class PlayerCollision : MonoBehaviour {
 
     void Start ()
     {
+        thisPlayed = false;
         PlayermaxHP = 3;
         PlayerHP = 3;
         gotDamage = false;
@@ -94,7 +109,7 @@ public class PlayerCollision : MonoBehaviour {
     {
         if (PlayerCol.gameObject.tag == "Damage" && PlayerStatics.inmuneTimer <= 0 && FaceTime <= 0)
         {
-            
+            reproduceHitSound();
             // I only want one contact, so that's why I initialise it with capacity 1
             ContactPoint2D[] contacts = new ContactPoint2D[1];
             PlayerCol.GetContacts(contacts);
@@ -113,9 +128,34 @@ public class PlayerCollision : MonoBehaviour {
 
 
         }
+        if (PlayerCol.gameObject.tag == "Wall" || PlayerCol.gameObject.tag == "Enemy" || PlayerCol.gameObject.tag == "Neutral")
+        {
+            if (isSpeaker)
+            {
+                if (!thisPlayed)
+                {
+                    if (!isPlaying)
+                    {
+                        reproduceBlobSound();
+                        thisPlayed = true;
+                    }
+                }
+            }
+            
+
+        }
 
     }
-    
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Wall"|| collision.gameObject.tag == "Enemy" || collision.gameObject.tag == "Neutral")
+        {
+            StartCoroutine(enableThisSound());
+        }
+
+        
+    }
+
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -134,6 +174,62 @@ public class PlayerCollision : MonoBehaviour {
 
     }
 
+    void reproduceBlobSound()
+    {
+
+        int clipSelected = Random.Range(0, 3);
+        while (clipSelected== lastSoundPos) 
+        {
+        clipSelected = Random.Range(0, 3);
+        }
+        lastSoundPos = clipSelected;
+        audioSource.clip = sfxList[clipSelected];
+        audioSource.Play();
+        isPlaying = true;
+
+        // Programar el final del sonido
+        // Invoke("OnAudioEnd", audioSource.clip.length);
+        StartCoroutine(enableAudio());
+    }
+    void reproduceHitSound()
+    {
+        isPlaying = true;
+        audioSource.clip = dmgClip; 
+        audioSource.Play();
+        StartCoroutine(enableAudio());
+
+    }
+    public void reproduceO2Sound()
+    {
+        int clipSelected = Random.Range(0, 2);
+        while (clipSelected == lastSoundPosO2)
+        {
+            clipSelected = Random.Range(0, 2);
+        }
+        lastSoundPosO2 = clipSelected;
+        audioSourceSecondary.clip = o2sfxList[clipSelected];
+        audioSourceSecondary.Play();
+        //StartCoroutine(enableAudio());
+
+    }
+    IEnumerator enableAudio()
+    {
+        yield return new WaitForSeconds(1f);
+        isPlaying = false;
+
+    }
+    IEnumerator enableThisSound()
+    {
+        yield return new WaitForSeconds(2f);
+        thisPlayed = false;
+
+    }
+    void OnAudioEnd()
+    {
+        isPlaying = false;
+
+        // Este método se llama cuando el sonido ha terminado de reproducirse
+    }
     void FixedUpdate ()
     {
 

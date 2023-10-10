@@ -821,7 +821,7 @@ GameObject:
   - component: {fileID: 7930305970122403469}
   m_Layer: 0
   m_Name: PlaquetaBoss
-  m_TagString: Damage
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -870,6 +870,7 @@ GameObject:
   - component: {fileID: 3141484024940498520}
   - component: {fileID: 7257187821247274822}
   - component: {fileID: 7210717313500027301}
+  - component: {fileID: 9092593594195565765}
   m_Layer: 0
   m_Name: PlaquetaBoss
   m_TagString: Damage
@@ -956,7 +957,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6747794281496106131}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8b9e67d396ecce4449a572d6b95b1732, type: 3}
   m_Name: 
@@ -968,7 +969,7 @@ MonoBehaviour:
   comebackTimer: 0
   inSide: 0
   ready: 0
-  sourcePoint: {fileID: 0}
+  sourcePoint: {fileID: 5913506124721555599}
 --- !u!114 &7257187821247274822
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -986,6 +987,9 @@ MonoBehaviour:
   AttractionSpeed: 0
   PlaqisChasing: 0
   timer: 0
+  animator: {fileID: 0}
+  thisRandScript: {fileID: 0}
+  canExplode: 0
 --- !u!58 &7210717313500027301
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -1002,6 +1006,20 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 8.660116
+--- !u!114 &9092593594195565765
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6747794281496106131}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f1be1df498aae949bc79c082883214d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RotSpeed: 0
+  WichDirection: 0
 --- !u!1 &8392639453446274367
 GameObject:
   m_ObjectHideFlags: 0
