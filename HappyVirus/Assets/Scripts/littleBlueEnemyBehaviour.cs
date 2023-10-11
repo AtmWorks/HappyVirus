@@ -31,7 +31,7 @@ public class littleBlueEnemyBehaviour : MonoBehaviour
     }
     IEnumerator changeTag()
     {
-        yield return new WaitForSeconds(0.4f);
+        yield return new WaitForSeconds(0.8f);
         this.gameObject.tag = "Damage";
 
     }

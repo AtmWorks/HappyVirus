@@ -5,6 +5,7 @@ using UnityEngine;
 public class littleBlueEnemyHP : MonoBehaviour
 {
     [SerializeField] public Animator animator;
+    public GameObject parent;
     void Start()
     {
         
@@ -15,7 +16,11 @@ public class littleBlueEnemyHP : MonoBehaviour
         if (animator != null)
         {
             if (collision.gameObject.tag=="Proyectil")
-            animator.SetBool("isDead", true);
+            {
+                parent.tag = "Neutral";
+                animator.SetBool("isDead", true);
+
+            }
         }
     }
 

@@ -788,11 +788,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8414016681760740679}
-  - component: {fileID: 8008379338944570404}
+  - component: {fileID: 505438982304135167}
   - component: {fileID: 5545672866698322339}
+  - component: {fileID: 8008379338944570404}
   - component: {fileID: 8651500023709722893}
   - component: {fileID: 7677394242167308265}
-  - component: {fileID: 505438982304135167}
   m_Layer: 0
   m_Name: body
   m_TagString: Enemy
@@ -820,6 +820,34 @@ Transform:
   m_Father: {fileID: 2601396796026115933}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &505438982304135167
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5418913662496687577}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4050e6706d654c7438a53002593ddddb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 3031432951987881048}
+  parent: {fileID: 322159199572253524}
+--- !u!114 &5545672866698322339
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5418913662496687577}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f1be1df498aae949bc79c082883214d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RotSpeed: 0
+  WichDirection: 0
 --- !u!212 &8008379338944570404
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -873,20 +901,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &5545672866698322339
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5418913662496687577}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4f1be1df498aae949bc79c082883214d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  RotSpeed: 0
-  WichDirection: 0
 --- !u!58 &8651500023709722893
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -919,19 +933,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 1.0342352
---- !u!114 &505438982304135167
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5418913662496687577}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4050e6706d654c7438a53002593ddddb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  animator: {fileID: 3031432951987881048}
 --- !u!1 &5527777095802712400
 GameObject:
   m_ObjectHideFlags: 0
@@ -944,7 +945,7 @@ GameObject:
   - component: {fileID: 6124110378081631576}
   m_Layer: 0
   m_Name: littleBlueEnemy
-  m_TagString: Damage
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
