@@ -5,7 +5,6 @@ using UnityEngine;
 public class audioAndDestroy : MonoBehaviour
 {
     public static bool proyectilSound;
-    private bool didReproduce;
     private AudioSource aSource;
     public AudioClip sfxHit;
     // Start is called before the first frame update
@@ -13,7 +12,7 @@ public class audioAndDestroy : MonoBehaviour
     {
         aSource = GetComponent<AudioSource>();
         proyectilSound = false; 
-        bool didReproduce;
+
 
     }
 

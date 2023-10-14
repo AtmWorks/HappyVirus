@@ -11,6 +11,10 @@ public class Proyectil01 : MonoBehaviour {
     public float currentTime;
     public float speed;
     public float fireRate;
+    public bool isYellowProyectile;
+    public yellowProyectileTrigger trigger;
+    public float rotationSpeed;
+
    // public GameObject shockCollider;
     void Start()
     {
@@ -63,6 +67,26 @@ public class Proyectil01 : MonoBehaviour {
         {
             Instantiate(explosion, new Vector3(this.gameObject.transform.position.x, this.gameObject.transform.position.y, 0), Quaternion.identity);
             Destroy(this.gameObject);
+        }
+        if(isYellowProyectile)
+        {
+            rotateTowardsEnemy();
+        }
+    }
+
+    public void rotateTowardsEnemy()
+    {
+        if(trigger.enemy != null)
+        {
+            // Calcula la dirección hacia el enemigo
+            Vector3 direction = trigger.enemy.transform.position - transform.position;
+
+            // Calcula el ángulo en radianes
+            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+
+            // Interpola la rotación suavemente (puedes ajustar el valor del tercer parámetro para cambiar la velocidad de rotación)
+            Quaternion targetRotation = Quaternion.Euler(0, 0, angle);
+            transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, Time.deltaTime * rotationSpeed);
         }
     }
 }

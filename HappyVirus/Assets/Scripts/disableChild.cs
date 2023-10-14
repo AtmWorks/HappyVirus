@@ -7,6 +7,7 @@ public class disableChild : MonoBehaviour
 {
     public GameObject Virus;
     public GameObject Child;
+    public float desiredDistance = 50f;
 
     void Start()
     {
@@ -25,7 +26,7 @@ public class disableChild : MonoBehaviour
         {
             float distance = Vector3.Distance(Virus.transform.position, Child.transform.position);
 
-            if (distance > 50)
+            if (distance > desiredDistance)
             {
                 Child.SetActive(false);
             }

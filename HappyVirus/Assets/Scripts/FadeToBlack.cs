@@ -147,7 +147,7 @@ public class FadeToBlack : MonoBehaviour
 
     public void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Virus")
+        if (collision.gameObject.tag == "Player")
         {
             spawnController.currentArea = newArea;
             cameraEffect = true;

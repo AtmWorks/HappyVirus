@@ -5,7 +5,7 @@ using UnityEngine.U2D;
 public class SoftBody : MonoBehaviour
 {
     #region Constants;
-    private const float splineOffset = 0.5f;
+    public float splineOffset = 0.5f;
     #endregion
     #region Fields;
     [SerializeField]

@@ -32,6 +32,9 @@ namespace BarthaSzabolcs.Tutorial_SpriteFlash
         // The currently running coroutine.
         private Coroutine flashRoutine;
 
+        public Color whiteColor;
+        public Color oldColor;
+
         #endregion
 
         #endregion
@@ -46,7 +49,8 @@ namespace BarthaSzabolcs.Tutorial_SpriteFlash
             // Get the SpriteRenderer to be used,
             // alternatively you could set it from the inspector.
             spriteRenderer = GetComponent<SpriteRenderer>();
-
+            oldColor = spriteRenderer.color;
+            whiteColor = Color.white;
             // Get the material that the SpriteRenderer uses, 
             // so we can switch back to it after the flash ended.
             originalMaterial = spriteRenderer.material;
@@ -72,6 +76,7 @@ namespace BarthaSzabolcs.Tutorial_SpriteFlash
         private IEnumerator FlashRoutine()
         {
             // Swap to the flashMaterial.
+            spriteRenderer.color= whiteColor;
             spriteRenderer.material = flashMaterial;
             //------- blobRenderer.material = blobflashMaterial;
 
@@ -80,6 +85,8 @@ namespace BarthaSzabolcs.Tutorial_SpriteFlash
 
             // After the pause, swap back to the original material.
             spriteRenderer.material = originalMaterial;
+            spriteRenderer.color = oldColor;
+
             //------- blobRenderer.material = originalBlobMaterial;
 
             // Set the routine to null, signaling that it's finished.
