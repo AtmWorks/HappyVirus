@@ -47,7 +47,7 @@ public class O2Behaviour : MonoBehaviour {
             if (!didSound)
             {
                 didSound = true;
-                audioTime.reproduceO2Sound();
+                //////audioTime.reproduceO2Sound();
             }
             StartCoroutine(destroyDelay());
         }

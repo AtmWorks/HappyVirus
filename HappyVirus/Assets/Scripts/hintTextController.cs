@@ -127,6 +127,7 @@ public class hintTextController : MonoBehaviour
 
         // Desactivar el GameObject hintText una vez que la transición haya terminado.
         hintText.SetActive(false);
+        Destroy(this.gameObject);
     }
 
     // Corutina para desvanecer gradualmente la pista.

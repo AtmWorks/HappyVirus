@@ -2,89 +2,132 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EggCounter : MonoBehaviour {
-
-    public static bool NexusFull;
+public class EggCounter : MonoBehaviour
+{
     public GameObject DobleVirus;
     public GameObject DobleVirus1;
-    public GameObject DobleVirus2;
-    public GameObject DobleVirus3;
-    public static int EggCount;
-    public bool Icreated;
-    public float currentTime;
-    public static bool IsAbsorbing;
 
+    public bool creationState;
+    public bool eggsChosen;
+    public int eggsTogether;
+
+    public GameObject trianglePosition;
+    public List<GameObject> eggs;
+    public List<GameObject> chosenEggs;
+
+    public UnityEngine.UI.Button clonesButton;
+
+    public bool isDemanding;
+
+    public GameObject explosion;
     public void Start()
     {
-        EggCount = 0;
-        IsAbsorbing = false;
-        Icreated = false;
-        currentTime = 0.1f;
+        isDemanding = false;
+        eggsTogether = 0;
+        eggsChosen = false;
+        clonesButton.onClick.AddListener(changeDemandStart);
+
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
+    private void OnTriggerStay2D(Collider2D other)
     {
-        if (other.tag == "EGG")
-        { 
-        EggCount++;
-        //Debug.Log(string.Format("EggCount = {0}", EggCount));
-
+        if (other.tag == "EGG" && !eggs.Contains(other.gameObject))
+        {
+            eggs.Add(other.gameObject);
         }
     }
-
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        if (other.tag == "EGG")
+        if (other.tag == "EGG" && eggs.Contains(other.gameObject))
         {
-            EggCount--;
-            //Debug.Log(string.Format("EggCount = {0}", EggCount));
-
+            eggs.Remove(other.gameObject);
         }
     }
 
-    private void FixedUpdate()
+    public void changeDemandStart()
     {
-        if (DobleVirus.activeSelf == true && DobleVirus1.activeSelf == true && DobleVirus2.activeSelf == true && DobleVirus3.activeSelf == true) { NexusFull = true; }
-        else if (DobleVirus.activeSelf == false || DobleVirus1.activeSelf == false || DobleVirus2.activeSelf == false || DobleVirus3.activeSelf == false) { NexusFull = false; }
+        StartCoroutine(changeDemand());
+    }
+    IEnumerator changeDemand()
+    {
+        isDemanding = true;
+        yield return new WaitForSeconds(0.5f);
+        isDemanding = false;
+    }
 
-        if (EggCount >=3 && Icreated == false && EggAttraction.isAtracting == true && NexusFull == false)
+    private void Update()
+    {
+        //ATRAER HUEVOS AL NEXO DE TRANSFORMACION//
+        if ((Input.GetKeyDown("f") || isDemanding )&& PlayerAnimator.IsShooting == false && eggs.Count >= 3)
         {
-            Icreated = true;
-            PlayerStatics.creationState = 1;
-            
-            if(DobleVirus.activeSelf == false) { DobleVirus.SetActive(true); PlayerStatics.EggsCounterPubl -= 3; }
+            creationState = true;
+        }
+        if (eggs.Count >= 3  && creationState == true)
+        {
+            Vector3 positionToMeet = trianglePosition.transform.position;
+            if (!eggsChosen)
+            {
+                chosenEggs = new List<GameObject>();
+                for (int i = 0; i < 3; i++)
+                {
+                    if (eggs.Count > 0)
+                    {
+                        if (!chosenEggs.Contains(eggs[i]))
+                        {
+                            chosenEggs.Add(eggs[i]);
+                        }
+                        //eggs.RemoveAt(randomIndex);
+                    }
+                }
 
-            else if (DobleVirus.activeSelf == true && DobleVirus1.activeSelf == false)
-            { DobleVirus1.SetActive(true); PlayerStatics.EggsCounterPubl -= 3; }
+                if(chosenEggs.Count >= 3)
+                {
+                    foreach (GameObject egg in chosenEggs)
+                    {
+                        StartCoroutine(MoveEggToPosition(egg, positionToMeet));
+                    }
+                    eggsChosen = true;
 
-            else if (DobleVirus.activeSelf == true && DobleVirus1.activeSelf == true && DobleVirus2.activeSelf == false)
-            { DobleVirus2.SetActive(true); PlayerStatics.EggsCounterPubl -=3; }
-
-            else if (DobleVirus.activeSelf == true && DobleVirus1.activeSelf == true && DobleVirus2.activeSelf == true && DobleVirus3.activeSelf == false) 
-            { DobleVirus3.SetActive(true); PlayerStatics.EggsCounterPubl -= 3; }
+                }
 
 
-            
+            }
+
+            if (eggsTogether >= 3)
+            {
+                eggsChosen = false;
+                foreach (GameObject egg in chosenEggs)
+                {
+                    Instantiate(explosion, egg.transform.position, egg.transform.rotation);
+                    Destroy(egg);
+                    PlayerStatics.EggsCounterPubl--;
+                }
+                Instantiate(DobleVirus, positionToMeet, DobleVirus.transform.rotation);
+                eggs.Clear();
+                chosenEggs.Clear();
+                creationState = false;
+                eggsTogether = 0;
+            }
         }
 
-        if (PlayerStatics.creationState == 1)
-        {
-            currentTime -= 1 * Time.deltaTime;
-            EggAttraction.isAtracting = false;
-        }
-
-        if(currentTime <= 0f)
-        {
-            Icreated = false;
-            currentTime = 0.1f;
-            EggCount = 0;
-            PlayerStatics.creationState = 0;
-            this.gameObject.SetActive(false);
-            
-        }
 
     }
 
+    private IEnumerator MoveEggToPosition(GameObject egg, Vector3 targetPosition)
+    {
+        float speed = 0.5f; // Ajusta la velocidad de movimiento
+        float journeyLength = Vector3.Distance(egg.transform.position, targetPosition);
+        float startTime = Time.time;
 
+        while (Vector3.Distance(egg.transform.position, targetPosition) > 0.5f)
+        {
+            float distanceCovered = (Time.time - startTime) * speed;
+            float fractionOfJourney = distanceCovered / journeyLength;
+            egg.transform.position = Vector3.Lerp(egg.transform.position, targetPosition, fractionOfJourney);
+            yield return null;
+        }
+
+        eggsTogether++;
+    }
 }

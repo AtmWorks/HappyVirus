@@ -99,6 +99,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   flashMaterial: {fileID: 2100000, guid: d9c0d1c6573b0a447b87d716c1366f77, type: 2}
   duration: 0.1
+  whiteColor: {r: 0, g: 0, b: 0, a: 0}
+  oldColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &3341360367510751800
 GameObject:
   m_ObjectHideFlags: 0
@@ -198,6 +200,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   flashMaterial: {fileID: 2100000, guid: d9c0d1c6573b0a447b87d716c1366f77, type: 2}
   duration: 0.1
+  whiteColor: {r: 0, g: 0, b: 0, a: 0}
+  oldColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &4862891430635581629
 GameObject:
   m_ObjectHideFlags: 0
@@ -478,6 +482,7 @@ MonoBehaviour:
     type: 3}
   realExplosion: {fileID: 0}
   EnemyObject: {fileID: 5328101571809632606}
+  face: {fileID: 5328101571214122534}
   bodyRend: {fileID: 5328101570895438535}
   corpse: {fileID: 1989663626031634, guid: 7782e397db77aef44b4f5dda57714ffa, type: 3}
   thisAnim: {fileID: 5328101571809632611}
@@ -490,6 +495,7 @@ MonoBehaviour:
   - {fileID: 1133549522368972811}
   - {fileID: 3558851312676025827}
   flashMaterial: {fileID: 2100000, guid: d9c0d1c6573b0a447b87d716c1366f77, type: 2}
+  parentTag: {fileID: 5328101571161128674}
   EnemyAlive: 0
   isSpawned: 0
   enemyHP: 3
@@ -593,6 +599,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   flashMaterial: {fileID: 2100000, guid: d9c0d1c6573b0a447b87d716c1366f77, type: 2}
   duration: 0.1
+  whiteColor: {r: 0, g: 0, b: 0, a: 0}
+  oldColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &5328101571161128671
 GameObject:
   m_ObjectHideFlags: 0
@@ -646,6 +654,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isDmg: 0
+  isDead: 0
   virusTag: Virus
   maxChaseSpeed: 8
   canChase: 0
@@ -888,6 +897,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   flashMaterial: {fileID: 2100000, guid: d9c0d1c6573b0a447b87d716c1366f77, type: 2}
   duration: 0.1
+  whiteColor: {r: 0, g: 0, b: 0, a: 0}
+  oldColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &5328101571809632606
 GameObject:
   m_ObjectHideFlags: 0
@@ -954,3 +965,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Virus: {fileID: 0}
   Child: {fileID: 0}
+  desiredDistance: 50

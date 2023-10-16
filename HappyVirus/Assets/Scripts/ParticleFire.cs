@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class ParticleFire : MonoBehaviour {
 
-    public AudioSource audioSource;
-    public AudioClip sfx1, sfx2, sfx3;
-    public List<AudioClip> sfxList;
+    //////public AudioSource audioSource;
+    //////public AudioClip sfx1, sfx2, sfx3;
+    //////public List<AudioClip> sfxList;
 
     public static int shootMode;
     public GameObject firePoint;
@@ -115,18 +115,18 @@ public class ParticleFire : MonoBehaviour {
 
 
                 // To fire - SHOOT MODE 1
-                if (shootMode == 1 && PlayerStatics.O2counter >= 1 && Time.time >= timeToFire)
+                if (shootMode == 1 && PlayerStatics.O2counter >= 1 && Time.time >= timeToFire)//DISPARO BASE
                 {
-                    reproduceSound();
+                    //////reproduceSound();
                     PlayerStatics.O2counter--;
                     effectToSpawn = vfx[0];
                     timeToFire = Time.time + 1 / effectToSpawn.GetComponent<Proyectil01>().fireRate;
                     SpawnVFX();
                 }
                 // Add similar conditions for other shoot modes (2, 3, and 4) here.
-                if (shootMode == 2 && PlayerStatics.O2counter >= 1 && Time.time >= timeToFire)
+                if (shootMode == 2 && PlayerStatics.O2counter >= 1 && Time.time >= timeToFire)//DISPARO DISPERSO
                 {
-                    reproduceSound();
+                    //////reproduceSound();
                     PlayerStatics.O2counter--;
                     effectToSpawn = vfx[2];
                     timeToFire = Time.time + 1 / effectToSpawn.GetComponent<Proyectil02>().fireRate;
@@ -135,7 +135,7 @@ public class ParticleFire : MonoBehaviour {
                 }
                 if (shootMode == 3 && PlayerStatics.O2counter >= 3 && Time.time >= timeToFire) //DISPARO TRIPLE
                 {
-                    reproduceSound();
+                    //////reproduceSound();
                     PlayerStatics.O2counter-=3;
                     effectToSpawn = vfx[0];
                     timeToFire = Time.time + 1 / effectToSpawn.GetComponent<Proyectil01>().fireRate;
@@ -150,6 +150,15 @@ public class ParticleFire : MonoBehaviour {
                     PlayerStatics.O2counter--;
                     effectToSpawn = vfx[4];
                     timeToFire = Time.time + 1 / effectToSpawn.GetComponent<Bomb02>().fireRate;
+                    SpawnVFX();
+
+                }
+                if (shootMode == 5 && PlayerStatics.O2counter >= 1 && Time.time >= timeToFire) //DISPARO GUIADO
+                {
+                    //reproduceSound();
+                    PlayerStatics.O2counter--;
+                    effectToSpawn = vfx[5];
+                    timeToFire = Time.time + 1 / effectToSpawn.GetComponent<Proyectil01>().fireRate;
                     SpawnVFX();
 
                 }
@@ -226,12 +235,12 @@ public class ParticleFire : MonoBehaviour {
         { Debug.Log("No Fire Point"); }
     }
 
-    void reproduceSound()
-    {
-        int clipSelected = Random.Range(0, 7);
-        audioSource.clip = sfxList[clipSelected];
-        audioSource.Play();
-    }
+    //////void reproduceSound()
+    //////{
+    //////    int clipSelected = Random.Range(0, 7);
+    //////    audioSource.clip = sfxList[clipSelected];
+    //////    audioSource.Play();
+    //////}
     void SpawnVFX (Quaternion rotation)
     {
         GameObject vfx;

@@ -28,6 +28,7 @@ TagManager:
   - renderTag
   - hit
   - Neutral
+  - invisible
   layers:
   - Default
   - TransparentFX

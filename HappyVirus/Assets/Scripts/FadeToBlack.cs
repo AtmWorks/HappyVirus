@@ -33,7 +33,7 @@ public class FadeToBlack : MonoBehaviour
     public List<GameObject> oldTPs;
 
     public ResetObjectsToDefault resetComponent;
-
+    public static List<cloneMovement> clones;
 
     public bool isReviving;
 
@@ -59,11 +59,11 @@ public class FadeToBlack : MonoBehaviour
         if ( timer >0.2f && targetColor == Color.clear && currentColor != targetColor)
         {
             virusMove.softBodyPosition();
-            //if (blobfix == true)
+            //foreach (cloneMovement clone in clones) 
             //{
-            //    blobParts.SetActive(true);
-            //    blobfix = false;
+            //    clone.softBodyPosition();
             //}
+
         }
         if (cameraEffect == true && timer > 1.5)
         {

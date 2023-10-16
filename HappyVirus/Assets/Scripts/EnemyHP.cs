@@ -8,6 +8,7 @@ public class EnemyHP : MonoBehaviour {
     public GameObject explosion;
     public GameObject realExplosion;
     public GameObject EnemyObject;
+    public GameObject face;
     public SpriteRenderer bodyRend;
     public GameObject corpse;
     public Animator thisAnim;
@@ -16,8 +17,9 @@ public class EnemyHP : MonoBehaviour {
 
     public bool isInfected;
     public List<SimpleFlash> flashList;
-
     public Material flashMaterial;
+
+    public ChasePlayer parentTag;
 
     //[SerializeField] private SimpleFlash flashEffectbody;
     //[SerializeField] private SimpleFlash flashEffectface;
@@ -40,15 +42,25 @@ public class EnemyHP : MonoBehaviour {
         }
     }
 
+    IEnumerator changeRend() { 
+    
+        while (bodyRend.material != flashMaterial)
+        {
+            bodyRend.material = flashMaterial;
+        }
+        yield return null;
+    }
     void EnemyDies()
     {
+        bodyRend.material = flashMaterial;
+        this.gameObject.tag = "invisible";
+        parentTag.isDead = true;
         EnemyAlive = false;
-
-        thisAnim.SetBool("isDead", true);
-        thisAnim.SetBool("isAttack", false);
-
         chaseScript.enabled = false;
-
+        face.SetActive(false);
+        StartCoroutine(changeRend());
+        thisAnim.SetBool("isAttack", false);
+        thisAnim.SetBool("isDead", true);
 
     }
 
@@ -82,12 +94,12 @@ public class EnemyHP : MonoBehaviour {
         {
             Instantiate(explosion, new Vector3(this.gameObject.transform.position.x, this.gameObject.transform.position.y, 0), Quaternion.identity);
            // Instantiate(corpse, new Vector3(this.gameObject.transform.position.x, this.gameObject.transform.position.y, 0), Quaternion.identity);
-            
+            bodyRend.material = flashMaterial;
+            StartCoroutine(changeRend());
             EnemyDies();
         }
         if (EnemyAlive == false)
         {
-            bodyRend.material = flashMaterial;
             deadlyTimer -= Time.deltaTime;
         }
 
@@ -98,7 +110,7 @@ public class EnemyHP : MonoBehaviour {
         }
         if(deadlyTimer <= 0f)
         {
-            EnemyObject.SetActive(false);
+            Destroy(EnemyObject);
         }
 
     }

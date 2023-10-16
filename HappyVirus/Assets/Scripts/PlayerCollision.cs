@@ -12,11 +12,11 @@ public class PlayerCollision : MonoBehaviour {
     private int lastSoundPosO2;
     public bool isSpeaker;
     public bool nextSound;
-    public AudioSource audioSource;
-    public AudioSource audioSourceSecondary;
-    public AudioClip dmgClip;
-    public List<AudioClip>sfxList;
-    public List<AudioClip>o2sfxList;
+//    public AudioSource audioSource;
+//    public AudioSource audioSourceSecondary;
+//    public AudioClip dmgClip;
+//    public List<AudioClip>sfxList;
+//    public List<AudioClip>o2sfxList;
     private static bool isPlaying = false;
     public bool thisPlayed;
 
@@ -150,7 +150,7 @@ public class PlayerCollision : MonoBehaviour {
     {
         if (collision.gameObject.tag == "Wall"|| collision.gameObject.tag == "Enemy" || collision.gameObject.tag == "Neutral")
         {
-            StartCoroutine(enableThisSound());
+            //StartCoroutine(enableThisSound());
         }
 
         
@@ -183,53 +183,52 @@ public class PlayerCollision : MonoBehaviour {
         clipSelected = Random.Range(0, 3);
         }
         lastSoundPos = clipSelected;
-        audioSource.clip = sfxList[clipSelected];
-        audioSource.Play();
+        //audioSource.clip = sfxList[clipSelected];
+        //audioSource.Play();
         isPlaying = true;
 
-        // Programar el final del sonido
-        // Invoke("OnAudioEnd", audioSource.clip.length);
-        StartCoroutine(enableAudio());
+
+//        StartCoroutine(enableAudio());
     }
     void reproduceHitSound()
     {
         isPlaying = true;
-        audioSource.clip = dmgClip; 
-        audioSource.Play();
-        StartCoroutine(enableAudio());
+        //audioSource.clip = dmgClip; 
+        //audioSource.Play();
+//        StartCoroutine(enableAudio());
 
     }
-    public void reproduceO2Sound()
-    {
-        int clipSelected = Random.Range(0, 2);
-        while (clipSelected == lastSoundPosO2)
-        {
-            clipSelected = Random.Range(0, 2);
-        }
-        lastSoundPosO2 = clipSelected;
-        audioSourceSecondary.clip = o2sfxList[clipSelected];
-        audioSourceSecondary.Play();
-        //StartCoroutine(enableAudio());
+    //public void reproduceO2Sound()
+    //{
+    //    int clipSelected = Random.Range(0, 2);
+    //    while (clipSelected == lastSoundPosO2)
+    //    {
+    //        clipSelected = Random.Range(0, 2);
+    //    }
+    //    lastSoundPosO2 = clipSelected;
+    //    audioSourceSecondary.clip = o2sfxList[clipSelected];
+    //    audioSourceSecondary.Play();
+    //    //StartCoroutine(enableAudio());
 
-    }
-    IEnumerator enableAudio()
-    {
-        yield return new WaitForSeconds(1f);
-        isPlaying = false;
+    //}
+    //IEnumerator enableAudio()
+    //{
+    //    yield return new WaitForSeconds(1f);
+    //    isPlaying = false;
 
-    }
-    IEnumerator enableThisSound()
-    {
-        yield return new WaitForSeconds(2f);
-        thisPlayed = false;
+    //}
+    //IEnumerator enableThisSound()
+    //{
+    //    yield return new WaitForSeconds(2f);
+    //    thisPlayed = false;
 
-    }
-    void OnAudioEnd()
-    {
-        isPlaying = false;
+    //}
+    //void OnAudioEnd()
+    //{
+    //    isPlaying = false;
 
-        // Este método se llama cuando el sonido ha terminado de reproducirse
-    }
+    //    // Este método se llama cuando el sonido ha terminado de reproducirse
+    //}
     void FixedUpdate ()
     {
 

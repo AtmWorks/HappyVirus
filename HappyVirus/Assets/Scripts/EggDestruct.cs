@@ -15,21 +15,11 @@ public class EggDestruct : MonoBehaviour {
 
     public void OnTriggerStay2D(Collider2D other)
     {
-        if(other.tag == "EggAtractor" && PlayerStatics.creationState == 1)
-        {
-           Destroy(mainEgg);
-        }
-        if(other.tag == "Follow")
-        {
-           mainAttraction.isInside = true;
-        }
+
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.tag == "Follow")
-        {
-            mainAttraction.isInside = false;
-        }
+
     }
     void Update ()
     {

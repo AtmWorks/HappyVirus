@@ -234,6 +234,7 @@ public class PlayerMovement : MonoBehaviour
     }
     void getO2()
     {
+        PlayerStatics.maxO2counter = 100;
         PlayerStatics.O2counter = PlayerStatics.maxO2counter;
     }
     public void useSmoke()
@@ -341,12 +342,7 @@ public class PlayerMovement : MonoBehaviour
         {
             EggAttraction.isAbsorbing = false;
         }
-        //ATRAER HUEVOS AL NEXO DE TRANSFORMACION//
-        if (Input.GetKeyDown("f") && PlayerAnimator.IsShooting == false && EggCounter.NexusFull == false && PlayerStatics.EggsCounterPubl >= 3)
-        {
-            EggAttraction.isAtracting = true;
 
-        }
         //LLEVAR LOS TENTACULOS A COGER ALGO
 
         //SPRINT
@@ -429,13 +425,6 @@ public class PlayerMovement : MonoBehaviour
                 {
                     virusDoble = virusSelect.DobleVirus;
                 }
-                else if (virusSelect.DobleVirus.activeSelf == false && virusSelect.DobleVirus1.activeSelf == true)
-                { virusDoble = virusSelect.DobleVirus1; }
-                else if (virusSelect.DobleVirus.activeSelf == false && virusSelect.DobleVirus1.activeSelf == false && virusSelect.DobleVirus2.activeSelf == true)
-                { virusDoble = virusSelect.DobleVirus2; }
-                else if (virusSelect.DobleVirus.activeSelf == false && virusSelect.DobleVirus1.activeSelf == false && virusSelect.DobleVirus2.activeSelf == false && virusSelect.DobleVirus3.activeSelf == true)
-                { virusDoble = virusSelect.DobleVirus3; }
-
                 rig = virusDoble.GetComponent<Rigidbody2D>();//Cambiar el focus del rigidBody
                 VirusAttraction.isOnControl = true;//para que el clon no te siga
                 outOfControl = true;

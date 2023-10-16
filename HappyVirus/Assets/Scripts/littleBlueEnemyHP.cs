@@ -17,7 +17,8 @@ public class littleBlueEnemyHP : MonoBehaviour
         {
             if (collision.gameObject.tag=="Proyectil")
             {
-                parent.tag = "Neutral";
+                parent.tag = "invisible";
+                this.gameObject.tag = "invisible";
                 animator.SetBool("isDead", true);
 
             }

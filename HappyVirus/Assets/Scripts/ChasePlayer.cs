@@ -7,6 +7,7 @@ public class ChasePlayer : MonoBehaviour
 {
 
     public bool isDmg;
+    public bool isDead;
     public string virusTag = "Virus";
     public float maxChaseSpeed = 3f;
     //public float minChaseTimer = 4f;
@@ -39,15 +40,21 @@ public class ChasePlayer : MonoBehaviour
     }
     public void Update()
     {
-        if (isDmg)
+        if (isDmg && !isDead)
         {
             this.gameObject.tag = "Damage";
         }
-        else if (!isDmg)
+        else if (!isDmg && !isDead)
         {
             this.gameObject.tag = "Neutral";
 
         }
+        if(isDead)
+        {
+            this.gameObject.tag = "invisible";
+
+        }
+
     }
 
     private void OnTriggerEnter2D(Collider2D other)

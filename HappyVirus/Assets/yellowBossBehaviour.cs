@@ -11,7 +11,7 @@ public class yellowBossBehaviour : MonoBehaviour
     public Animator animator;
     public GameObject enemyPrefab;
     public GameObject plaquetaPrefab;
-    public cloneMovement movement;
+    public cloneMovementBoss movement;
     public List<SimpleFlash> flashes;
     public int bossHP;
     private bool didSpawn;

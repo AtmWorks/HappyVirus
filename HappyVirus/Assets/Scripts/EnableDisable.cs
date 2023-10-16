@@ -15,11 +15,7 @@ public class EnableDisable : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-       
-        if (EggAttraction.isAtracting == true )
-        {
-            EggAtractor.SetActive(true);
-        }
+
 		
 	}
 }
