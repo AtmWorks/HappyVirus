@@ -109,7 +109,7 @@ public class PlayerCollision : MonoBehaviour {
     {
         if (PlayerCol.gameObject.tag == "Damage" && PlayerStatics.inmuneTimer <= 0 && FaceTime <= 0)
         {
-            reproduceHitSound();
+            //reproduceHitSound();
             // I only want one contact, so that's why I initialise it with capacity 1
             ContactPoint2D[] contacts = new ContactPoint2D[1];
             PlayerCol.GetContacts(contacts);
@@ -136,7 +136,7 @@ public class PlayerCollision : MonoBehaviour {
                 {
                     if (!isPlaying)
                     {
-                        reproduceBlobSound();
+                        //reproduceBlobSound();
                         thisPlayed = true;
                     }
                 }
@@ -174,30 +174,30 @@ public class PlayerCollision : MonoBehaviour {
 
     }
 
-    void reproduceBlobSound()
-    {
+//    void reproduceBlobSound()
+//    {
 
-        int clipSelected = Random.Range(0, 3);
-        while (clipSelected== lastSoundPos) 
-        {
-        clipSelected = Random.Range(0, 3);
-        }
-        lastSoundPos = clipSelected;
-        //audioSource.clip = sfxList[clipSelected];
-        //audioSource.Play();
-        isPlaying = true;
+//        int clipSelected = Random.Range(0, 3);
+//        while (clipSelected== lastSoundPos) 
+//        {
+//        clipSelected = Random.Range(0, 3);
+//        }
+//        lastSoundPos = clipSelected;
+//        //audioSource.clip = sfxList[clipSelected];
+//        //audioSource.Play();
+//        isPlaying = true;
 
 
-//        StartCoroutine(enableAudio());
-    }
-    void reproduceHitSound()
-    {
-        isPlaying = true;
-        //audioSource.clip = dmgClip; 
-        //audioSource.Play();
-//        StartCoroutine(enableAudio());
+////        StartCoroutine(enableAudio());
+//    }
+//    void reproduceHitSound()
+//    {
+//        isPlaying = true;
+//        //audioSource.clip = dmgClip; 
+//        //audioSource.Play();
+////        StartCoroutine(enableAudio());
 
-    }
+//    }
     //public void reproduceO2Sound()
     //{
     //    int clipSelected = Random.Range(0, 2);
@@ -238,9 +238,11 @@ public class PlayerCollision : MonoBehaviour {
         { 
             PlayerDies();
             Debug.Log("I DIED");
+            StartCoroutine(flashDMG());
+            StartCoroutine(disableGetDmg());
         }
 
-        if (gotDamage == true && PlayerStatics.inmuneTimer <= 0)
+        if (gotDamage == true && PlayerStatics.inmuneTimer <= 0 && PlayerHP >=1)
         {
             oneDamage();
             StartCoroutine(flashDMG());

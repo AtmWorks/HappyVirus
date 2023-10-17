@@ -42,23 +42,14 @@ public class EnemyHP : MonoBehaviour {
         }
     }
 
-    IEnumerator changeRend() { 
-    
-        while (bodyRend.material != flashMaterial)
-        {
-            bodyRend.material = flashMaterial;
-        }
-        yield return null;
-    }
     void EnemyDies()
     {
-        bodyRend.material = flashMaterial;
+        //bodyRend.material = flashMaterial;
         this.gameObject.tag = "invisible";
         parentTag.isDead = true;
         EnemyAlive = false;
         chaseScript.enabled = false;
         face.SetActive(false);
-        StartCoroutine(changeRend());
         thisAnim.SetBool("isAttack", false);
         thisAnim.SetBool("isDead", true);
 
@@ -87,15 +78,12 @@ public class EnemyHP : MonoBehaviour {
         yield return null;
 
     }
-    void Update () {
+    void FixedUpdate () {
         
 
         if (enemyHP <= 0 && EnemyAlive == true)
         {
             Instantiate(explosion, new Vector3(this.gameObject.transform.position.x, this.gameObject.transform.position.y, 0), Quaternion.identity);
-           // Instantiate(corpse, new Vector3(this.gameObject.transform.position.x, this.gameObject.transform.position.y, 0), Quaternion.identity);
-            bodyRend.material = flashMaterial;
-            StartCoroutine(changeRend());
             EnemyDies();
         }
         if (EnemyAlive == false)

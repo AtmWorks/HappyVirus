@@ -50311,6 +50311,7 @@ MonoBehaviour:
   isOnPC: 0
   isOnMobile: 1
   rightJoy: {fileID: 0}
+  rightJoyObject: {fileID: 0}
   offset: 0
 --- !u!1 &8054283547867555460
 GameObject:
@@ -57395,6 +57396,16 @@ MonoBehaviour:
   spriteFlip: {fileID: 8054283547379623165}
   explosion: {fileID: 5459446116007223409, guid: 0070457196c15a944bb13173cd626c7e,
     type: 3}
+  blob1: {fileID: 8054283547867555460}
+  blob2: {fileID: 8054283547424022547}
+  blob3: {fileID: 8054283548612238907}
+  blob4: {fileID: 8054283547959582361}
+  blob5: {fileID: 8054283548230159393}
+  blob6: {fileID: 8054283549157287177}
+  skinPos: {x: 0, y: 0, z: 0}
+  skinScale: {x: 0, y: 0, z: 0}
+  skinRot: {x: 0, y: 0, z: 0, w: 0}
+  VirusSkin: {fileID: 8054283547404793893}
 --- !u!1 &8054283548272012796
 GameObject:
   m_ObjectHideFlags: 0

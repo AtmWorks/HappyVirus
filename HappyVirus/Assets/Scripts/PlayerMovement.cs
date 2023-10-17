@@ -183,7 +183,25 @@ public class PlayerMovement : MonoBehaviour
         VirusSkin.gameObject.transform.localPosition = skinPos;
         VirusSkin.gameObject.transform.localRotation = skinRot;
         VirusSkin.gameObject.transform.localScale = skinScale;
+        findSoftBodys();
 
+    }
+    public void findSoftBodys()
+    {
+        // Buscar todos los objetos activos en la escena con el tag "subVirus"
+        GameObject[] subViruses = GameObject.FindGameObjectsWithTag("SubVirus");
+
+        foreach (GameObject subVirus in subViruses)
+        {
+            // Verificar si el objeto tiene un componente "cloneMovement"
+            cloneMovement cloneMovement = subVirus.GetComponent<cloneMovement>();
+
+            if (cloneMovement != null)
+            {
+                // Ejecutar el método "softBodyPosition()" en el componente "cloneMovement"
+                cloneMovement.softBodyPosition();
+            }
+        }
     }
 
     private void growFaceOver()
@@ -448,16 +466,18 @@ public class PlayerMovement : MonoBehaviour
 
 
         //CONGELA PLAYER//
-        if (PlayerAnimator.IsShooting == true || PlayerAnimator.IsCreatingEgg == true )
-        {
-            //rig.constraints = RigidbodyConstraints2D.FreezeAll;
-            rig.velocity = rig.velocity/3;
-        }
-        else
-        {
-            rig.constraints &= ~RigidbodyConstraints2D.FreezePositionY;
-            rig.constraints &= ~RigidbodyConstraints2D.FreezePositionX;
-        }
+
+            if (PlayerAnimator.IsShooting == true || PlayerAnimator.IsCreatingEgg == true)
+            {
+                //rig.constraints = RigidbodyConstraints2D.FreezeAll;
+                rig.velocity = rig.velocity / 3;
+            }
+            else
+            {
+                rig.constraints &= ~RigidbodyConstraints2D.FreezePositionY;
+                rig.constraints &= ~RigidbodyConstraints2D.FreezePositionX;
+            }
+        
 
         //MODOS DE DISPARO//
         if (Input.GetKeyDown("1"))

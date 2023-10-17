@@ -129,6 +129,7 @@ public class cloneMovement : MonoBehaviour
         VirusSkin.gameObject.transform.localRotation = skinRot;
         VirusSkin.gameObject.transform.localScale = skinScale;
 
+
     }
 
 

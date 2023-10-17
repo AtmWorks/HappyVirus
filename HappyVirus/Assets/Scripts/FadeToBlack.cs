@@ -52,6 +52,26 @@ public class FadeToBlack : MonoBehaviour
         //blobfix = false;
     }
 
+    public void findSoftBodys()
+    {
+        // Buscar todos los objetos activos en la escena con el tag "subVirus"
+        GameObject[] subViruses = GameObject.FindGameObjectsWithTag("SubVirus");
+
+        if(subViruses.Length > 0 )
+        {
+            foreach (GameObject subVirus in subViruses)
+            {
+                // Verificar si el objeto tiene un componente "cloneMovement"
+                cloneMovement cloneMovement = subVirus.GetComponent<cloneMovement>();
+
+                if (cloneMovement != null)
+                {
+                    // Ejecutar el método "softBodyPosition()" en el componente "cloneMovement"
+                    cloneMovement.softBodyPosition();
+                }
+            }
+        }
+    }
     private void Update()
     {
         timer += Time.deltaTime;
@@ -59,10 +79,8 @@ public class FadeToBlack : MonoBehaviour
         if ( timer >0.2f && targetColor == Color.clear && currentColor != targetColor)
         {
             virusMove.softBodyPosition();
-            //foreach (cloneMovement clone in clones) 
-            //{
-            //    clone.softBodyPosition();
-            //}
+            findSoftBodys();
+
 
         }
         if (cameraEffect == true && timer > 1.5)
@@ -145,7 +163,7 @@ public class FadeToBlack : MonoBehaviour
         }
     }
 
-    public void OnTriggerEnter2D(Collider2D collision)
+    public void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Player")
         {

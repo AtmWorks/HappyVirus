@@ -99,6 +99,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   flashMaterial: {fileID: 2100000, guid: d9c0d1c6573b0a447b87d716c1366f77, type: 2}
   duration: 0.1
+  whiteColor: {r: 0, g: 0, b: 0, a: 0}
+  oldColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &729590085065889196
 GameObject:
   m_ObjectHideFlags: 0
@@ -198,6 +200,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   flashMaterial: {fileID: 2100000, guid: d9c0d1c6573b0a447b87d716c1366f77, type: 2}
   duration: 0.1
+  whiteColor: {r: 0, g: 0, b: 0, a: 0}
+  oldColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &1490527150264870978
 GameObject:
   m_ObjectHideFlags: 0
@@ -469,6 +473,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   flashMaterial: {fileID: 2100000, guid: d9c0d1c6573b0a447b87d716c1366f77, type: 2}
   duration: 0.1
+  whiteColor: {r: 0, g: 0, b: 0, a: 0}
+  oldColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &1942633691924758588
 GameObject:
   m_ObjectHideFlags: 0
@@ -545,6 +551,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Virus: {fileID: 0}
   Child: {fileID: 0}
+  desiredDistance: 50
 --- !u!1 &4977565535681792098
 GameObject:
   m_ObjectHideFlags: 0
@@ -560,7 +567,7 @@ GameObject:
   - component: {fileID: 7428906537811655361}
   m_Layer: 0
   m_Name: shooterEnemy
-  m_TagString: Damage
+  m_TagString: Neutral
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -762,6 +769,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   flashMaterial: {fileID: 2100000, guid: d9c0d1c6573b0a447b87d716c1366f77, type: 2}
   duration: 0.1
+  whiteColor: {r: 0, g: 0, b: 0, a: 0}
+  oldColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &8171040919084029301
 GameObject:
   m_ObjectHideFlags: 0
@@ -861,6 +870,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   flashMaterial: {fileID: 2100000, guid: d9c0d1c6573b0a447b87d716c1366f77, type: 2}
   duration: 0.1
+  whiteColor: {r: 0, g: 0, b: 0, a: 0}
+  oldColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &8243407276250124850
 GameObject:
   m_ObjectHideFlags: 0
@@ -961,6 +972,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   flashMaterial: {fileID: 2100000, guid: d9c0d1c6573b0a447b87d716c1366f77, type: 2}
   duration: 0.1
+  whiteColor: {r: 0, g: 0, b: 0, a: 0}
+  oldColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &9194392836569765523
 GameObject:
   m_ObjectHideFlags: 0
@@ -1060,3 +1073,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   flashMaterial: {fileID: 2100000, guid: d9c0d1c6573b0a447b87d716c1366f77, type: 2}
   duration: 0.1
+  whiteColor: {r: 0, g: 0, b: 0, a: 0}
+  oldColor: {r: 0, g: 0, b: 0, a: 0}
