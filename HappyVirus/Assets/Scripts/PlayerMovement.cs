@@ -25,6 +25,7 @@ public class PlayerMovement : MonoBehaviour
     private bool growingFace;
     private bool outOfControl;
     public bool isSprinting;
+    public bool killed1stBoss;
     
     public static bool isAttractingEgg;
 
@@ -125,6 +126,7 @@ public class PlayerMovement : MonoBehaviour
         smokeButtonEnable.onClick.AddListener(switchSmoke);
 
         blobCircle.fillAmount = 0f;
+        killed1stBoss = false;
 
     }
 
@@ -211,8 +213,8 @@ public class PlayerMovement : MonoBehaviour
 
             //VirusFace.gameObject.transform.localScale = new Vector3 (1, 1, 1) ; 
             //VirusFace.SetActive(true);
-            PlayerCollision.PlayermaxHP = 6;
-            PlayerCollision.PlayerHP = PlayerCollision.PlayermaxHP;
+            //PlayerCollision.PlayermaxHP = 6;
+            //PlayerCollision.PlayerHP = PlayerCollision.PlayermaxHP;
             PlayerStatics.VirusState = 2;
             softBodyPosition();
             growingFace = true;
@@ -312,15 +314,14 @@ public class PlayerMovement : MonoBehaviour
             growingFace = false;
 
         }
-        if (Input.GetKey("p"))
+        if (PlayerCollision.PlayerHP> 1 && !VirusFaceCheck && killed1stBoss == true)
         {
-
 
             growFaceOver();
 
         }     
 
-        if (PlayerCollision.PlayerHP <= 1 && VirusFaceCheck == true)
+        if (PlayerCollision.PlayerHP <= 1 && VirusFaceCheck == true )
         {
             //VirusFace.SetActive(false);
             PlayerStatics.VirusState = 1;

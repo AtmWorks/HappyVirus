@@ -12,10 +12,12 @@ public class plaquetaBehaviour : MonoBehaviour
     public Animator animator;
     public RandomMovement thisRandScript;
     public bool canExplode;
+    public bool stopMovement;
 
     // Use this for initialization
     void Start()
     {
+        stopMovement = false;
         canExplode = false;
         this.gameObject.tag = "Neutral";
         Virus = GameObject.Find("Virus");
@@ -54,24 +56,32 @@ public class plaquetaBehaviour : MonoBehaviour
 
     void Update()
     {
-
-        if (PlaqisChasing == true)
+        if (!stopMovement)
         {
-            thisRandScript.enabled = false;
-            AttractionSpeed += (Time.deltaTime/2);
-            transform.position = Vector3.MoveTowards(transform.position, Virus.transform.position, AttractionSpeed * Time.deltaTime);
+            if (PlaqisChasing == true)
+            {
+                thisRandScript.enabled = false;
+                AttractionSpeed += (Time.deltaTime / 2);
+                transform.position = Vector3.MoveTowards(transform.position, Virus.transform.position, AttractionSpeed * Time.deltaTime);
 
+            }
+            else if (PlaqisChasing == false)
+            {
+
+            }
+            float distance = Vector3.Distance(Virus.transform.position, this.transform.position);
+            if (distance < 2 || canExplode)
+            {
+                animator.SetBool("isExplode", true);
+                StartCoroutine(changeTag());
+            }
         }
-        else if (PlaqisChasing == false) 
-        { 
+        else
+        {
+            Rigidbody2D rb = this.GetComponent<Rigidbody2D>();
+            rb.constraints = RigidbodyConstraints2D.FreezeAll;
+        }
         
-        }
-        float distance = Vector3.Distance(Virus.transform.position, this.transform.position);
-        if(distance < 2 || canExplode ) 
-        {
-            animator.SetBool("isExplode", true);
-            StartCoroutine(changeTag());
-        }
 
 
     }

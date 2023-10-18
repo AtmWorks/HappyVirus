@@ -49,10 +49,12 @@ public class yellowBossBehaviour : MonoBehaviour
     public List <SpriteRenderer> bossSpriteRenderers;
     public SpriteShapeRenderer skinRender;
 
+    public PlayerMovement Virus;
+
     void Start()
     {
         didSpawn=false; 
-        timer = -12f; // Se establece el temporizador en un valor aleatorio entre -6 y -3.
+        timer = -6f; // Se establece el temporizador en un valor aleatorio entre -6 y -3.
         //parentInitialtransform = parent.transform;
 
 
@@ -167,6 +169,7 @@ public class yellowBossBehaviour : MonoBehaviour
         if (bossHP <= 0)
         {
             Instantiate(upgradeObj, parent.transform.position, parent.transform.rotation);
+            Virus.killed1stBoss = true;
             Destroy(parent);
         }
     }

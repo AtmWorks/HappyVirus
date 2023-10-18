@@ -5,6 +5,7 @@ using UnityEngine;
 public class plaqHP : MonoBehaviour
 {
     public GameObject mainPlaq;
+    public GameObject explosion;
     public bool isDestroy;
     // Start is called before the first frame update
     void Start()
@@ -16,6 +17,7 @@ public class plaqHP : MonoBehaviour
     {
         if (collision.gameObject.tag == "Proyectil")
         {
+            Instantiate(explosion, this.transform.position, transform.rotation);
             destroyThis();
         }
        

@@ -148,6 +148,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainPlaq: {fileID: 0}
+  explosion: {fileID: 5459446116007223409, guid: 0070457196c15a944bb13173cd626c7e,
+    type: 3}
   isDestroy: 0
 --- !u!1 &3621652187471478038
 GameObject:
@@ -855,6 +857,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Virus: {fileID: 0}
   Child: {fileID: 0}
+  desiredDistance: 40
 --- !u!1 &6747794281496106131
 GameObject:
   m_ObjectHideFlags: 0
@@ -928,9 +931,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.025041461, y: 0}
+  m_Offset: {x: -0.015, y: 0.03}
   serializedVersion: 2
-  m_Radius: 0.8
+  m_Radius: 0.85
 --- !u!95 &588945230706319838
 Animator:
   serializedVersion: 3
@@ -990,6 +993,7 @@ MonoBehaviour:
   animator: {fileID: 0}
   thisRandScript: {fileID: 0}
   canExplode: 0
+  stopMovement: 0
 --- !u!58 &7210717313500027301
 CircleCollider2D:
   m_ObjectHideFlags: 0
