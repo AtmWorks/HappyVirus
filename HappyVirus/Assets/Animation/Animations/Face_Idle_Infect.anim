@@ -217,7 +217,7 @@ AnimationClip:
     script: {fileID: 0}
   - curve:
     - time: 0
-      value: {fileID: 21300068, guid: c196489318a518e498626fbc4cc0a006, type: 3}
+      value: {fileID: 21300046, guid: c196489318a518e498626fbc4cc0a006, type: 3}
     attribute: m_Sprite
     path: Mouth/Mouth_Sprite
     classID: 212
@@ -274,7 +274,7 @@ AnimationClip:
     pptrCurveMapping:
     - {fileID: 21300050, guid: c196489318a518e498626fbc4cc0a006, type: 3}
     - {fileID: 21300054, guid: c196489318a518e498626fbc4cc0a006, type: 3}
-    - {fileID: 21300068, guid: c196489318a518e498626fbc4cc0a006, type: 3}
+    - {fileID: 21300046, guid: c196489318a518e498626fbc4cc0a006, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}

@@ -264,6 +264,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Virus: {fileID: 0}
   Child: {fileID: 0}
+  desiredDistance: 50
 --- !u!1 &5984659668527405379
 GameObject:
   m_ObjectHideFlags: 0

@@ -1067,4 +1067,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Virus: {fileID: 0}
   Child: {fileID: 0}
-  desiredDistance: 50
+  desiredDistance: 30
