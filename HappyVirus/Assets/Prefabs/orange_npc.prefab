@@ -783,7 +783,7 @@ GameObject:
   - component: {fileID: 8282861241878103799}
   - component: {fileID: 1811933843}
   m_Layer: 0
-  m_Name: orangeNPC
+  m_Name: orange_npc
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

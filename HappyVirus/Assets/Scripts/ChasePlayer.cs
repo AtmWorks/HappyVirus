@@ -95,9 +95,8 @@ public class ChasePlayer : MonoBehaviour
     {
         if (canChase)
         {
- 
             //rb.constraints = RigidbodyConstraints2D.None;
-            Chase();
+            //Chase();
         }
         if (virusTransform != null)
         {
