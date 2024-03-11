@@ -9,7 +9,7 @@ TextureImporter:
       213: 21300002
     second: Paredes01_1
   externalObjects: {}
-  serializedVersion: 11
+  serializedVersion: 12
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -26,10 +26,12 @@ TextureImporter:
     externalNormalMap: 0
     heightScale: 0.25
     normalMapFilter: 0
+    flipGreenChannel: 0
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMipmapLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -39,8 +41,8 @@ TextureImporter:
   textureSettings:
     serializedVersion: 2
     filterMode: 0
-    aniso: -1
-    mipBias: -100
+    aniso: 1
+    mipBias: 0
     wrapU: 1
     wrapV: 1
     wrapW: 1
@@ -61,11 +63,15 @@ TextureImporter:
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 1
+  swizzle: 50462976
+  cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -77,6 +83,7 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 1
   - serializedVersion: 3
@@ -89,6 +96,20 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 1
   spriteSheet:
@@ -110,40 +131,68 @@ TextureImporter:
       tessellationDetail: 0
       bones:
       - name: root
+        guid: 
         position: {x: 29.32208, y: 263.88733, z: 0}
         rotation: {x: 0, y: 0, z: 0.0067548025, w: 0.9999772}
         length: 295.2428
         parentId: -1
+        color:
+          serializedVersion: 2
+          rgba: 0
       - name: bone_25
+        guid: 
         position: {x: 295.24286, y: 0.0000071558125, z: 0}
         rotation: {x: 0, y: 0, z: -0.03399302, w: 0.9994221}
         length: 439.48657
         parentId: 0
+        color:
+          serializedVersion: 2
+          rgba: 0
       - name: bone_26
+        guid: 
         position: {x: 439.48663, y: -0.00003797188, z: 0}
         rotation: {x: 0, y: 0, z: 0.022341201, w: 0.9997504}
         length: 406.93875
         parentId: 1
+        color:
+          serializedVersion: 2
+          rgba: 0
       - name: bone_27
+        guid: 
         position: {x: 406.93884, y: 0.000038387363, z: 0}
         rotation: {x: 0, y: 0, z: -0.006331202, w: 0.99998}
         length: 355.14627
         parentId: 2
+        color:
+          serializedVersion: 2
+          rgba: 0
       - name: bone_28
+        guid: 
         position: {x: 355.1463, y: 0.000012644734, z: 0}
         rotation: {x: 0, y: 0, z: 0.029737592, w: 0.99955773}
         length: 431.1511
         parentId: 3
+        color:
+          serializedVersion: 2
+          rgba: 0
       - name: bone_29
+        guid: 
         position: {x: 431.151, y: -0.000107220636, z: 0}
         rotation: {x: 0, y: 0, z: 0.0050033936, w: 0.9999875}
         length: 339.47446
         parentId: 4
+        color:
+          serializedVersion: 2
+          rgba: 0
       - name: bone_30
+        guid: 
         position: {x: 339.47458, y: 0.00016893918, z: 0}
         rotation: {x: 0, y: 0, z: -0.038883567, w: 0.99924374}
         length: 259.43375
         parentId: 5
+        color:
+          serializedVersion: 2
+          rgba: 0
       spriteID: aeee74fe0df5dbe4eb941de5385cca6f
       internalID: 21300000
       vertices:
@@ -561,9 +610,11 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-  spritePackingTag: 
+    nameFileIdTable:
+      Paredes01_0: 21300000
+      Paredes01_1: 21300002
+  mipmapLimitGroupName: 
   pSDRemoveMatte: 0
-  pSDShowRemoveMatteOption: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 

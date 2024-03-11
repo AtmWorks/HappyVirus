@@ -36,6 +36,22 @@ SpriteAtlas:
     bindAsDefault: 1
     isAtlasV2: 0
     cachedData: {fileID: 0}
+    packedSpriteRenderDataKeys:
+    - 4afbd0f2fd96c244aa9ec7d422b780bd: 21300022
+    - 4afbd0f2fd96c244aa9ec7d422b780bd: 21300020
+    - 4afbd0f2fd96c244aa9ec7d422b780bd: 21300004
+    - 4afbd0f2fd96c244aa9ec7d422b780bd: 21300026
+    - 4afbd0f2fd96c244aa9ec7d422b780bd: 21300006
+    - 4afbd0f2fd96c244aa9ec7d422b780bd: 21300024
+    - 4afbd0f2fd96c244aa9ec7d422b780bd: 21300000
+    - 4afbd0f2fd96c244aa9ec7d422b780bd: 21300002
+    - 4afbd0f2fd96c244aa9ec7d422b780bd: 21300028
+    - 4afbd0f2fd96c244aa9ec7d422b780bd: 21300012
+    - 4afbd0f2fd96c244aa9ec7d422b780bd: 21300014
+    - 4afbd0f2fd96c244aa9ec7d422b780bd: 21300008
+    - 4afbd0f2fd96c244aa9ec7d422b780bd: 21300010
+    - 4afbd0f2fd96c244aa9ec7d422b780bd: 21300016
+    - 4afbd0f2fd96c244aa9ec7d422b780bd: 21300018
   m_MasterAtlas: {fileID: 0}
   m_PackedSprites:
   - {fileID: 21300022, guid: 4afbd0f2fd96c244aa9ec7d422b780bd, type: 3}

@@ -54,7 +54,7 @@ TextureImporter:
       213: 342457604838595991
     second: Star_Flash_V2_spritesheet_17
   externalObjects: {}
-  serializedVersion: 11
+  serializedVersion: 12
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -71,10 +71,12 @@ TextureImporter:
     externalNormalMap: 0
     heightScale: 0.25
     normalMapFilter: 0
+    flipGreenChannel: 0
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMipmapLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -113,6 +115,8 @@ TextureImporter:
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -124,6 +128,7 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
@@ -136,6 +141,7 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
@@ -148,6 +154,7 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
@@ -520,9 +527,26 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-  spritePackingTag: 
+    nameFileIdTable:
+      Star_Flash_V2_spritesheet_0: 5945982012071876238
+      Star_Flash_V2_spritesheet_1: -3715343289988404581
+      Star_Flash_V2_spritesheet_10: -5035184537469638648
+      Star_Flash_V2_spritesheet_11: -3493668421127128188
+      Star_Flash_V2_spritesheet_12: 1199223888710639527
+      Star_Flash_V2_spritesheet_13: -9109110862646785905
+      Star_Flash_V2_spritesheet_14: 87346766855384546
+      Star_Flash_V2_spritesheet_15: 7161422330575521457
+      Star_Flash_V2_spritesheet_17: 342457604838595991
+      Star_Flash_V2_spritesheet_2: -3231375445202759370
+      Star_Flash_V2_spritesheet_3: 2334605197625479777
+      Star_Flash_V2_spritesheet_4: 3695828633645088574
+      Star_Flash_V2_spritesheet_5: -6110696720118307205
+      Star_Flash_V2_spritesheet_6: 2248691718996576346
+      Star_Flash_V2_spritesheet_7: 8399616681621730052
+      Star_Flash_V2_spritesheet_8: 3049523911518510206
+      Star_Flash_V2_spritesheet_9: 1375501706442469087
+  mipmapLimitGroupName: 
   pSDRemoveMatte: 0
-  pSDShowRemoveMatteOption: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 

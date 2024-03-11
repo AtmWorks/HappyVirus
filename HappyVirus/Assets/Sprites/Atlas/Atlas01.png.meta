@@ -162,7 +162,7 @@ TextureImporter:
       213: 8645766403186248891
     second: Atlas01_52
   externalObjects: {}
-  serializedVersion: 11
+  serializedVersion: 12
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -179,10 +179,12 @@ TextureImporter:
     externalNormalMap: 0
     heightScale: 0.25
     normalMapFilter: 0
+    flipGreenChannel: 0
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMipmapLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -221,6 +223,8 @@ TextureImporter:
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 1
+  swizzle: 50462976
+  cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -232,6 +236,7 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
@@ -244,6 +249,7 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
@@ -256,6 +262,7 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
@@ -268,6 +275,7 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
@@ -961,10 +969,10 @@ TextureImporter:
       name: Atlas01_28
       rect:
         serializedVersion: 2
-        x: 104
-        y: 20
-        width: 428
-        height: 404
+        x: 785
+        y: 161
+        width: 181
+        height: 319
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1558,7 +1566,7 @@ TextureImporter:
         width: 33
         height: 40
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1566,6 +1574,48 @@ TextureImporter:
       bones: []
       spriteID: ffb09e4e27c2568a0800000000000000
       internalID: -6312590430711510017
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Atlas01_52
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 37
+        width: 138
+        height: 202
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b7d47b9292bae641afab13eb5544b2d
+      internalID: -1866313380
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Atlas01_53
+      rect:
+        serializedVersion: 2
+        x: 214
+        y: 57
+        width: 185
+        height: 176
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e3df983e4b748ce47995540cd29853cb
+      internalID: -537006988
       vertices: []
       indices: 
       edges: []
@@ -1580,9 +1630,63 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-  spritePackingTag: 
+    nameFileIdTable:
+      Atlas01_0: 21300000
+      Atlas01_1: 21300002
+      Atlas01_10: 21300020
+      Atlas01_11: 21300022
+      Atlas01_12: 21300024
+      Atlas01_13: 21300026
+      Atlas01_14: 21300028
+      Atlas01_15: 21300030
+      Atlas01_16: 21300032
+      Atlas01_17: 21300034
+      Atlas01_18: 21300036
+      Atlas01_19: 21300038
+      Atlas01_2: 21300004
+      Atlas01_20: 21300040
+      Atlas01_21: 21300042
+      Atlas01_22: 21300044
+      Atlas01_23: 21300046
+      Atlas01_24: 21300048
+      Atlas01_25: 21300050
+      Atlas01_26: 21300052
+      Atlas01_27: 21300054
+      Atlas01_28: 21300056
+      Atlas01_29: 21300058
+      Atlas01_3: 21300006
+      Atlas01_30: 21300060
+      Atlas01_31: 21300062
+      Atlas01_32: 21300064
+      Atlas01_33: 21300066
+      Atlas01_34: 21300068
+      Atlas01_35: 21300070
+      Atlas01_36: 21300072
+      Atlas01_37: 21300074
+      Atlas01_38: 21300076
+      Atlas01_39: 21300078
+      Atlas01_4: 21300008
+      Atlas01_40: 21300080
+      Atlas01_41: 21300082
+      Atlas01_42: 21300084
+      Atlas01_43: 21300086
+      Atlas01_44: 21300088
+      Atlas01_45: 21300090
+      Atlas01_46: 21300092
+      Atlas01_47: 21300094
+      Atlas01_48: 21300096
+      Atlas01_49: 21300098
+      Atlas01_5: 21300010
+      Atlas01_50: 21300100
+      Atlas01_51: -6312590430711510017
+      Atlas01_52: -1866313380
+      Atlas01_53: -537006988
+      Atlas01_6: 21300012
+      Atlas01_7: 21300014
+      Atlas01_8: 21300016
+      Atlas01_9: 21300018
+  mipmapLimitGroupName: 
   pSDRemoveMatte: 0
-  pSDShowRemoveMatteOption: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 

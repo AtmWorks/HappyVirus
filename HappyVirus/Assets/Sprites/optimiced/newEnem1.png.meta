@@ -15,7 +15,7 @@ TextureImporter:
       213: 2349820393257201668
     second: newEnem1_16
   externalObjects: {}
-  serializedVersion: 11
+  serializedVersion: 12
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -32,10 +32,12 @@ TextureImporter:
     externalNormalMap: 0
     heightScale: 0.25
     normalMapFilter: 0
+    flipGreenChannel: 0
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMipmapLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -74,6 +76,8 @@ TextureImporter:
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -85,6 +89,7 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
@@ -97,6 +102,7 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
@@ -109,6 +115,7 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
@@ -534,6 +541,258 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: newEnem1_4
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 216
+        width: 101
+        height: 136
+      alignment: 9
+      pivot: {x: 0.5, y: 0.1499011}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e9e2c9048590104db952fb269874fb1
+      internalID: -1920205602
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: newEnem1_5
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 167
+        width: 42
+        height: 48
+      alignment: 9
+      pivot: {x: 0.5472356, y: 0.9339771}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2bf44cf16505d5947b1c070489e1120a
+      internalID: 843837255
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: newEnem1_6
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 163
+        width: 59
+        height: 55
+      alignment: 9
+      pivot: {x: 0.24103676, y: 0.8408037}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 226f56336e6082142bd47baca7b42792
+      internalID: 1257761532
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: newEnem1_10
+      rect:
+        serializedVersion: 2
+        x: 126
+        y: 275
+        width: 21
+        height: 71
+      alignment: 9
+      pivot: {x: 0.62438965, y: 0.049304802}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 69e0b098591eaab4e9ab37c87e5c00f8
+      internalID: 1516651322
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: newEnem1_17
+      rect:
+        serializedVersion: 2
+        x: 149
+        y: 273
+        width: 31
+        height: 55
+      alignment: 9
+      pivot: {x: 0.20316014, y: 0.10817094}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 019460c4e478c22428704b14a5646035
+      internalID: 680164078
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: newEnem1_22
+      rect:
+        serializedVersion: 2
+        x: 482
+        y: 814
+        width: 22
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 11f52db00fe188043a05bb80cf05a61f
+      internalID: 1699336478
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: newEnem1_23
+      rect:
+        serializedVersion: 2
+        x: 508
+        y: 816
+        width: 26
+        height: 36
+      alignment: 9
+      pivot: {x: 0.45380813, y: 0.45829943}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0114708dc1b54aa48b50bc42cf41730e
+      internalID: 1927776360
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: newEnem1_24
+      rect:
+        serializedVersion: 2
+        x: 537
+        y: 751
+        width: 55
+        height: 158
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c679b164b9f614c4a92bb94d6a71782f
+      internalID: 382268683
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: newEnem1_25
+      rect:
+        serializedVersion: 2
+        x: 518
+        y: 693
+        width: 33
+        height: 57
+      alignment: 9
+      pivot: {x: 0.54737806, y: 0.8236716}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9418e021f47007b43ae6b722d80c0001
+      internalID: 956873808
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: newEnem1_27
+      rect:
+        serializedVersion: 2
+        x: 551
+        y: 693
+        width: 41
+        height: 47
+      alignment: 9
+      pivot: {x: 0.5533879, y: 0.91249764}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b97a00d44158e8b41a6bd96be98db506
+      internalID: -1098766968
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: newEnem1_28
+      rect:
+        serializedVersion: 2
+        x: 633
+        y: 827
+        width: 119
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee70078609d38c6468a99b2d97e07350
+      internalID: -1903885359
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: newEnem1_30
+      rect:
+        serializedVersion: 2
+        x: 607
+        y: 724
+        width: 187
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b70a62dac3fa944c9d86c335e086395
+      internalID: -2003500675
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -544,9 +803,41 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-  spritePackingTag: 
+    nameFileIdTable:
+      newEnem1_0: -4372797354567221025
+      newEnem1_1: 4075303344309001858
+      newEnem1_10: 1516651322
+      newEnem1_11: 1574719073460474867
+      newEnem1_12: 3452601961457462439
+      newEnem1_13: 1154647258055255564
+      newEnem1_14: -5318984418212472521
+      newEnem1_15: -4959243219620171257
+      newEnem1_16: 2349820393257201668
+      newEnem1_17: 680164078
+      newEnem1_18: -6639833084577334915
+      newEnem1_19: -3806703139466394105
+      newEnem1_2: 5901870579542232533
+      newEnem1_20: 7846216633666270982
+      newEnem1_21: 820554018935823186
+      newEnem1_22: 1699336478
+      newEnem1_23: 1927776360
+      newEnem1_24: 382268683
+      newEnem1_25: 956873808
+      newEnem1_26: 5353994150096837027
+      newEnem1_27: -1098766968
+      newEnem1_28: -1903885359
+      newEnem1_29: 6836381740736627502
+      newEnem1_3: 4169522619603193484
+      newEnem1_30: -2003500675
+      newEnem1_31: 3635839032971835385
+      newEnem1_4: -1920205602
+      newEnem1_5: 843837255
+      newEnem1_6: 1257761532
+      newEnem1_7: -929306006760483205
+      newEnem1_8: -7169758369790701314
+      newEnem1_9: 2901672713362438104
+  mipmapLimitGroupName: 
   pSDRemoveMatte: 0
-  pSDShowRemoveMatteOption: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 
