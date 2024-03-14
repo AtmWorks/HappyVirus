@@ -46,12 +46,23 @@ public class EnemyHP : MonoBehaviour {
     {
         //bodyRend.material = flashMaterial;
         this.gameObject.tag = "invisible";
-        parentTag.isDead = true;
+        if (parentTag != null )
+        {
+            parentTag.isDead = true;
+        }
         EnemyAlive = false;
+        if (chaseScript != null) { 
         chaseScript.enabled = false;
-        face.SetActive(false);
-        thisAnim.SetBool("isAttack", false);
-        thisAnim.SetBool("isDead", true);
+        }
+        if (face != null) { 
+            face.SetActive(false);
+        }
+        if(thisAnim != null)
+        {
+            thisAnim.SetBool("isAttack", false);
+            thisAnim.SetBool("isDead", true);
+        }
+
 
     }
 
@@ -79,26 +90,37 @@ public class EnemyHP : MonoBehaviour {
 
     }
     void FixedUpdate () {
-        
 
-        if (enemyHP <= 0 && EnemyAlive == true)
+
+        //if (enemyHP <= 0 && EnemyAlive == true)
+        //{
+        //    Instantiate(explosion, new Vector3(this.gameObject.transform.position.x, this.gameObject.transform.position.y, 0), Quaternion.identity);
+        //    Instantiate(explosion, new Vector3(this.gameObject.transform.position.x, this.gameObject.transform.position.y, 0), Quaternion.identity);
+        //    Instantiate(explosion, new Vector3(this.gameObject.transform.position.x, this.gameObject.transform.position.y, 0), Quaternion.identity);
+        //    EnemyDies();
+        //}
+        //if (EnemyAlive == false)
+        //{
+        //    deadlyTimer -= Time.deltaTime;
+        //}
+
+        //if(deadlyTimer <= 0.5f && isSpawned)
+        //{
+        //    Instantiate(corpse, new Vector3(this.gameObject.transform.position.x, this.gameObject.transform.position.y, 0), Quaternion.identity);
+        //    isSpawned = false;
+        //}
+        //if(deadlyTimer <= 0f)
+        //{
+        //    Destroy(EnemyObject);
+        //}
+        if (enemyHP <= 0 )
         {
             Instantiate(explosion, new Vector3(this.gameObject.transform.position.x, this.gameObject.transform.position.y, 0), Quaternion.identity);
-            EnemyDies();
-        }
-        if (EnemyAlive == false)
-        {
-            deadlyTimer -= Time.deltaTime;
-        }
-
-        if(deadlyTimer <= 0.5f && isSpawned)
-        {
+            Instantiate(explosion, new Vector3(this.gameObject.transform.position.x, this.gameObject.transform.position.y, 0), Quaternion.identity);
+            Instantiate(explosion, new Vector3(this.gameObject.transform.position.x, this.gameObject.transform.position.y, 0), Quaternion.identity);
             Instantiate(corpse, new Vector3(this.gameObject.transform.position.x, this.gameObject.transform.position.y, 0), Quaternion.identity);
-            isSpawned = false;
-        }
-        if(deadlyTimer <= 0f)
-        {
             Destroy(EnemyObject);
+
         }
 
     }

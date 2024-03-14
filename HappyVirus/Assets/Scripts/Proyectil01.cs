@@ -11,16 +11,19 @@ public class Proyectil01 : MonoBehaviour {
     public float currentTime;
     public float speed;
     public float fireRate;
+    public bool canChase;
     public bool isYellowProyectile;
-    public yellowProyectileTrigger trigger;
     public float rotationSpeed;
+    public GameObject enemyTag;
 
    // public GameObject shockCollider;
     void Start()
     {
+        canChase = false;
         instanceSound();
         proyectHit = false;
         currentTime = 5f;
+        StartCoroutine(StartRotation());
         StartCoroutine(enableHitCollider());
     }
 
@@ -53,6 +56,24 @@ public class Proyectil01 : MonoBehaviour {
 
     void Update()
     {
+        
+        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+        if (enemies.Length != 0)
+        {
+            float minDistance = Mathf.Infinity;
+            GameObject nearestEnemy = null;
+            foreach (GameObject enemy in enemies)
+            {
+                float distance = Vector3.Distance(transform.position, enemy.transform.position);
+                if (distance < minDistance)
+                {
+                    minDistance = distance;
+                    nearestEnemy = enemy;
+                }
+            }
+            enemyTag = nearestEnemy;
+        }
+
         //audioCarry.transform.position=this.transform.position;  
         currentTime -= 1 * Time.deltaTime;
         if (speed != 0)
@@ -68,7 +89,7 @@ public class Proyectil01 : MonoBehaviour {
             Instantiate(explosion, new Vector3(this.gameObject.transform.position.x, this.gameObject.transform.position.y, 0), Quaternion.identity);
             Destroy(this.gameObject);
         }
-        if(isYellowProyectile)
+        if(isYellowProyectile && canChase)
         {
             rotateTowardsEnemy();
         }
@@ -76,10 +97,10 @@ public class Proyectil01 : MonoBehaviour {
 
     public void rotateTowardsEnemy()
     {
-        if(trigger.enemy != null)
+        if(enemyTag != null)
         {
             // Calcula la dirección hacia el enemigo
-            Vector3 direction = trigger.enemy.transform.position - transform.position;
+            Vector3 direction = enemyTag.transform.position - transform.position;
 
             // Calcula el ángulo en radianes
             float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
@@ -87,6 +108,18 @@ public class Proyectil01 : MonoBehaviour {
             // Interpola la rotación suavemente (puedes ajustar el valor del tercer parámetro para cambiar la velocidad de rotación)
             Quaternion targetRotation = Quaternion.Euler(0, 0, angle);
             transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, Time.deltaTime * rotationSpeed);
+        }
+    }
+    IEnumerator StartRotation()
+    {
+        yield return new WaitForSeconds(1f);
+        while (true)
+        {
+            if (isYellowProyectile)
+            {
+                canChase = true;
+            }
+            yield return null;
         }
     }
 }

@@ -34,32 +34,32 @@ public class O2Behaviour : MonoBehaviour {
     {
         if (other.gameObject.tag == "Virus" && getOnce == true && canChase == true)
         {
+            thisCollider.enabled = true;
             target = other.gameObject;
             isChasing = true;
-            thisCollider.enabled = true;
         }
     }
     private void OnCollisionEnter2D(Collision2D other)
     {
         if (other.gameObject.tag == "Virus" && getOnce == true)
         {
-            PlayerCollision audioTime = other.gameObject.GetComponent<PlayerCollision>();
-            if (!didSound)
-            {
-                didSound = true;
-                //////audioTime.reproduceO2Sound();
-            }
+            //PlayerCollision audioTime = other.gameObject.GetComponent<PlayerCollision>();
+            //if (!didSound)
+            //{
+            //    didSound = true;
+            //    //////audioTime.reproduceO2Sound();
+            //}
             StartCoroutine(destroyDelay());
         }
     }
 
     IEnumerator destroyDelay()
     {
-        yield return new WaitForSeconds(0.02f);
         getOnce = false;
+        yield return new WaitForSeconds(0.1f);
         PlayerStatics.O2counter += 2;
         popScore.popText= "+2";
         popScore.isPoping = true;
-        Destroy(gameObject);
+        Destroy(this.gameObject);
     }
 }
