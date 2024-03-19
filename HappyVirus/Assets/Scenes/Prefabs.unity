@@ -2744,7 +2744,7 @@ SpriteRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 68733139}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
@@ -18053,12 +18053,12 @@ PrefabInstance:
     - target: {fileID: 2268472424509113875, guid: 81e85365006d86b4f9950af5abad7a86,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -24.2
+      value: -25.5
       objectReference: {fileID: 0}
     - target: {fileID: 2268472424509113875, guid: 81e85365006d86b4f9950af5abad7a86,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 7.3
+      value: 2.3
       objectReference: {fileID: 0}
     - target: {fileID: 2268472424622656649, guid: 81e85365006d86b4f9950af5abad7a86,
         type: 3}
@@ -21837,12 +21837,14 @@ MonoBehaviour:
   - {fileID: 1898613020743034524, guid: 2c1c2744898d1c441aafe220cb98c6cc, type: 3}
   - {fileID: 7762096285765464515, guid: cfe6932a9ded22e4da4bbc336ec2606a, type: 3}
   - {fileID: 5795283068033255745, guid: 889047d3ff87ede4c8c3685b3b46aec6, type: 3}
+  - {fileID: 5795283068033255745, guid: 18d5e9e6e7f1c1849b3e1614238e1b6c, type: 3}
   - {fileID: 3995482084551124838, guid: 3f03f7a367d11a04eadbd6f4cf6b661b, type: 3}
-  - {fileID: 6148492939429462785, guid: 69ce2b4e4617ee8469d81c37723298d6, type: 3}
+  - {fileID: 3995482084551124838, guid: 52e82fb4fa4c38e498adc61db3ed629f, type: 3}
   - {fileID: 4837828053942926271, guid: 744ab14e7de13864ea84dd382e44aad4, type: 3}
   - {fileID: 4315423588392303091, guid: 975d2a8b4c1efad42a6dfe412c47d578, type: 3}
   mapsSecurityCopy: []
   usedMaps: []
+  openPaths: 0
   lobbySpawn: {fileID: 68733141}
   lobbyMap: {fileID: 990196146}
   oldArea: {fileID: 990196146}

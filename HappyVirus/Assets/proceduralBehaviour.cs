@@ -27,8 +27,9 @@ public class proceduralBehaviour : MonoBehaviour
     public List<GameObject> mapsSecurityCopy;
     public List<GameObject> usedMaps;
 
-    public spawnProcedural lobbySpawn;
+    public int openPaths;
 
+    public spawnProcedural lobbySpawn;
     public GameObject lobbyMap;
 
     public GameObject oldArea; 
@@ -88,11 +89,26 @@ public class proceduralBehaviour : MonoBehaviour
                 }
                 else
                 {
+                    openPaths--;
                     List<GameObject> potentialMaps = new List<GameObject>();
                     foreach (var map in Lvl1maps)
                     {
-                        if (!map.name.Contains("R_END") && !map.name.Contains("L_END"))
-                            potentialMaps.Add(map);
+                        bool isTripleAble = true;
+                        if ( openPaths >= 5) { isTripleAble = false ; }
+                            if (!map.name.Contains("R_END") && !map.name.Contains("L_END"))
+                            { 
+                            if (isTripleAble)
+                            {
+                                potentialMaps.Add(map); 
+                            }
+                            else
+                            {
+                                if (!map.name.Contains("LRTB") && !map.name.Contains("L_END") && !map.name.Contains("LRT") && !map.name.Contains("LRB") && !map.name.Contains("LTB") && !map.name.Contains("RTB") )
+                                {
+                                    potentialMaps.Add(map);
+                                }
+                            }
+                        }
                     }
                     if (potentialMaps.Count <= 0)
                     {
@@ -105,6 +121,22 @@ public class proceduralBehaviour : MonoBehaviour
 
                     GameObject listSelectedMap = potentialMaps[Random.Range(0, potentialMaps.Count)];
                     Lvl1maps.Remove(listSelectedMap); 
+                    if(listSelectedMap.name.Contains("LRTB"))
+                    {
+                        openPaths += 3;
+                    }
+                    else if (listSelectedMap.name.Contains("LRT") || listSelectedMap.name.Contains("LRB") || listSelectedMap.name.Contains("RTB") || listSelectedMap.name.Contains("LTB") )
+                    { 
+                        openPaths += 2;
+                    }
+                    else if (listSelectedMap.name.Contains("LR_LVL") || listSelectedMap.name.Contains("TB_LVL"))
+                    {
+                        openPaths ++;
+                    }
+                    else if (listSelectedMap.name.Contains("END"))
+                    {
+                        openPaths--;
+                    }
                     GameObject selectedMap = Instantiate(listSelectedMap, Vector3.zero, Quaternion.identity);
                     usedMaps.Add(selectedMap); 
                     GameObject oldSpawn = oldArea.transform.Find("SPAWN_R").gameObject;
