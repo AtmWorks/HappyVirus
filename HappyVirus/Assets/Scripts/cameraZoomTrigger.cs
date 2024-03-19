@@ -10,6 +10,18 @@ public class cameraZoomTrigger : MonoBehaviour
     public float zoomEpsilon = 0.01f; // Un pequeño valor para determinar cuándo la cámara ha llegado al zoom deseado.
 
     private bool isZooming = false;
+    private void Start()
+    {
+        Camera mainCameraAtScene = Camera.main;
+        if (mainCameraAtScene != null)
+        {
+            mainCamera = mainCameraAtScene;
+        }
+        else
+        {
+            Debug.LogError("No se encontró una cámara en la escena.");
+        }
+    }
 
     void OnTriggerEnter2D(Collider2D collision)
     {

@@ -24,24 +24,22 @@ public class proceduralBehaviour : MonoBehaviour
 
     //map generation related
     public List<GameObject> Lvl1maps;
+    public List<GameObject> mapsSecurityCopy;
+    public List<GameObject> usedMaps;
 
-    public List<GameObject> mapSpawns;
-    
-    public GameObject reviveSpawnArea;
-    public GameObject oldArea;
-    public GameObject TPspawn;
+    public spawnProcedural lobbySpawn;
+
+    public GameObject lobbyMap;
+
+    public GameObject oldArea; 
+    public GameObject newAreaToSpawn;
+    public GameObject TPspawn; 
     public GameObject ReviveTPspawn;
     public float timer;
-    public enum spawnOrientation
-    {
-        R,
-        L,
-        T,
-        B
-    }
 
     private void Start()
     {
+        mapsSecurityCopy = new List<GameObject>(Lvl1maps);
         spriteRenderer = blackSquare.GetComponent<SpriteRenderer>();
         virusMove = Player.GetComponent<PlayerMovement>(); ;
         currentColor = Color.clear;
@@ -51,6 +49,17 @@ public class proceduralBehaviour : MonoBehaviour
         timer = 1f;
         cameraEffect = false;
     }
+    public void onRevive()
+    {
+        Lvl1maps = new List<GameObject>(mapsSecurityCopy);
+        foreach (GameObject map in usedMaps) {
+        usedMaps.Remove(map);
+        Destroy(map);
+
+        }
+        lobbySpawn.mapToSpawn = null;
+
+    }
     public void proceduralMap(spawnOrientation orientation, GameObject newArea = null)
     {
         switch (orientation)
@@ -58,222 +67,147 @@ public class proceduralBehaviour : MonoBehaviour
             case spawnOrientation.R:
                 if (newArea != null)
                 {
-                    oldArea.SetActive(false);
-                    newArea.SetActive(true);
-                    oldArea = newArea;
-                }
-                else
-                {
-                    List<GameObject> potentialMaps = new List<GameObject>();
-                    foreach (var map in Lvl1maps)
+                    for (int i = 0; i < newArea.transform.childCount; i++)
                     {
-                        if (!map.name.Contains("R_end"))
-                            potentialMaps.Add(map);
-                    }
-
-                    GameObject selectedMap = potentialMaps[Random.Range(0, potentialMaps.Count)];
-
-                    mapSpawns.Clear();
-                    foreach (Transform child in selectedMap.transform)
-                    {
-                        if (child.name.Contains("SPAWN"))
-                        {
-                            mapSpawns.Add(child.gameObject);
-                        }
+                        Transform child = newArea.transform.GetChild(i);
                         if (child.name.Contains("SPAWN_L"))
                         {
-                            Transform locationTransform = child.Find("LOCATION");
-                            if (locationTransform != null)
+                            TPspawn = child.gameObject;
+                            spawnProcedural newSpawnScript = child.GetComponent<spawnProcedural>();
+                            if (newSpawnScript != null)
                             {
-                                TPspawn = locationTransform.gameObject;
+                                newSpawnScript.mapToSpawn = oldArea;
                             }
+                            break;
                         }
+                        
                     }
-                    GameObject oldSpawn = oldArea.transform.Find("SPAWN_R").gameObject;
-                    spawnProcedural spawnScript = oldSpawn.GetComponent<spawnProcedural>();
-                    spawnScript.mapToSpawn = selectedMap;
+                    newAreaToSpawn = newArea;
+                    cameraEffect = true;
 
-                    oldArea.SetActive(false);
-                    Instantiate(selectedMap, Vector3.zero, Quaternion.identity);
-                    selectedMap.SetActive(true);
-                    oldArea = selectedMap;
-                }
-                break;
-            
-            case spawnOrientation.L:
-                if (newArea != null)
-                {
-                    oldArea.SetActive(false);
-                    newArea.SetActive(true);
-                    oldArea = newArea;
                 }
                 else
                 {
                     List<GameObject> potentialMaps = new List<GameObject>();
                     foreach (var map in Lvl1maps)
                     {
-                        if (!map.name.Contains("L_end"))
+                        if (!map.name.Contains("R_END") && !map.name.Contains("L_END"))
                             potentialMaps.Add(map);
                     }
-
-                    GameObject selectedMap = potentialMaps[Random.Range(0, potentialMaps.Count)];
-
-                    mapSpawns.Clear();
-                    foreach (Transform child in selectedMap.transform)
+                    if (potentialMaps.Count <= 0)
                     {
-                        if (child.name.Contains("SPAWN"))
+                        foreach (var map in Lvl1maps)
                         {
-                            mapSpawns.Add(child.gameObject);
+                            if (map.name.Contains("L_END"))
+                                potentialMaps.Add(map);
                         }
+                    }
+
+                    GameObject listSelectedMap = potentialMaps[Random.Range(0, potentialMaps.Count)];
+                    Lvl1maps.Remove(listSelectedMap); 
+                    GameObject selectedMap = Instantiate(listSelectedMap, Vector3.zero, Quaternion.identity);
+                    usedMaps.Add(selectedMap); 
+                    GameObject oldSpawn = oldArea.transform.Find("SPAWN_R").gameObject;
+                    spawnProcedural oldSpawnScript = oldSpawn.GetComponent<spawnProcedural>();
+                    oldSpawnScript.mapToSpawn = selectedMap;
+
+                    foreach (Transform childTransform in selectedMap.transform)
+                    {
+                        GameObject child = childTransform.gameObject;
+                        if (child.name.Contains("SPAWN_L"))
+                        {
+                            spawnProcedural newSpawnScript = child.GetComponent<spawnProcedural>();
+                            if (newSpawnScript != null)
+                            {
+                                TPspawn = child;
+                                newSpawnScript.mapToSpawn = oldArea;
+                            }
+                            else
+                            {
+                                Debug.LogWarning("El objeto " + child.name + " no tiene un componente spawnProcedural.");
+                            }
+                        }
+                    }
+
+                    //selectedMap.SetActive(false);
+                    newAreaToSpawn = selectedMap;
+                    cameraEffect = true;
+                }
+                break;
+                case spawnOrientation.L:
+                if (newArea != null)
+                {
+                    for (int i = 0; i < newArea.transform.childCount; i++)
+                    {
+                        Transform child = newArea.transform.GetChild(i);
                         if (child.name.Contains("SPAWN_R"))
                         {
-                            Transform locationTransform = child.Find("LOCATION");
-                            if (locationTransform != null)
+                            TPspawn = child.gameObject;
+                            spawnProcedural newSpawnScript = child.GetComponent<spawnProcedural>();
+                            if (newSpawnScript != null)
                             {
-                                TPspawn = locationTransform.gameObject;
+                                newSpawnScript.mapToSpawn = oldArea;
                             }
+                            break;
+                        }
+                        
+                    }
+                    newAreaToSpawn = newArea;
+                    cameraEffect = true;
+
+                }
+                else
+                {
+                    List<GameObject> potentialMaps = new List<GameObject>();
+                    foreach (var map in Lvl1maps)
+                    {
+                        if (!map.name.Contains("R_END") && !map.name.Contains("L_END"))
+                            potentialMaps.Add(map);
+                    }
+                    if (potentialMaps.Count <= 0)
+                    {
+                        foreach (var map in Lvl1maps)
+                        {
+                            if (map.name.Contains("R_END"))
+                                potentialMaps.Add(map);
                         }
                     }
+
+                    GameObject listSelectedMap = potentialMaps[Random.Range(0, potentialMaps.Count)];
+                    Lvl1maps.Remove(listSelectedMap); 
+                    GameObject selectedMap = Instantiate(listSelectedMap, Vector3.zero, Quaternion.identity);
+                    usedMaps.Add(selectedMap); 
                     GameObject oldSpawn = oldArea.transform.Find("SPAWN_L").gameObject;
-                    spawnProcedural spawnScript = oldSpawn.GetComponent<spawnProcedural>();
-                    spawnScript.mapToSpawn = selectedMap;
+                    spawnProcedural oldSpawnScript = oldSpawn.GetComponent<spawnProcedural>();
+                    oldSpawnScript.mapToSpawn = selectedMap;
 
-                    oldArea.SetActive(false);
-                    Instantiate(selectedMap, Vector3.zero, Quaternion.identity);
-                    selectedMap.SetActive(true);
-                    oldArea = selectedMap;
-                }
-                break;
-            case spawnOrientation.T:
-                if (newArea != null)
-                {
-                    oldArea.SetActive(false);
-                    newArea.SetActive(true);
-                    oldArea = newArea;
-                }
-                else
-                {
-                    List<GameObject> potentialMaps = new List<GameObject>();
-                    foreach (var map in Lvl1maps)
+                    foreach (Transform childTransform in selectedMap.transform)
                     {
-                        if (!map.name.Contains("T_end")) // Cambiar a "T_end" para la orientación T
-                            potentialMaps.Add(map);
-                    }
-
-                    GameObject selectedMap = potentialMaps[Random.Range(0, potentialMaps.Count)];
-
-                    mapSpawns.Clear();
-                    foreach (Transform child in selectedMap.transform)
-                    {
-                        if (child.name.Contains("SPAWN"))
+                        GameObject child = childTransform.gameObject;
+                        if (child.name.Contains("SPAWN_R"))
                         {
-                            mapSpawns.Add(child.gameObject);
-                        }
-                        if (child.name.Contains("SPAWN_B")) // Cambiar a "SPAWN_B" para la orientación T
-                        {
-                            Transform locationTransform = child.Find("LOCATION");
-                            if (locationTransform != null)
+                            spawnProcedural newSpawnScript = child.GetComponent<spawnProcedural>();
+                            if (newSpawnScript != null)
                             {
-                                TPspawn = locationTransform.gameObject;
+                                TPspawn = child;
+                                newSpawnScript.mapToSpawn = oldArea;
+                            }
+                            else
+                            {
+                                Debug.LogWarning("El objeto " + child.name + " no tiene un componente spawnProcedural.");
                             }
                         }
                     }
-                    GameObject oldSpawn = oldArea.transform.Find("SPAWN_T").gameObject; // Cambiar a "SPAWN_T" para la orientación T
-                    spawnProcedural spawnScript = oldSpawn.GetComponent<spawnProcedural>();
-                    spawnScript.mapToSpawn = selectedMap;
 
-                    oldArea.SetActive(false);
-                    Instantiate(selectedMap, Vector3.zero, Quaternion.identity);
-                    selectedMap.SetActive(true);
-                    oldArea = selectedMap;
+                    //selectedMap.SetActive(false);
+                    newAreaToSpawn = selectedMap;
+                    cameraEffect = true;
                 }
                 break;
 
-            case spawnOrientation.B:
-                if (newArea != null)
-                {
-                    oldArea.SetActive(false);
-                    newArea.SetActive(true);
-                    oldArea = newArea;
-                }
-                else
-                {
-                    List<GameObject> potentialMaps = new List<GameObject>();
-                    foreach (var map in Lvl1maps)
-                    {
-                        if (!map.name.Contains("B_end")) // Cambiar a "B_end" para la orientación B
-                            potentialMaps.Add(map);
-                    }
+            
+            
 
-                    GameObject selectedMap = potentialMaps[Random.Range(0, potentialMaps.Count)];
-
-                    mapSpawns.Clear();
-                    foreach (Transform child in selectedMap.transform)
-                    {
-                        if (child.name.Contains("SPAWN"))
-                        {
-                            mapSpawns.Add(child.gameObject);
-                        }
-                        if (child.name.Contains("SPAWN_T")) // Cambiar a "SPAWN_T" para la orientación B
-                        {
-                            Transform locationTransform = child.Find("LOCATION");
-                            if (locationTransform != null)
-                            {
-                                TPspawn = locationTransform.gameObject;
-                            }
-                        }
-                    }
-                    GameObject oldSpawn = oldArea.transform.Find("SPAWN_B").gameObject; // Cambiar a "SPAWN_B" para la orientación B
-                    spawnProcedural spawnScript = oldSpawn.GetComponent<spawnProcedural>();
-                    spawnScript.mapToSpawn = selectedMap;
-
-                    oldArea.SetActive(false);
-                    Instantiate(selectedMap, Vector3.zero, Quaternion.identity);
-                    selectedMap.SetActive(true);
-                    oldArea = selectedMap;
-                }
-                break;
-
-        }
-    }
-
-    public void spawnAproachBehaviour()
-    {
-        GameObject closestSpawn = null;
-        float minDistance = Mathf.Infinity;
-
-        // Iteramos sobre cada objeto en mapSpawns para calcular su distancia al jugador
-        foreach (GameObject spawn in mapSpawns)
-        {
-            // Calculamos la distancia entre el jugador y el objeto actual en mapSpawns
-            float distance = Vector3.Distance(Player.transform.position, spawn.transform.position);
-
-            // Si la distancia es menor que la mínima registrada hasta ahora, actualizamos la mínima y el objeto más cercano
-            if (distance < minDistance)
-            {
-                minDistance = distance;
-                closestSpawn = spawn;
-            }
-        }
-
-        // Si la distancia mínima es menor que 1, el jugador está lo suficientemente cerca de un spawn
-        if (closestSpawn != null && minDistance < 1f)
-        {
-            // Accedemos al script spawnProcedural asociado al spawn más cercano
-            spawnProcedural spawnScript = closestSpawn.GetComponent<spawnProcedural>();
-
-            // Si se encuentra el script, ejecutamos proceduralMap con los valores de orientación y mapa
-            if (spawnScript != null)
-            {
-                spawnOrientation orientation = (spawnOrientation)spawnScript.orientation;
-                GameObject mapToSpawn = spawnScript.mapToSpawn;
-                proceduralMap(orientation, mapToSpawn);
-            }
-            // Si no se encuentra el script, ejecutamos proceduralMap con la orientación predeterminada
-            else
-            {
-                proceduralMap(spawnOrientation.R);
-            }
         }
     }
 
@@ -313,27 +247,35 @@ public class proceduralBehaviour : MonoBehaviour
                 targetColor = Color.black;
                 timer = 0;
             }
-        }
-        if (currentColor == Color.black)
-        {
-            if (oldArea != null)
+            else
             {
-                oldArea.SetActive(false);
 
-            }
-            if (isReviving)
-            {
-                if (ReviveTPspawn != null)
+                if (newAreaToSpawn != null)
                 {
-                    Player.transform.position = ReviveTPspawn.transform.position;
-                    mainCam.transform.position = new Vector3(ReviveTPspawn.transform.position.x, ReviveTPspawn.transform.position.y, mainCam.transform.position.z);
-                }
+                    oldArea.SetActive(false);
+                    oldArea = newAreaToSpawn;
+                    Player.SetActive(false);
+                    newAreaToSpawn.SetActive(true);
+                    if (isReviving)
+                    {
+                        if (ReviveTPspawn != null)
+                        {
+                            Player.transform.position = ReviveTPspawn.transform.position;
+                            mainCam.transform.position = new Vector3(ReviveTPspawn.transform.position.x, ReviveTPspawn.transform.position.y, mainCam.transform.position.z);
+                        }
 
-            }
-            if (!isReviving)
-            {
-                Player.transform.position = TPspawn.transform.position;
-                mainCam.transform.position = new Vector3(TPspawn.transform.position.x, TPspawn.transform.position.y, mainCam.transform.position.z);
+                    }
+                    if (!isReviving)
+                    {
+                        Player.transform.position = TPspawn.transform.position;
+                        mainCam.transform.position = new Vector3(TPspawn.transform.position.x, TPspawn.transform.position.y, mainCam.transform.position.z);
+                    }
+                    Player.SetActive(true);
+
+                }
+                targetColor = Color.clear;
+                cameraEffect = false;
+                timer = 0;
             }
         }
 
@@ -344,19 +286,4 @@ public class proceduralBehaviour : MonoBehaviour
         }
     }
 
-    //public void OnTriggerStay2D(Collider2D collision)
-    //{
-    //    if (collision.gameObject.tag == "Player")
-    //    {
-    //        if (newArea != null)
-    //        {
-    //            cameraEffect = true;
-    //        }
-    //        else
-    //        {
-    //            //from the list 
-    //        }
-
-    //    }
-    //}
 }

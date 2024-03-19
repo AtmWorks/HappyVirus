@@ -17,7 +17,7 @@ public class SpawnBehaviour : MonoBehaviour
 
     public spawnController spawnController;
 
-    public List<GameObject> currentTPs;
+    //public List<GameObject> currentTPs;
     
 
     void Start()
@@ -40,7 +40,7 @@ public class SpawnBehaviour : MonoBehaviour
             thisTeleport.ReviveTPspawn = spawnPoint;
             spawnController.currentSpawner = this.gameObject;
             spawnController.spawnArea = currentArea;
-            UpdateNewTPs();
+            //UpdateNewTPs();
 
         }
     }
@@ -54,25 +54,25 @@ public class SpawnBehaviour : MonoBehaviour
 
 
     }
-    public void UpdateNewTPs()
-    {
-        // Asegúrate de que spawnControllerManager y currentTPs no sean nulos.
-        if (spawnController != null && currentTPs != null)
-        {
-            // Vaciar la lista newTPs.
-            spawnController.newTPs.Clear();
+    //public void UpdateNewTPs()
+    //{
+    //    // Asegúrate de que spawnControllerManager y currentTPs no sean nulos.
+    //    if (spawnController != null && currentTPs != null)
+    //    {
+    //        // Vaciar la lista newTPs.
+    //        spawnController.newTPs.Clear();
 
-            // Llenar newTPs con el contenido de currentTPs.
-            foreach (GameObject tp in currentTPs)
-            {
-                spawnController.newTPs.Add(tp);
-            }
-        }
-        else
-        {
-            Debug.LogWarning("spawnController o currentTPs es null");
-        }
-    }
+    //        // Llenar newTPs con el contenido de currentTPs.
+    //        foreach (GameObject tp in currentTPs)
+    //        {
+    //            spawnController.newTPs.Add(tp);
+    //        }
+    //    }
+    //    else
+    //    {
+    //        Debug.LogWarning("spawnController o currentTPs es null");
+    //    }
+    //}
 
     private IEnumerator animatorBoolWait()
     {

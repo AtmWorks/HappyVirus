@@ -10,10 +10,11 @@ public class spawnController : MonoBehaviour
     public SpawnBehaviour spawnBehaviour;
     public GameObject currentArea;
     public GameObject spawnArea;
+    public proceduralBehaviour proceduralBehaviour;
     //public GameObject TPspawn;
 
-    public List<GameObject> currentTPlist;
-    public List<GameObject> newTPs;
+    //public List<GameObject> currentTPlist;
+    //public List<GameObject> newTPs;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,13 +27,16 @@ public class spawnController : MonoBehaviour
         if (currentSpawner != null)
         {
             //TODO: RESETEAR VALORES DEL NIVEL
-            currentArea.SetActive(false);
+
+            proceduralBehaviour.oldArea.SetActive(false);
+            proceduralBehaviour.oldArea = spawnArea;
+            proceduralBehaviour.onRevive();
             spawnArea.SetActive(true);
             currentSpawner.SetActive(true);
             spawnBehaviour = currentSpawner.GetComponent<SpawnBehaviour>();
             
             spawnBehaviour.spawnProcess();
-            StartCoroutine(gestionTPs());
+            //StartCoroutine(gestionTPs());
             
 
         }
@@ -44,24 +48,24 @@ public class spawnController : MonoBehaviour
 
         
     }
-    IEnumerator gestionTPs()
-    {
-        // Espera 1 segundo.
-        yield return new WaitForSeconds(0.5f);
+    //IEnumerator gestionTPs()
+    //{
+    //    // Espera 1 segundo.
+    //    yield return new WaitForSeconds(0.5f);
 
-        // Activa los objetos en la lista newTPs.
-        foreach (GameObject obj in newTPs)
-        {
-            obj.SetActive(true);
-        }
+    //    //// Activa los objetos en la lista newTPs.
+    //    //foreach (GameObject obj in newTPs)
+    //    //{
+    //    //    obj.SetActive(true);
+    //    //}
 
-        // Desactiva los objetos en la lista oldTPs.
-        foreach (GameObject obj in currentTPlist)
-        {
-            obj.SetActive(false);
-        }
+    //    //// Desactiva los objetos en la lista oldTPs.
+    //    //foreach (GameObject obj in currentTPlist)
+    //    //{
+    //    //    obj.SetActive(false);
+    //    //}
 
-        // Desactiva el objeto que porta este script.
-        //gameObject.SetActive(false);
-    }
+    //    // Desactiva el objeto que porta este script.
+    //    //gameObject.SetActive(false);
+    //}
 }

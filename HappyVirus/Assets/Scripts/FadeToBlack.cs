@@ -29,8 +29,8 @@ public class FadeToBlack : MonoBehaviour
     public GameObject TPspawn;
     public GameObject ReviveTPspawn;
 
-    public List<GameObject> newTPs;
-    public List<GameObject> oldTPs;
+    //public List<GameObject> newTPs;
+    //public List<GameObject> oldTPs;
 
     public ResetObjectsToDefault resetComponent;
     public static List<cloneMovement> clones;
@@ -116,7 +116,7 @@ public class FadeToBlack : MonoBehaviour
                 cameraEffect = false;
                 timer = 0;
 
-                StartCoroutine(gestionTPs());
+                //StartCoroutine(gestionTPs());
 
             }
         }
@@ -172,26 +172,26 @@ public class FadeToBlack : MonoBehaviour
 
         }
     }
-    IEnumerator gestionTPs()
-    {
-        // Espera 1 segundo.
-        // Desactiva los objetos en la lista oldTPs.
-        foreach (GameObject obj in oldTPs)
-        {
-            obj.SetActive(false);
-        }
-        yield return new WaitForSeconds(0.5f);
-        // Activa los objetos en la lista newTPs.
-        foreach (GameObject obj in newTPs)
-        {
-            obj.SetActive(true);
-        }
-        UpdateNewTPs();
-        // Desactiva el objeto que porta este script.
-        if (!isReviving) gameObject.SetActive(false);
+    //IEnumerator gestionTPs()
+    //{
+    //    // Espera 1 segundo.
+    //    // Desactiva los objetos en la lista oldTPs.
+    //    foreach (GameObject obj in oldTPs)
+    //    {
+    //        obj.SetActive(false);
+    //    }
+    //    yield return new WaitForSeconds(0.5f);
+    //    // Activa los objetos en la lista newTPs.
+    //    foreach (GameObject obj in newTPs)
+    //    {
+    //        obj.SetActive(true);
+    //    }
+    //    UpdateNewTPs();
+    //    // Desactiva el objeto que porta este script.
+    //    if (!isReviving) gameObject.SetActive(false);
 
 
-    } 
+    //} 
     IEnumerator dameUnRespiro()
     {
         // Espera 1 segundo.
@@ -200,24 +200,24 @@ public class FadeToBlack : MonoBehaviour
 
     }
 
-    public void UpdateNewTPs()
-    {
-        // Asegúrate de que spawnControllerManager y currentTPs no sean nulos.
-        if (spawnController != null && newTPs != null)
-        {
-            // Vaciar la lista newTPs.
-            spawnController.currentTPlist.Clear();
+    //public void UpdateNewTPs()
+    //{
+    //    // Asegúrate de que spawnControllerManager y currentTPs no sean nulos.
+    //    if (spawnController != null && newTPs != null)
+    //    {
+    //        // Vaciar la lista newTPs.
+    //        spawnController.currentTPlist.Clear();
 
-            // Llenar newTPs con el contenido de currentTPs.
-            foreach (GameObject tp in newTPs)
-            {
-                spawnController.currentTPlist.Add(tp);
-            }
-        }
-        else
-        {
-            Debug.LogWarning("spawnController o currentTPs es null");
-        }
-    }
+    //        // Llenar newTPs con el contenido de currentTPs.
+    //        foreach (GameObject tp in newTPs)
+    //        {
+    //            spawnController.currentTPlist.Add(tp);
+    //        }
+    //    }
+    //    else
+    //    {
+    //        Debug.LogWarning("spawnController o currentTPs es null");
+    //    }
+    //}
 
 }
