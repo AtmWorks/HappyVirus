@@ -56,7 +56,6 @@ public class proceduralBehaviour : MonoBehaviour
         foreach (GameObject map in usedMaps) {
         usedMaps.Remove(map);
         Destroy(map);
-
         }
         lobbySpawn.mapToSpawn = null;
 
@@ -89,24 +88,33 @@ public class proceduralBehaviour : MonoBehaviour
                 }
                 else
                 {
+                    if (Lvl1maps.Count <= 0)
+                    {
+                        onRevive();
+                        return;
+                    }
                     openPaths--;
                     List<GameObject> potentialMaps = new List<GameObject>();
                     foreach (var map in Lvl1maps)
                     {
-                        bool isTripleAble = true;
-                        if ( openPaths >= 5) { isTripleAble = false ; }
-                            if (!map.name.Contains("R_END") && !map.name.Contains("L_END"))
-                            { 
-                            if (isTripleAble)
+
+                        if (!map.name.Contains("BT_LVL"))
+                        {
+                            if (openPaths > 5)
                             {
-                                potentialMaps.Add(map); 
+                                if (map.name.Contains("L_END"))
+                                potentialMaps.Add(map);
                             }
-                            else
+                            else if (openPaths <= 2)
                             {
-                                if (!map.name.Contains("LRTB") && !map.name.Contains("L_END") && !map.name.Contains("LRT") && !map.name.Contains("LRB") && !map.name.Contains("LTB") && !map.name.Contains("RTB") )
+                                if (!map.name.Contains("END") && (map.name.Contains("LRTB") || map.name.Contains("LRT") || map.name.Contains("LRB") || map.name.Contains("LTB") || map.name.Contains("RTB")))
                                 {
                                     potentialMaps.Add(map);
                                 }
+                            }
+                            else
+                            {
+                                    potentialMaps.Add(map);
                             }
                         }
                     }
@@ -118,10 +126,19 @@ public class proceduralBehaviour : MonoBehaviour
                                 potentialMaps.Add(map);
                         }
                     }
-
-                    GameObject listSelectedMap = potentialMaps[Random.Range(0, potentialMaps.Count)];
-                    Lvl1maps.Remove(listSelectedMap); 
-                    if(listSelectedMap.name.Contains("LRTB"))
+                    if (potentialMaps.Count == 0)
+                    {
+                        Debug.Log("HAPPENED?");
+                        onRevive();
+                        return;
+                    }
+                    int randomRangeCount = potentialMaps.Count - 1;
+                    GameObject listSelectedMap = potentialMaps[Random.Range(0, randomRangeCount)];
+                    if (!listSelectedMap.name.Contains("_END"))
+                    { 
+                        Lvl1maps.Remove(listSelectedMap);
+                    }
+                    if (listSelectedMap.name.Contains("LRTB"))
                     {
                         openPaths += 3;
                     }
@@ -129,7 +146,7 @@ public class proceduralBehaviour : MonoBehaviour
                     { 
                         openPaths += 2;
                     }
-                    else if (listSelectedMap.name.Contains("LR_LVL") || listSelectedMap.name.Contains("TB_LVL"))
+                    else if (listSelectedMap.name.Contains("RL_LVL") || listSelectedMap.name.Contains("BT_LVL"))
                     {
                         openPaths ++;
                     }
@@ -166,7 +183,7 @@ public class proceduralBehaviour : MonoBehaviour
                     cameraEffect = true;
                 }
                 break;
-                case spawnOrientation.L:
+            case spawnOrientation.L:
                 if (newArea != null)
                 {
                     for (int i = 0; i < newArea.transform.childCount; i++)
@@ -182,19 +199,44 @@ public class proceduralBehaviour : MonoBehaviour
                             }
                             break;
                         }
-                        
+
                     }
                     newAreaToSpawn = newArea;
                     cameraEffect = true;
 
                 }
+
                 else
                 {
+                    if (Lvl1maps.Count <= 0)
+                    {
+                        onRevive();
+                        return;
+                    }
+                    openPaths--;
                     List<GameObject> potentialMaps = new List<GameObject>();
                     foreach (var map in Lvl1maps)
                     {
-                        if (!map.name.Contains("R_END") && !map.name.Contains("L_END"))
-                            potentialMaps.Add(map);
+
+                        if (!map.name.Contains("BT_LVL"))
+                        {
+                            if (openPaths > 5)
+                            {
+                                if (map.name.Contains("R_END"))
+                                potentialMaps.Add(map);
+                            }
+                            else if (openPaths <= 2)
+                            {
+                                if (!map.name.Contains("END") && (map.name.Contains("LRTB") || map.name.Contains("LRT") || map.name.Contains("LRB") || map.name.Contains("LTB") || map.name.Contains("RTB")))
+                                {
+                                    potentialMaps.Add(map);
+                                }
+                            }
+                            else
+                            {
+                                potentialMaps.Add(map);
+                            }
+                        }
                     }
                     if (potentialMaps.Count <= 0)
                     {
@@ -204,11 +246,36 @@ public class proceduralBehaviour : MonoBehaviour
                                 potentialMaps.Add(map);
                         }
                     }
-
-                    GameObject listSelectedMap = potentialMaps[Random.Range(0, potentialMaps.Count)];
-                    Lvl1maps.Remove(listSelectedMap); 
+                    if (potentialMaps.Count == 0)
+                    {
+                        Debug.Log("HAPPENED?");
+                        onRevive();
+                        return;
+                    }
+                    int randomRangeCount = potentialMaps.Count - 1;
+                    GameObject listSelectedMap = potentialMaps[Random.Range(0, randomRangeCount)];
+                    if (!listSelectedMap.name.Contains("_END"))
+                    {
+                        Lvl1maps.Remove(listSelectedMap);
+                    }
+                    if (listSelectedMap.name.Contains("LRTB"))
+                    {
+                        openPaths += 3;
+                    }
+                    else if (listSelectedMap.name.Contains("LRT") || listSelectedMap.name.Contains("LRB") || listSelectedMap.name.Contains("RTB") || listSelectedMap.name.Contains("LTB"))
+                    {
+                        openPaths += 2;
+                    }
+                    else if (listSelectedMap.name.Contains("RL_LVL") || listSelectedMap.name.Contains("BT_LVL"))
+                    {
+                        openPaths++;
+                    }
+                    else if (listSelectedMap.name.Contains("END"))
+                    {
+                        openPaths--;
+                    }
                     GameObject selectedMap = Instantiate(listSelectedMap, Vector3.zero, Quaternion.identity);
-                    usedMaps.Add(selectedMap); 
+                    usedMaps.Add(selectedMap);
                     GameObject oldSpawn = oldArea.transform.Find("SPAWN_L").gameObject;
                     spawnProcedural oldSpawnScript = oldSpawn.GetComponent<spawnProcedural>();
                     oldSpawnScript.mapToSpawn = selectedMap;
@@ -236,9 +303,231 @@ public class proceduralBehaviour : MonoBehaviour
                     cameraEffect = true;
                 }
                 break;
+            case spawnOrientation.T:
+                if (newArea != null)
+                {
+                    for (int i = 0; i < newArea.transform.childCount; i++)
+                    {
+                        Transform child = newArea.transform.GetChild(i);
+                        if (child.name.Contains("SPAWN_B"))
+                        {
+                            TPspawn = child.gameObject;
+                            spawnProcedural newSpawnScript = child.GetComponent<spawnProcedural>();
+                            if (newSpawnScript != null)
+                            {
+                                newSpawnScript.mapToSpawn = oldArea;
+                            }
+                            break;
+                        }
 
-            
-            
+                    }
+                    newAreaToSpawn = newArea;
+                    cameraEffect = true;
+
+                }
+                else
+                {
+                    if (Lvl1maps.Count <= 0)
+                    {
+                        onRevive();
+                        return;
+                    }
+                    openPaths--;
+                    List<GameObject> potentialMaps = new List<GameObject>();
+                    foreach (var map in Lvl1maps)
+                    {
+
+                        if (!map.name.Contains("RL_LVL"))
+                        {
+                            if (openPaths > 5)
+                            {
+                                if (map.name.Contains("B_END"))
+                                potentialMaps.Add(map);
+                            }
+                            else if (openPaths <= 2)
+                            {
+                                if (!map.name.Contains("END") && (map.name.Contains("LRTB") || map.name.Contains("LRT") || map.name.Contains("LRB") || map.name.Contains("LTB") || map.name.Contains("RTB")))
+                                {
+                                    potentialMaps.Add(map);
+                                }
+                            }
+                            else
+                            {
+                                potentialMaps.Add(map);
+                            }
+                        }
+                    }
+                    if (potentialMaps.Count <= 0)
+                    {
+                        foreach (var map in Lvl1maps)
+                        {
+                            if (map.name.Contains("B_END"))
+                                potentialMaps.Add(map);
+                        }
+                    }
+                    if (potentialMaps.Count == 0)
+                    {
+                        Debug.Log("HAPPENED?");
+                        onRevive();
+                        return;
+                    }
+                    Debug.Log("++++COUNT"+potentialMaps.Count); 
+                    int randomRangeCount = potentialMaps.Count - 1;
+                    GameObject listSelectedMap = potentialMaps[Random.Range(0, randomRangeCount)];
+                    if (!listSelectedMap.name.Contains("_END"))
+                    {
+                        Lvl1maps.Remove(listSelectedMap);
+                    }
+                    if (listSelectedMap.name.Contains("LRTB"))
+                    {
+                        openPaths += 3;
+                    }
+                    else if (listSelectedMap.name.Contains("LRT") || listSelectedMap.name.Contains("LRB") || listSelectedMap.name.Contains("RTB") || listSelectedMap.name.Contains("LTB"))
+                    {
+                        openPaths += 2;
+                    }
+                    else if (listSelectedMap.name.Contains("RL_LVL") || listSelectedMap.name.Contains("BT_LVL"))
+                    {
+                        openPaths++;
+                    }
+                    else if (listSelectedMap.name.Contains("END"))
+                    {
+                        openPaths--;
+                    }
+                    GameObject selectedMap = Instantiate(listSelectedMap, Vector3.zero, Quaternion.identity);
+                    usedMaps.Add(selectedMap);
+                    GameObject oldSpawn = oldArea.transform.Find("SPAWN_T").gameObject;
+                    spawnProcedural oldSpawnScript = oldSpawn.GetComponent<spawnProcedural>();
+                    oldSpawnScript.mapToSpawn = selectedMap;
+
+                    foreach (Transform childTransform in selectedMap.transform)
+                    {
+                        GameObject child = childTransform.gameObject;
+                        if (child.name.Contains("SPAWN_B"))
+                        {
+                            spawnProcedural newSpawnScript = child.GetComponent<spawnProcedural>();
+                            if (newSpawnScript != null)
+                            {
+                                TPspawn = child;
+                                newSpawnScript.mapToSpawn = oldArea;
+                            }
+                            else
+                            {
+                                Debug.LogWarning("El objeto " + child.name + " no tiene un componente spawnProcedural.");
+                            }
+                        }
+                    }
+
+                    //selectedMap.SetActive(false);
+                    newAreaToSpawn = selectedMap;
+                    cameraEffect = true;
+                }
+
+                break;case spawnOrientation.B:
+                if (newArea != null)
+                {
+                    for (int i = 0; i < newArea.transform.childCount; i++)
+                    {
+                        Transform child = newArea.transform.GetChild(i);
+                        if (child.name.Contains("SPAWN_T"))
+                        {
+                            TPspawn = child.gameObject;
+                            spawnProcedural newSpawnScript = child.GetComponent<spawnProcedural>();
+                            if (newSpawnScript != null)
+                            {
+                                newSpawnScript.mapToSpawn = oldArea;
+                            }
+                            break;
+                        }
+
+                    }
+                    newAreaToSpawn = newArea;
+                    cameraEffect = true;
+
+                }
+                else
+                {
+                    if (Lvl1maps.Count <= 0)
+                    {
+                        onRevive();
+                        return;
+                    }
+                    openPaths--;
+                    List<GameObject> potentialMaps = new List<GameObject>();
+                    foreach (var map in Lvl1maps)
+                    {
+
+                        if (!map.name.Contains("RL_LVL"))
+                        {
+                            if (openPaths > 5)
+                            {
+                                if (map.name.Contains("T_END"))
+                                potentialMaps.Add(map);
+                            }
+                            else if (openPaths <= 2)
+                            {
+                                if (!map.name.Contains("END") && (map.name.Contains("LRTB") || map.name.Contains("LRT") || map.name.Contains("LRB") || map.name.Contains("LTB") || map.name.Contains("RTB")))
+                                {
+                                    potentialMaps.Add(map);
+                                }
+                            }
+                            else
+                            {
+                                potentialMaps.Add(map);
+                            }
+                        }
+                    }
+
+                    GameObject listSelectedMap = potentialMaps[Random.Range(0, potentialMaps.Count-1)];
+                    if (!listSelectedMap.name.Contains("_END"))
+                    {
+                        Lvl1maps.Remove(listSelectedMap);
+                    }
+                    if (listSelectedMap.name.Contains("LRTB"))
+                    {
+                        openPaths += 3;
+                    }
+                    else if (listSelectedMap.name.Contains("LRT") || listSelectedMap.name.Contains("LRB") || listSelectedMap.name.Contains("RTB") || listSelectedMap.name.Contains("LTB"))
+                    {
+                        openPaths += 2;
+                    }
+                    else if (listSelectedMap.name.Contains("RL_LVL") || listSelectedMap.name.Contains("BT_LVL"))
+                    {
+                        openPaths++;
+                    }
+                    else if (listSelectedMap.name.Contains("END"))
+                    {
+                        openPaths--;
+                    }
+                    GameObject selectedMap = Instantiate(listSelectedMap, Vector3.zero, Quaternion.identity);
+                    usedMaps.Add(selectedMap);
+                    GameObject oldSpawn = oldArea.transform.Find("SPAWN_B").gameObject;
+                    spawnProcedural oldSpawnScript = oldSpawn.GetComponent<spawnProcedural>();
+                    oldSpawnScript.mapToSpawn = selectedMap;
+
+                    foreach (Transform childTransform in selectedMap.transform)
+                    {
+                        GameObject child = childTransform.gameObject;
+                        if (child.name.Contains("SPAWN_T"))
+                        {
+                            spawnProcedural newSpawnScript = child.GetComponent<spawnProcedural>();
+                            if (newSpawnScript != null)
+                            {
+                                TPspawn = child;
+                                newSpawnScript.mapToSpawn = oldArea;
+                            }
+                            else
+                            {
+                                Debug.LogWarning("El objeto " + child.name + " no tiene un componente spawnProcedural.");
+                            }
+                        }
+                    }
+
+                    //selectedMap.SetActive(false);
+                    newAreaToSpawn = selectedMap;
+                    cameraEffect = true;
+                }
+                break;
 
         }
     }

@@ -3295,7 +3295,7 @@ GameObject:
   - component: {fileID: 2652550083850672204}
   - component: {fileID: 3282481490263389159}
   m_Layer: 0
-  m_Name: SPAWN_L
+  m_Name: SPAWN_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

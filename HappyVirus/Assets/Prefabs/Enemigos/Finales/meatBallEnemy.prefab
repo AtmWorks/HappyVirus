@@ -290,12 +290,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosion: {fileID: 5459446116007223409, guid: c7103d3f1f5adc94a84b83600d190164,
     type: 3}
-  reward: {fileID: 0}
+  reward: {fileID: 806819293476772316, guid: 4bf906f21efd2c649bd89237584ea1e2, type: 3}
   parent: {fileID: 41971931302871531}
   bodyrend: {fileID: 41971931241790515}
   animator: {fileID: 41971931302871528}
   Alive: 0
-  enemyHP: 0
+  enemyHP: 6
   meatBall: {fileID: 41971931269415197}
   whiteMat: {fileID: 2100000, guid: d9c0d1c6573b0a447b87d716c1366f77, type: 2}
   flashList:
@@ -608,7 +608,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 20
+  m_Radius: 23.14
 --- !u!1 &41971931302871531
 GameObject:
   m_ObjectHideFlags: 0

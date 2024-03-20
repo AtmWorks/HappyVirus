@@ -1285,12 +1285,12 @@ GameObject:
   m_Component:
   - component: {fileID: 2597308472697780765}
   m_Layer: 0
-  m_Name: LR_LVL1_C1
+  m_Name: RL_LVL1_C1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2597308472697780765
 Transform:
   m_ObjectHideFlags: 0
@@ -8250,26 +8250,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2597308472697780765}
     m_Modifications:
-    - target: {fileID: 41971931269415193, guid: a657251fda72a824fbcad15738ce96e6,
-        type: 3}
-      propertyPath: m_Radius
-      value: 23.14
-      objectReference: {fileID: 0}
-    - target: {fileID: 41971931269415193, guid: a657251fda72a824fbcad15738ce96e6,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 41971931302871529, guid: a657251fda72a824fbcad15738ce96e6,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.75
-      objectReference: {fileID: 0}
-    - target: {fileID: 41971931302871529, guid: a657251fda72a824fbcad15738ce96e6,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.75
-      objectReference: {fileID: 0}
     - target: {fileID: 41971931302871529, guid: a657251fda72a824fbcad15738ce96e6,
         type: 3}
       propertyPath: m_LocalPosition.x
