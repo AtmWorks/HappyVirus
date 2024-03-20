@@ -4,17 +4,21 @@ using UnityEngine;
 
 public class Rotation : MonoBehaviour {
     public float RotSpeed;
-    public int WichDirection = 0;
+    public int WichDirection;
 	// Use this for initialization
 	void Start ()
     {
-        WichDirection = Random.Range(0, 4);
-        
-        if (WichDirection >= 2)
-        { RotSpeed = Random.Range(-50, -30); }
+        if(RotSpeed == 0 || RotSpeed == null)
+        {
+            WichDirection = Random.Range(0, 4);
 
-        if (WichDirection <= 2)
-        { RotSpeed = Random.Range(50, 30); }
+            if (WichDirection >= 2)
+            { RotSpeed = Random.Range(-50, -30); }
+
+            if (WichDirection <= 2)
+            { RotSpeed = Random.Range(50, 30); }
+        }
+        
     }
 
 

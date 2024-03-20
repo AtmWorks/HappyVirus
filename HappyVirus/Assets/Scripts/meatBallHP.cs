@@ -6,11 +6,11 @@ using UnityEngine;
 public class meatBallHP : MonoBehaviour
 {
     public GameObject explosion;
+    public GameObject reward;
     //Sprites de enfermo
 
     public GameObject parent;
     public SpriteRenderer bodyrend;
-    public Sprite normalBody, infectedBody, infectedPlusBody,deadBody;
 
     //public GameObject EnemyObject;
     public Animator animator;
@@ -24,9 +24,7 @@ public class meatBallHP : MonoBehaviour
     void Start()
     {
         Alive = true;
-        enemyHP = 12;
     }
-
 
     IEnumerator flashDMG()
     {
@@ -51,36 +49,26 @@ public class meatBallHP : MonoBehaviour
     void Update()
     {
 
-        if (enemyHP <= 9 && enemyHP> 6) { 
-            bodyrend.sprite = infectedBody;
-        }
-        if (enemyHP <= 6 && enemyHP > 3)  
-        {
-            bodyrend.sprite = infectedPlusBody;
-            animator.SetBool("isInfected", true);
-
-        }
-
-        if (enemyHP <= 3 )
-        {
-            bodyrend.sprite = deadBody;
-            animator.SetBool("isVeryInfected", true);
-
-        }
+        
         if (enemyHP <= 0 )
         {
             animator.SetBool("isDead", true);
             meatBall.enabled = false;
-            StartCoroutine(EnemyDies());
+            EnemyDies();
         }
 
     }
 
-    IEnumerator EnemyDies()
+    void EnemyDies()
     {
+        Instantiate(explosion, new Vector3(this.gameObject.transform.position.x, this.gameObject.transform.position.y, 0), Quaternion.identity);
+        Instantiate(reward, new Vector3(this.gameObject.transform.position.x, this.gameObject.transform.position.y, 0), Quaternion.identity);
+        Instantiate(explosion, new Vector3(this.gameObject.transform.position.x + 1, this.gameObject.transform.position.y+1, 0), Quaternion.identity);
+        Instantiate(explosion, new Vector3(this.gameObject.transform.position.x +1, this.gameObject.transform.position.y-1, 0), Quaternion.identity);
+        Instantiate(explosion, new Vector3(this.gameObject.transform.position.x -1, this.gameObject.transform.position.y + 1, 0), Quaternion.identity);
+        Instantiate(explosion, new Vector3(this.gameObject.transform.position.x -1, this.gameObject.transform.position.y - 1, 0), Quaternion.identity);
 
             bodyrend.material = whiteMat;
-            yield return new WaitForSeconds(2.5f);
             Destroy(parent);
 
     }
