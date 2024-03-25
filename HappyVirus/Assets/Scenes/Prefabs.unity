@@ -2729,6 +2729,7 @@ MonoBehaviour:
   proceduralMap: {fileID: 0}
   mapToSpawn: {fileID: 0}
   orientation: 0
+  nextLvlType: 0
 --- !u!61 &68733142
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -18737,12 +18738,12 @@ PrefabInstance:
     - target: {fileID: 2268472424509113875, guid: 81e85365006d86b4f9950af5abad7a86,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -24.2
+      value: 63.3
       objectReference: {fileID: 0}
     - target: {fileID: 2268472424509113875, guid: 81e85365006d86b4f9950af5abad7a86,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 7.8
+      value: 1.1
       objectReference: {fileID: 0}
     - target: {fileID: 2268472424622656649, guid: 81e85365006d86b4f9950af5abad7a86,
         type: 3}
@@ -22577,24 +22578,23 @@ MonoBehaviour:
   Player: {fileID: 75848495}
   blobParts: {fileID: 547158854}
   isReviving: 0
-  Lvl1maps:
-  - {fileID: 3237241771850619176, guid: e69752b1cc9314449a7a5b7f4130de62, type: 3}
-  - {fileID: 3237241771850619176, guid: 60c3a44a7fc03bb4da1cbfc830d88cc5, type: 3}
+  LVLmaps:
   - {fileID: 1898613020743034524, guid: 2c1c2744898d1c441aafe220cb98c6cc, type: 3}
-  - {fileID: 7762096285765464515, guid: cfe6932a9ded22e4da4bbc336ec2606a, type: 3}
-  - {fileID: 5795283068033255745, guid: 889047d3ff87ede4c8c3685b3b46aec6, type: 3}
   - {fileID: 5795283068033255745, guid: 18d5e9e6e7f1c1849b3e1614238e1b6c, type: 3}
   - {fileID: 5795283068033255745, guid: 1f17c421039c6e34095524b83f9a9c36, type: 3}
-  - {fileID: 1898613020743034524, guid: 24ad2938970641e41b9a525f605ae040, type: 3}
-  - {fileID: 1898613020743034524, guid: d72d8c111d4aa4749866a476043312ce, type: 3}
+  - {fileID: 3237241771850619176, guid: e69752b1cc9314449a7a5b7f4130de62, type: 3}
+  - {fileID: 3237241771850619176, guid: 60c3a44a7fc03bb4da1cbfc830d88cc5, type: 3}
   - {fileID: 3995482084551124838, guid: 3f03f7a367d11a04eadbd6f4cf6b661b, type: 3}
   - {fileID: 3995482084551124838, guid: 52e82fb4fa4c38e498adc61db3ed629f, type: 3}
   - {fileID: 3237241771850619176, guid: b1ee2095d40b6ab4094d9b26a30594e3, type: 3}
   - {fileID: 3237241771850619176, guid: 1d36ee5e7b2f5ca43ab3294d5ef203f5, type: 3}
-  - {fileID: 1898613020743034524, guid: 7e93c3e5fc1efdb4fb6c02a2cae6ab7d, type: 3}
-  - {fileID: 5795283068033255745, guid: 12a325a8b6dfc8c4889cdce23d987ac2, type: 3}
-  - {fileID: 1898613020743034524, guid: 34d6b77f4983d354b86b034d9c8cf598, type: 3}
   - {fileID: 1898613020743034524, guid: 90a6d4824853ca94fbf7c27dbf60d34e, type: 3}
+  - {fileID: 1898613020743034524, guid: 34d6b77f4983d354b86b034d9c8cf598, type: 3}
+  - {fileID: 5795283068033255745, guid: 12a325a8b6dfc8c4889cdce23d987ac2, type: 3}
+  - {fileID: 3237241771850619176, guid: 1c2c78d3793a28c41893f38ae06f2cde, type: 3}
+  - {fileID: 3237241771850619176, guid: 3501670ebbda14646ac21a1b3de47fba, type: 3}
+  - {fileID: 3237241771850619176, guid: 3b3feafce45c35a4da94f1aac51ea40a, type: 3}
+  - {fileID: 3237241771850619176, guid: 954cd1386a6cda44b8af064cd31c820c, type: 3}
   mapsSecurityCopy: []
   usedMaps: []
   openPaths: 0

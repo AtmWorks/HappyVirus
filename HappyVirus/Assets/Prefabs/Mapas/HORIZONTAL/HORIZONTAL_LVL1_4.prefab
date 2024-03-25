@@ -2550,6 +2550,7 @@ MonoBehaviour:
   proceduralMap: {fileID: 0}
   mapToSpawn: {fileID: 0}
   orientation: 0
+  nextLvlType: 0
 --- !u!61 &6995886965153081457
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3382,6 +3383,7 @@ MonoBehaviour:
   proceduralMap: {fileID: 0}
   mapToSpawn: {fileID: 0}
   orientation: 1
+  nextLvlType: 0
 --- !u!61 &7980861229398239770
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4114,7 +4116,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2438898773952201164}
   m_Layer: 0
-  m_Name: RL_LVL1_B1
+  m_Name: HORIZONTAL_LVL1_4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

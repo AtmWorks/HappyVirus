@@ -2149,6 +2149,7 @@ MonoBehaviour:
   proceduralMap: {fileID: 0}
   mapToSpawn: {fileID: 0}
   orientation: 1
+  nextLvlType: 0
 --- !u!61 &2652550083850672204
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2616,7 +2617,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3839666136293611617}
   m_Layer: 0
-  m_Name: L_END_LVL1_A2
+  m_Name: L_END_LVL1_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

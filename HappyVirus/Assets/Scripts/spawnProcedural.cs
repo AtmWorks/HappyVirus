@@ -7,6 +7,7 @@ public class spawnProcedural : MonoBehaviour
     public proceduralBehaviour proceduralMap;
     public GameObject mapToSpawn;
     public spawnOrientation orientation;
+    public int nextLvlType = 0 ;
 
     private void Start()
     {
@@ -25,18 +26,18 @@ public class spawnProcedural : MonoBehaviour
         B
     }
    
-    public void OnTriggerStay2D(Collider2D other)
+    public void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.tag == "Player")
         {
 
             if (mapToSpawn != null)
             {
-                proceduralMap.proceduralMap(orientation, mapToSpawn);
+                proceduralMap.proceduralMap(orientation, nextLvlType,mapToSpawn);
             }
             else
             {
-                proceduralMap.proceduralMap(orientation);
+                proceduralMap.proceduralMap(orientation,nextLvlType);
             }
         }
     }
