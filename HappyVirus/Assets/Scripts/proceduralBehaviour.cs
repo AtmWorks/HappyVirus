@@ -237,7 +237,7 @@ public class proceduralBehaviour : MonoBehaviour
                 Debug.Log("No hay mapas potenciales disponibles." + potentialMaps.Count);
             }
 
-            GameObject listSelectedMap = potentialMaps[Random.Range(0, potentialMaps.Count)];
+            GameObject listSelectedMap = potentialMaps[Random.Range(0, (potentialMaps.Count -1))];
             LVLmaps.Remove(listSelectedMap);
 
             if (listSelectedMap.name.Contains("QUAD"))

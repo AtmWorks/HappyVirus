@@ -5,24 +5,36 @@ using UnityEngine;
 public class SpawnBehaviour : MonoBehaviour
 {
     public Animator thisAnimator;
-
     public GameObject currentArea;
     public GameObject spawnPoint;
-    public GameObject virus;
-    public PlayerMovement virusMove;
-
-    public FadeToBlack thisTeleport;
-
+    public FadeToBlack thisTeleport = null;
     public bool isInfected;
-
-    public spawnController spawnController;
-
+    public spawnController spawnController = null;
+    public bool isMainSpawner;
+    public GameObject leaveUI;
+    public bool askOnce;
     //public List<GameObject> currentTPs;
     
 
     void Start()
     {
-        //TODO: thisAnimator es igual al componente animator de este gameObject 
+        askOnce = false;
+        GameObject leaveUIParent = GameObject.Find("leaveUI");
+        if (leaveUIParent != null)
+        {
+            if (leaveUIParent.transform.childCount > 0)
+            {
+                leaveUI = leaveUIParent.transform.GetChild(0).gameObject;
+            }
+            else
+            {
+                Debug.LogError("El objeto leaveUI no tiene hijos.");
+            }
+        }
+        else Debug.LogError("No se encontró el objeto leaveUI en la escena.");
+
+        // Busca el objeto hijo dentro de leaveUIParent
+        
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -32,16 +44,15 @@ public class SpawnBehaviour : MonoBehaviour
 
             if(!isInfected)
             {
-                //TODO: thisAnimator setBool "isTransforming" true
                 thisAnimator.SetBool("isTransforming", true);
                 StartCoroutine(infect());
-                
             }
-            thisTeleport.ReviveTPspawn = spawnPoint;
-            spawnController.currentSpawner = this.gameObject;
-            spawnController.spawnArea = currentArea;
-            //UpdateNewTPs();
-
+            if(isMainSpawner)
+            {
+                thisTeleport.ReviveTPspawn = spawnPoint;
+                spawnController.currentSpawner = this.gameObject;
+                spawnController.spawnArea = currentArea;
+            }
         }
     }
 
@@ -54,26 +65,6 @@ public class SpawnBehaviour : MonoBehaviour
 
 
     }
-    //public void UpdateNewTPs()
-    //{
-    //    // Asegúrate de que spawnControllerManager y currentTPs no sean nulos.
-    //    if (spawnController != null && currentTPs != null)
-    //    {
-    //        // Vaciar la lista newTPs.
-    //        spawnController.newTPs.Clear();
-
-    //        // Llenar newTPs con el contenido de currentTPs.
-    //        foreach (GameObject tp in currentTPs)
-    //        {
-    //            spawnController.newTPs.Add(tp);
-    //        }
-    //    }
-    //    else
-    //    {
-    //        Debug.LogWarning("spawnController o currentTPs es null");
-    //    }
-    //}
-
     private IEnumerator animatorBoolWait()
     {
         yield return new WaitForSeconds(1.0f); // Espera 1 segundo
@@ -99,9 +90,32 @@ public class SpawnBehaviour : MonoBehaviour
     {
         // Espera 1 segundo.
         yield return new WaitForSeconds(1f);
-
+        if (!isMainSpawner)
+        {
+            if (!askOnce)
+            {
+                yield return StartCoroutine(askForBack());
+            }
+        }
+        // Si es el spawner principal o si askOnce ya es verdadero, 
+        // establecer isInfected y la animación de transformación
         thisAnimator.SetBool("isInfected", true);
         isInfected = true;
         thisAnimator.SetBool("isTransforming", false);
+    }
+    IEnumerator askForBack()
+    {
+        //esto no se esta ejecutando
+        if (!askOnce)
+        {
+            askOnce = true;
+            yield return new WaitForSeconds(3f);
+            //Esto si se está ejecutando
+            leaveUI.SetActive(true);
+            Time.timeScale = 0f;
+
+        }
+
+
     }
 }

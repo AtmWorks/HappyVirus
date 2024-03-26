@@ -51,7 +51,7 @@ public class PlayerCollision : MonoBehaviour {
         gotDamage = false;
     }
 
-    void PlayerDies ()
+    public void PlayerDies ()
     {
         //this.gameObject.SetActive(false);
         //SPAWN:

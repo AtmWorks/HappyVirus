@@ -4,22 +4,36 @@ using UnityEngine;
 
 public class hintTextCanvasController : MonoBehaviour
 {
-    public UnityEngine.UI.Button okButton;
+    public UnityEngine.UI.Button yesButton;
+    public UnityEngine.UI.Button noButton;
     public static GameObject childHintText;
+    public PlayerCollision playerScript;
+    public proceduralBehaviour proceduralMap;
+
+
     void Start()
     {
-        okButton.onClick.AddListener(null);
+        yesButton.onClick.AddListener(backToBase);
+        noButton.onClick.AddListener(backToNormal);
+        proceduralMap = GameObject.Find("Procedural map").GetComponent<proceduralBehaviour>();
 
+        if (proceduralMap == null)
+        {
+            Debug.LogError("Procedural map object not found in the scene.");
+        }
     }
 
-    void closeChild()
+    void backToNormal()
     {
-        
+       Time.timeScale = 1f;
+       this.gameObject.SetActive(false);
+    }
+    private void backToBase()
+    {
+        Time.timeScale = 1f;
+        playerScript.PlayerDies();
+        proceduralMap.onRevive();
+        this.gameObject.SetActive(false);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
