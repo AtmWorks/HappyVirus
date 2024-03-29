@@ -49,6 +49,11 @@ public class ProyectilBlue : MonoBehaviour {
             StartCoroutine(destroyAfter());
             
         }
+        if (collision.gameObject.tag == "Wall" || collision.gameObject.tag == "hit")
+        {
+            Instantiate(explosion, new Vector3(this.gameObject.transform.position.x, this.gameObject.transform.position.y, 0), Quaternion.identity);
+            Destroy(this.gameObject);
+        }
     }
 
     IEnumerator destroyAfter()
@@ -65,10 +70,7 @@ public class ProyectilBlue : MonoBehaviour {
         {
             transform.position += transform.right * (speed * Time.deltaTime);
         }
-        else
-        {
-            Debug.Log("No Speed");
-        }
+
         if (currentTime <= 0)
         {
             Instantiate(explosion, new Vector3(this.gameObject.transform.position.x, this.gameObject.transform.position.y, 0), Quaternion.identity);

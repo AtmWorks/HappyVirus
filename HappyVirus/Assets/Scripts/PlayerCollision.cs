@@ -46,8 +46,8 @@ public class PlayerCollision : MonoBehaviour {
     void Start ()
     {
         thisPlayed = false;
-        PlayermaxHP = 3;
-        PlayerHP = 3;
+        PlayermaxHP = 1;
+        PlayerHP = 1;
         gotDamage = false;
     }
 

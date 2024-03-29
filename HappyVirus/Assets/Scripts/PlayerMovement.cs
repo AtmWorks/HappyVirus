@@ -314,7 +314,8 @@ public class PlayerMovement : MonoBehaviour
             growingFace = false;
 
         }
-        if (PlayerCollision.PlayerHP> 1 && !VirusFaceCheck && killed1stBoss == true)
+        //if (PlayerCollision.PlayerHP> 1 && !VirusFaceCheck && killed1stBoss == true)
+        if (PlayerCollision.PlayerHP> 1 && !VirusFaceCheck )
         {
 
             growFaceOver();
@@ -338,20 +339,20 @@ public class PlayerMovement : MonoBehaviour
             followEggButtonObject.SetActive(false);
             VirusFaceCheck = false;
         }
-        if (PlayerCollision.PlayerHP <= 0)
-        {
-            VirusBody.gameObject.SetActive(false);
-            blobCircle.color = new Color32(95, 255, 100, 90);
-            blobCircle.fillAmount += 1.0f / (waitTime*2) * Time.deltaTime;
-            if(blobCircle.fillAmount >= 1.0f) 
-            {
-                blobCircle.fillAmount = 0f;
-                softBodyPosition();
-                blobCircle.color = new Color32(95, 255, 100, 255);
-                PlayerCollision.PlayerHP = 1;
-            }
+        //if (PlayerCollision.PlayerHP <= 0)
+        //{
+        //    VirusBody.gameObject.SetActive(false);
+        //    blobCircle.color = new Color32(95, 255, 100, 90);
+        //    blobCircle.fillAmount += 1.0f / (waitTime*2) * Time.deltaTime;
+        //    if(blobCircle.fillAmount >= 1.0f) 
+        //    {
+        //        blobCircle.fillAmount = 0f;
+        //        softBodyPosition();
+        //        blobCircle.color = new Color32(95, 255, 100, 255);
+        //        PlayerCollision.PlayerHP = 1;
+        //    }
 
-        }
+        //}
         //ATRAER HUEVOS AL PLAYER//
         if ((/*Input.GetMouseButton(1)||*/isAttractingEgg) && PlayerAnimator.IsShooting == false)
         {

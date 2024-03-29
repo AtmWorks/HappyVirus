@@ -69,6 +69,7 @@ public class proceduralBehaviour : MonoBehaviour
         spriteRenderer.color = currentColor;
         timer = 1f;
         cameraEffect = false;
+        openPaths = 1;
     }
     public void onRevive()
     {
@@ -234,10 +235,22 @@ public class proceduralBehaviour : MonoBehaviour
             }
             else
             {
-                Debug.Log("No hay mapas potenciales disponibles." + potentialMaps.Count);
+                Debug.Log("No hay mapas potenciales disponibles, se añade _END" + potentialMaps.Count);
+                foreach (var map in LVLmaps )
+                {
+                    Debug.Log("Emergencia: " + map.name);
+
+                    if (map.name.Contains(desiredOrientation + "_END"))
+                        potentialMaps.Add(map);
+                }
             }
 
-            GameObject listSelectedMap = potentialMaps[Random.Range(0, (potentialMaps.Count -1))];
+            GameObject listSelectedMap;
+            if (potentialMaps.Count > 0)
+            listSelectedMap = potentialMaps[Random.Range(0, potentialMaps.Count)];
+            else
+            listSelectedMap = potentialMaps[0];
+
             LVLmaps.Remove(listSelectedMap);
 
             if (listSelectedMap.name.Contains("QUAD"))
