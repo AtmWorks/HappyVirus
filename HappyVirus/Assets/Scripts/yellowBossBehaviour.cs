@@ -169,7 +169,7 @@ public class yellowBossBehaviour : MonoBehaviour
         if (bossHP <= 0)
         {
             Instantiate(upgradeObj, parent.transform.position, parent.transform.rotation);
-            Virus.killed1stBoss = true;
+            //Virus.killed1stBoss = true;
             Destroy(parent);
         }
     }

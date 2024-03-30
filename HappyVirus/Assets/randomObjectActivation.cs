@@ -18,7 +18,7 @@ public class randomObjectActivation : MonoBehaviour
     {
         if (possibleObjects.Count > 0)
         {
-            int randomIndex = Random.Range(0, (possibleObjects.Count-1));
+            int randomIndex = Random.Range(0, (possibleObjects.Count));
             possibleObjects[randomIndex].SetActive(true);
         }
         else
