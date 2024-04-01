@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class randomObjectActivation : MonoBehaviour
 {
-    public List<GameObject> possibleObjects = new List<GameObject>();
+    public List<GameObject> baseLvl1 = new List<GameObject>();
+    public List<GameObject> baseLvl2 = new List<GameObject>();
+    public List<GameObject> yellowLvl1 = new List<GameObject>();
     void Start()
     {
-        foreach (GameObject obj in possibleObjects) 
+        foreach (GameObject obj in baseLvl1) 
         {
             obj.SetActive(false);
         }
@@ -16,10 +18,10 @@ public class randomObjectActivation : MonoBehaviour
 
     void ActivateRandomObject()
     {
-        if (possibleObjects.Count > 0)
+        if (baseLvl1.Count > 0)
         {
-            int randomIndex = Random.Range(0, (possibleObjects.Count));
-            possibleObjects[randomIndex].SetActive(true);
+            int randomIndex = Random.Range(0, (baseLvl1.Count));
+            baseLvl1[randomIndex].SetActive(true);
         }
         else
         {

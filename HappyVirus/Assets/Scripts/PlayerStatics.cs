@@ -8,14 +8,13 @@ public class PlayerStatics : MonoBehaviour {
     public static int O2counter;
     public static int maxO2counter;
     public static int EggsCounterPubl;
-    public static int VirusState;
     public static float inmuneTimer;//
+    public static int colorState = 0;
 	// Use this for initialization
 	void Start ()
     {
        // creationState = 0;
         O2counter = 0;
-        VirusState = 1;
         maxO2counter = 20;
     }
 	

@@ -100,7 +100,6 @@ MonoBehaviour:
   flashMaterial: {fileID: 2100000, guid: d9c0d1c6573b0a447b87d716c1366f77, type: 2}
   duration: 0.1
   whiteColor: {r: 0, g: 0, b: 0, a: 0}
-  oldColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &93520065722725367
 GameObject:
   m_ObjectHideFlags: 0
@@ -4959,7 +4958,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2384419830729266223
 Transform:
   m_ObjectHideFlags: 0
@@ -5091,7 +5090,6 @@ MonoBehaviour:
   flashMaterial: {fileID: 2100000, guid: d9c0d1c6573b0a447b87d716c1366f77, type: 2}
   duration: 0.1
   whiteColor: {r: 0, g: 0, b: 0, a: 0}
-  oldColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &1954726896801677488
 GameObject:
   m_ObjectHideFlags: 0
@@ -5192,7 +5190,6 @@ MonoBehaviour:
   flashMaterial: {fileID: 2100000, guid: d9c0d1c6573b0a447b87d716c1366f77, type: 2}
   duration: 0.1
   whiteColor: {r: 0, g: 0, b: 0, a: 0}
-  oldColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &4322807743110173701
 GameObject:
   m_ObjectHideFlags: 0
@@ -5440,7 +5437,6 @@ MonoBehaviour:
   flashMaterial: {fileID: 2100000, guid: d9c0d1c6573b0a447b87d716c1366f77, type: 2}
   duration: 0.1
   whiteColor: {r: 0, g: 0, b: 0, a: 0}
-  oldColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &6384207868020867219
 GameObject:
   m_ObjectHideFlags: 0
@@ -5652,7 +5648,6 @@ MonoBehaviour:
   flashMaterial: {fileID: 2100000, guid: d9c0d1c6573b0a447b87d716c1366f77, type: 2}
   duration: 0.1
   whiteColor: {r: 0, g: 0, b: 0, a: 0}
-  oldColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &6799680249343844494
 GameObject:
   m_ObjectHideFlags: 0
@@ -5968,9 +5963,13 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 12.713356, y: 3.230976}
+    - - {x: 3.5001705, y: 4.4938483}
+      - {x: 6.9803267, y: 5.4191656}
+      - {x: 12.713356, y: 3.230976}
       - {x: 13.065669, y: -0.45641524}
-      - {x: 12.415142, y: -3.7871017}
+      - {x: 12.492966, y: -4.5268645}
+      - {x: 9.137599, y: -6.3105125}
+      - {x: 4.300894, y: -5.5411386}
       - {x: -1.2853708, y: -0.549716}
       - {x: -1.4433985, y: 0.52363634}
   m_UseDelaunayMesh: 0
@@ -6095,4 +6094,3 @@ MonoBehaviour:
   flashMaterial: {fileID: 2100000, guid: d9c0d1c6573b0a447b87d716c1366f77, type: 2}
   duration: 0.1
   whiteColor: {r: 0, g: 0, b: 0, a: 0}
-  oldColor: {r: 0, g: 0, b: 0, a: 0}

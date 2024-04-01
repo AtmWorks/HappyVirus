@@ -3610,7 +3610,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3839666136293611617}
   m_Layer: 0
-  m_Name: R_END_LVL1_1
+  m_Name: R_END_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -11,8 +11,9 @@ public class PlayerMovement : MonoBehaviour
     public static bool VirusFaceCheck;
     //public bool VirusFaceCheck;
 
+    public int colorStatus = 0;
+
     public GameObject smoke;
-    public GameObject bigLight;
     public GameObject VirusFace;
     public GameObject VirusSkin;
     public GameObject VirusBody;
@@ -118,7 +119,7 @@ public class PlayerMovement : MonoBehaviour
         //VirusSkin.SetActive(false);
         growingFace = false;
 
-        faceButton.onClick.AddListener(growFaceOver);
+        faceButton.onClick.AddListener(changeColor);
         tentacleButton.onClick.AddListener(showTentacles);
         addO2Button.onClick.AddListener(getO2);
         smokeButton.onClick.AddListener(useSmoke);
@@ -129,6 +130,18 @@ public class PlayerMovement : MonoBehaviour
         killed1stBoss = false;
 
     }
+    void changeColor()
+    {
+        if(colorStatus == 0)
+        {
+            colorStatus = 1;
+        }
+        else if (colorStatus == 1)
+        {
+            colorStatus = 0;
+        }
+    }
+
 
     public GameObject getMouseOverThing()
     {
@@ -215,11 +228,9 @@ public class PlayerMovement : MonoBehaviour
             //VirusFace.SetActive(true);
             //PlayerCollision.PlayermaxHP = 6;
             //PlayerCollision.PlayerHP = PlayerCollision.PlayermaxHP;
-            PlayerStatics.VirusState = 2;
             softBodyPosition();
             growingFace = true;
             Debug.Log("Face Growing");
-            bigLight.SetActive(true);
             creatteEggButtonObject.SetActive(true);
             followEggButtonObject.SetActive(true);
             VirusFaceCheck = true;
@@ -297,6 +308,11 @@ public class PlayerMovement : MonoBehaviour
     }
     void FixedUpdate ()
     {
+
+        if (colorStatus != PlayerStatics.colorState)
+        {
+            PlayerStatics.colorState = colorStatus ;
+        }
         //CANVAS BUTTON INPUTS
 
         //PARA HUEVOS MANTENIDO
@@ -325,14 +341,12 @@ public class PlayerMovement : MonoBehaviour
         if (PlayerCollision.PlayerHP <= 1 && VirusFaceCheck == true )
         {
             //VirusFace.SetActive(false);
-            PlayerStatics.VirusState = 1;
             VirusFace.gameObject.transform.localScale = new Vector3(0, 0, 0);
             //VirusSkin.gameObject.transform.localScale = new Vector3(0, 0, 0);
             
 
             //PlayerCollision.PlayermaxHP =3;
             //PlayerCollision.PlayerHP = 3;
-            bigLight.SetActive(false);
             tentacles.SetActive(false);
             catchTentacleButton.SetActive(false);
             creatteEggButtonObject.SetActive(false);
