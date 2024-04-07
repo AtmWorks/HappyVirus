@@ -28,6 +28,7 @@ public class proceduralBehaviour : MonoBehaviour
     public List<GameObject> mapsSecurityCopy;
     public bool isEscapeAvailable;
     public int passedRooms;
+    public static int difficutly = 0; 
 
     //new try map generation
     //Nombres de los mapas: 
@@ -354,7 +355,13 @@ public class proceduralBehaviour : MonoBehaviour
             }
             passedRooms++;
             openPaths--;
-            if(passedRooms >= 4) { isEscapeAvailable = true; }
+            if(passedRooms >= 4) { 
+                isEscapeAvailable = true;
+                if (difficutly == 0)
+                {
+                    difficutly = 1;
+                }
+            }
             List<GameObject> potentialMaps = new List<GameObject>();
             Debug.Log("ENTERING MAP BANS");
             int mapFetching = 0;
@@ -376,35 +383,46 @@ public class proceduralBehaviour : MonoBehaviour
                         Debug.Log("Map banned:" + map.name);
                         shouldBreak = true;
                     }
-                }
-                
-                if (shouldBreak) continue;
-                //si hay mas de 5 caminos abiertos, cerramos seccion
-                if (openPaths >= 5)
-                {
-                    if (map.name.Contains(desiredOrientation+"_END"))
-                        potentialMaps.Add(map);
-                }
-                //si quedan 2 o menos caminos, no dejamos que haya un cierre de sección
-                else if (openPaths <= 2)
-                {
-                    if (!map.name.Contains("END"))
+                    if (shouldBreak) continue;
+                    //si hay mas de 5 caminos abiertos, cerramos seccion
+                    if (openPaths >= 5)
+                    {
+                        if (map.name.Contains(desiredOrientation + "_END"))
+                            potentialMaps.Add(map);
+                    }
+                    //si quedan 2 o menos caminos, no dejamos que haya un cierre de sección
+                    else if (openPaths <= 2)
+                    {
+                        if (!map.name.Contains("END"))
+                        {
+                            potentialMaps.Add(map);
+                        }
+                    }
+                    //si estamos en rango de caminos, da igual que mapa sacar.
+                    else
                     {
                         potentialMaps.Add(map);
                     }
                 }
-                //si estamos en rango de caminos, da igual que mapa sacar.
                 else
                 {
-                    potentialMaps.Add(map);
+                    if (shouldBreak) continue;
+
+                    if (map.name.Contains("ESC"))
+                    {
+                        potentialMaps.Add(map);
+
+                    }
+
                 }
+                
+                
             }
-            string potentialMapsString = "Potential maps after filter: ";
-            foreach (var map in potentialMaps)
+            if (isEscapeAvailable)
             {
-                potentialMapsString += map.name + ", ";
+                isEscapeAvailable = false;
+                passedRooms = 0;
             }
-            Debug.Log(potentialMapsString);
 
             if (potentialMaps.Count <= 0)
             {

@@ -6,6 +6,10 @@ public class PlayerStatics : MonoBehaviour {
 
    // public static int creationState;
     public static int O2counter;
+    public static int redCurrCounter;
+    public static int blueCurrCounter;
+    public static int yellowCurrCounter;
+
     public static int maxO2counter;
     public static int EggsCounterPubl;
     public static float inmuneTimer;//

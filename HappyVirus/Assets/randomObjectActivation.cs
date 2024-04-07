@@ -18,16 +18,32 @@ public class randomObjectActivation : MonoBehaviour
 
     void ActivateRandomObject()
     {
-        if (baseLvl1.Count > 0)
+        if (proceduralBehaviour.difficutly == 0)
         {
-            int randomIndex = Random.Range(0, (baseLvl1.Count));
-            baseLvl1[randomIndex].SetActive(true);
+            if (baseLvl1.Count > 0)
+            {
+                int randomIndex = Random.Range(0, (baseLvl1.Count));
+                baseLvl1[randomIndex].SetActive(true);
+            }
+            else
+            {
+                Debug.LogWarning("No possible objects to activate.");
+            }
         }
-        else
+        else if (proceduralBehaviour.difficutly == 1)
         {
-            Debug.LogWarning("No possible objects to activate.");
+            if (baseLvl2.Count > 0)
+            {
+                int randomIndex = Random.Range(0, (baseLvl2.Count));
+                baseLvl2[randomIndex].SetActive(true);
+            }
+            else
+            {
+                Debug.LogWarning("No possible objects to activate.");
+            }
         }
-        
+
+
     }
 
 }

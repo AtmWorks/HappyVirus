@@ -120,6 +120,8 @@ MonoBehaviour:
   canChase: 1
   thisCollider: {fileID: 5848048756380665674}
   chaseSpeed: 3
+  tagToFollow: 
+  objType: 0
 --- !u!58 &1180994788428494783
 CircleCollider2D:
   m_ObjectHideFlags: 0

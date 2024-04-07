@@ -13,6 +13,8 @@ public class HPbar : MonoBehaviour {
     public int EggCounts;
     public int O2Counter;
     public Text O2Text;
+    public Text redcurrText;
+    public Text bluecurrText;
     public Text EggsText;
     bool isDead;
     public GameObject[] MaxHPS;
@@ -68,19 +70,18 @@ public class HPbar : MonoBehaviour {
     void Update ()
     {
         EggCounts = PlayerStatics.EggsCounterPubl;
-        O2Counter = PlayerStatics.O2counter;
         maxHealth = PlayerCollision.PlayermaxHP;
         currentHealth = PlayerCollision.PlayerHP;
         EggsText.text = "" + EggCounts.ToString() ;
-        O2Text.text = "" + O2Counter.ToString() + "/" + PlayerStatics.maxO2counter ;
+        O2Text.text = "" + PlayerStatics.O2counter.ToString() + "/" + PlayerStatics.maxO2counter ;
+        redcurrText.text = "" + PlayerStatics.redCurrCounter.ToString();
+        bluecurrText.text = "" + PlayerStatics.blueCurrCounter.ToString();
         updateHP();
         isHealButtonPress = healButton.buttonPressed;
         if (isHealButtonPress)
         {
-            Debug.Log("BUTTON HEAL IS PRESSED");
             if(PlayerCollision.PlayerHP < PlayerCollision.PlayermaxHP && O2Counter >= 5) 
             {
-                Debug.Log("STARTING TO HEAL");
                 healEffect.SetActive(true);
                 PlayerAnimator.IsInfecting= true;
                 healTime += Time.deltaTime;
