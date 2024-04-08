@@ -9,13 +9,13 @@ public class EnemyHP : MonoBehaviour {
     public GameObject realExplosion;
     public GameObject EnemyObject;
     public GameObject face;
-    public SpriteRenderer bodyRend;
+    //public SpriteRenderer bodyRend;
     public GameObject corpse;
     public Animator thisAnim;
     public ChasePlayer chaseScript;
     public float deadlyTimer;
 
-    public bool isInfected;
+    //public bool isInfected;
     public List<SimpleFlash> flashList;
     public Material flashMaterial;
 
@@ -36,10 +36,10 @@ public class EnemyHP : MonoBehaviour {
 
         deadlyTimer = 1.5f;
         //enemyHP = 2;
-        if (isInfected)
-        {
-            StartCoroutine(infectDelay());
-        }
+        //if (isInfected)
+        //{
+        //    StartCoroutine(infectDelay());
+        //}
     }
 
     void EnemyDies()
@@ -82,13 +82,13 @@ public class EnemyHP : MonoBehaviour {
         }
     }
 
-    public IEnumerator infectDelay()
-    {
+    //public IEnumerator infectDelay()
+    //{
 
-        thisAnim.SetBool("isInfected", true);
-        yield return null;
+    //    thisAnim.SetBool("isInfected", true);
+    //    yield return null;
 
-    }
+    //}
     void FixedUpdate () {
 
 
