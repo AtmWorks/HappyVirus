@@ -25,14 +25,14 @@ public class colorController : MonoBehaviour
         if (PlayerStatics.colorState != colorState)
         {
             colorState = PlayerStatics.colorState;
-            if (thisShapeRenderer != null) 
-            {
-                thisShapeRenderer.color = colorList[colorState];
-            }
-            if (thisSpriteRenderer != null)
-            {
-                thisSpriteRenderer.color = colorList[colorState];
-            }
+        }
+        if (thisShapeRenderer != null && thisShapeRenderer.color != colorList[colorState])
+        {
+            thisShapeRenderer.color = colorList[colorState];
+        }
+        if (thisSpriteRenderer != null && thisSpriteRenderer.color != colorList[colorState])
+        {
+            thisSpriteRenderer.color = colorList[colorState];
         }
     }
 }

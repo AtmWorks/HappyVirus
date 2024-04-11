@@ -127,14 +127,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2649738153970708873}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0.037722457, w: 0.99928826}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1.0884, y: 1.0884, z: 1.0884}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3205552969926132525}
   m_Father: {fileID: 6198980319380679750}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -4.324}
 --- !u!60 &5616548244536043920
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -179,15 +179,15 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: -6.7179785, y: 16.258959}
-      - {x: -12.701805, y: 12.307195}
-      - {x: -15.455782, y: 6.7326818}
-      - {x: -15.865945, y: 1.5821736}
-      - {x: 17.075935, y: -0.40692097}
-      - {x: 16.25804, y: 5.9514623}
-      - {x: 13.6905365, y: 10.8026}
-      - {x: 7.8794174, y: 15.520251}
-      - {x: 1.2144878, y: 17.264305}
+    - - {x: -6.8769865, y: 18.440998}
+      - {x: -12.420165, y: 15.131142}
+      - {x: -17.348644, y: 8.196275}
+      - {x: -18.672096, y: 1.758589}
+      - {x: 18.773653, y: -0.6359455}
+      - {x: 18.02432, y: 5.8404207}
+      - {x: 16.008804, y: 10.718003}
+      - {x: 9.98505, y: 16.91655}
+      - {x: 1.5595468, y: 19.612114}
   m_UseDelaunayMesh: 0
 --- !u!114 &4335827339593800648
 MonoBehaviour:
@@ -629,7 +629,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosion: {fileID: 5459446116007223409, guid: 69ada58f03867024aa748d198bc627e8,
     type: 3}
-  EnemyObject: {fileID: 9072759840529105563}
+  EnemyObject: {fileID: 2649738153970708873}
   corpse: {fileID: 2776787549449851587, guid: cb55e5fb4bb29364aa2ce7f0c2f2d2ed, type: 3}
   flashMaterial: {fileID: 2100000, guid: d9c0d1c6573b0a447b87d716c1366f77, type: 2}
   flashList:

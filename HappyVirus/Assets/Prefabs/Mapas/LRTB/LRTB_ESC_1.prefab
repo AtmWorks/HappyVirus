@@ -3396,12 +3396,12 @@ GameObject:
   m_Component:
   - component: {fileID: 5495991327248957924}
   m_Layer: 0
-  m_Name: LRTB_1_ESC
+  m_Name: LRTB_ESC_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &5495991327248957924
 Transform:
   m_ObjectHideFlags: 0

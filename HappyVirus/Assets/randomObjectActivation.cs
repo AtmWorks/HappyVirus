@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class randomObjectActivation : MonoBehaviour
@@ -22,8 +23,11 @@ public class randomObjectActivation : MonoBehaviour
         {
             if (baseLvl1.Count > 0)
             {
-                int randomIndex = Random.Range(0, (baseLvl1.Count));
-                baseLvl1[randomIndex].SetActive(true);
+                // Baraja la lista baseLvl1
+                List<GameObject> shuffledList = baseLvl1.OrderBy(x => Random.value).ToList();
+
+                // Activa el primer objeto de la lista barajada
+                shuffledList[0].SetActive(true);
             }
             else
             {
@@ -34,8 +38,11 @@ public class randomObjectActivation : MonoBehaviour
         {
             if (baseLvl2.Count > 0)
             {
-                int randomIndex = Random.Range(0, (baseLvl2.Count));
-                baseLvl2[randomIndex].SetActive(true);
+                // Baraja la lista baseLvl1
+                List<GameObject> shuffledList = baseLvl2.OrderBy(x => Random.value).ToList();
+
+                // Activa el primer objeto de la lista barajada
+                shuffledList[0].SetActive(true);
             }
             else
             {
