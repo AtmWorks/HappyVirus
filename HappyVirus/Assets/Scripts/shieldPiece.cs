@@ -12,7 +12,6 @@ public class MovementAndDamage : MonoBehaviour
 
     private Rigidbody2D rb;
     private bool isInvincible = false;
-    private bool isArriving = false;
 
     void Start()
     {
@@ -34,12 +33,10 @@ public class MovementAndDamage : MonoBehaviour
             // Comprueba si ha llegado a la posición
             if (distance <= arrivalThreshold)
             {
-                isArriving = true;
                 rb.velocity = Vector2.Lerp(rb.velocity, direction * 5, Time.deltaTime * 2f); // Lerp a velocidad 1
             }
             else
             {
-                isArriving = false;
                 rb.velocity = Vector2.Lerp(rb.velocity, direction * speed, Time.deltaTime * 0.5f); // Lerp a velocidad speed
             }
         }

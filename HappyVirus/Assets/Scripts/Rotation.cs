@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Rotation : MonoBehaviour {
-    public float RotSpeed;
+    public float RotSpeed = 0;
     public int WichDirection;
 	// Use this for initialization
 	void Start ()
     {
-        if(RotSpeed == 0 || RotSpeed == null)
+        if(RotSpeed == 0)
         {
             WichDirection = Random.Range(0, 4);
 

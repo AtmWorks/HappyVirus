@@ -14860,13 +14860,13 @@ Transform:
   - {fileID: 7421720072559776252}
   - {fileID: 6724816640832917643}
   - {fileID: 8176194567463900651}
-  - {fileID: 5760529448208602880}
   - {fileID: 9183838375854348192}
   - {fileID: 1363117603716494960}
   - {fileID: 8908958835349607100}
   - {fileID: 2745431485219894263}
   - {fileID: 515510022098479681}
   - {fileID: 8156123272182588225}
+  - {fileID: 5760529448208602880}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4033966165009992277
@@ -17506,7 +17506,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mainCamera: {fileID: 0}
   zoomSpeed: 0.5
-  targetZoom: 11.5
+  targetZoom: 12.5
   zoomEpsilon: 0.01
 --- !u!1 &4796797603795781526
 GameObject:
