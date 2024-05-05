@@ -23,7 +23,7 @@ public class plaquetaBehaviour : MonoBehaviour
         Virus = GameObject.Find("Virus");
         //timer = 4;
         PlaqisChasing = false;
-        AttractionSpeed = 6;
+        AttractionSpeed = 2;
         animator = GetComponent<Animator>();
         thisRandScript = GetComponent<RandomMovement>();
     }
@@ -60,6 +60,8 @@ public class plaquetaBehaviour : MonoBehaviour
         {
             if (PlaqisChasing == true)
             {
+                animator.SetBool("isChasing", true);
+
                 thisRandScript.enabled = false;
                 AttractionSpeed += (Time.deltaTime / 2);
                 transform.position = Vector3.MoveTowards(transform.position, Virus.transform.position, AttractionSpeed * Time.deltaTime);

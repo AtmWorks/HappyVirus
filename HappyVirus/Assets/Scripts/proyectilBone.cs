@@ -13,7 +13,14 @@ public class proyectilBone : MonoBehaviour{
     void Start()
     {
         proyectHit = false;
-        currentTime = 5f;
+        currentTime = 3f;
+    }
+    IEnumerator destroyAfter()
+    {
+        yield return new WaitForSeconds(0.15f);
+        Instantiate(explosion, new Vector3(this.gameObject.transform.position.x, this.gameObject.transform.position.y, 0), Quaternion.identity);
+        Destroy(this.gameObject);
+
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -22,6 +29,10 @@ public class proyectilBone : MonoBehaviour{
         {
             Instantiate(explosion, new Vector3(this.gameObject.transform.position.x, this.gameObject.transform.position.y, 0), Quaternion.identity);
             Destroy(this.gameObject);
+        }
+        if ( collision.gameObject.tag == "Virus")
+        {
+            StartCoroutine(destroyAfter());
         }
 
 
@@ -33,6 +44,10 @@ public class proyectilBone : MonoBehaviour{
         {
             Instantiate(explosion, new Vector3(this.gameObject.transform.position.x, this.gameObject.transform.position.y, 0), Quaternion.identity);
             Destroy(this.gameObject);
+        }
+        if ( collision.gameObject.tag == "Virus")
+        {
+            StartCoroutine(destroyAfter());
         }
 
 

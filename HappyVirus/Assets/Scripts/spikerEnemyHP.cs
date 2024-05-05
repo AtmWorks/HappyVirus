@@ -9,14 +9,12 @@ public class spikerEnemyHP : MonoBehaviour
     public int hp;
     public List<SimpleFlash> FlashList;
     public spikerEnemyBehaviour parent;
-    public Material whiteMaterial;
-    public Animator animator;
-    public bool isDead;
-    public Collider2D thisCollider;
+   
+
     void Start()
     {
-        hp = 8;
-        isDead = false;
+        if (hp==0) hp = 8;
+        
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -38,26 +36,13 @@ public class spikerEnemyHP : MonoBehaviour
     }
     private void Update()
     {
-       if (hp <= 0 && !isDead)
+       if (hp <= 0 )
        {
-            StartCoroutine(allWhite());
-       }
-       if (isDead)
-        {
-            Destroy(parent.gameObject);
+            parent.isDead = true;
+
         }
+       
     }
 
-    IEnumerator allWhite()
-    {
-        foreach(SimpleFlash flash in FlashList)
-        {
-            GameObject objetToWhite = flash.gameObject;
-            SpriteRenderer renderer = objetToWhite.GetComponent<SpriteRenderer>();
-            renderer.material = whiteMaterial;
-        }
-        thisCollider.enabled = false;
-        animator.SetBool("isDead", true);
-        yield return null;
-    }
+    
 }

@@ -12,14 +12,17 @@ public class spikerEnemyBehaviour : MonoBehaviour
     public GameObject rotationParent;
     public GameObject target;
 
+    public GameObject parent;
+
     public Rigidbody2D rb;
     //public GameObject projectile;
 
-    public float speed;
-    public float minimumDistance;
+    public float maxSpeed;
+    public float accelerationRate = 5f; 
+    private Vector2 targetVelocity; // Velocidad objetivo gradual
 
-    public bool retreat;
-    public bool canShoot;
+    public float desiredDistance = 0;
+
     public bool isShooting;
     public bool canRotate;
     public bool isVirusInRange;
@@ -33,6 +36,10 @@ public class spikerEnemyBehaviour : MonoBehaviour
     public float resetTime;
     public float nextTime;
 
+    public bool isDead;
+    public GameObject explosion;
+
+
 
     private Quaternion rotacionInicial;
 
@@ -42,14 +49,12 @@ public class spikerEnemyBehaviour : MonoBehaviour
     void Start()
     {
      //   rb = GetComponent<Rigidbody2D>();
-        retreat = false;
-        timer = Random.Range(-10f, -5f); ;
+        isDead = false;
+        timer = -3 ;
         resetTime = 2f;
         nextTime = -4f;
         effectToSpawn = vfx[0];
-        speed = 3;
         rotacionInicial = Quaternion.Euler(0f, 0f, transform.rotation.eulerAngles.z);
-        canShoot = false;
         canRotate = false;
         isShooting = false;
         isVirusInRange = false;
@@ -57,60 +62,124 @@ public class spikerEnemyBehaviour : MonoBehaviour
 
     }
 
+    public void shoot()
+    {
+        canRotate = false;
+        if (target != null)
+        {
+                alreadyShoot = true;
+                SpawnVFX();
+        }
+    }
 
 
     // Update is called once per frame
     void FixedUpdate()
     {
+        if (isDead)
+        {
+            enemyDies();
+        }
         timer += Time.deltaTime;
 
-        if (isShooting)
+        if (isShooting && !alreadyShoot)
         {
-            if (canShoot && !alreadyShoot)
-            {
-                SpawnVFX();
-                isShooting = false;
-                alreadyShoot=true;
-            }
+            shoot();
         }
-
-        if (timer > 0f )
+        
+        if (timer > 0f && target != null )
         {
-            if(canShoot)
-            {
-                _animator.SetBool("imShooting", true);
-            }
-
+            _animator.SetBool("imShooting", true);
         }
-        if (canRotate)
-        {
-            rotationParent.GetComponent<Rotation>().enabled = true; // Desactivar el script
+        //if (canRotate)
+        //{
+        //    rotationParent.GetComponent<Rotation>().enabled = true; // Desactivar el script
 
-        }
-        if (!canRotate)
-        {
-            rotationParent.GetComponent<Rotation>().enabled = false; // Desactivar el script
+        //}
+        //if (!canRotate)
+        //{
+        //    rotationParent.GetComponent<Rotation>().enabled = false; // Desactivar el script
 
-        }
-        if (timer > 2.25f )
+        //}
+        if (timer > 1f )
         {
             _animator.SetBool("imShooting", false);
             alreadyShoot = false;
+            canRotate = true;
 
-
-            timer = Random.Range(-3f, -6f);
+            timer = Random.Range(-6f, -3f);
            
         }
-        if (retreat)
+
+        float distance = Vector3.Distance(target.gameObject.transform.position, transform.position);
+        if (target != null ) 
+        { 
+        if (distance > desiredDistance)
         {
-            if (isVirusInRange) 
-            {
-                Vector2 direction = (target.gameObject.transform.position - transform.position).normalized;
-                rb.velocity = -direction * speed;
-            }
-            
+            isVirusInRange = false;
         }
+        else if (distance < desiredDistance)
+        {
+            isVirusInRange = true;
+        }
+        }
+
+        pullBackMovement();
+
+        keepRotation();
+
         
+    }
+    public void enemyDies()
+    {
+        Instantiate(explosion, new Vector3(this.gameObject.transform.position.x+1, this.gameObject.transform.position.y +1, 0), Quaternion.identity);
+        Instantiate(explosion, new Vector3(this.gameObject.transform.position.x-1, this.gameObject.transform.position.y -1, 0), Quaternion.identity);
+        Instantiate(explosion, new Vector3(this.gameObject.transform.position.x, this.gameObject.transform.position.y, 0), Quaternion.identity);
+        Instantiate(explosion, new Vector3(this.gameObject.transform.position.x - 1, this.gameObject.transform.position.y +1, 0), Quaternion.identity);
+        Instantiate(explosion, new Vector3(this.gameObject.transform.position.x + 1, this.gameObject.transform.position.y -1, 0), Quaternion.identity);
+        Destroy(parent);
+    }
+    //public void pullBackMovement()
+    //{
+    //    if (isVirusInRange)
+    //    {
+    //        Vector2 direction = (target.gameObject.transform.position - transform.position).normalized;
+    //        //TODO: modify the next line to LERP the velocity instead setting it directly 
+    //        rb.velocity = -direction * maxSpeed;
+    //    }
+    //    if (!isVirusInRange)
+    //    {
+    //        if (target != null)
+    //        {
+    //            Vector2 direction = (target.gameObject.transform.position - transform.position).normalized;
+    //            rb.velocity = direction * maxSpeed;
+    //        }
+    //    }
+    //}
+
+    public void pullBackMovement()
+    {
+
+        float distance = Vector3.Distance(target.gameObject.transform.position, transform.position);
+        if (distance > desiredDistance -1.5 && distance < desiredDistance + 1.5) { return;}
+        if (isVirusInRange)
+        {
+            Vector2 direction = (target.gameObject.transform.position - transform.position).normalized;
+            targetVelocity = -direction * maxSpeed; // Establecer la nueva velocidad objetivo
+        }
+        else if (target != null)
+        {
+            Vector2 direction = (target.gameObject.transform.position - transform.position).normalized;
+            targetVelocity = direction * maxSpeed; // Establecer la nueva velocidad objetivo
+        }
+
+        // Aplicar una interpolación suave de la velocidad actual hacia la velocidad objetivo
+        rb.velocity = Vector2.Lerp(rb.velocity, targetVelocity, Time.deltaTime * accelerationRate);
+    }
+
+
+    public void keepRotation()
+    {
         // Obtenemos el ángulo de rotación actual en el eje Z
         float anguloActual = transform.rotation.eulerAngles.z;
         // Si la rotación actual es diferente de la rotación inicial en el eje Z
@@ -136,22 +205,9 @@ public class spikerEnemyBehaviour : MonoBehaviour
         if (collision.tag == "Virus")
         {
             target = collision.gameObject;
-            canShoot = true;
-            retreat = true;
-            isVirusInRange = true;
         }
     }
-    public void OnTriggerExit2D(Collider2D collision)
-    {
-        if (collision.tag == "Virus")
-        {
-            retreat = false;
-            isVirusInRange = false;
-
-            //canShoot = false;
-
-        }
-    }
+ 
 
     void SpawnVFX()
     {

@@ -30,7 +30,9 @@ public class proceduralBehaviour : MonoBehaviour
 
     public bool isEscapeAvailable;
     public int passedRooms;
-    public static int difficutly = 0; 
+    public static int difficutly = 0;
+    public static string lastOrientation;
+
     //leyenda:
     // 1 2 y 3 (rojo)
     // 4 y 5  (amarillo)
@@ -48,6 +50,7 @@ public class proceduralBehaviour : MonoBehaviour
     public GameObject TPspawn; 
     public GameObject ReviveTPspawn;
     public float timer;
+
 
     private void Start()
     {
@@ -82,6 +85,7 @@ public class proceduralBehaviour : MonoBehaviour
 
     public void proceduralMap(spawnOrientation enterSpawnOrientation, int nextLevelType , GameObject areaToSpawn = null )
     {
+        
         string desiredOrientation = "L";
         //consts to switch
         switch (enterSpawnOrientation)
@@ -99,6 +103,8 @@ public class proceduralBehaviour : MonoBehaviour
                 desiredOrientation = "T";
             break;
         }
+        lastOrientation = desiredOrientation;
+
         if ( areaToSpawn != null )
         {
 
