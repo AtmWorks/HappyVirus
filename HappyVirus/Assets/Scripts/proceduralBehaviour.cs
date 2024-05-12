@@ -30,7 +30,8 @@ public class proceduralBehaviour : MonoBehaviour
 
     public bool isEscapeAvailable;
     public int passedRooms;
-    public static int difficutly = 0;
+    public static int difficulty = 0;
+    public int currentDifficulty = difficulty;
     public static string lastOrientation;
 
     //leyenda:
@@ -45,9 +46,9 @@ public class proceduralBehaviour : MonoBehaviour
     public spawnProcedural lobbySpawn;
     public GameObject lobbyMap;
 
-    public GameObject oldArea; 
+    public GameObject oldArea;
     public GameObject newAreaToSpawn;
-    public GameObject TPspawn; 
+    public GameObject TPspawn;
     public GameObject ReviveTPspawn;
     public float timer;
 
@@ -75,48 +76,46 @@ public class proceduralBehaviour : MonoBehaviour
         //Destroy(map);
         //}
         lobbySpawn.mapToSpawn = null;
-        openPaths = 1; 
+        openPaths = 1;
         passedRooms = 0;
     }
 
-    //TODO: si la dificultad supera X, se añaden las transiciones.
+    //TODO: si la dificultad supera X, se aï¿½aden las transiciones.
     // si nextLevelType es 0, rojo, 1, amarillo
     // manejar las orientaciones de las transitions (mediante SPAWN)
 
-    public void proceduralMap(spawnOrientation enterSpawnOrientation, int nextLevelType , GameObject areaToSpawn = null )
+    public void proceduralMap(spawnOrientation enterSpawnOrientation, int nextLevelType, GameObject areaToSpawn = null)
     {
-        
+
         string desiredOrientation = "L";
         //consts to switch
         switch (enterSpawnOrientation)
         {
             case spawnOrientation.R:
                 desiredOrientation = "L";
-            break;
+                break;
             case spawnOrientation.L:
                 desiredOrientation = "R";
-            break;
+                break;
             case spawnOrientation.T:
                 desiredOrientation = "B";
-            break;
+                break;
             case spawnOrientation.B:
                 desiredOrientation = "T";
-            break;
+                break;
         }
         lastOrientation = desiredOrientation;
 
-        if ( areaToSpawn != null )
+        //MAPA YA VISTO
+        if (areaToSpawn != null)
         {
 
             for (int i = 0; i < areaToSpawn.transform.childCount; i++)
             {
                 Transform child = areaToSpawn.transform.GetChild(i);
-                if (child.gameObject.name.Contains("SPAWN_"+desiredOrientation))
+                if (child.gameObject.name.Contains("SPAWN_" + desiredOrientation))
                 {
-                    Debug.Log("Encontrado:"+ child.gameObject.name);
-                    //ponemos el punto de teleport en el spawn de salida
                     TPspawn = child.gameObject;
-                    //linkamos el mapa del que venimos a ese spawn de salida
                     spawnProcedural newSpawnScript = child.gameObject.GetComponent<spawnProcedural>();
                     if (newSpawnScript != null)
                     {
@@ -124,56 +123,68 @@ public class proceduralBehaviour : MonoBehaviour
                     }
                     break;
                 }
-                
+
             }
             newAreaToSpawn = areaToSpawn;
             cameraEffect = true;
         }
+        //MAPA NUEVO
         else
         {
+            passedRooms++;
+            openPaths--;
             List<GameObject> listToCheck = new List<GameObject>();
-            if ( nextLevelType == 0 )
-            {
+            if (nextLevelType == 0) { 
+                LVLmaps = LVLmaps.OrderBy(x => Random.Range(0, LVLmaps.Count -1)).ToList();
                 listToCheck = LVLmaps;
-            }
-            else if ( nextLevelType == 1 )
-            {
-                listToCheck = LVLmaps_yellow;
-            }
+                 }
+            else if (nextLevelType == 1) { listToCheck = LVLmaps_yellow; }
             if (listToCheck.Count <= 0)
             {
                 onRevive();
                 cameraEffect = true;
                 return;
             }
-            passedRooms++;
-            openPaths--;
-            if(passedRooms >= 4) { 
-                isEscapeAvailable = true;
-                if (difficutly == 0)
+            
+            if (passedRooms >= 3)
+            {
+                if (difficulty == 0)
                 {
-                    difficutly = 1;
+                    isEscapeAvailable = true;
+                    difficulty = 1;
                 }
             }
+
+            if (passedRooms >= 5)
+            {
+                if (difficulty == 1)
+                {
+                    difficulty = 2;
+                }
+                if (nextLevelType == 1)
+                {
+                    difficulty = 3;
+                }
+            }
+
+            //if(passedRooms >= 4) { 
+            //    isEscapeAvailable = false;
+
+            //}
+            currentDifficulty = difficulty;
             List<GameObject> potentialMaps = new List<GameObject>();
-            Debug.Log("ENTERING MAP BANS");
-            int mapFetching = 0;
+            
             foreach (var map in listToCheck)
             {
-                mapFetching++;
-                Debug.Log("Fetching map:" + mapFetching+" "+ map.name);
                 bool shouldBreak = false;
-
                 if (!map.name.Contains(desiredOrientation))
                 {
-                    Debug.Log("Map banned:" + map.name);
-                    shouldBreak = true; 
+                    shouldBreak = true;
                 }
-                if(!isEscapeAvailable)
+                if (!isEscapeAvailable)
                 {
                     if (map.name.Contains("ESC"))
                     {
-                        Debug.Log("Map banned:" + map.name);
                         shouldBreak = true;
                     }
                     if (shouldBreak) continue;
@@ -183,7 +194,7 @@ public class proceduralBehaviour : MonoBehaviour
                         if (map.name.Contains(desiredOrientation + "_END"))
                             potentialMaps.Add(map);
                     }
-                    //si quedan 2 o menos caminos, no dejamos que haya un cierre de sección
+                    //si quedan 2 o menos caminos, no dejamos que haya un cierre de secciï¿½n
                     else if (openPaths <= 2)
                     {
                         if (!map.name.Contains("END"))
@@ -208,48 +219,43 @@ public class proceduralBehaviour : MonoBehaviour
                     }
 
                 }
-                
-                
             }
             if (isEscapeAvailable)
             {
                 isEscapeAvailable = false;
-                passedRooms = 0;
+                // passedRooms = 0;
             }
 
             if (potentialMaps.Count <= 0)
             {
+                Debug.Log("No hay mapas potenciales disponibles, se aÃ±ade _END" );
                 foreach (var map in usedMaps)
                 {
-                    if (map.name.Contains(desiredOrientation+"_END"))
-                        potentialMaps.Add(map);
-                }
-            }
-            //Debug.Log("Didnt get potential maps, adding used map:" + potentialMaps[0]);
-            //seleccionamos un mapa aleatorio dentro de posibles mapas.
-            if (potentialMaps.Count > 0)
-            {
-                Debug.Log("Numero de mapas potenciales"+potentialMaps.Count);
-            }
-            else
-            {
-                Debug.Log("No hay mapas potenciales disponibles, se añade _END" + potentialMaps.Count);
-                foreach (var map in LVLmaps )
-                {
-                    Debug.Log("Emergencia: " + map.name);
-
                     if (map.name.Contains(desiredOrientation + "_END"))
                         potentialMaps.Add(map);
                 }
             }
+            
 
             GameObject listSelectedMap;
+
             if (potentialMaps.Count > 0)
-            listSelectedMap = potentialMaps[Random.Range(0, potentialMaps.Count)];
+            {
+                
+                potentialMaps = potentialMaps.OrderBy(x => Random.value).ToList();
+                int mapNumber = 0;
+                foreach (var map in potentialMaps)
+                {
+                    mapNumber++;
+                    Debug.Log("Map number " + mapNumber + " is " + map.name);
+                }
+                listSelectedMap = potentialMaps[0];
+            }
             else
-            listSelectedMap = potentialMaps[0];
+                listSelectedMap = potentialMaps[0];
 
             LVLmaps.Remove(listSelectedMap);
+
             if (listSelectedMap.name.Contains("END"))
             {
                 openPaths--;
@@ -266,16 +272,16 @@ public class proceduralBehaviour : MonoBehaviour
 
                 }
             }
-            
+
             Debug.Log("Instantiating this map: " + listSelectedMap.name);
             GameObject selectedMap = Instantiate(listSelectedMap, Vector3.zero, Quaternion.identity);
-            spawnProcedural oldSpawnScript = oldArea.transform.Find("SPAWN_"+enterSpawnOrientation).gameObject.GetComponent<spawnProcedural>();
+            spawnProcedural oldSpawnScript = oldArea.transform.Find("SPAWN_" + enterSpawnOrientation).gameObject.GetComponent<spawnProcedural>();
             oldSpawnScript.mapToSpawn = selectedMap;
 
             foreach (Transform childTransform in selectedMap.transform)
             {
                 GameObject child = childTransform.gameObject;
-                if (child.name.Contains("SPAWN_"+desiredOrientation))
+                if (child.name.Contains("SPAWN_" + desiredOrientation))
                 {
                     spawnProcedural newSpawnScript = child.GetComponent<spawnProcedural>();
                     if (newSpawnScript != null)
@@ -310,7 +316,7 @@ public class proceduralBehaviour : MonoBehaviour
 
                 if (cloneMovement != null)
                 {
-                    // Ejecutar el método "softBodyPosition()" en el componente "cloneMovement"
+                    // Ejecutar el mï¿½todo "softBodyPosition()" en el componente "cloneMovement"
                     cloneMovement.softBodyPosition();
                 }
             }
