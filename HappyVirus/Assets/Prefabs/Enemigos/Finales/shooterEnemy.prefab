@@ -597,7 +597,7 @@ MonoBehaviour:
   virusTag: Virus
   safeDistanceMin: 10
   safeDistanceMax: 15
-  moveSpeed: 50
+  moveSpeed: 40
   startSpeed: 0
   sinusSpeed: 2
   rotationSpeed: 5

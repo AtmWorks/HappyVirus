@@ -135,6 +135,7 @@ public class proceduralBehaviour : MonoBehaviour
             openPaths--;
             List<GameObject> listToCheck = new List<GameObject>();
             if (nextLevelType == 0) { 
+                Random.InitState(System.DateTime.Now.Millisecond);
                 LVLmaps = LVLmaps.OrderBy(x => Random.Range(0, LVLmaps.Count -1)).ToList();
                 listToCheck = LVLmaps;
                  }
@@ -241,8 +242,8 @@ public class proceduralBehaviour : MonoBehaviour
 
             if (potentialMaps.Count > 0)
             {
-                
-                potentialMaps = potentialMaps.OrderBy(x => Random.value).ToList();
+                Random.InitState(System.DateTime.Now.Millisecond);
+                potentialMaps = potentialMaps.OrderBy(x =>Random.Range(0, potentialMaps.Count)).ToList();
                 int mapNumber = 0;
                 foreach (var map in potentialMaps)
                 {

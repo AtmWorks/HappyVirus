@@ -25459,12 +25459,11 @@ MonoBehaviour:
   - {fileID: 8797411075988482447}
   yellowTransition:
   - {fileID: 4957816225068117428}
-  - {fileID: 4957816225068117428}
+  - {fileID: 5682012376406544098}
   spawnsList:
   - {fileID: 682172155098427236}
   - {fileID: 2667030651739979388}
   transitionsInOrder: 
-  isYellow: 0
 --- !u!1 &8704101171522732458
 GameObject:
   m_ObjectHideFlags: 0
