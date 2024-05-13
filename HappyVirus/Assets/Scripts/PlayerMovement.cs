@@ -14,6 +14,7 @@ public class PlayerMovement : MonoBehaviour
     public int colorStatus = 0;
 
     public GameObject smoke;
+
     public GameObject VirusFace;
     public GameObject VirusSkin;
     public GameObject VirusBody;
@@ -27,7 +28,7 @@ public class PlayerMovement : MonoBehaviour
     private bool outOfControl;
     public bool isSprinting;
     public bool killed1stBoss;
-    
+
     public static bool isAttractingEgg;
 
     public isButtonPressed sprintButton;
@@ -89,12 +90,12 @@ public class PlayerMovement : MonoBehaviour
     {
         isOnTentacleTarget = false;
         rig = this.GetComponent<Rigidbody2D>();
-       // rigCopy = virusDoble.GetComponent<Rigidbody2D>();
+        // rigCopy = virusDoble.GetComponent<Rigidbody2D>();
         resting = false;
         isSprinting = false;
     }
 
-    void Start ()
+    void Start()
     {
         baseSpeed = speed;
         //VirusBody.gameObject.SetActive(false);
@@ -132,7 +133,7 @@ public class PlayerMovement : MonoBehaviour
     }
     void changeColor()
     {
-        if(colorStatus == 0)
+        if (colorStatus == 0)
         {
             colorStatus = 1;
         }
@@ -221,7 +222,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void growFaceOver()
     {
-        if(VirusFaceCheck == false)
+        if (VirusFaceCheck == false)
         {
 
             //VirusFace.gameObject.transform.localScale = new Vector3 (1, 1, 1) ; 
@@ -235,11 +236,13 @@ public class PlayerMovement : MonoBehaviour
             followEggButtonObject.SetActive(true);
             VirusFaceCheck = true;
         }
-        else { 
-        Debug.Log("Not enough O2");
+        else
+        {
+            Debug.Log("Not enough O2");
 
         }
-        if (blobCircle.fillAmount >= 1.0f) {
+        if (blobCircle.fillAmount >= 1.0f)
+        {
             softBodyPosition();
 
         }
@@ -248,7 +251,7 @@ public class PlayerMovement : MonoBehaviour
 
     void showTentacles()
     {
-        if(tentacles.activeSelf==false)
+        if (tentacles.activeSelf == false)
         {
             tentacles.SetActive(true);
             catchTentacleButton.SetActive(true);
@@ -272,7 +275,7 @@ public class PlayerMovement : MonoBehaviour
     {
         PlayerAnimator.GetDmg = true;
         StartCoroutine(spawnSmoke());
-        
+
     }
     IEnumerator spawnSmoke()
     {
@@ -285,13 +288,13 @@ public class PlayerMovement : MonoBehaviour
     }
     void switchEggAttract()
     {
-        if(isAttractingEgg)
+        if (isAttractingEgg)
         {
             isAttractingEgg = false;
         }
-        else if(!isAttractingEgg)
+        else if (!isAttractingEgg)
         {
-            isAttractingEgg= true;
+            isAttractingEgg = true;
         }
     }
 
@@ -306,12 +309,111 @@ public class PlayerMovement : MonoBehaviour
             smokeButtonObject.SetActive(true);
         }
     }
-    void FixedUpdate ()
+
+    void dashingMovement(int mode)
+    {
+        if (mode == 1)
+        {
+            if (coolingDown == true)
+            {
+                //Reduce fill amount over 30 seconds
+                Stamina.fillAmount -= 2.0f / waitTime * Time.deltaTime;
+            }
+            else
+            {
+                Stamina.fillAmount += 1.0f / waitTime * Time.deltaTime;
+            }
+            //STAMINA
+            if (Stamina.fillAmount <= 0.05f)
+            {
+
+                resting = true;
+                Stamina.color = new Color32(255, 86, 69, 255);
+                //coolingDown = true;
+
+            }
+            else if (Stamina.fillAmount >= 0.5f)
+            {
+                resting = false;
+                Stamina.color = new Color32(255, 246, 95, 255);
+
+            }
+            if (Stamina.fillAmount >= 1f)
+            {
+                Stamina.color = new Color32(255, 246, 95, 0);
+            }
+            else if (Stamina.fillAmount <= 1f && Stamina.fillAmount >= 0.5f)
+            {
+                Stamina.color = new Color32(255, 246, 95, 255);
+            }
+            if ((Input.GetKey("left shift") || isSprinting) && Stamina.fillAmount >= 0.05f && resting == false)
+            {
+
+                coolingDown = true;
+                PlayerAnimator.IsSprinting = true;
+                speed = 15;
+
+            }
+            else
+            {
+                coolingDown = false;
+                PlayerAnimator.IsSprinting = false;
+                speed = baseSpeed;
+            }
+        }
+
+        if (mode == 2)
+        {
+            if (coolingDown == true)
+            {
+                Stamina.fillAmount -= 5.0f * Time.deltaTime;
+            }
+            else if (coolingDown == false)
+            {
+                PlayerAnimator.IsSprinting = false;
+                speed = baseSpeed;
+                Stamina.fillAmount += 1.0f / waitTime * Time.deltaTime;
+            }
+
+            if (Stamina.fillAmount <= 1f)
+            {
+                if (Stamina.fillAmount <= 0.05f)
+                {
+                    coolingDown = false;
+                }
+                resting = true;
+                Stamina.color = new Color32(255, 86, 69, 255);
+            }
+
+            if (Stamina.fillAmount >= 0.90f)
+            {
+                resting = false;
+                Stamina.color = new Color32(255, 246, 95, 255);
+            }
+            if (Stamina.fillAmount >= 1f)
+            {
+                Stamina.color = new Color32(255, 246, 95, 0);
+            }
+
+
+            if ((Input.GetKey("left shift") || isSprinting) && Stamina.fillAmount >= 0.90f)
+            {
+
+                coolingDown = true;
+                PlayerAnimator.IsSprinting = true;
+                speed = 35;
+
+            }
+        }
+
+
+    }
+    void FixedUpdate()
     {
 
         if (colorStatus != PlayerStatics.colorState)
         {
-            PlayerStatics.colorState = colorStatus ;
+            PlayerStatics.colorState = colorStatus;
         }
         //CANVAS BUTTON INPUTS
 
@@ -331,19 +433,19 @@ public class PlayerMovement : MonoBehaviour
 
         }
         //if (PlayerCollision.PlayerHP> 1 && !VirusFaceCheck && killed1stBoss == true)
-        if (PlayerCollision.PlayerHP> 1 && !VirusFaceCheck )
+        if (PlayerCollision.PlayerHP > 1 && !VirusFaceCheck)
         {
 
             growFaceOver();
 
-        }     
+        }
 
-        if (PlayerCollision.PlayerHP <= 1 && VirusFaceCheck == true )
+        if (PlayerCollision.PlayerHP <= 1 && VirusFaceCheck == true)
         {
             //VirusFace.SetActive(false);
             VirusFace.gameObject.transform.localScale = new Vector3(0, 0, 0);
             //VirusSkin.gameObject.transform.localScale = new Vector3(0, 0, 0);
-            
+
 
             //PlayerCollision.PlayermaxHP =3;
             //PlayerCollision.PlayerHP = 3;
@@ -380,50 +482,7 @@ public class PlayerMovement : MonoBehaviour
         //LLEVAR LOS TENTACULOS A COGER ALGO
 
         //SPRINT
-        if (coolingDown == true )
-        {
-            //Reduce fill amount over 30 seconds
-            Stamina.fillAmount -= 2.0f / waitTime * Time.deltaTime;
-        }
-        else
-        {
-            Stamina.fillAmount += 1.0f / waitTime * Time.deltaTime;
-        } 
-        //STAMINA
-        if (Stamina.fillAmount <=0.05f )
-        {
-            
-            resting = true;
-            Stamina.color = new Color32(255, 86, 69,255);
-            //coolingDown = true;
-
-        }
-        else if (Stamina.fillAmount >= 0.5f)
-        {
-            resting = false;
-            Stamina.color = new Color32(255, 246, 95,255);
-
-        }
-        if (Stamina.fillAmount >= 1f)
-        {
-            Stamina.color = new Color32(255, 246, 95, 0);
-        } 
-        else if (Stamina.fillAmount <= 1f && Stamina.fillAmount >= 0.5f)
-        {
-            Stamina.color = new Color32(255, 246, 95, 255);
-        }
-        if ((Input.GetKey("left shift")||isSprinting) && Stamina.fillAmount >= 0.05f && resting == false)
-        {
-
-            coolingDown = true;
-            speed = 12;
-
-        }
-        else
-        {
-            coolingDown = false;
-            speed = baseSpeed;
-        }
+        dashingMovement(2);
 
         //MOVIMIENTO//
         float moveHorizontal = Input.GetAxis("Horizontal");
@@ -450,9 +509,9 @@ public class PlayerMovement : MonoBehaviour
         if (virusDoble.activeSelf == true) { activedobl = true; }
         else if (virusDoble.activeSelf == false) { activedobl = false; } //checkers
 
-        if (Input.GetKeyDown("k") ) 
+        if (Input.GetKeyDown("k"))
         {
-            if (outOfControl == false) 
+            if (outOfControl == false)
             {
                 //elegir el virus que se queda
                 if (virusSelect.DobleVirus.activeSelf == true)
@@ -465,12 +524,12 @@ public class PlayerMovement : MonoBehaviour
                 mainCamera.target = virusDoble.transform;//cambiar la camara
 
             }
-             else if (outOfControl == true)
+            else if (outOfControl == true)
             {
                 Debug.Log("ESTOY OUTOFCONTROL");
                 rig = this.GetComponent<Rigidbody2D>();
                 VirusAttraction.isOnControl = false;//para que el clon no te siga
-                mainCamera.target =this.gameObject.transform;//cambiar la camara
+                mainCamera.target = this.gameObject.transform;//cambiar la camara
                 outOfControl = false;
 
 
@@ -483,41 +542,41 @@ public class PlayerMovement : MonoBehaviour
 
         //CONGELA PLAYER//
 
-            if (PlayerAnimator.IsShooting == true || PlayerAnimator.IsCreatingEgg == true)
-            {
-                //rig.constraints = RigidbodyConstraints2D.FreezeAll;
-                rig.velocity = rig.velocity / 3;
-            }
-            else
-            {
-                rig.constraints &= ~RigidbodyConstraints2D.FreezePositionY;
-                rig.constraints &= ~RigidbodyConstraints2D.FreezePositionX;
-            }
-        
+        if (PlayerAnimator.IsShooting == true || PlayerAnimator.IsCreatingEgg == true)
+        {
+            //rig.constraints = RigidbodyConstraints2D.FreezeAll;
+            rig.velocity = rig.velocity / 3;
+        }
+        else
+        {
+            rig.constraints &= ~RigidbodyConstraints2D.FreezePositionY;
+            rig.constraints &= ~RigidbodyConstraints2D.FreezePositionX;
+        }
+
 
         //MODOS DE DISPARO//
         if (Input.GetKeyDown("1"))
-        {          
+        {
             ParticleFire.shootMode = 1;
-            Debug.Log("I SWITCHED TO MODE1");            
+            Debug.Log("I SWITCHED TO MODE1");
         }
         if (Input.GetKeyDown("2"))
-        {          
+        {
             ParticleFire.shootMode = 2;
-            Debug.Log("I SWITCHED TO MODE2");            
+            Debug.Log("I SWITCHED TO MODE2");
         }
         if (Input.GetKeyDown("3"))
-        {          
+        {
             ParticleFire.shootMode = 3;
-            Debug.Log("I SWITCHED TO MODE3");            
+            Debug.Log("I SWITCHED TO MODE3");
         }
         if (Input.GetKeyDown("4"))
-        {          
+        {
             ParticleFire.shootMode = 4;
-            Debug.Log("I SWITCHED TO MODE4");            
+            Debug.Log("I SWITCHED TO MODE4");
         }
 
 
-        
+
     }
 }

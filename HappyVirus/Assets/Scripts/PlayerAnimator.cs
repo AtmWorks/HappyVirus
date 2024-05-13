@@ -8,6 +8,7 @@ public class PlayerAnimator : MonoBehaviour {
     public static bool IsInfecting;
     public static bool IsShooting;
     public static bool IsCreatingEgg;
+    public static bool IsSprinting;
     public static bool GetDmg;
 
     void Start ()
@@ -59,6 +60,14 @@ public class PlayerAnimator : MonoBehaviour {
         else
         {
             FaceAnimator.SetBool("IsInfecting", false);
+        }
+        if(IsSprinting == true)
+        {
+            FaceAnimator.SetBool("IsSprinting", true);
+        }
+        else
+        {
+            FaceAnimator.SetBool("IsSprinting", false);
         }
     }
     
