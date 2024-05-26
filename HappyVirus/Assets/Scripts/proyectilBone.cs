@@ -9,11 +9,14 @@ public class proyectilBone : MonoBehaviour{
     public float currentTime;
     public float speed;
     public float fireRate;
+    //a rigidbody2d component
+    private Rigidbody2D rb;
 
     void Start()
     {
         proyectHit = false;
         currentTime = 3f;
+        rb = GetComponent<Rigidbody2D>();
     }
     IEnumerator destroyAfter()
     {
@@ -56,9 +59,19 @@ public class proyectilBone : MonoBehaviour{
     {
 
         currentTime -= 1 * Time.deltaTime;
+        //Option1: apply speed to  transform 
+        // if (speed != 0)
+        // {
+        //     transform.position += transform.right * (speed * Time.deltaTime);
+        // }
+        // else
+        // {
+        //     Debug.Log("No Speed");
+        // }
+        //option2: apply speed to rigidbody, also point to the direction of this rotation
         if (speed != 0)
         {
-            transform.position += transform.right * (speed * Time.deltaTime);
+            rb.velocity = transform.right * speed;
         }
         else
         {
@@ -69,5 +82,6 @@ public class proyectilBone : MonoBehaviour{
             Instantiate(explosion, new Vector3(this.gameObject.transform.position.x, this.gameObject.transform.position.y, 0), Quaternion.identity);
             Destroy(this.gameObject);
         }
+        // 
     }
 }
