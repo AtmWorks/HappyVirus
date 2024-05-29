@@ -81,17 +81,15 @@ public class randomObjectActivation : MonoBehaviour
                 string orderToBan = proceduralBehaviour.lastOrientation;
                 foreach (GameObject shuffledObj in shuffledList)
                 {
-                    if (!shuffledObj.name.Contains(orderToBan)) { finalList.Add(shuffledObj); }
+                    if (!shuffledObj.name.Contains(orderToBan)) { finalList.Add(shuffledObj); break;}
                 }
 
                 List<string> orientations = new List<string> { "L", "R", "T", "B" };
 
                 foreach (string orientation in orientations)
                 {
-
                     if (finalList[0].name.Contains(orientation))
                     {
-
                         foreach (GameObject spawn in spawnsList)
                         {
 
@@ -113,7 +111,7 @@ public class randomObjectActivation : MonoBehaviour
                         }
                     }
                 }
-                shuffledList[0].SetActive(true);
+                finalList[0].SetActive(true);
             }
             else
             {

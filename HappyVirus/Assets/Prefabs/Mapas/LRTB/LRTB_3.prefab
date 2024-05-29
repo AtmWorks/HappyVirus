@@ -5087,15 +5087,13 @@ MonoBehaviour:
   baseLvl2:
   - {fileID: 4599300955115440333}
   - {fileID: 7148249572557232150}
-  yellowTransition:
-  - {fileID: 3523292775290015219}
+  yellowTransition: []
   spawnsList:
   - {fileID: 5559780084064803374}
   - {fileID: 5770688357665571485}
   - {fileID: 903243774209991327}
   - {fileID: 8295767450927439135}
   transitionsInOrder: 
-  isYellow: 0
 --- !u!1 &1341703825489932412
 GameObject:
   m_ObjectHideFlags: 0
