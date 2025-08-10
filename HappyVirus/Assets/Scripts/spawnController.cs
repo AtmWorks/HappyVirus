@@ -11,6 +11,7 @@ public class spawnController : MonoBehaviour
     public GameObject currentArea;
     public GameObject spawnArea;
     public proceduralBehaviour proceduralBehaviour;
+    public bool isProdecuralMap = true;
     //public GameObject TPspawn;
 
     //public List<GameObject> currentTPlist;
@@ -19,12 +20,13 @@ public class spawnController : MonoBehaviour
     void Start()
     {
         //TODO: spawnBehaviour es un script que esta como componente del gameObject currentSpawner
-        spawnBehaviour = currentSpawner.GetComponent<SpawnBehaviour>();
+        if(currentSpawner != null){ spawnBehaviour = currentSpawner.GetComponent<SpawnBehaviour>(); }
     }
 
     public void spawnProcess()
     {
-        if (currentSpawner != null)
+        Debug.Log("its spawn:"+currentSpawner+ "\nits procedural"+isProdecuralMap);
+        if (currentSpawner != null && isProdecuralMap)
         {
             //TODO: RESETEAR VALORES DEL NIVEL
 
@@ -40,14 +42,29 @@ public class spawnController : MonoBehaviour
             
 
         }
+        else if ( currentSpawner != null && isProdecuralMap == false)
+        {
+            Debug.Log("its spawn:" + currentSpawner + "\nits procedural" + isProdecuralMap);
+
+            spawnArea.SetActive(true);
+            currentSpawner.SetActive(true);
+            spawnBehaviour = currentSpawner.GetComponent<SpawnBehaviour>();
+
+            spawnBehaviour.spawnProcess();
+        }
         else
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+
         }
 
 
-        
+
     }
+
+
+
+
     //IEnumerator gestionTPs()
     //{
     //    // Espera 1 segundo.

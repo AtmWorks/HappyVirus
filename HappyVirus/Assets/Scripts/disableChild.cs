@@ -1,45 +1,60 @@
-
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class disableChild : MonoBehaviour
+public class DisableChildOnTrigger : MonoBehaviour
 {
-    public GameObject Virus;
-    public GameObject Child;
+    [Header("Modo de funcionamiento")]
+    public bool isTriggerHandled = false;      // true = trigger, false = distancia
+
+    [Header("Config distancia")]
     public float desiredDistance = 50f;
+    public GameObject Virus;                   // Jugador
+
+    [Header("Config hijo")]
+    public GameObject Child;
 
     void Start()
     {
-        // Encuentra el objeto con la etiqueta "Virus" y as�gnalo a la variable Virus
-        Virus = GameObject.FindWithTag("Player");
-        // Asigna el objeto hijo de este GameObject a la variable Child
-        if (transform.childCount > 0)
-        {
+        // Buscar el hijo si no está asignado
+        if (Child == null && transform.childCount > 0)
             Child = transform.GetChild(0).gameObject;
-        }
+
+        // Buscar jugador si no está asignado (solo para modo distancia)
+        if (!isTriggerHandled && Virus == null)
+            Virus = GameObject.FindWithTag("Player");
     }
 
     void Update()
     {
-        // Calcula la distancia entre Virus y el objeto hijo (Child)
-
-        // Si la distancia entre Virus y el objeto hijo es mayor que 20, desactiva el objeto hijo
-        if (Child != null)
+        // Solo ejecuta la lógica de distancia si no usamos trigger
+        if (!isTriggerHandled && Child != null && Virus != null)
         {
             float distance = Vector3.Distance(Virus.transform.position, Child.transform.position);
 
             if (distance > desiredDistance)
-            {
                 Child.SetActive(false);
-            }
-            // Si la distancia entre Virus y el objeto hijo es menor o igual a 20, activa el objeto hijo
             else
-            {
                 Child.SetActive(true);
-            }
         }
-        else { Destroy(this.gameObject); }
-        
+        else if (Child == null)
+        {
+            Destroy(gameObject);
+        }
+    }
+
+    // --- Modo Trigger ---
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (isTriggerHandled && other.CompareTag("Player"))
+        {
+            if (Child != null) Child.SetActive(true);
+        }
+    }
+
+    void OnTriggerExit2D(Collider2D other)
+    {
+        if (isTriggerHandled && other.CompareTag("Player"))
+        {
+            if (Child != null) Child.SetActive(false);
+        }
     }
 }

@@ -61,9 +61,6 @@ public class SpawnBehaviour : MonoBehaviour
         //StartCoroutine(animatorBoolWait());
         thisAnimator.SetBool("isSpawning", true);
         StartCoroutine(spawnVirus());
-
-
-
     }
     private IEnumerator animatorBoolWait()
     {
@@ -90,13 +87,13 @@ public class SpawnBehaviour : MonoBehaviour
     {
         // Espera 1 segundo.
         yield return new WaitForSeconds(1f);
-        if (!isMainSpawner)
-        {
-            if (!askOnce)
-            {
-                yield return StartCoroutine(askForBack());
-            }
-        }
+        //if (!isMainSpawner)
+        //{
+        //    if (!askOnce)
+        //    {
+        //        yield return StartCoroutine(askForBack());
+        //    }
+        //}
         // Si es el spawner principal o si askOnce ya es verdadero, 
         // establecer isInfected y la animación de transformación
         thisAnimator.SetBool("isInfected", true);

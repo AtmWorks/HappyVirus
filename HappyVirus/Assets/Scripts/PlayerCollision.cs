@@ -70,7 +70,7 @@ public class PlayerCollision : MonoBehaviour {
     {
         // Espera 1 segundo.
         yield return new WaitForSeconds(1f);
-        PlayerHP = 3;
+        PlayerHP = PlayermaxHP;
 
         player.blobCircle.fillAmount = 0;
         player.blobCircle.color = new Color32(95, 255, 100, 255);
