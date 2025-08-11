@@ -17,15 +17,10 @@ MonoBehaviour:
     m_End: 180
     m_Order: 0
     m_Sprites:
-    - {fileID: -8877434157721704989, guid: c60161eb11c461d4480ace8360e4f4cc, type: 3}
-    - {fileID: -1411527869310484539, guid: c60161eb11c461d4480ace8360e4f4cc, type: 3}
     - {fileID: -568029996897123366, guid: c60161eb11c461d4480ace8360e4f4cc, type: 3}
     - {fileID: -960303309141411675, guid: c60161eb11c461d4480ace8360e4f4cc, type: 3}
-    - {fileID: -543464338974346424, guid: c60161eb11c461d4480ace8360e4f4cc, type: 3}
-    - {fileID: 1430914407836550037, guid: 83f72d1e0082740438a998198d451891, type: 3}
     - {fileID: 1811540504169614512, guid: 83f72d1e0082740438a998198d451891, type: 3}
-    - {fileID: 3196926550923045612, guid: c60161eb11c461d4480ace8360e4f4cc, type: 3}
-    - {fileID: 1912238806638902716, guid: c60161eb11c461d4480ace8360e4f4cc, type: 3}
+    - {fileID: -543464338974346424, guid: c60161eb11c461d4480ace8360e4f4cc, type: 3}
     - {fileID: -7654391521213317383, guid: c60161eb11c461d4480ace8360e4f4cc, type: 3}
     - {fileID: 7468117612247235207, guid: c60161eb11c461d4480ace8360e4f4cc, type: 3}
     - {fileID: -7629083103380226896, guid: c60161eb11c461d4480ace8360e4f4cc, type: 3}
