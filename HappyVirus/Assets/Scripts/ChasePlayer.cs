@@ -46,7 +46,7 @@ public class ChasePlayer : MonoBehaviour
         }
         else if (!isDmg && !isDead)
         {
-            this.gameObject.tag = "Neutral";
+            this.gameObject.tag = "tentacleTarget";
 
         }
         if(isDead)
