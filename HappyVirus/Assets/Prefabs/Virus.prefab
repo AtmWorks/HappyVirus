@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 13754193}
   - component: {fileID: 13754195}
   - component: {fileID: 13754194}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Rays
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5893,7 +5893,7 @@ GameObject:
   - component: {fileID: 124673703}
   - component: {fileID: 124673705}
   - component: {fileID: 124673704}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: TentacleSegment1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6563,7 +6563,7 @@ GameObject:
   - component: {fileID: 191604896}
   - component: {fileID: 191604898}
   - component: {fileID: 191604897}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Target6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7679,7 +7679,7 @@ GameObject:
   - component: {fileID: 581156368}
   - component: {fileID: 581156370}
   - component: {fileID: 581156369}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: TentaclePivot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8004,7 +8004,7 @@ GameObject:
   - component: {fileID: 603831922}
   - component: {fileID: 603831921}
   - component: {fileID: 603831920}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: TentacleTip
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8284,7 +8284,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 694627881}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: selectFX (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8320,7 +8320,7 @@ GameObject:
   - component: {fileID: 706067673}
   - component: {fileID: 706067675}
   - component: {fileID: 706067674}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: targetCollider (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9079,7 +9079,7 @@ GameObject:
   m_Component:
   - component: {fileID: 805379399}
   - component: {fileID: 805379400}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: TentacleCOPY
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9366,7 +9366,7 @@ GameObject:
   m_Component:
   - component: {fileID: 888545645}
   - component: {fileID: 888545646}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Point Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9956,7 +9956,7 @@ GameObject:
   - component: {fileID: 986007290}
   - component: {fileID: 986007292}
   - component: {fileID: 986007291}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: TentacleParent
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11364,7 +11364,7 @@ GameObject:
   - component: {fileID: 1157340983}
   - component: {fileID: 1157340985}
   - component: {fileID: 1157340984}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: targetCollider (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11450,7 +11450,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1157658220}
   - component: {fileID: 1217192787}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Targets
   m_TagString: tentacleRange
   m_Icon: {fileID: 0}
@@ -12236,7 +12236,7 @@ GameObject:
   - component: {fileID: 1305377271}
   - component: {fileID: 1305377273}
   - component: {fileID: 1305377272}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: targetCollider (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12431,7 +12431,7 @@ GameObject:
   - component: {fileID: 1332718607}
   - component: {fileID: 1332718609}
   - component: {fileID: 1332718608}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: targetCollider
   m_TagString: tentacleRange
   m_Icon: {fileID: 0}
@@ -12769,7 +12769,7 @@ GameObject:
   - component: {fileID: 1459258044}
   - component: {fileID: 1459258043}
   - component: {fileID: 1459258042}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: spawn6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13211,7 +13211,7 @@ GameObject:
   - component: {fileID: 1529903088}
   - component: {fileID: 1529903090}
   - component: {fileID: 1529903089}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Small Stars
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18093,7 +18093,7 @@ GameObject:
   - component: {fileID: 1568007764}
   - component: {fileID: 1568007766}
   - component: {fileID: 1568007765}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: targetCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18321,7 +18321,7 @@ GameObject:
   - component: {fileID: 1663129558}
   - component: {fileID: 1663129560}
   - component: {fileID: 1663129559}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: TentacleSegment2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18512,7 +18512,7 @@ GameObject:
   - component: {fileID: 1692437588}
   - component: {fileID: 1692437590}
   - component: {fileID: 1692437589}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: targetCollider (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20429,7 +20429,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9159278211149228968}
   - component: {fileID: 6738051320048900246}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Point1 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20590,7 +20590,7 @@ GameObject:
   - component: {fileID: 1414115124429049036}
   - component: {fileID: 5752587276030209669}
   - component: {fileID: 9160215901625604856}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Target1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20686,7 +20686,7 @@ GameObject:
   - component: {fileID: 4505525994230320388}
   - component: {fileID: 4091071642477002952}
   - component: {fileID: 5209167429122752781}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Rays
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25528,7 +25528,7 @@ GameObject:
   - component: {fileID: 5587277123932015169}
   - component: {fileID: 6660058020994704582}
   - component: {fileID: 5664813501931511309}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Small Stars
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30323,6 +30323,119 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
+--- !u!1 &284619556168385010
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2830602190580501153}
+  - component: {fileID: 8018662571515562837}
+  - component: {fileID: 2398113619795194474}
+  m_Layer: 6
+  m_Name: 5 (1)
+  m_TagString: Virus
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2830602190580501153
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 284619556168385010}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 1.399999, z: 0}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1374653703168829470}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &8018662571515562837
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 284619556168385010}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 66
+  m_Sprite: {fileID: 1421578307984107085, guid: d78eb7bebeb53504288307fabeb181a1,
+    type: 3}
+  m_Color: {r: 1, g: 0.17295581, b: 0.9309663, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 6.27, y: 6.45}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!50 &2398113619795194474
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 284619556168385010}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 2
+  m_LinearDrag: 0.05
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 1
+  m_SleepingMode: 1
+  m_CollisionDetection: 1
+  m_Constraints: 4
 --- !u!1 &380048292780762660
 GameObject:
   m_ObjectHideFlags: 0
@@ -30479,7 +30592,7 @@ GameObject:
   - component: {fileID: 3059733210737500982}
   - component: {fileID: 4096990714263255354}
   - component: {fileID: 1408478872784948614}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: shield
   m_TagString: Virus
   m_Icon: {fileID: 0}
@@ -30726,7 +30839,7 @@ GameObject:
   - component: {fileID: 8483961311242969957}
   - component: {fileID: 8042007822240306914}
   - component: {fileID: 1766854137571092548}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: TentacleSegment1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30841,7 +30954,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2521534202591951}
   - component: {fileID: 6643280117610497951}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Point1 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30911,6 +31024,91 @@ SpriteRenderer:
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 5.12, y: 5.12}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!1 &610365499526807673
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 302666139774161576}
+  - component: {fileID: 7590037845547650735}
+  m_Layer: 6
+  m_Name: 2 (2)
+  m_TagString: Virus
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &302666139774161576
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 610365499526807673}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: -0.08, y: -0.08, z: -0.05999998}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 1374653703127428622}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &7590037845547650735
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 610365499526807673}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 77
+  m_Sprite: {fileID: 1421578307984107085, guid: d78eb7bebeb53504288307fabeb181a1,
+    type: 3}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.63529414}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 6.27, y: 6.45}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -30997,6 +31195,119 @@ MonoBehaviour:
   m_Text: 'UwU
 
 '
+--- !u!1 &654303237579690567
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7851657938521401053}
+  - component: {fileID: 4513416021398942476}
+  - component: {fileID: 1058324263934030857}
+  m_Layer: 6
+  m_Name: 6 (1)
+  m_TagString: Virus
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7851657938521401053
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 654303237579690567}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1.1999996, y: 0.6999995, z: 0}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1374653703168829470}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &4513416021398942476
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 654303237579690567}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 66
+  m_Sprite: {fileID: 1421578307984107085, guid: d78eb7bebeb53504288307fabeb181a1,
+    type: 3}
+  m_Color: {r: 1, g: 0.17295581, b: 0.9309663, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 6.27, y: 6.45}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!50 &1058324263934030857
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 654303237579690567}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 2
+  m_LinearDrag: 0.05
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 1
+  m_SleepingMode: 1
+  m_CollisionDetection: 1
+  m_Constraints: 4
 --- !u!1 &693951851107589505
 GameObject:
   m_ObjectHideFlags: 0
@@ -31081,7 +31392,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2238747606882660106}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: selectFX
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -31116,7 +31427,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3647370993888522145}
   - component: {fileID: 4204143193312939592}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Point Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -31210,7 +31521,7 @@ GameObject:
   m_Component:
   - component: {fileID: 76097673068156616}
   - component: {fileID: 4013078259689467221}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Tentacle 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -31301,6 +31612,119 @@ MonoBehaviour:
   debugOutline: 0
   debugTriangles: 0
   debugUVs: 0
+--- !u!1 &825181794151806299
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 9186212364711963360}
+  - component: {fileID: 829571921852916738}
+  - component: {fileID: 2715362699452640130}
+  m_Layer: 6
+  m_Name: 4 (1)
+  m_TagString: Virus
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &9186212364711963360
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 825181794151806299}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -1.1999996, y: 0.6999995, z: 0}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1374653703168829470}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &829571921852916738
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 825181794151806299}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 66
+  m_Sprite: {fileID: 1421578307984107085, guid: d78eb7bebeb53504288307fabeb181a1,
+    type: 3}
+  m_Color: {r: 1, g: 0.17295581, b: 0.9309663, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 6.27, y: 6.45}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!50 &2715362699452640130
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 825181794151806299}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 2
+  m_LinearDrag: 0.05
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 1
+  m_SleepingMode: 1
+  m_CollisionDetection: 1
+  m_Constraints: 4
 --- !u!1 &835480914798593129
 GameObject:
   m_ObjectHideFlags: 0
@@ -31385,7 +31809,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1541062810103931066}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: selectFX (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -31421,7 +31845,7 @@ GameObject:
   - component: {fileID: 8087605326285943508}
   - component: {fileID: 8788616389840242112}
   - component: {fileID: 5197234753244954810}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Rays
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36482,7 +36906,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9199224590370158171}
   - component: {fileID: 6885044761981753611}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Point1 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36569,7 +36993,7 @@ GameObject:
   - component: {fileID: 107894648013503181}
   - component: {fileID: 7319664326687213394}
   - component: {fileID: 8701540617309326353}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: TentacleSegment2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36923,7 +37347,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6799408542158899118}
   - component: {fileID: 6816222245293296905}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Tentacle 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38481,7 +38905,8 @@ GameObject:
   - component: {fileID: 1374653703127428597}
   - component: {fileID: 1374653703127428596}
   - component: {fileID: 1374653703127428623}
-  m_Layer: 0
+  - component: {fileID: 6312261514872594807}
+  m_Layer: 6
   m_Name: 2
   m_TagString: Virus
   m_Icon: {fileID: 0}
@@ -38500,7 +38925,8 @@ Transform:
   m_LocalPosition: {x: 0, y: -1.4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 302666139774161576}
   m_Father: {fileID: 1374653703168829470}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1374653703127428617
@@ -38625,19 +39051,19 @@ DistanceJoint2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1374653703127428598}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 4
   m_EnableCollision: 0
-  m_ConnectedRigidBody: {fileID: 1374653703137111378}
+  m_ConnectedRigidBody: {fileID: 579035720786366075}
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
   m_BreakAction: 0
   m_AutoConfigureConnectedAnchor: 0
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}
-  m_AutoConfigureDistance: 1
-  m_Distance: 2.100006
-  m_MaxDistanceOnly: 0
+  m_AutoConfigureDistance: 0
+  m_Distance: 0.5
+  m_MaxDistanceOnly: 1
 --- !u!231 &1374653703127428618
 SpringJoint2D:
   m_ObjectHideFlags: 0
@@ -38656,7 +39082,7 @@ SpringJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}
   m_AutoConfigureDistance: 1
-  m_Distance: 1.05
+  m_Distance: 1.0499992
   m_DampingRatio: 0
   m_Frequency: 8
 --- !u!231 &1374653703127428597
@@ -38677,7 +39103,7 @@ SpringJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}
   m_AutoConfigureDistance: 1
-  m_Distance: 1.0419333
+  m_Distance: 1.0419327
   m_DampingRatio: 0
   m_Frequency: 7
 --- !u!231 &1374653703127428596
@@ -38687,7 +39113,7 @@ SpringJoint2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1374653703127428598}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   m_EnableCollision: 1
   m_ConnectedRigidBody: {fileID: 1374653704044137729}
@@ -38698,7 +39124,7 @@ SpringJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}
   m_AutoConfigureDistance: 1
-  m_Distance: 1.0419333
+  m_Distance: 1.0419327
   m_DampingRatio: 0
   m_Frequency: 7
 --- !u!114 &1374653703127428623
@@ -38733,6 +39159,26 @@ MonoBehaviour:
   - {fileID: 2069810391}
   - {fileID: 675795712}
   - {fileID: 1441177094}
+--- !u!254 &6312261514872594807
+RelativeJoint2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1374653703127428598}
+  m_Enabled: 0
+  serializedVersion: 4
+  m_EnableCollision: 0
+  m_ConnectedRigidBody: {fileID: 1374653703137111378}
+  m_BreakForce: Infinity
+  m_BreakTorque: Infinity
+  m_BreakAction: 3
+  m_MaxForce: 1000
+  m_MaxTorque: 1000
+  m_CorrectionScale: 0.2
+  m_AutoConfigureOffset: 1
+  m_LinearOffset: {x: 0, y: 2.0999985}
+  m_AngularOffset: 0
 --- !u!1 &1374653703137111389
 GameObject:
   m_ObjectHideFlags: 0
@@ -38750,7 +39196,8 @@ GameObject:
   - component: {fileID: 1374653703137111376}
   - component: {fileID: 1374653703137111379}
   - component: {fileID: 1374653703137111402}
-  m_Layer: 0
+  - component: {fileID: 6555713716521488741}
+  m_Layer: 6
   m_Name: 5
   m_TagString: Virus
   m_Icon: {fileID: 0}
@@ -38769,7 +39216,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 1.4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 7591689155686145319}
   m_Father: {fileID: 1374653703168829470}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1374653703137111380
@@ -38894,19 +39342,19 @@ DistanceJoint2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1374653703137111389}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 4
   m_EnableCollision: 0
-  m_ConnectedRigidBody: {fileID: 1374653703127428599}
+  m_ConnectedRigidBody: {fileID: 2398113619795194474}
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
   m_BreakAction: 0
   m_AutoConfigureConnectedAnchor: 0
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}
-  m_AutoConfigureDistance: 1
-  m_Distance: 2.100006
-  m_MaxDistanceOnly: 0
+  m_AutoConfigureDistance: 0
+  m_Distance: 0.5
+  m_MaxDistanceOnly: 1
 --- !u!231 &1374653703137111377
 SpringJoint2D:
   m_ObjectHideFlags: 0
@@ -38925,7 +39373,7 @@ SpringJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}
   m_AutoConfigureDistance: 1
-  m_Distance: 1.0500002
+  m_Distance: 1.0499992
   m_DampingRatio: 0
   m_Frequency: 8
 --- !u!231 &1374653703137111376
@@ -38935,7 +39383,7 @@ SpringJoint2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1374653703137111389}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   m_EnableCollision: 1
   m_ConnectedRigidBody: {fileID: 1374653704498784119}
@@ -38946,7 +39394,7 @@ SpringJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}
   m_AutoConfigureDistance: 1
-  m_Distance: 1.0419334
+  m_Distance: 1.0419327
   m_DampingRatio: 0
   m_Frequency: 7
 --- !u!231 &1374653703137111379
@@ -38967,7 +39415,7 @@ SpringJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}
   m_AutoConfigureDistance: 1
-  m_Distance: 1.0419334
+  m_Distance: 1.0419327
   m_DampingRatio: 0
   m_Frequency: 7
 --- !u!114 &1374653703137111402
@@ -39002,6 +39450,26 @@ MonoBehaviour:
   - {fileID: 2069810391}
   - {fileID: 675795712}
   - {fileID: 1441177094}
+--- !u!254 &6555713716521488741
+RelativeJoint2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1374653703137111389}
+  m_Enabled: 0
+  serializedVersion: 4
+  m_EnableCollision: 0
+  m_ConnectedRigidBody: {fileID: 1374653703127428599}
+  m_BreakForce: Infinity
+  m_BreakTorque: Infinity
+  m_BreakAction: 3
+  m_MaxForce: 1000
+  m_MaxTorque: 1000
+  m_CorrectionScale: 0.2
+  m_AutoConfigureOffset: 1
+  m_LinearOffset: {x: 0, y: -2.0999985}
+  m_AngularOffset: 0
 --- !u!1 &1374653703168829465
 GameObject:
   m_ObjectHideFlags: 0
@@ -39011,7 +39479,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1374653703168829470}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: BlobParts
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39039,6 +39507,12 @@ Transform:
   - {fileID: 1374653703812798148}
   - {fileID: 1374653704959941317}
   - {fileID: 5767630185694682751}
+  - {fileID: 3408538750054182663}
+  - {fileID: 1834815776375525824}
+  - {fileID: 3351492158132928481}
+  - {fileID: 9186212364711963360}
+  - {fileID: 2830602190580501153}
+  - {fileID: 7851657938521401053}
   m_Father: {fileID: 1374653703284074444}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1374653703220669811
@@ -39649,7 +40123,8 @@ GameObject:
   - component: {fileID: 1374653703735055636}
   - component: {fileID: 1374653703735055639}
   - component: {fileID: 1374653703735055662}
-  m_Layer: 0
+  - component: {fileID: 8197856798255660432}
+  m_Layer: 6
   m_Name: 3
   m_TagString: Virus
   m_Icon: {fileID: 0}
@@ -39668,7 +40143,8 @@ Transform:
   m_LocalPosition: {x: -1.2, y: -0.7, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 932073678542288930}
   m_Father: {fileID: 1374653703168829470}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1374653703735055656
@@ -39793,19 +40269,19 @@ DistanceJoint2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1374653703735055633}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 4
   m_EnableCollision: 0
-  m_ConnectedRigidBody: {fileID: 1374653703812798174}
+  m_ConnectedRigidBody: {fileID: 9099611949552538308}
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
   m_BreakAction: 0
   m_AutoConfigureConnectedAnchor: 0
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}
-  m_AutoConfigureDistance: 1
-  m_Distance: 2.08385
-  m_MaxDistanceOnly: 0
+  m_AutoConfigureDistance: 0
+  m_Distance: 0.5
+  m_MaxDistanceOnly: 1
 --- !u!231 &1374653703735055637
 SpringJoint2D:
   m_ObjectHideFlags: 0
@@ -39824,7 +40300,7 @@ SpringJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}
   m_AutoConfigureDistance: 1
-  m_Distance: 1.0419334
+  m_Distance: 1.0419327
   m_DampingRatio: 0
   m_Frequency: 8
 --- !u!231 &1374653703735055636
@@ -39845,7 +40321,7 @@ SpringJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}
   m_AutoConfigureDistance: 1
-  m_Distance: 1.0500002
+  m_Distance: 1.0499992
   m_DampingRatio: 0
   m_Frequency: 7
 --- !u!231 &1374653703735055639
@@ -39855,7 +40331,7 @@ SpringJoint2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1374653703735055633}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   m_EnableCollision: 1
   m_ConnectedRigidBody: {fileID: 1374653703127428599}
@@ -39866,7 +40342,7 @@ SpringJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}
   m_AutoConfigureDistance: 1
-  m_Distance: 1.0419333
+  m_Distance: 1.0419327
   m_DampingRatio: 0
   m_Frequency: 7
 --- !u!114 &1374653703735055662
@@ -39901,6 +40377,26 @@ MonoBehaviour:
   - {fileID: 2069810391}
   - {fileID: 675795712}
   - {fileID: 1441177094}
+--- !u!254 &8197856798255660432
+RelativeJoint2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1374653703735055633}
+  m_Enabled: 0
+  serializedVersion: 4
+  m_EnableCollision: 0
+  m_ConnectedRigidBody: {fileID: 1374653703812798174}
+  m_BreakForce: Infinity
+  m_BreakTorque: Infinity
+  m_BreakAction: 3
+  m_MaxForce: 1000
+  m_MaxTorque: 1000
+  m_CorrectionScale: 0.2
+  m_AutoConfigureOffset: 1
+  m_LinearOffset: {x: 1.7999992, y: 1.0499992}
+  m_AngularOffset: 0
 --- !u!1 &1374653703812798151
 GameObject:
   m_ObjectHideFlags: 0
@@ -39918,7 +40414,8 @@ GameObject:
   - component: {fileID: 1374653703812798170}
   - component: {fileID: 1374653703812798149}
   - component: {fileID: 1374653703812798172}
-  m_Layer: 0
+  - component: {fileID: 4557793468510308712}
+  m_Layer: 6
   m_Name: 6
   m_TagString: Virus
   m_Icon: {fileID: 0}
@@ -39937,7 +40434,8 @@ Transform:
   m_LocalPosition: {x: 1.2, y: 0.7, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1534619673225734142}
   m_Father: {fileID: 1374653703168829470}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1374653703812798175
@@ -40062,19 +40560,19 @@ DistanceJoint2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1374653703812798151}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 4
   m_EnableCollision: 0
-  m_ConnectedRigidBody: {fileID: 1374653703735055638}
+  m_ConnectedRigidBody: {fileID: 1058324263934030857}
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
   m_BreakAction: 0
   m_AutoConfigureConnectedAnchor: 0
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}
-  m_AutoConfigureDistance: 1
-  m_Distance: 2.08385
-  m_MaxDistanceOnly: 0
+  m_AutoConfigureDistance: 0
+  m_Distance: 0.5
+  m_MaxDistanceOnly: 1
 --- !u!231 &1374653703812798171
 SpringJoint2D:
   m_ObjectHideFlags: 0
@@ -40093,7 +40591,7 @@ SpringJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}
   m_AutoConfigureDistance: 1
-  m_Distance: 1.0419334
+  m_Distance: 1.0419327
   m_DampingRatio: 0
   m_Frequency: 8
 --- !u!231 &1374653703812798170
@@ -40114,7 +40612,7 @@ SpringJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}
   m_AutoConfigureDistance: 1
-  m_Distance: 1.0500002
+  m_Distance: 1.0499992
   m_DampingRatio: 0
   m_Frequency: 7
 --- !u!231 &1374653703812798149
@@ -40124,7 +40622,7 @@ SpringJoint2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1374653703812798151}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   m_EnableCollision: 1
   m_ConnectedRigidBody: {fileID: 1374653703137111378}
@@ -40135,7 +40633,7 @@ SpringJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}
   m_AutoConfigureDistance: 1
-  m_Distance: 1.0419334
+  m_Distance: 1.0419327
   m_DampingRatio: 0
   m_Frequency: 7
 --- !u!114 &1374653703812798172
@@ -40170,6 +40668,26 @@ MonoBehaviour:
   - {fileID: 2069810391}
   - {fileID: 675795712}
   - {fileID: 1441177094}
+--- !u!254 &4557793468510308712
+RelativeJoint2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1374653703812798151}
+  m_Enabled: 0
+  serializedVersion: 4
+  m_EnableCollision: 0
+  m_ConnectedRigidBody: {fileID: 1374653703735055638}
+  m_BreakForce: Infinity
+  m_BreakTorque: Infinity
+  m_BreakAction: 3
+  m_MaxForce: 1000
+  m_MaxTorque: 1000
+  m_CorrectionScale: 0.2
+  m_AutoConfigureOffset: 1
+  m_LinearOffset: {x: -1.7999992, y: -1.0499992}
+  m_AngularOffset: 0
 --- !u!1 &1374653704044137728
 GameObject:
   m_ObjectHideFlags: 0
@@ -40187,7 +40705,8 @@ GameObject:
   - component: {fileID: 1374653704044137735}
   - component: {fileID: 1374653704044137734}
   - component: {fileID: 1374653704044137753}
-  m_Layer: 0
+  - component: {fileID: 2963581754335045991}
+  m_Layer: 6
   m_Name: 1
   m_TagString: Virus
   m_Icon: {fileID: 0}
@@ -40206,7 +40725,8 @@ Transform:
   m_LocalPosition: {x: 1.2, y: -0.7, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 4330117480619187996}
   m_Father: {fileID: 1374653703168829470}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1374653704044137755
@@ -40331,19 +40851,19 @@ DistanceJoint2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1374653704044137728}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 4
   m_EnableCollision: 0
-  m_ConnectedRigidBody: {fileID: 1374653704498784119}
+  m_ConnectedRigidBody: {fileID: 6191762642315430140}
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
   m_BreakAction: 0
   m_AutoConfigureConnectedAnchor: 0
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}
-  m_AutoConfigureDistance: 1
-  m_Distance: 2.08385
-  m_MaxDistanceOnly: 0
+  m_AutoConfigureDistance: 0
+  m_Distance: 0.5
+  m_MaxDistanceOnly: 1
 --- !u!231 &1374653704044137732
 SpringJoint2D:
   m_ObjectHideFlags: 0
@@ -40362,7 +40882,7 @@ SpringJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}
   m_AutoConfigureDistance: 1
-  m_Distance: 1.0419334
+  m_Distance: 1.0419327
   m_DampingRatio: 0
   m_Frequency: 8
 --- !u!231 &1374653704044137735
@@ -40383,7 +40903,7 @@ SpringJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}
   m_AutoConfigureDistance: 1
-  m_Distance: 1.0419333
+  m_Distance: 1.0419327
   m_DampingRatio: 0
   m_Frequency: 7
 --- !u!231 &1374653704044137734
@@ -40393,7 +40913,7 @@ SpringJoint2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1374653704044137728}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   m_EnableCollision: 1
   m_ConnectedRigidBody: {fileID: 1374653703812798174}
@@ -40404,7 +40924,7 @@ SpringJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}
   m_AutoConfigureDistance: 1
-  m_Distance: 1.0500002
+  m_Distance: 1.0499992
   m_DampingRatio: 0
   m_Frequency: 7
 --- !u!114 &1374653704044137753
@@ -40439,6 +40959,26 @@ MonoBehaviour:
   - {fileID: 2069810391}
   - {fileID: 675795712}
   - {fileID: 1441177094}
+--- !u!254 &2963581754335045991
+RelativeJoint2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1374653704044137728}
+  m_Enabled: 0
+  serializedVersion: 4
+  m_EnableCollision: 0
+  m_ConnectedRigidBody: {fileID: 1374653704498784119}
+  m_BreakForce: Infinity
+  m_BreakTorque: Infinity
+  m_BreakAction: 3
+  m_MaxForce: 1000
+  m_MaxTorque: 1000
+  m_CorrectionScale: 0.2
+  m_AutoConfigureOffset: 1
+  m_LinearOffset: {x: -1.7999992, y: 1.0499992}
+  m_AngularOffset: 0
 --- !u!1 &1374653704492727717
 GameObject:
   m_ObjectHideFlags: 0
@@ -40538,7 +41078,8 @@ GameObject:
   - component: {fileID: 1374653704498784117}
   - component: {fileID: 1374653704498784116}
   - component: {fileID: 1374653704498784143}
-  m_Layer: 0
+  - component: {fileID: 3417999126542205439}
+  m_Layer: 6
   m_Name: 4
   m_TagString: Virus
   m_Icon: {fileID: 0}
@@ -40557,7 +41098,8 @@ Transform:
   m_LocalPosition: {x: -1.2, y: 0.7, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1321544169348268519}
   m_Father: {fileID: 1374653703168829470}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1374653704498784137
@@ -40682,19 +41224,19 @@ DistanceJoint2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1374653704498784118}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 4
   m_EnableCollision: 0
-  m_ConnectedRigidBody: {fileID: 1374653704044137729}
+  m_ConnectedRigidBody: {fileID: 2715362699452640130}
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
   m_BreakAction: 0
   m_AutoConfigureConnectedAnchor: 0
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}
-  m_AutoConfigureDistance: 1
-  m_Distance: 2.08385
-  m_MaxDistanceOnly: 0
+  m_AutoConfigureDistance: 0
+  m_Distance: 0.5
+  m_MaxDistanceOnly: 1
 --- !u!231 &1374653704498784138
 SpringJoint2D:
   m_ObjectHideFlags: 0
@@ -40713,7 +41255,7 @@ SpringJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}
   m_AutoConfigureDistance: 1
-  m_Distance: 1.0419334
+  m_Distance: 1.0419327
   m_DampingRatio: 0
   m_Frequency: 8
 --- !u!231 &1374653704498784117
@@ -40723,7 +41265,7 @@ SpringJoint2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1374653704498784118}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   m_EnableCollision: 1
   m_ConnectedRigidBody: {fileID: 1374653703735055638}
@@ -40734,7 +41276,7 @@ SpringJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}
   m_AutoConfigureDistance: 1
-  m_Distance: 1.0500002
+  m_Distance: 1.0499992
   m_DampingRatio: 0
   m_Frequency: 7
 --- !u!231 &1374653704498784116
@@ -40755,7 +41297,7 @@ SpringJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}
   m_AutoConfigureDistance: 1
-  m_Distance: 1.0419334
+  m_Distance: 1.0419327
   m_DampingRatio: 0
   m_Frequency: 7
 --- !u!114 &1374653704498784143
@@ -40790,6 +41332,26 @@ MonoBehaviour:
   - {fileID: 2069810391}
   - {fileID: 675795712}
   - {fileID: 1441177094}
+--- !u!254 &3417999126542205439
+RelativeJoint2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1374653704498784118}
+  m_Enabled: 0
+  serializedVersion: 4
+  m_EnableCollision: 0
+  m_ConnectedRigidBody: {fileID: 1374653704044137729}
+  m_BreakForce: Infinity
+  m_BreakTorque: Infinity
+  m_BreakAction: 3
+  m_MaxForce: 1000
+  m_MaxTorque: 1000
+  m_CorrectionScale: 0.2
+  m_AutoConfigureOffset: 1
+  m_LinearOffset: {x: 1.7999992, y: -1.0499992}
+  m_AngularOffset: 0
 --- !u!1 &1374653704626147368
 GameObject:
   m_ObjectHideFlags: 0
@@ -41070,7 +41632,7 @@ GameObject:
   - component: {fileID: 1374653704959941339}
   - component: {fileID: 1374653704959941338}
   - component: {fileID: 1070493589924183091}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Skin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -49920,7 +50482,7 @@ GameObject:
   - component: {fileID: 5931416065701002076}
   - component: {fileID: 4243980960388071947}
   - component: {fileID: 9155258554730490432}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Small Stars
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -54729,7 +55291,7 @@ GameObject:
   - component: {fileID: 8351992294096525973}
   - component: {fileID: 8870272668334715692}
   - component: {fileID: 8236435400398730869}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: TentaclePivot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -54934,7 +55496,7 @@ GameObject:
   - component: {fileID: 6943859502842309571}
   - component: {fileID: 1585982129516687631}
   - component: {fileID: 396129575075695136}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: TentaclePivot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -55238,7 +55800,7 @@ GameObject:
   - component: {fileID: 1036871158018293842}
   - component: {fileID: 1710149859}
   - component: {fileID: 1710149861}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: spawn1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -55413,7 +55975,7 @@ GameObject:
   - component: {fileID: 8617786170902786478}
   - component: {fileID: 8902201968033434833}
   - component: {fileID: 1474727185886902766}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: TentacleTip
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -55605,6 +56167,119 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!1 &1638825516895412774
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3351492158132928481}
+  - component: {fileID: 389291305723886713}
+  - component: {fileID: 9099611949552538308}
+  m_Layer: 6
+  m_Name: 3 (1)
+  m_TagString: Virus
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3351492158132928481
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1638825516895412774}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -1.1999996, y: -0.6999995, z: 0}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1374653703168829470}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &389291305723886713
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1638825516895412774}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 66
+  m_Sprite: {fileID: 1421578307984107085, guid: d78eb7bebeb53504288307fabeb181a1,
+    type: 3}
+  m_Color: {r: 1, g: 0.17295581, b: 0.9309663, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 6.27, y: 6.45}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!50 &9099611949552538308
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1638825516895412774}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 2
+  m_LinearDrag: 0.05
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 1
+  m_SleepingMode: 1
+  m_CollisionDetection: 1
+  m_Constraints: 4
 --- !u!1 &1686744798583121772
 GameObject:
   m_ObjectHideFlags: 0
@@ -55773,7 +56448,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4193333186556926753}
   - component: {fileID: 2845961055485787217}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Point1 (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -55859,7 +56534,7 @@ GameObject:
   - component: {fileID: 3946901505367824898}
   - component: {fileID: 7688721535152724237}
   - component: {fileID: 6979961252952845460}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: targetCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -55944,7 +56619,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8529623763083068788}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: selectFX (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -55980,7 +56655,7 @@ GameObject:
   - component: {fileID: 6991171836127613084}
   - component: {fileID: 2272973532219137696}
   - component: {fileID: 5696234624922120379}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: targetCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -56070,7 +56745,7 @@ GameObject:
   - component: {fileID: 1398185395685135044}
   - component: {fileID: 5636796019982521743}
   - component: {fileID: 6051604265671934733}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: TentacleTip
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -56394,7 +57069,7 @@ GameObject:
   - component: {fileID: 7099066527086217672}
   - component: {fileID: 2272232086430202159}
   - component: {fileID: 8336289650927119794}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: shieldInsideDecor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -56513,7 +57188,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8351116351131594029}
   - component: {fileID: 1829266582554718609}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: shieldInsideDecor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -56596,7 +57271,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5767630185694682751}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: tentacles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -56649,7 +57324,7 @@ GameObject:
   - component: {fileID: 6636599153962364874}
   - component: {fileID: 5942835621529644094}
   - component: {fileID: 8123183440314847854}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Rays
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -66322,6 +66997,91 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
+--- !u!1 &2656809720396839454
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1321544169348268519}
+  - component: {fileID: 4855396824913811927}
+  m_Layer: 6
+  m_Name: 4 (2)
+  m_TagString: Virus
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1321544169348268519
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2656809720396839454}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: -0.08, y: -0.08, z: -0.05999998}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 1374653704498784142}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &4855396824913811927
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2656809720396839454}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 77
+  m_Sprite: {fileID: 1421578307984107085, guid: d78eb7bebeb53504288307fabeb181a1,
+    type: 3}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.63529414}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 6.27, y: 6.45}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
 --- !u!1 &2864101421421054681
 GameObject:
   m_ObjectHideFlags: 0
@@ -66487,7 +67247,7 @@ GameObject:
   - component: {fileID: 4153452575032614669}
   - component: {fileID: 2704979466357748243}
   - component: {fileID: 2413875486882596258}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Target3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -66586,7 +67346,7 @@ GameObject:
   - component: {fileID: 8679249182503784948}
   - component: {fileID: 5470625476431625932}
   - component: {fileID: 3669313980282818887}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: shield
   m_TagString: Virus
   m_Icon: {fileID: 0}
@@ -66821,6 +67581,91 @@ MonoBehaviour:
   HP: 2
   invincibleTime: 1
   arrivalThreshold: 1
+--- !u!1 &3152721288433603183
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 932073678542288930}
+  - component: {fileID: 3194624348729580772}
+  m_Layer: 6
+  m_Name: 3 (2)
+  m_TagString: Virus
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &932073678542288930
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3152721288433603183}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: -0.08, y: -0.08, z: -0.05999998}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 1374653703735055657}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &3194624348729580772
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3152721288433603183}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 77
+  m_Sprite: {fileID: 1421578307984107085, guid: d78eb7bebeb53504288307fabeb181a1,
+    type: 3}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.63529414}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 6.27, y: 6.45}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
 --- !u!1 &3411009520739833781
 GameObject:
   m_ObjectHideFlags: 0
@@ -66833,7 +67678,7 @@ GameObject:
   - component: {fileID: 1270547863237794034}
   - component: {fileID: 8952463332109182787}
   - component: {fileID: 604528084}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: spawn3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -66954,7 +67799,7 @@ GameObject:
   - component: {fileID: 736880780366839600}
   - component: {fileID: 19350500308169320}
   - component: {fileID: 3750884810858152466}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: TentacleSegment2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -67071,7 +67916,7 @@ GameObject:
   - component: {fileID: 4449090787928731531}
   - component: {fileID: 3629445603129989976}
   - component: {fileID: 1953180364}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: spawn4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -67191,7 +68036,7 @@ GameObject:
   - component: {fileID: 1228590147208402940}
   - component: {fileID: 1529663610955622791}
   - component: {fileID: 7747109597838454937}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Target5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -67352,6 +68197,176 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!1 &3650743545760280212
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4330117480619187996}
+  - component: {fileID: 9120820820717340862}
+  m_Layer: 6
+  m_Name: 1 (2)
+  m_TagString: Virus
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4330117480619187996
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3650743545760280212}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: -0.08, y: -0.08, z: -0.05999998}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 1374653704044137752}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &9120820820717340862
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3650743545760280212}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 77
+  m_Sprite: {fileID: 1421578307984107085, guid: d78eb7bebeb53504288307fabeb181a1,
+    type: 3}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.63529414}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 6.27, y: 6.45}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!1 &3753126648065524786
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1534619673225734142}
+  - component: {fileID: 6754234429292879356}
+  m_Layer: 6
+  m_Name: 6 (2)
+  m_TagString: Virus
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1534619673225734142
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3753126648065524786}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: -0.08, y: -0.08, z: -0.05999998}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 1374653703812798148}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &6754234429292879356
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3753126648065524786}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 77
+  m_Sprite: {fileID: 1421578307984107085, guid: d78eb7bebeb53504288307fabeb181a1,
+    type: 3}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.63529414}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 6.27, y: 6.45}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
 --- !u!1 &3754518786749184585
 GameObject:
   m_ObjectHideFlags: 0
@@ -67441,7 +68456,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7859449510340250622}
   - component: {fileID: 6872114186858552273}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Point Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -67535,7 +68550,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4606815547075025747}
   - component: {fileID: 1675093614410023402}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Point Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -67820,7 +68835,7 @@ GameObject:
   - component: {fileID: 8038719890319748740}
   - component: {fileID: 5406628991758189102}
   - component: {fileID: 3720137939871762753}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: TentacleSegment1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -67939,7 +68954,7 @@ GameObject:
   - component: {fileID: 1553652810953128736}
   - component: {fileID: 8774724103524743042}
   - component: {fileID: 15415424981717986}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: TentacleTip
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -68145,7 +69160,7 @@ GameObject:
   - component: {fileID: 1548160240491582486}
   - component: {fileID: 4559288183306603708}
   - component: {fileID: 2770845180937484094}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: TentaclePivot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -68319,7 +69334,7 @@ GameObject:
   - component: {fileID: 3103635239719086541}
   - component: {fileID: 1543924838944055749}
   - component: {fileID: 1135898729}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: TentaclePivot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -68501,7 +69516,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8190159184375164446}
   - component: {fileID: 6421387562249329237}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: shieldInsideDecor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -68585,7 +69600,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5564314940327798218}
   - component: {fileID: 6475786524650912392}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Tentacle 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -68687,7 +69702,7 @@ GameObject:
   - component: {fileID: 5716543683865215142}
   - component: {fileID: 8199483960100659937}
   - component: {fileID: 7607197199464579880}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: targetCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -68773,7 +69788,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3987793595321154027}
   - component: {fileID: 7996953642066160203}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Point1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -68858,7 +69873,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6068545962487698031}
   - component: {fileID: 5817065867472631271}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Point1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -68944,7 +69959,7 @@ GameObject:
   - component: {fileID: 8559756545217735146}
   - component: {fileID: 4963847809530106499}
   - component: {fileID: 6495083378367500604}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Rays
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -73938,7 +74953,7 @@ GameObject:
   - component: {fileID: 1616492409897835874}
   - component: {fileID: 7989818876901329913}
   - component: {fileID: 2927244323361593615}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: targetCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -74028,7 +75043,7 @@ GameObject:
   - component: {fileID: 1278980890886803937}
   - component: {fileID: 212874132518686390}
   - component: {fileID: 2713190767460970732}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: shield
   m_TagString: SubVirus
   m_Icon: {fileID: 0}
@@ -74277,7 +75292,7 @@ GameObject:
   - component: {fileID: 473921171918526483}
   - component: {fileID: 7369841760735813362}
   - component: {fileID: 6652273197397834147}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: shield
   m_TagString: Virus
   m_Icon: {fileID: 0}
@@ -74598,7 +75613,7 @@ GameObject:
   - component: {fileID: 6251618184808817672}
   - component: {fileID: 3412657347663291519}
   - component: {fileID: 1491057942522772854}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Small Stars
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -79407,7 +80422,7 @@ GameObject:
   - component: {fileID: 1489292253640764502}
   - component: {fileID: 8156811748436520380}
   - component: {fileID: 4726100271723635280}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: TentaclePivot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -79804,7 +80819,7 @@ GameObject:
   - component: {fileID: 204297013811638641}
   - component: {fileID: 4753056034266361335}
   - component: {fileID: 7744009526435822149}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: targetCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -79976,7 +80991,7 @@ GameObject:
   - component: {fileID: 1897448056651851497}
   - component: {fileID: 4971996661058106708}
   - component: {fileID: 7213565727405278155}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: TentacleSegment2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -80093,7 +81108,7 @@ GameObject:
   - component: {fileID: 3801443988528241149}
   - component: {fileID: 7717250128049590351}
   - component: {fileID: 1078550030}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: spawn2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -80202,6 +81217,119 @@ HingeJoint2D:
   m_AngleLimits:
     m_LowerAngle: 0
     m_UpperAngle: 359
+--- !u!1 &6121621060100560759
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1834815776375525824}
+  - component: {fileID: 5028349568917151019}
+  - component: {fileID: 579035720786366075}
+  m_Layer: 6
+  m_Name: 2 (1)
+  m_TagString: Virus
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1834815776375525824
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6121621060100560759}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: -1.399999, z: 0}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1374653703168829470}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &5028349568917151019
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6121621060100560759}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 66
+  m_Sprite: {fileID: 1421578307984107085, guid: d78eb7bebeb53504288307fabeb181a1,
+    type: 3}
+  m_Color: {r: 1, g: 0.17295581, b: 0.9309663, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 6.27, y: 6.45}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!50 &579035720786366075
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6121621060100560759}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 2
+  m_LinearDrag: 0.05
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 1
+  m_SleepingMode: 1
+  m_CollisionDetection: 1
+  m_Constraints: 4
 --- !u!1 &6308500760600668919
 GameObject:
   m_ObjectHideFlags: 0
@@ -80212,7 +81340,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5754723601273747071}
   - component: {fileID: 1667442747097843609}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: shieldInsideDecor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -80370,7 +81498,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2904493804230031896}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: selectFX (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -80487,7 +81615,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1283185875528161878}
   - component: {fileID: 6472450775121712498}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: shieldInsideDecor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -80573,7 +81701,7 @@ GameObject:
   - component: {fileID: 8726354937494550994}
   - component: {fileID: 6925704275331834260}
   - component: {fileID: 491049919891910253}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: TentacleSegment1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -80687,7 +81815,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6261603555312862922}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: GameObject (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -80724,7 +81852,7 @@ GameObject:
   - component: {fileID: 5810659749549359912}
   - component: {fileID: 807494090708179777}
   - component: {fileID: 3381801759010165182}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Target4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -80820,7 +81948,7 @@ GameObject:
   - component: {fileID: 1778122948773335558}
   - component: {fileID: 4235331020143612794}
   - component: {fileID: 8092331082314762963}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Rays
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -85663,7 +86791,7 @@ GameObject:
   - component: {fileID: 1801903635238217323}
   - component: {fileID: 5618123750318471593}
   - component: {fileID: 9066052289987829737}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: TentacleSegment1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -85779,7 +86907,7 @@ GameObject:
   - component: {fileID: 7257965201319637864}
   - component: {fileID: 288026007250578222}
   - component: {fileID: 535805882955736554}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: ShieldRing
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -85881,7 +87009,7 @@ GameObject:
   - component: {fileID: 5597344844757605277}
   - component: {fileID: 996140238372077261}
   - component: {fileID: 9058498553111594152}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: TentacleSegment2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -85996,7 +87124,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4695704260389974709}
   - component: {fileID: 2610866906379436413}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: shieldInsideDecor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -86082,7 +87210,7 @@ GameObject:
   - component: {fileID: 2024626436841587533}
   - component: {fileID: 7727648966593592585}
   - component: {fileID: 694166296223433283}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: TentacleSegment2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -86196,7 +87324,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5024207899074356318}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -86232,7 +87360,7 @@ GameObject:
   m_Component:
   - component: {fileID: 108130877831448830}
   - component: {fileID: 3551895073398026980}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Point Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -86326,7 +87454,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6064149504910218778}
   - component: {fileID: 6034262136793752070}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Point Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -86420,7 +87548,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4613741182558251474}
   - component: {fileID: 3676255100246955513}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: shieldInsideDecor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -86503,7 +87631,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3863476312768842550}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: selectFX (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -86539,7 +87667,7 @@ GameObject:
   - component: {fileID: 1897116785925058052}
   - component: {fileID: 245101399784389315}
   - component: {fileID: 2991173363485216041}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Small Stars
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -91346,7 +92474,7 @@ GameObject:
   - component: {fileID: 6501915063379409180}
   - component: {fileID: 7820714834202536360}
   - component: {fileID: 1145987952}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: spawn5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -91469,7 +92597,7 @@ GameObject:
   - component: {fileID: 4293399576253517259}
   - component: {fileID: 7999168134677805649}
   - component: {fileID: 7808689595475826821}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: shield
   m_TagString: Virus
   m_Icon: {fileID: 0}
@@ -91718,7 +92846,7 @@ GameObject:
   - component: {fileID: 1112296882370446377}
   - component: {fileID: 6860222062563526931}
   - component: {fileID: 2096671593613280882}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: shield
   m_TagString: Virus
   m_Icon: {fileID: 0}
@@ -91963,7 +93091,7 @@ GameObject:
   m_Component:
   - component: {fileID: 156873677881401717}
   - component: {fileID: 5772667052116255096}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Tentacle 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -92068,7 +93196,7 @@ GameObject:
   - component: {fileID: 7338170833698870851}
   - component: {fileID: 2362693910981835994}
   - component: {fileID: 6618017242067000425}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: TentacleTip
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -92272,7 +93400,7 @@ GameObject:
   - component: {fileID: 2607606876676670351}
   - component: {fileID: 3510561716615978514}
   - component: {fileID: 3767970969691031839}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: TentacleSegment1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -92387,7 +93515,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6104920902796587383}
   - component: {fileID: 4940244988839679777}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Tentacle 5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -92642,7 +93770,7 @@ GameObject:
   - component: {fileID: 8644100659669712261}
   - component: {fileID: 4558872926769964119}
   - component: {fileID: 2840385554617318369}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: targetCollider (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -92732,7 +93860,7 @@ GameObject:
   - component: {fileID: 5788693062176855441}
   - component: {fileID: 6612553720476966497}
   - component: {fileID: 1374603823681941579}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: shield
   m_TagString: Virus
   m_Icon: {fileID: 0}
@@ -93057,7 +94185,7 @@ GameObject:
   - component: {fileID: 9179579299779854081}
   - component: {fileID: 2964398295753619173}
   - component: {fileID: 7153768132996260200}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: shield
   m_TagString: Virus
   m_Icon: {fileID: 0}
@@ -93306,7 +94434,7 @@ GameObject:
   - component: {fileID: 6083388805371463139}
   - component: {fileID: 476100405457097926}
   - component: {fileID: 7539937970470769480}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: TentacleTip
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -93509,7 +94637,7 @@ GameObject:
   - component: {fileID: 4630399381107613680}
   - component: {fileID: 3281387777476250568}
   - component: {fileID: 2128943128998342177}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Small Stars
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -98314,7 +99442,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3046427033369124564}
   - component: {fileID: 3167158267327693177}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: shieldInsideDecor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -98388,6 +99516,204 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &8604750693313071793
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7591689155686145319}
+  - component: {fileID: 3435745488670986839}
+  m_Layer: 6
+  m_Name: 5 (2)
+  m_TagString: Virus
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7591689155686145319
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8604750693313071793}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: -0.08, y: -0.08, z: -0.05999998}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 1374653703137111381}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &3435745488670986839
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8604750693313071793}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 77
+  m_Sprite: {fileID: 1421578307984107085, guid: d78eb7bebeb53504288307fabeb181a1,
+    type: 3}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.63529414}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 6.27, y: 6.45}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!1 &8830824243782907556
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3408538750054182663}
+  - component: {fileID: 693620708829055130}
+  - component: {fileID: 6191762642315430140}
+  m_Layer: 6
+  m_Name: 1 (1)
+  m_TagString: Virus
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3408538750054182663
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8830824243782907556}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1.1999996, y: -0.6999995, z: 0}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1374653703168829470}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &693620708829055130
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8830824243782907556}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 66
+  m_Sprite: {fileID: 1421578307984107085, guid: d78eb7bebeb53504288307fabeb181a1,
+    type: 3}
+  m_Color: {r: 1, g: 0.17295581, b: 0.9309663, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 6.27, y: 6.45}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!50 &6191762642315430140
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8830824243782907556}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 2
+  m_LinearDrag: 0.05
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 1
+  m_SleepingMode: 1
+  m_CollisionDetection: 1
+  m_Constraints: 4
 --- !u!1 &8971184605507012044
 GameObject:
   m_ObjectHideFlags: 0
@@ -98399,7 +99725,7 @@ GameObject:
   - component: {fileID: 5857801063787075922}
   - component: {fileID: 8067355464745493914}
   - component: {fileID: 8758533548551584817}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Target2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -98615,7 +99941,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1732099224859686112}
   - component: {fileID: 7707413317545526326}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Point1 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -98700,7 +100026,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7464082915478255688}
   - component: {fileID: 5847846034189929123}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Point1 (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -43,10 +43,17 @@ public class catchRelease : MonoBehaviour
         if (collision.tag == "tentacleRange")
         {
             //si salimos del rango devolvemos el target
-            if(tentacle1.IsHoldingTarget && tentacleTarget != null)
+            Debug.Log("++++++IS OUT TENTACLE RANGE 01");
+            Debug.Log("++++++IS HOLDING?: "+ tentacle1.IsHoldingTarget+"\nIS TARGET?: "+ tentacleTarget);
+
+            if (tentacle1.IsHoldingTarget && tentacleTarget != null)
             {
+                Debug.Log("+++IS OUT TENTACLE RANGE 02");
+
                 tentacle1.Release();
             }
+            Debug.Log("+++IS OUT TENTACLE RANGE 03");
+
             tentacle1.TargetRigidbody = spawnTarget;
             isOnTentacleTarget = false;
             tentacleTarget = null;
