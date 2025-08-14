@@ -14,7 +14,10 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/PlayGround.unity
     guid: d8035313924b43242adee0d05289d901
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Prefabs.unity
     guid: 0dd0c3a440f27cc49a04a4172b2fd1ad
+  - enabled: 1
+    path: Assets/Scenes/GAME-V0.1.unity
+    guid: cd1dcb6f775e89b42b427e60264caced
   m_configObjects: {}
