@@ -445,7 +445,6 @@ GameObject:
   m_Component:
   - component: {fileID: 20908230}
   - component: {fileID: 20908233}
-  - component: {fileID: 20908232}
   - component: {fileID: 20908231}
   m_Layer: 0
   m_Name: bolas3_2 (9)
@@ -482,24 +481,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isTriggerHandled: 0
-  desiredDistance: 50
+  desiredDistance: 45
   Virus: {fileID: 75848495}
   Child: {fileID: 0}
   isBackgroundElement: 1
---- !u!114 &20908232
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 20908229}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d6492d35ea1c4774ea783cc2f69de00c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  RotSpeed: 1
-  WichDirection: 1
 --- !u!212 &20908233
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1750,6 +1735,118 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cameraTransform: {fileID: 199964438}
   relativeMove: 0.11
+--- !u!1001 &26052935
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1340072369}
+    m_Modifications:
+    - target: {fileID: 2486638264020419297, guid: 1c3788451427fb049bccf9c6fd7a9797,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2486638264020419297, guid: 1c3788451427fb049bccf9c6fd7a9797,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2486638264020419297, guid: 1c3788451427fb049bccf9c6fd7a9797,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3535604592933578859, guid: 1c3788451427fb049bccf9c6fd7a9797,
+        type: 3}
+      propertyPath: m_LocalBounds.m_Center.x
+      value: 0.00029999018
+      objectReference: {fileID: 0}
+    - target: {fileID: 3535604592933578859, guid: 1c3788451427fb049bccf9c6fd7a9797,
+        type: 3}
+      propertyPath: m_LocalBounds.m_Center.y
+      value: -0.00035005808
+      objectReference: {fileID: 0}
+    - target: {fileID: 3535604592933578859, guid: 1c3788451427fb049bccf9c6fd7a9797,
+        type: 3}
+      propertyPath: m_LocalBounds.m_Extent.x
+      value: 1.9999001
+      objectReference: {fileID: 0}
+    - target: {fileID: 3535604592933578859, guid: 1c3788451427fb049bccf9c6fd7a9797,
+        type: 3}
+      propertyPath: m_LocalBounds.m_Extent.y
+      value: 2.00005
+      objectReference: {fileID: 0}
+    - target: {fileID: 8606506339834024928, guid: 1c3788451427fb049bccf9c6fd7a9797,
+        type: 3}
+      propertyPath: m_Name
+      value: HPUPGRADE  Variant (11)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8606506339834024928, guid: 1c3788451427fb049bccf9c6fd7a9797,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8609056215653627384, guid: 1c3788451427fb049bccf9c6fd7a9797,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 37
+      objectReference: {fileID: 0}
+    - target: {fileID: 8609056215653627384, guid: 1c3788451427fb049bccf9c6fd7a9797,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 52.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8609056215653627384, guid: 1c3788451427fb049bccf9c6fd7a9797,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8609056215653627384, guid: 1c3788451427fb049bccf9c6fd7a9797,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8609056215653627384, guid: 1c3788451427fb049bccf9c6fd7a9797,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8609056215653627384, guid: 1c3788451427fb049bccf9c6fd7a9797,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8609056215653627384, guid: 1c3788451427fb049bccf9c6fd7a9797,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8609056215653627384, guid: 1c3788451427fb049bccf9c6fd7a9797,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8609056215653627384, guid: 1c3788451427fb049bccf9c6fd7a9797,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8609056215653627384, guid: 1c3788451427fb049bccf9c6fd7a9797,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 8609056215653627384, guid: 1c3788451427fb049bccf9c6fd7a9797,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1614979576}
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 1c3788451427fb049bccf9c6fd7a9797, type: 3}
 --- !u!1 &26346122
 GameObject:
   m_ObjectHideFlags: 0
@@ -2899,7 +2996,6 @@ GameObject:
   m_Component:
   - component: {fileID: 57827257}
   - component: {fileID: 57827260}
-  - component: {fileID: 57827259}
   - component: {fileID: 57827258}
   m_Layer: 0
   m_Name: bolas3_5 (17)
@@ -2936,24 +3032,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isTriggerHandled: 0
-  desiredDistance: 50
+  desiredDistance: 45
   Virus: {fileID: 75848495}
   Child: {fileID: 0}
   isBackgroundElement: 1
---- !u!114 &57827259
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 57827256}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d6492d35ea1c4774ea783cc2f69de00c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  RotSpeed: -1
-  WichDirection: 3
 --- !u!212 &57827260
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3138,6 +3220,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3258772411807990133, guid: ecfc397ec14341c418312cfd53a88e40,
     type: 3}
   m_PrefabInstance: {fileID: 693269883}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &63667474 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8609056215653627384, guid: 1c3788451427fb049bccf9c6fd7a9797,
+    type: 3}
+  m_PrefabInstance: {fileID: 26052935}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &66917311
 PrefabInstance:
@@ -4595,7 +4683,6 @@ GameObject:
   m_Component:
   - component: {fileID: 87412447}
   - component: {fileID: 87412450}
-  - component: {fileID: 87412449}
   - component: {fileID: 87412448}
   m_Layer: 0
   m_Name: bolas3_7 (14)
@@ -4632,24 +4719,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isTriggerHandled: 0
-  desiredDistance: 50
+  desiredDistance: 45
   Virus: {fileID: 75848495}
   Child: {fileID: 0}
   isBackgroundElement: 1
---- !u!114 &87412449
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 87412446}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d6492d35ea1c4774ea783cc2f69de00c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  RotSpeed: 1
-  WichDirection: 1
 --- !u!212 &87412450
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5077,7 +5150,6 @@ GameObject:
   m_Component:
   - component: {fileID: 93192415}
   - component: {fileID: 93192418}
-  - component: {fileID: 93192417}
   - component: {fileID: 93192416}
   m_Layer: 0
   m_Name: bolas3_0 (13)
@@ -5114,24 +5186,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isTriggerHandled: 0
-  desiredDistance: 50
+  desiredDistance: 45
   Virus: {fileID: 75848495}
   Child: {fileID: 0}
   isBackgroundElement: 1
---- !u!114 &93192417
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 93192414}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d6492d35ea1c4774ea783cc2f69de00c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  RotSpeed: 1
-  WichDirection: 2
 --- !u!212 &93192418
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -8470,7 +8528,6 @@ GameObject:
   m_Component:
   - component: {fileID: 165163402}
   - component: {fileID: 165163405}
-  - component: {fileID: 165163404}
   - component: {fileID: 165163403}
   m_Layer: 0
   m_Name: bolas3_5 (11)
@@ -8507,24 +8564,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isTriggerHandled: 0
-  desiredDistance: 50
+  desiredDistance: 45
   Virus: {fileID: 75848495}
   Child: {fileID: 0}
   isBackgroundElement: 1
---- !u!114 &165163404
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 165163401}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d6492d35ea1c4774ea783cc2f69de00c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  RotSpeed: 1
-  WichDirection: 1
 --- !u!212 &165163405
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -9506,7 +9549,6 @@ GameObject:
   m_Component:
   - component: {fileID: 186830865}
   - component: {fileID: 186830868}
-  - component: {fileID: 186830867}
   - component: {fileID: 186830866}
   m_Layer: 0
   m_Name: bolas3_1 (6)
@@ -9543,24 +9585,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isTriggerHandled: 0
-  desiredDistance: 50
+  desiredDistance: 45
   Virus: {fileID: 75848495}
   Child: {fileID: 0}
   isBackgroundElement: 1
---- !u!114 &186830867
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 186830864}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d6492d35ea1c4774ea783cc2f69de00c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  RotSpeed: 1
-  WichDirection: 0
 --- !u!212 &186830868
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -11454,7 +11482,6 @@ GameObject:
   m_Component:
   - component: {fileID: 265474409}
   - component: {fileID: 265474412}
-  - component: {fileID: 265474411}
   - component: {fileID: 265474410}
   m_Layer: 0
   m_Name: bolas3_5 (7)
@@ -11491,24 +11518,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isTriggerHandled: 0
-  desiredDistance: 50
+  desiredDistance: 45
   Virus: {fileID: 75848495}
   Child: {fileID: 0}
   isBackgroundElement: 1
---- !u!114 &265474411
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 265474408}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d6492d35ea1c4774ea783cc2f69de00c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  RotSpeed: -1
-  WichDirection: 3
 --- !u!212 &265474412
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -11677,7 +11690,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isTriggerHandled: 0
-  desiredDistance: 50
+  desiredDistance: 45
   Virus: {fileID: 75848495}
   Child: {fileID: 0}
   isBackgroundElement: 1
@@ -11955,7 +11968,6 @@ GameObject:
   m_Component:
   - component: {fileID: 276181437}
   - component: {fileID: 276181440}
-  - component: {fileID: 276181439}
   - component: {fileID: 276181438}
   m_Layer: 0
   m_Name: bolas3_7 (3)
@@ -11992,24 +12004,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isTriggerHandled: 0
-  desiredDistance: 50
+  desiredDistance: 45
   Virus: {fileID: 75848495}
   Child: {fileID: 0}
   isBackgroundElement: 1
---- !u!114 &276181439
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 276181436}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d6492d35ea1c4774ea783cc2f69de00c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  RotSpeed: 1
-  WichDirection: 0
 --- !u!212 &276181440
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -13321,7 +13319,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isTriggerHandled: 0
-  desiredDistance: 50
+  desiredDistance: 45
   Virus: {fileID: 75848495}
   Child: {fileID: 0}
   isBackgroundElement: 1
@@ -14280,7 +14278,6 @@ GameObject:
   m_Component:
   - component: {fileID: 358074421}
   - component: {fileID: 358074424}
-  - component: {fileID: 358074423}
   - component: {fileID: 358074422}
   m_Layer: 0
   m_Name: bolas3_5 (6)
@@ -14317,24 +14314,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isTriggerHandled: 0
-  desiredDistance: 50
+  desiredDistance: 45
   Virus: {fileID: 75848495}
   Child: {fileID: 0}
   isBackgroundElement: 1
---- !u!114 &358074423
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 358074420}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d6492d35ea1c4774ea783cc2f69de00c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  RotSpeed: 1
-  WichDirection: 0
 --- !u!212 &358074424
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -14646,7 +14629,6 @@ GameObject:
   m_Component:
   - component: {fileID: 376203378}
   - component: {fileID: 376203381}
-  - component: {fileID: 376203380}
   - component: {fileID: 376203379}
   m_Layer: 0
   m_Name: bolas3_1 (11)
@@ -14683,24 +14665,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isTriggerHandled: 0
-  desiredDistance: 50
+  desiredDistance: 45
   Virus: {fileID: 75848495}
   Child: {fileID: 0}
   isBackgroundElement: 1
---- !u!114 &376203380
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 376203377}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d6492d35ea1c4774ea783cc2f69de00c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  RotSpeed: 1
-  WichDirection: 2
 --- !u!212 &376203381
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -15225,7 +15193,6 @@ GameObject:
   m_Component:
   - component: {fileID: 382647197}
   - component: {fileID: 382647200}
-  - component: {fileID: 382647199}
   - component: {fileID: 382647198}
   m_Layer: 0
   m_Name: bolas3_5 (8)
@@ -15262,24 +15229,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isTriggerHandled: 0
-  desiredDistance: 50
+  desiredDistance: 45
   Virus: {fileID: 75848495}
   Child: {fileID: 0}
   isBackgroundElement: 1
---- !u!114 &382647199
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 382647196}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d6492d35ea1c4774ea783cc2f69de00c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  RotSpeed: -1
-  WichDirection: 3
 --- !u!212 &382647200
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -18705,7 +18658,6 @@ GameObject:
   m_Component:
   - component: {fileID: 455988771}
   - component: {fileID: 455988774}
-  - component: {fileID: 455988773}
   - component: {fileID: 455988772}
   m_Layer: 0
   m_Name: bolas3_0 (12)
@@ -18742,24 +18694,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isTriggerHandled: 0
-  desiredDistance: 50
+  desiredDistance: 45
   Virus: {fileID: 75848495}
   Child: {fileID: 0}
   isBackgroundElement: 1
---- !u!114 &455988773
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 455988770}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d6492d35ea1c4774ea783cc2f69de00c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  RotSpeed: 1
-  WichDirection: 0
 --- !u!212 &455988774
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -18823,7 +18761,6 @@ GameObject:
   m_Component:
   - component: {fileID: 456305185}
   - component: {fileID: 456305188}
-  - component: {fileID: 456305187}
   - component: {fileID: 456305186}
   m_Layer: 0
   m_Name: bolas3_0 (15)
@@ -18860,24 +18797,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isTriggerHandled: 0
-  desiredDistance: 50
+  desiredDistance: 45
   Virus: {fileID: 75848495}
   Child: {fileID: 0}
   isBackgroundElement: 1
---- !u!114 &456305187
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 456305184}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d6492d35ea1c4774ea783cc2f69de00c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  RotSpeed: 1
-  WichDirection: 0
 --- !u!212 &456305188
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -20915,7 +20838,6 @@ GameObject:
   m_Component:
   - component: {fileID: 518386763}
   - component: {fileID: 518386766}
-  - component: {fileID: 518386765}
   - component: {fileID: 518386764}
   m_Layer: 0
   m_Name: bolas3_6 (9)
@@ -20952,24 +20874,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isTriggerHandled: 0
-  desiredDistance: 50
+  desiredDistance: 45
   Virus: {fileID: 75848495}
   Child: {fileID: 0}
   isBackgroundElement: 1
---- !u!114 &518386765
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 518386762}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d6492d35ea1c4774ea783cc2f69de00c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  RotSpeed: 1
-  WichDirection: 1
 --- !u!212 &518386766
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -21491,7 +21399,6 @@ GameObject:
   m_Component:
   - component: {fileID: 529418009}
   - component: {fileID: 529418012}
-  - component: {fileID: 529418011}
   - component: {fileID: 529418010}
   m_Layer: 0
   m_Name: bolas3_5 (12)
@@ -21528,24 +21435,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isTriggerHandled: 0
-  desiredDistance: 50
+  desiredDistance: 45
   Virus: {fileID: 75848495}
   Child: {fileID: 0}
   isBackgroundElement: 1
---- !u!114 &529418011
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 529418008}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d6492d35ea1c4774ea783cc2f69de00c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  RotSpeed: 1
-  WichDirection: 0
 --- !u!212 &529418012
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -23923,7 +23816,6 @@ GameObject:
   m_Component:
   - component: {fileID: 613442109}
   - component: {fileID: 613442112}
-  - component: {fileID: 613442111}
   - component: {fileID: 613442110}
   m_Layer: 0
   m_Name: bolas3_7 (13)
@@ -23960,24 +23852,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isTriggerHandled: 0
-  desiredDistance: 50
+  desiredDistance: 45
   Virus: {fileID: 75848495}
   Child: {fileID: 0}
   isBackgroundElement: 1
---- !u!114 &613442111
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 613442108}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d6492d35ea1c4774ea783cc2f69de00c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  RotSpeed: 1
-  WichDirection: 0
 --- !u!212 &613442112
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -26066,7 +25944,6 @@ GameObject:
   m_Component:
   - component: {fileID: 639281056}
   - component: {fileID: 639281059}
-  - component: {fileID: 639281058}
   - component: {fileID: 639281057}
   m_Layer: 0
   m_Name: bolas3_0 (14)
@@ -26103,24 +25980,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isTriggerHandled: 0
-  desiredDistance: 50
+  desiredDistance: 45
   Virus: {fileID: 75848495}
   Child: {fileID: 0}
   isBackgroundElement: 1
---- !u!114 &639281058
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 639281055}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d6492d35ea1c4774ea783cc2f69de00c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  RotSpeed: -1
-  WichDirection: 3
 --- !u!212 &639281059
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -30776,7 +30639,6 @@ GameObject:
   m_Component:
   - component: {fileID: 707442044}
   - component: {fileID: 707442047}
-  - component: {fileID: 707442046}
   - component: {fileID: 707442045}
   m_Layer: 0
   m_Name: bolas3_4 (6)
@@ -30813,24 +30675,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isTriggerHandled: 0
-  desiredDistance: 50
+  desiredDistance: 45
   Virus: {fileID: 75848495}
   Child: {fileID: 0}
   isBackgroundElement: 1
---- !u!114 &707442046
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 707442043}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d6492d35ea1c4774ea783cc2f69de00c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  RotSpeed: 1
-  WichDirection: 2
 --- !u!212 &707442047
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -31276,7 +31124,6 @@ GameObject:
   m_Component:
   - component: {fileID: 716258334}
   - component: {fileID: 716258337}
-  - component: {fileID: 716258336}
   - component: {fileID: 716258335}
   m_Layer: 0
   m_Name: bolas3_4 (11)
@@ -31313,24 +31160,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isTriggerHandled: 0
-  desiredDistance: 50
+  desiredDistance: 45
   Virus: {fileID: 75848495}
   Child: {fileID: 0}
   isBackgroundElement: 1
---- !u!114 &716258336
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 716258333}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d6492d35ea1c4774ea783cc2f69de00c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  RotSpeed: 1
-  WichDirection: 2
 --- !u!212 &716258337
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -33477,7 +33310,6 @@ GameObject:
   m_Component:
   - component: {fileID: 746682499}
   - component: {fileID: 746682502}
-  - component: {fileID: 746682501}
   - component: {fileID: 746682500}
   m_Layer: 0
   m_Name: bolas3_6 (8)
@@ -33514,24 +33346,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isTriggerHandled: 0
-  desiredDistance: 50
+  desiredDistance: 45
   Virus: {fileID: 75848495}
   Child: {fileID: 0}
   isBackgroundElement: 1
---- !u!114 &746682501
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 746682498}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d6492d35ea1c4774ea783cc2f69de00c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  RotSpeed: 1
-  WichDirection: 0
 --- !u!212 &746682502
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -34411,7 +34229,6 @@ GameObject:
   m_Component:
   - component: {fileID: 783515188}
   - component: {fileID: 783515191}
-  - component: {fileID: 783515190}
   - component: {fileID: 783515189}
   m_Layer: 0
   m_Name: bolas3_5 (5)
@@ -34448,24 +34265,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isTriggerHandled: 0
-  desiredDistance: 50
+  desiredDistance: 45
   Virus: {fileID: 75848495}
   Child: {fileID: 0}
   isBackgroundElement: 1
---- !u!114 &783515190
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 783515187}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d6492d35ea1c4774ea783cc2f69de00c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  RotSpeed: 1
-  WichDirection: 2
 --- !u!212 &783515191
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -35970,7 +35773,6 @@ GameObject:
   m_Component:
   - component: {fileID: 826757647}
   - component: {fileID: 826757650}
-  - component: {fileID: 826757649}
   - component: {fileID: 826757648}
   m_Layer: 0
   m_Name: bolas3_5 (3)
@@ -36007,24 +35809,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isTriggerHandled: 0
-  desiredDistance: 50
+  desiredDistance: 45
   Virus: {fileID: 75848495}
   Child: {fileID: 0}
   isBackgroundElement: 1
---- !u!114 &826757649
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 826757646}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d6492d35ea1c4774ea783cc2f69de00c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  RotSpeed: 1
-  WichDirection: 1
 --- !u!212 &826757650
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -38666,7 +38454,6 @@ GameObject:
   m_Component:
   - component: {fileID: 929128459}
   - component: {fileID: 929128462}
-  - component: {fileID: 929128461}
   - component: {fileID: 929128460}
   m_Layer: 0
   m_Name: bolas3_1 (7)
@@ -38703,24 +38490,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isTriggerHandled: 0
-  desiredDistance: 50
+  desiredDistance: 45
   Virus: {fileID: 75848495}
   Child: {fileID: 0}
   isBackgroundElement: 1
---- !u!114 &929128461
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 929128458}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d6492d35ea1c4774ea783cc2f69de00c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  RotSpeed: 1
-  WichDirection: 1
 --- !u!212 &929128462
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -39885,7 +39658,6 @@ GameObject:
   m_Component:
   - component: {fileID: 945466474}
   - component: {fileID: 945466477}
-  - component: {fileID: 945466476}
   - component: {fileID: 945466475}
   m_Layer: 0
   m_Name: bolas3_1 (10)
@@ -39922,24 +39694,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isTriggerHandled: 0
-  desiredDistance: 50
+  desiredDistance: 45
   Virus: {fileID: 75848495}
   Child: {fileID: 0}
   isBackgroundElement: 1
---- !u!114 &945466476
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 945466473}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d6492d35ea1c4774ea783cc2f69de00c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  RotSpeed: 1
-  WichDirection: 2
 --- !u!212 &945466477
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -42890,7 +42648,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1003223418}
   - component: {fileID: 1003223421}
-  - component: {fileID: 1003223420}
   - component: {fileID: 1003223419}
   m_Layer: 0
   m_Name: bolas3_4 (10)
@@ -42927,24 +42684,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isTriggerHandled: 0
-  desiredDistance: 50
+  desiredDistance: 45
   Virus: {fileID: 75848495}
   Child: {fileID: 0}
   isBackgroundElement: 1
---- !u!114 &1003223420
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1003223417}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d6492d35ea1c4774ea783cc2f69de00c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  RotSpeed: 1
-  WichDirection: 2
 --- !u!212 &1003223421
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -43809,7 +43552,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1022529233}
   - component: {fileID: 1022529236}
-  - component: {fileID: 1022529235}
   - component: {fileID: 1022529234}
   m_Layer: 0
   m_Name: bolas3_5 (13)
@@ -43846,24 +43588,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isTriggerHandled: 0
-  desiredDistance: 50
+  desiredDistance: 45
   Virus: {fileID: 75848495}
   Child: {fileID: 0}
   isBackgroundElement: 1
---- !u!114 &1022529235
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1022529232}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d6492d35ea1c4774ea783cc2f69de00c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  RotSpeed: -1
-  WichDirection: 3
 --- !u!212 &1022529236
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -48026,7 +47754,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1153055753}
   - component: {fileID: 1153055756}
-  - component: {fileID: 1153055755}
   - component: {fileID: 1153055754}
   m_Layer: 0
   m_Name: bolas3_2 (4)
@@ -48063,24 +47790,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isTriggerHandled: 0
-  desiredDistance: 50
+  desiredDistance: 45
   Virus: {fileID: 75848495}
   Child: {fileID: 0}
   isBackgroundElement: 1
---- !u!114 &1153055755
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1153055752}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d6492d35ea1c4774ea783cc2f69de00c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  RotSpeed: 1
-  WichDirection: 0
 --- !u!212 &1153055756
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -48380,7 +48093,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1167449181}
   - component: {fileID: 1167449184}
-  - component: {fileID: 1167449183}
   - component: {fileID: 1167449182}
   m_Layer: 0
   m_Name: bolas3_4 (9)
@@ -48417,24 +48129,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isTriggerHandled: 0
-  desiredDistance: 50
+  desiredDistance: 45
   Virus: {fileID: 75848495}
   Child: {fileID: 0}
   isBackgroundElement: 1
---- !u!114 &1167449183
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1167449180}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d6492d35ea1c4774ea783cc2f69de00c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  RotSpeed: 1
-  WichDirection: 2
 --- !u!212 &1167449184
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -52172,7 +51870,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1286089530}
   - component: {fileID: 1286089533}
-  - component: {fileID: 1286089532}
   - component: {fileID: 1286089531}
   m_Layer: 0
   m_Name: bolas3_6 (7)
@@ -52209,24 +51906,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isTriggerHandled: 0
-  desiredDistance: 50
+  desiredDistance: 45
   Virus: {fileID: 75848495}
   Child: {fileID: 0}
   isBackgroundElement: 1
---- !u!114 &1286089532
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1286089529}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d6492d35ea1c4774ea783cc2f69de00c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  RotSpeed: 1
-  WichDirection: 2
 --- !u!212 &1286089533
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -53498,6 +53181,7 @@ Transform:
   - {fileID: 882873552}
   - {fileID: 520078206}
   - {fileID: 1890219635}
+  - {fileID: 63667474}
   m_Father: {fileID: 387949187}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1350796767
@@ -54864,7 +54548,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1400946003}
   - component: {fileID: 1400946006}
-  - component: {fileID: 1400946005}
   - component: {fileID: 1400946004}
   m_Layer: 0
   m_Name: bolas3_2 (5)
@@ -54901,24 +54584,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isTriggerHandled: 0
-  desiredDistance: 50
+  desiredDistance: 45
   Virus: {fileID: 75848495}
   Child: {fileID: 0}
   isBackgroundElement: 1
---- !u!114 &1400946005
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1400946002}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d6492d35ea1c4774ea783cc2f69de00c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  RotSpeed: 1
-  WichDirection: 2
 --- !u!212 &1400946006
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -55510,7 +55179,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1424401598}
   - component: {fileID: 1424401601}
-  - component: {fileID: 1424401600}
   - component: {fileID: 1424401599}
   m_Layer: 0
   m_Name: bolas3_2 (16)
@@ -55547,24 +55215,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isTriggerHandled: 0
-  desiredDistance: 50
+  desiredDistance: 45
   Virus: {fileID: 75848495}
   Child: {fileID: 0}
   isBackgroundElement: 1
---- !u!114 &1424401600
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1424401597}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d6492d35ea1c4774ea783cc2f69de00c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  RotSpeed: 1
-  WichDirection: 2
 --- !u!212 &1424401601
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -57376,7 +57030,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1466235992}
   - component: {fileID: 1466235995}
-  - component: {fileID: 1466235994}
   - component: {fileID: 1466235993}
   m_Layer: 0
   m_Name: bolas3_5 (15)
@@ -57413,24 +57066,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isTriggerHandled: 0
-  desiredDistance: 50
+  desiredDistance: 45
   Virus: {fileID: 75848495}
   Child: {fileID: 0}
   isBackgroundElement: 1
---- !u!114 &1466235994
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1466235991}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d6492d35ea1c4774ea783cc2f69de00c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  RotSpeed: -1
-  WichDirection: 3
 --- !u!212 &1466235995
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -57612,7 +57251,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1499750219}
   - component: {fileID: 1499750222}
-  - component: {fileID: 1499750221}
   - component: {fileID: 1499750220}
   m_Layer: 0
   m_Name: bolas3_5 (10)
@@ -57649,24 +57287,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isTriggerHandled: 0
-  desiredDistance: 50
+  desiredDistance: 45
   Virus: {fileID: 75848495}
   Child: {fileID: 0}
   isBackgroundElement: 1
---- !u!114 &1499750221
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1499750218}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d6492d35ea1c4774ea783cc2f69de00c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  RotSpeed: 1
-  WichDirection: 1
 --- !u!212 &1499750222
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -58095,7 +57719,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1513768826}
   - component: {fileID: 1513768829}
-  - component: {fileID: 1513768828}
   - component: {fileID: 1513768827}
   m_Layer: 0
   m_Name: bolas3_0 (16)
@@ -58132,24 +57755,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isTriggerHandled: 0
-  desiredDistance: 50
+  desiredDistance: 45
   Virus: {fileID: 75848495}
   Child: {fileID: 0}
   isBackgroundElement: 1
---- !u!114 &1513768828
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1513768825}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d6492d35ea1c4774ea783cc2f69de00c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  RotSpeed: 1
-  WichDirection: 0
 --- !u!212 &1513768829
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -58983,7 +58592,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1545872078}
   - component: {fileID: 1545872081}
-  - component: {fileID: 1545872080}
   - component: {fileID: 1545872079}
   m_Layer: 0
   m_Name: bolas3_6 (11)
@@ -59020,24 +58628,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isTriggerHandled: 0
-  desiredDistance: 50
+  desiredDistance: 45
   Virus: {fileID: 75848495}
   Child: {fileID: 0}
   isBackgroundElement: 1
---- !u!114 &1545872080
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1545872077}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d6492d35ea1c4774ea783cc2f69de00c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  RotSpeed: 1
-  WichDirection: 0
 --- !u!212 &1545872081
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -59478,7 +59072,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1563832972}
   - component: {fileID: 1563832975}
-  - component: {fileID: 1563832974}
   - component: {fileID: 1563832973}
   m_Layer: 0
   m_Name: bolas3_5 (14)
@@ -59515,24 +59108,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isTriggerHandled: 0
-  desiredDistance: 50
+  desiredDistance: 45
   Virus: {fileID: 75848495}
   Child: {fileID: 0}
   isBackgroundElement: 1
---- !u!114 &1563832974
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1563832971}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d6492d35ea1c4774ea783cc2f69de00c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  RotSpeed: -1
-  WichDirection: 3
 --- !u!212 &1563832975
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -60981,7 +60560,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1607735993}
   - component: {fileID: 1607735996}
-  - component: {fileID: 1607735995}
   - component: {fileID: 1607735994}
   m_Layer: 0
   m_Name: bolas3_2 (17)
@@ -61018,24 +60596,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isTriggerHandled: 0
-  desiredDistance: 50
+  desiredDistance: 45
   Virus: {fileID: 75848495}
   Child: {fileID: 0}
   isBackgroundElement: 1
---- !u!114 &1607735995
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1607735992}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d6492d35ea1c4774ea783cc2f69de00c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  RotSpeed: -1
-  WichDirection: 3
 --- !u!212 &1607735996
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -61208,7 +60772,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1609592752}
   - component: {fileID: 1609592755}
-  - component: {fileID: 1609592754}
   - component: {fileID: 1609592753}
   m_Layer: 0
   m_Name: bolas3_4 (4)
@@ -61245,24 +60808,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isTriggerHandled: 0
-  desiredDistance: 50
+  desiredDistance: 45
   Virus: {fileID: 75848495}
   Child: {fileID: 0}
   isBackgroundElement: 1
---- !u!114 &1609592754
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1609592751}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d6492d35ea1c4774ea783cc2f69de00c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  RotSpeed: -1
-  WichDirection: 3
 --- !u!212 &1609592755
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -61478,6 +61027,100 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1614024073}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1614979575
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1614979576}
+  - component: {fileID: 1614979578}
+  - component: {fileID: 1614979577}
+  m_Layer: 0
+  m_Name: CameraTrigger (4)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1614979576
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1614979575}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: 0.10315925, w: 0.99466485}
+  m_LocalPosition: {x: 8.4, y: -23.8, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 63667474}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 11.842}
+--- !u!114 &1614979577
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1614979575}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f342fed4db4bfb34ea7a58993195e67d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mainCamera: {fileID: 0}
+  zoomSpeed: 0.5
+  targetZoom: 24
+  zoomEpsilon: 0.01
+--- !u!61 &1614979578
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1614979575}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.2422409, y: 1.0137901}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 25.188126, y: 15.871696}
+  m_EdgeRadius: 0
 --- !u!1 &1619995971
 GameObject:
   m_ObjectHideFlags: 0
@@ -63797,7 +63440,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isTriggerHandled: 0
-  desiredDistance: 50
+  desiredDistance: 45
   Virus: {fileID: 75848495}
   Child: {fileID: 0}
   isBackgroundElement: 1
@@ -66676,7 +66319,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1773335135}
   - component: {fileID: 1773335138}
-  - component: {fileID: 1773335137}
   - component: {fileID: 1773335136}
   m_Layer: 0
   m_Name: bolas3_7 (8)
@@ -66713,24 +66355,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isTriggerHandled: 0
-  desiredDistance: 50
+  desiredDistance: 45
   Virus: {fileID: 75848495}
   Child: {fileID: 0}
   isBackgroundElement: 1
---- !u!114 &1773335137
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1773335134}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d6492d35ea1c4774ea783cc2f69de00c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  RotSpeed: 1
-  WichDirection: 0
 --- !u!212 &1773335138
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -68060,7 +67688,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1788002770}
   - component: {fileID: 1788002773}
-  - component: {fileID: 1788002772}
   - component: {fileID: 1788002771}
   m_Layer: 0
   m_Name: bolas3_4 (2)
@@ -68097,24 +67724,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isTriggerHandled: 0
-  desiredDistance: 50
+  desiredDistance: 45
   Virus: {fileID: 75848495}
   Child: {fileID: 0}
   isBackgroundElement: 1
---- !u!114 &1788002772
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1788002769}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d6492d35ea1c4774ea783cc2f69de00c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  RotSpeed: 1
-  WichDirection: 1
 --- !u!212 &1788002773
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -68825,7 +68438,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1817674620}
   - component: {fileID: 1817674623}
-  - component: {fileID: 1817674622}
   - component: {fileID: 1817674621}
   m_Layer: 0
   m_Name: bolas3_4 (3)
@@ -68862,24 +68474,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isTriggerHandled: 0
-  desiredDistance: 50
+  desiredDistance: 45
   Virus: {fileID: 75848495}
   Child: {fileID: 0}
   isBackgroundElement: 1
---- !u!114 &1817674622
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1817674619}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d6492d35ea1c4774ea783cc2f69de00c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  RotSpeed: -1
-  WichDirection: 3
 --- !u!212 &1817674623
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -69375,7 +68973,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1822660950}
   - component: {fileID: 1822660953}
-  - component: {fileID: 1822660952}
   - component: {fileID: 1822660951}
   m_Layer: 0
   m_Name: bolas3_2 (8)
@@ -69412,24 +69009,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isTriggerHandled: 0
-  desiredDistance: 50
+  desiredDistance: 45
   Virus: {fileID: 75848495}
   Child: {fileID: 0}
   isBackgroundElement: 1
---- !u!114 &1822660952
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1822660949}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d6492d35ea1c4774ea783cc2f69de00c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  RotSpeed: -1
-  WichDirection: 3
 --- !u!212 &1822660953
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -71179,7 +70762,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1854310336}
   - component: {fileID: 1854310339}
-  - component: {fileID: 1854310338}
   - component: {fileID: 1854310337}
   m_Layer: 0
   m_Name: bolas3_1 (9)
@@ -71216,24 +70798,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isTriggerHandled: 0
-  desiredDistance: 50
+  desiredDistance: 45
   Virus: {fileID: 75848495}
   Child: {fileID: 0}
   isBackgroundElement: 1
---- !u!114 &1854310338
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1854310335}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d6492d35ea1c4774ea783cc2f69de00c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  RotSpeed: 1
-  WichDirection: 0
 --- !u!212 &1854310339
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -72314,7 +71882,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1900904523}
   - component: {fileID: 1900904526}
-  - component: {fileID: 1900904525}
   - component: {fileID: 1900904524}
   m_Layer: 0
   m_Name: bolas3_7 (2)
@@ -72351,24 +71918,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isTriggerHandled: 0
-  desiredDistance: 50
+  desiredDistance: 45
   Virus: {fileID: 75848495}
   Child: {fileID: 0}
   isBackgroundElement: 1
---- !u!114 &1900904525
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1900904522}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d6492d35ea1c4774ea783cc2f69de00c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  RotSpeed: 1
-  WichDirection: 2
 --- !u!212 &1900904526
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -73385,7 +72938,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1926924645}
   - component: {fileID: 1926924648}
-  - component: {fileID: 1926924647}
   - component: {fileID: 1926924646}
   m_Layer: 0
   m_Name: bolas3_4 (8)
@@ -73422,24 +72974,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isTriggerHandled: 0
-  desiredDistance: 50
+  desiredDistance: 45
   Virus: {fileID: 75848495}
   Child: {fileID: 0}
   isBackgroundElement: 1
---- !u!114 &1926924647
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1926924644}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d6492d35ea1c4774ea783cc2f69de00c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  RotSpeed: 1
-  WichDirection: 2
 --- !u!212 &1926924648
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -74600,7 +74138,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1947337467}
   - component: {fileID: 1947337470}
-  - component: {fileID: 1947337469}
   - component: {fileID: 1947337468}
   m_Layer: 0
   m_Name: bolas3_6 (10)
@@ -74637,24 +74174,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isTriggerHandled: 0
-  desiredDistance: 50
+  desiredDistance: 45
   Virus: {fileID: 75848495}
   Child: {fileID: 0}
   isBackgroundElement: 1
---- !u!114 &1947337469
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1947337466}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d6492d35ea1c4774ea783cc2f69de00c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  RotSpeed: 1
-  WichDirection: 2
 --- !u!212 &1947337470
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -74812,7 +74335,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1954612195}
   - component: {fileID: 1954612198}
-  - component: {fileID: 1954612197}
   - component: {fileID: 1954612196}
   m_Layer: 0
   m_Name: bolas3_6 (4)
@@ -74849,24 +74371,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isTriggerHandled: 0
-  desiredDistance: 50
+  desiredDistance: 45
   Virus: {fileID: 75848495}
   Child: {fileID: 0}
   isBackgroundElement: 1
---- !u!114 &1954612197
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1954612194}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d6492d35ea1c4774ea783cc2f69de00c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  RotSpeed: 1
-  WichDirection: 1
 --- !u!212 &1954612198
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -75361,7 +74869,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isTriggerHandled: 0
-  desiredDistance: 50
+  desiredDistance: 45
   Virus: {fileID: 75848495}
   Child: {fileID: 0}
   isBackgroundElement: 1
@@ -75442,7 +74950,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1972852233}
   - component: {fileID: 1972852236}
-  - component: {fileID: 1972852235}
   - component: {fileID: 1972852234}
   m_Layer: 0
   m_Name: bolas3_1 (8)
@@ -75479,24 +74986,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isTriggerHandled: 0
-  desiredDistance: 50
+  desiredDistance: 45
   Virus: {fileID: 75848495}
   Child: {fileID: 0}
   isBackgroundElement: 1
---- !u!114 &1972852235
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1972852232}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d6492d35ea1c4774ea783cc2f69de00c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  RotSpeed: -1
-  WichDirection: 3
 --- !u!212 &1972852236
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -77936,7 +77429,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2009088794}
   - component: {fileID: 2009088797}
-  - component: {fileID: 2009088796}
   - component: {fileID: 2009088795}
   m_Layer: 0
   m_Name: bolas3_2 (3)
@@ -77973,24 +77465,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isTriggerHandled: 0
-  desiredDistance: 50
+  desiredDistance: 45
   Virus: {fileID: 75848495}
   Child: {fileID: 0}
   isBackgroundElement: 1
---- !u!114 &2009088796
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2009088793}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d6492d35ea1c4774ea783cc2f69de00c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  RotSpeed: 1
-  WichDirection: 2
 --- !u!212 &2009088797
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -78877,7 +78355,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2047883924}
   - component: {fileID: 2047883927}
-  - component: {fileID: 2047883926}
   - component: {fileID: 2047883925}
   m_Layer: 0
   m_Name: bolas3_4 (5)
@@ -78914,24 +78391,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isTriggerHandled: 0
-  desiredDistance: 50
+  desiredDistance: 45
   Virus: {fileID: 75848495}
   Child: {fileID: 0}
   isBackgroundElement: 1
---- !u!114 &2047883926
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2047883923}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d6492d35ea1c4774ea783cc2f69de00c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  RotSpeed: 1
-  WichDirection: 2
 --- !u!212 &2047883927
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -79586,7 +79049,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2055238053}
   - component: {fileID: 2055238056}
-  - component: {fileID: 2055238055}
   - component: {fileID: 2055238054}
   m_Layer: 0
   m_Name: bolas3_7 (7)
@@ -79623,24 +79085,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isTriggerHandled: 0
-  desiredDistance: 50
+  desiredDistance: 45
   Virus: {fileID: 75848495}
   Child: {fileID: 0}
   isBackgroundElement: 1
---- !u!114 &2055238055
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2055238052}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d6492d35ea1c4774ea783cc2f69de00c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  RotSpeed: -1
-  WichDirection: 3
 --- !u!212 &2055238056
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -79844,7 +79292,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isTriggerHandled: 0
-  desiredDistance: 50
+  desiredDistance: 45
   Virus: {fileID: 75848495}
   Child: {fileID: 0}
   isBackgroundElement: 1
@@ -80034,7 +79482,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2081200988}
   - component: {fileID: 2081200991}
-  - component: {fileID: 2081200990}
   - component: {fileID: 2081200989}
   m_Layer: 0
   m_Name: bolas3_2 (19)
@@ -80071,24 +79518,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isTriggerHandled: 0
-  desiredDistance: 50
+  desiredDistance: 45
   Virus: {fileID: 75848495}
   Child: {fileID: 0}
   isBackgroundElement: 1
---- !u!114 &2081200990
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2081200987}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d6492d35ea1c4774ea783cc2f69de00c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  RotSpeed: 1
-  WichDirection: 1
 --- !u!212 &2081200991
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -80777,7 +80210,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2089645300}
   - component: {fileID: 2089645303}
-  - component: {fileID: 2089645302}
   - component: {fileID: 2089645301}
   m_Layer: 0
   m_Name: bolas3_7 (6)
@@ -80814,24 +80246,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isTriggerHandled: 0
-  desiredDistance: 50
+  desiredDistance: 45
   Virus: {fileID: 75848495}
   Child: {fileID: 0}
   isBackgroundElement: 1
---- !u!114 &2089645302
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2089645299}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d6492d35ea1c4774ea783cc2f69de00c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  RotSpeed: 1
-  WichDirection: 1
 --- !u!212 &2089645303
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -81742,7 +81160,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2125425862}
   - component: {fileID: 2125425865}
-  - component: {fileID: 2125425864}
   - component: {fileID: 2125425863}
   m_Layer: 0
   m_Name: bolas3_5 (4)
@@ -81779,24 +81196,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isTriggerHandled: 0
-  desiredDistance: 50
+  desiredDistance: 45
   Virus: {fileID: 75848495}
   Child: {fileID: 0}
   isBackgroundElement: 1
---- !u!114 &2125425864
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2125425861}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d6492d35ea1c4774ea783cc2f69de00c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  RotSpeed: 1
-  WichDirection: 0
 --- !u!212 &2125425865
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -82708,7 +82111,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2145253471}
   - component: {fileID: 2145253474}
-  - component: {fileID: 2145253473}
   - component: {fileID: 2145253472}
   m_Layer: 0
   m_Name: bolas3_5 (2)
@@ -82745,24 +82147,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isTriggerHandled: 0
-  desiredDistance: 50
+  desiredDistance: 45
   Virus: {fileID: 75848495}
   Child: {fileID: 0}
   isBackgroundElement: 1
---- !u!114 &2145253473
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2145253470}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d6492d35ea1c4774ea783cc2f69de00c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  RotSpeed: 1
-  WichDirection: 0
 --- !u!212 &2145253474
 SpriteRenderer:
   m_ObjectHideFlags: 0
