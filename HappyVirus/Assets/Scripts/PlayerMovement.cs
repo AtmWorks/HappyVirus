@@ -41,6 +41,7 @@ public class PlayerMovement : MonoBehaviour
     public UnityEngine.UI.Button tentacleButton;
     public UnityEngine.UI.Button addO2Button;
     public UnityEngine.UI.Button smokeButton;
+    public UnityEngine.UI.Button shieldRingButton;
     public UnityEngine.UI.Button eggFollowSwitch;
     public UnityEngine.UI.Button smokeButtonEnable;
     public GameObject catchTentacleButton;
@@ -51,6 +52,9 @@ public class PlayerMovement : MonoBehaviour
     //Tentaculos
     [SerializeField] private Tentacle tentacle1;
     [SerializeField] private Tentacle tentacle2;
+
+    //Escudo
+    public GameObject shieldRing;
 
     //Posicionamiento del soft body
     public GameObject blob1;
@@ -124,6 +128,7 @@ public class PlayerMovement : MonoBehaviour
         tentacleButton.onClick.AddListener(showTentacles);
         addO2Button.onClick.AddListener(getO2);
         smokeButton.onClick.AddListener(useSmoke);
+        shieldRingButton.onClick.AddListener(CrearEscudo);
         eggFollowSwitch.onClick.AddListener(switchEggAttract);
         smokeButtonEnable.onClick.AddListener(switchSmoke);
 
@@ -309,7 +314,11 @@ public class PlayerMovement : MonoBehaviour
             smokeButtonObject.SetActive(true);
         }
     }
-
+    void CrearEscudo()
+    {
+        GameObject copia = Instantiate(shieldRing, transform.position, transform.rotation, transform);
+        copia.SetActive(true);
+    }
     void dashingMovement(int mode)
     {
         if (mode == 1)

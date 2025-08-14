@@ -46,7 +46,7 @@ public class ChasePlayer : MonoBehaviour
         }
         else if (!isDmg && !isDead)
         {
-            this.gameObject.tag = "tentacleTarget";
+            this.gameObject.tag = "Neutral";
 
         }
         if(isDead)
@@ -61,7 +61,8 @@ public class ChasePlayer : MonoBehaviour
     {
         if (other.CompareTag(virusTag))
         {
-            virusTransform = other.transform;
+            //virusTransform = other.transform;
+            Attack();
             //canChase = true;
         }
     }
@@ -69,7 +70,7 @@ public class ChasePlayer : MonoBehaviour
     {
         if (other.CompareTag(virusTag))
         {
-            virusTransform = other.transform;
+            //virusTransform = other.transform;
             //canChase = true;
         }
     }
@@ -93,27 +94,27 @@ public class ChasePlayer : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (canChase)
-        {
-            //rb.constraints = RigidbodyConstraints2D.None;
-            //Chase();
-        }
-        if (virusTransform != null)
-        {
-            float distance = Vector2.Distance(transform.position, virusTransform.position);
+        //if (canChase)
+        //{
+        //    //rb.constraints = RigidbodyConstraints2D.None;
+        //    //Chase();
+        //}
+        //if (virusTransform != null)
+        //{
+        //    float distance = Vector2.Distance(transform.position, virusTransform.position);
 
-            // Si la distancia es menor que cierto valor (por ejemplo, 1 unidad), realiza un ataque
-            if (distance < 5f)
-            {
-                Attack();
-            }
-        }
-        else if (!canChase)
-        {
+        //    // Si la distancia es menor que cierto valor (por ejemplo, 1 unidad), realiza un ataque
+        //    if (distance < 5f)
+        //    {
+        //        Attack();
+        //    }
+        //}
+        //else if (!canChase)
+        //{
 
-            rb.velocity = Vector2.Lerp(rb.velocity, Vector2.zero, Time.deltaTime);
-            //rb.constraints = RigidbodyConstraints2D.FreezePosition;
-        }
+        //    rb.velocity = Vector2.Lerp(rb.velocity, Vector2.zero, Time.deltaTime);
+        //    //rb.constraints = RigidbodyConstraints2D.FreezePosition;
+        //}
         //Para mantener la rotacion firme
         float anguloActual = transform.rotation.eulerAngles.z;
         if (anguloActual != rotacionInicial.eulerAngles.z)
@@ -129,35 +130,35 @@ public class ChasePlayer : MonoBehaviour
     }
 
 
-    private void Chase()
-    {
-        if (virusTransform == null)
-        {
-            return;
-        }
+    //private void Chase()
+    //{
+    //    if (virusTransform == null)
+    //    {
+    //        return;
+    //    }
 
-        rotationTimer += Time.deltaTime;
+    //    rotationTimer += Time.deltaTime;
 
-        if (rotationTimer >= Random.Range(0.5f, 2f)) // Change rotation mode every 1 second
-        {
-            rotationTimer = 0f;
-            rotateClockwise = !rotateClockwise; // Switch rotation direction
-        }
+    //    if (rotationTimer >= Random.Range(0.5f, 2f)) // Change rotation mode every 1 second
+    //    {
+    //        rotationTimer = 0f;
+    //        rotateClockwise = !rotateClockwise; // Switch rotation direction
+    //    }
 
-        Vector2 direction = (virusTransform.position - transform.position).normalized;
+    //    Vector2 direction = (virusTransform.position - transform.position).normalized;
 
-        // Rotate the direction vector by 15 degrees in either direction based on the mode
-        float rotationAmount = rotateClockwise ? 30f : -30f;
+    //    // Rotate the direction vector by 15 degrees in either direction based on the mode
+    //    float rotationAmount = rotateClockwise ? 30f : -30f;
 
-        //TODO: direction has to reach rotationAmount Gradually instead this:
-        //direction = Quaternion.Euler(0f, 0f, rotationAmount) * direction;
-        float rotationSpeed = 20f;
-        direction = Vector2.Lerp(direction, Quaternion.Euler(0f, 0f, rotationAmount) * direction, rotationSpeed * Time.deltaTime);
-        rb.velocity = direction * chaseSpeed;
+    //    //TODO: direction has to reach rotationAmount Gradually instead this:
+    //    //direction = Quaternion.Euler(0f, 0f, rotationAmount) * direction;
+    //    float rotationSpeed = 20f;
+    //    direction = Vector2.Lerp(direction, Quaternion.Euler(0f, 0f, rotationAmount) * direction, rotationSpeed * Time.deltaTime);
+    //    rb.velocity = direction * chaseSpeed;
 
-        // Increment chase speed gradually up to maxChaseSpeed
-        chaseSpeed = Mathf.Min(chaseSpeed + Time.deltaTime, maxChaseSpeed);
-    }
+    //    // Increment chase speed gradually up to maxChaseSpeed
+    //    chaseSpeed = Mathf.Min(chaseSpeed + Time.deltaTime, maxChaseSpeed);
+    //}
 
     //private void Chase()
     //{
