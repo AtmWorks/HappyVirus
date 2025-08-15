@@ -14,7 +14,10 @@ public class FPSCounter : MonoBehaviour
     {
         tiempoRestante = 1f / updateRate;
     }
-
+    void Awake()
+    {
+        Application.targetFrameRate = 60; // O m�s si tu pantalla lo soporta
+    }
     void Update()
     {
         float delta = Time.unscaledDeltaTime; // No afectado por Time.timeScale
