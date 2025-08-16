@@ -29,6 +29,7 @@ TagManager:
   - hit
   - Neutral
   - invisible
+  - TentacleTip
   layers:
   - Default
   - TransparentFX

@@ -37,8 +37,11 @@ public class JellyfishMovement : MonoBehaviour
     private float currentRotationSpeed;
     private Vector2 returnTargetPoint;
 
+    public bool isAvoiding;
+
     private void Start()
     {
+        isAvoiding = false;
         rb = GetComponent<Rigidbody2D>();
 
         if (!anchor)
@@ -80,8 +83,9 @@ public class JellyfishMovement : MonoBehaviour
         isMoving = false;
         isReadyToMove = false;
         rb.velocity = Vector2.zero;
+        if (isAvoiding){ rb.mass = 0.2f; } else { rb.mass = 25f; }
 
-        idleTimer = Random.Range(minIdleTime, maxIdleTime);
+        idleTimer = isAvoiding ? (Random.Range(minIdleTime, maxIdleTime))*2 : Random.Range(minIdleTime, maxIdleTime);
 
         float distFromAnchor = Vector2.Distance(transform.position, anchor.transform.position);
         if (distFromAnchor > maxDistance)
@@ -108,13 +112,37 @@ public class JellyfishMovement : MonoBehaviour
 
     private void HandleRotation()
     {
-        if (returnToAnchor && !isMoving)
+        if (returnToAnchor && !isMoving && !isAvoiding)
         {
             transform.rotation = Quaternion.RotateTowards(
                 transform.rotation,
                 targetRotation,
                 Mathf.Abs(currentRotationSpeed) * Time.deltaTime
             );
+        }
+        else if (isAvoiding)
+        {
+            // Encuentra un objeto en la escena con el tag "Player"
+            GameObject player = GameObject.FindWithTag("Player");
+            if (player != null)
+            {
+                // Vector desde la medusa al player
+                Vector2 dirToPlayer = (player.transform.position - transform.position).normalized;
+
+                // Invertir la dirección para mirar en sentido opuesto
+                Vector2 oppositeDir = -dirToPlayer;
+
+                // Calcular el ángulo y aplicar rotación
+                float angle = Mathf.Atan2(oppositeDir.y, oppositeDir.x) * Mathf.Rad2Deg - 90f;
+                Quaternion targetRot = Quaternion.Euler(0, 0, angle);
+
+                // Rotación x3
+                transform.rotation = Quaternion.RotateTowards(
+                    transform.rotation,
+                    targetRot,
+                    Mathf.Abs(currentRotationSpeed * 3f) * Time.deltaTime
+                );
+            }
         }
         else
         {
@@ -130,7 +158,7 @@ public class JellyfishMovement : MonoBehaviour
         }
         else
         {
-            if (returnToAnchor)
+            if (returnToAnchor && !isAvoiding)
             {
                 float angleDiff = Quaternion.Angle(transform.rotation, targetRotation);
                 if (angleDiff > 1f)
