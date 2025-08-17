@@ -11,6 +11,7 @@ public class DisableChildOnTrigger : MonoBehaviour
 
     [Header("Config hijo")]
     public GameObject Child;
+    public bool isChildOriginPoint = false;
 
     [Header("Config Background Element")]
     public bool isBackgroundElement = false;
@@ -55,7 +56,7 @@ public class DisableChildOnTrigger : MonoBehaviour
             if (Virus == null) return;
         }
 
-        float distance = Vector3.Distance(Virus.transform.position, transform.position);
+        float distance = Vector3.Distance(Virus.transform.position, isChildOriginPoint ? Child.transform.position : transform.position);
 
         if (isBackgroundElement)
         {

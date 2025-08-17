@@ -24,6 +24,9 @@ public class catchRelease : MonoBehaviour
     bool noColliders = false;
     float checkInterval = 2f;
 
+    public Transform rangeAnchor;
+    public float desiredDistance;
+    public bool showGizmos = true;
 
     public void OnTriggerStay2D(Collider2D collision)
     {
@@ -42,31 +45,25 @@ public class catchRelease : MonoBehaviour
 
         if (collision.tag == "tentacleRange")
         {
-            //si salimos del rango devolvemos el target
-            Debug.Log("++++++IS OUT TENTACLE RANGE 01");
-            Debug.Log("++++++IS HOLDING?: "+ tentacle1.IsHoldingTarget+"\nIS TARGET?: "+ tentacleTarget);
-
-            if (tentacle1.IsHoldingTarget && tentacleTarget != null)
-            {
-                Debug.Log("+++IS OUT TENTACLE RANGE 02");
-
-                tentacle1.Release();
-            }
-            Debug.Log("+++IS OUT TENTACLE RANGE 03");
-
-            tentacle1.TargetRigidbody = spawnTarget;
-            isOnTentacleTarget = false;
-            tentacleTarget = null;
+           
         }
         if (collision.tag == "tentacleTarget" && tentacle1.IsHoldingTarget==false)
         {
-
             tentacle1.TargetRigidbody = spawnTarget;
             isOnTentacleTarget = false;
             tentacleTarget = null;
-
-
         }
+    }
+    public void triggerOutOfRange()
+    {
+        //si salimos del rango devolvemos el target
+        if (tentacle1.IsHoldingTarget && tentacleTarget != null)
+        {
+            tentacle1.Release();
+        }
+        tentacle1.TargetRigidbody = spawnTarget;
+        isOnTentacleTarget = false;
+        tentacleTarget = null;
     }
 
     void Start()
@@ -76,8 +73,7 @@ public class catchRelease : MonoBehaviour
         tentacleTarget=null;
         radius = GetComponent<CircleCollider2D>().radius;
         StartCoroutine(CheckForColliders());
-        boton01.onClick.AddListener(catchIt);
-
+        boton01.onClick.AddListener(catchAndRelease);
     }
 
     IEnumerator CheckForColliders()
@@ -106,7 +102,7 @@ public class catchRelease : MonoBehaviour
         }
     }
 
-    public void catchIt()
+    public void catchAndRelease()
     {
         if (isOnTentacleTarget == true)
         {
@@ -124,7 +120,6 @@ public class catchRelease : MonoBehaviour
                     tentacle1.TargetRigidbody = targetRigidbody;
                     tentacle1.Catch();
                 }
-
             }
             else
             {
@@ -136,8 +131,19 @@ public class catchRelease : MonoBehaviour
         
         
     }
+
     void FixedUpdate()
     {
+        //si el actual transform se aleja 'desiredDistance' (float) de rangeAnchor (transform declarado en el inspector), ejecuta triggerOutOfRange()
+        if (rangeAnchor != null)
+        {
+            float dist = Vector2.Distance(transform.position, rangeAnchor.position);
+            if (dist > desiredDistance)
+            {
+                triggerOutOfRange();
+            }
+        }
+
         if (tentacleTarget==null && tentacle1.IsHoldingTarget == false)
         {
             indicator.SetActive(false);
@@ -145,8 +151,7 @@ public class catchRelease : MonoBehaviour
         else { indicator.SetActive(true); }
         if (Input.GetMouseButtonDown(1) && isOnTentacleTarget == true)
         {
-
-            catchIt();
+            catchAndRelease();
         }
 
         if (isOnTentacleTarget == true)
@@ -157,8 +162,6 @@ public class catchRelease : MonoBehaviour
                 tentacle1.TargetRigidbody = targetRigidbody;
 
             }
-
-
         }
         else
         {
@@ -171,5 +174,25 @@ public class catchRelease : MonoBehaviour
             tentacle1.Release();
         }
 
+    }
+
+    private void OnDrawGizmos()
+    {
+        if (showGizmos && rangeAnchor != null)
+        {
+            Gizmos.color = Color.magenta; // rosa
+
+            int segments = 64; // más segmentos = círculo más suave
+            float angleStep = 2 * Mathf.PI / segments;
+            Vector3 prevPoint = rangeAnchor.position + new Vector3(Mathf.Cos(0), Mathf.Sin(0), 0) * desiredDistance;
+
+            for (int i = 1; i <= segments; i++)
+            {
+                float angle = i * angleStep;
+                Vector3 nextPoint = rangeAnchor.position + new Vector3(Mathf.Cos(angle), Mathf.Sin(angle), 0) * desiredDistance;
+                Gizmos.DrawLine(prevPoint, nextPoint);
+                prevPoint = nextPoint;
+            }
+        }
     }
 }

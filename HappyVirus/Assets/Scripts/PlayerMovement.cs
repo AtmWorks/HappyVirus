@@ -1,7 +1,5 @@
 ﻿using Cubequad.Tentacles2D;
 using System.Collections;
-using System.Collections.Generic;
-using System.Drawing;
 using UnityEngine;
 using UnityEngine.UI;
 //using Tentacle;

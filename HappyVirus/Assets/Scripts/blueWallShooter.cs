@@ -1,64 +1,68 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class blueWallShooter : MonoBehaviour
+public class BlueWallShooter : MonoBehaviour
 {
-    public GameObject virus = null;
+    [Header("References")]
     public GameObject proyectil;
     public Transform shootPoint;
-    public float rotationSpeed;
-    public float initialRotation;
     public Animator thisAnimator;
-    public float timeBetweenAttacks;
-    public bool attack = false;
-    public float timer;
     public GameObject objetToRotate;
 
+    [Header("Config")]
+    public float rotationSpeed = 5f;
+    public float timeBetweenAttacks = 1f;
+
+    private GameObject virus = null;
+    private float initialRotation;
+    private float timer;
+    public bool attack;
     void Start()
     {
-        initialRotation = objetToRotate.transform.rotation.eulerAngles.z;
+        if (objetToRotate != null)
+            initialRotation = objetToRotate.transform.rotation.eulerAngles.z;
+
+        timer = 0f;
     }
-    private void OnTriggerStay2D(Collider2D other)
+
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log("+++ENTERING SHOOTING AREA");
-        if (other.gameObject.tag == "Virus")
+        if (other.CompareTag("Virus") && virus == null)
         {
-            if (virus == null)
             virus = other.gameObject;
         }
     }
+
     private void OnTriggerExit2D(Collider2D collision)
     {
-        virus = null;
+        if (collision.CompareTag("Virus") && collision.gameObject == virus)
+        {
+            virus = null;
+        }
     }
 
     private void Update()
     {
-        // Actualizar el temporizador restando el tiempo transcurrido desde el último frame
         timer -= Time.deltaTime;
 
         if (virus != null)
         {
-            //TODO: rotate objetToRotate towards virus 
-            Vector3 direction = virus.transform.position - objetToRotate.transform.position;
-            Quaternion targetRotation = Quaternion.LookRotation(Vector3.forward, direction);
-            objetToRotate.transform.rotation = Quaternion.Slerp(objetToRotate.transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
-            float angleDifference = Quaternion.Angle(objetToRotate.transform.rotation, targetRotation);
-            if (angleDifference < 1f && timer <= 0)
+            RotateTowards(virus.transform.position);
+
+            float angleDifference = Quaternion.Angle(
+                objetToRotate.transform.rotation,
+                Quaternion.LookRotation(Vector3.forward, virus.transform.position - objetToRotate.transform.position)
+            );
+
+            if (angleDifference < 1f && timer <= 0f)
             {
                 thisAnimator.SetBool("canAttack", true);
-
             }
         }
         else
         {
-            //TODO: rotate towards initial rotation
-            Quaternion targetRotation = Quaternion.Euler(0, 0, initialRotation);
-            objetToRotate.transform.rotation = Quaternion.Slerp(objetToRotate.transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
+            RotateTowards(new Vector3(0, 0, initialRotation), isAngle:true);
         }
-
-        if (attack && timer < 0 )
+        if (attack && timer < 0)
         {
             attack = false;
             Instantiate(proyectil, shootPoint.position, shootPoint.rotation);
@@ -66,5 +70,21 @@ public class blueWallShooter : MonoBehaviour
             attack = false;
             thisAnimator.SetBool("canAttack", false);
         }
+    }
+
+    // Called from Animation Event
+
+
+    private void RotateTowards(Vector3 target, bool isAngle = false)
+    {
+        Quaternion targetRotation = isAngle 
+            ? Quaternion.Euler(0, 0, target.z) 
+            : Quaternion.LookRotation(Vector3.forward, target - objetToRotate.transform.position);
+
+        objetToRotate.transform.rotation = Quaternion.Slerp(
+            objetToRotate.transform.rotation,
+            targetRotation,
+            rotationSpeed * Time.deltaTime
+        );
     }
 }

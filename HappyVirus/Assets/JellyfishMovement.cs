@@ -29,7 +29,7 @@ public class JellyfishMovement : MonoBehaviour
 
     // Privadas
     private Rigidbody2D rb;
-    private bool isMoving = false;
+    public bool isMoving = false;
     private float idleTimer;
     private bool returnToAnchor = false;
     private Quaternion targetRotation;
@@ -70,7 +70,7 @@ public class JellyfishMovement : MonoBehaviour
 
             rb.velocity = transform.up * currentSpeed;
 
-            if (currentSpeed < 0.05f && Mathf.Abs(currentRotationSpeed) < 0.05f)
+            if (currentSpeed < 0.5f)
             {
                 EnterIdleState();
             }
@@ -83,9 +83,8 @@ public class JellyfishMovement : MonoBehaviour
         isMoving = false;
         isReadyToMove = false;
         rb.velocity = Vector2.zero;
-        if (isAvoiding){ rb.mass = 0.2f; } else { rb.mass = 25f; }
 
-        idleTimer = isAvoiding ? (Random.Range(minIdleTime, maxIdleTime))*2 : Random.Range(minIdleTime, maxIdleTime);
+        idleTimer = isAvoiding ? (Random.Range(minIdleTime, maxIdleTime))*4 : Random.Range(minIdleTime, maxIdleTime);
 
         float distFromAnchor = Vector2.Distance(transform.position, anchor.transform.position);
         if (distFromAnchor > maxDistance)
@@ -140,7 +139,7 @@ public class JellyfishMovement : MonoBehaviour
                 transform.rotation = Quaternion.RotateTowards(
                     transform.rotation,
                     targetRot,
-                    Mathf.Abs(currentRotationSpeed * 3f) * Time.deltaTime
+                    Mathf.Abs(currentRotationSpeed * 1.5f) * Time.deltaTime
                 );
             }
         }
