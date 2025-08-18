@@ -48,6 +48,7 @@ public class O2Behaviour : MonoBehaviour
         {
             if (other.gameObject.tag == "Virus" && getOnce == true && canChase == true)
             {
+                unParentObject();
                 thisCollider.enabled = true;
                 target = other.gameObject;
                 isChasing = true;
@@ -60,6 +61,20 @@ public class O2Behaviour : MonoBehaviour
                 thisCollider.enabled = true;
                 target = other.gameObject;
                 isChasing = true;
+            }
+        }
+    }
+    private void unParentObject()
+    {
+        if (transform.parent != null)
+        {
+            if (transform.parent.parent != null)
+            {
+                transform.SetParent(transform.parent.parent);
+            }
+            else
+            {
+                transform.SetParent(null);
             }
         }
     }

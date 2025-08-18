@@ -30,6 +30,7 @@ TagManager:
   - Neutral
   - invisible
   - TentacleTip
+  - OrangeChild
   layers:
   - Default
   - TransparentFX

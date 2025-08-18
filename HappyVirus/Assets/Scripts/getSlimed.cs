@@ -14,7 +14,7 @@ public class getSlimed : MonoBehaviour
 
     public void OnCollisionStay2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Virus" || collision.gameObject.tag == "Proyectil" || collision.gameObject.tag == "Damage")
+        if (collision.gameObject.tag == "Virus" || collision.gameObject.tag == "Proyectil" || collision.gameObject.tag == "Damage" || collision.gameObject.tag == "OrangeChild")
         {
             animator.SetBool("isGettingHit", true);
             timer = 0;
