@@ -1,13 +1,11 @@
 using UnityEngine;
 using TMPro;
+using UnityEngine.Profiling; // para la memoria
 
 public class FPSCounter : MonoBehaviour
 {
-    [Header("Referencia al texto en pantalla")]
     public TextMeshProUGUI textoFPS;
-
-    [Header("Configuración")]
-    public float updateRate = 4f; // veces por segundo que se actualiza
+    public float updateRate = 4f;
 
     private float acumulado = 0f;
     private int frames = 0;
@@ -15,7 +13,6 @@ public class FPSCounter : MonoBehaviour
 
     void Awake()
     {
-        // Limita los FPS a 60 (puedes subirlo si tu pantalla lo soporta)
         Application.targetFrameRate = 60;
     }
 
@@ -34,14 +31,23 @@ public class FPSCounter : MonoBehaviour
         if (tiempoRestante <= 0f)
         {
             float fpsPromedio = frames / acumulado;
-            string texto = "FPS: " + Mathf.RoundToInt(fpsPromedio);
+
+            string texto =
+                "FPS: " + Mathf.RoundToInt(fpsPromedio) + "\n" +
+                "Used Memory: " + (Profiler.GetTotalAllocatedMemoryLong() / 1048576f).ToString("F2") + " MB\n";
+
+#if UNITY_EDITOR
+            texto +=
+                "Batches: " + UnityEditor.UnityStats.batches + "\n" +
+                "SetPass Calls: " + UnityEditor.UnityStats.setPassCalls + "\n" +
+                "Tris: " + UnityEditor.UnityStats.triangles + "\n" +
+                "Verts: " + UnityEditor.UnityStats.vertices + "\n";
+#endif
 
             if (textoFPS != null)
             {
                 textoFPS.text = texto;
-
 #if UNITY_ANDROID || UNITY_IOS
-                // En móviles a veces no refresca el canvas automáticamente
                 textoFPS.ForceMeshUpdate();
 #endif
             }
