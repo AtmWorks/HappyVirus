@@ -1,75 +1,67 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-
 
 public class disablePlaquetas : MonoBehaviour
 {
     public GameObject explosion;
     public GameObject O2;
-    public GameObject parent;
-    private float timer = 0.0f;
+    public GameObject parent; // se usará para obtener el abuelo
     public bool isInfected;
     public bool gotTouch;
     public Animator anim;
-    // Start is called before the first frame update
+
     void Start()
     {
         isInfected = false;
         gotTouch = false;
-
-        //isInfected = false;
     }
 
-    void explode ()
+    void explode()
     {
-        Instantiate(explosion, new Vector3(this.gameObject.transform.position.x, this.gameObject.transform.position.y, 0), Quaternion.identity);
-        Instantiate(O2, new Vector3(this.gameObject.transform.position.x, this.gameObject.transform.position.y, 0), Quaternion.identity);
+        Instantiate(explosion, transform.position, Quaternion.identity);
+        Instantiate(O2, transform.position, Quaternion.identity);
 
-        Destroy(parent.gameObject);
-    }
-
-    private void FixedUpdate()
-    {
-        
+        // Destruir al abuelo en lugar del padre
+        if (parent != null && parent.transform.parent != null)
+        {
+            Destroy(parent.transform.parent.gameObject);
+        }
+        else
+        {
+            Destroy(parent); // fallback si no hay abuelo
+        }
     }
 
     public void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Virus"|| collision.gameObject.tag == "Proyectil") 
+        if (collision.gameObject.CompareTag("Virus") || collision.gameObject.CompareTag("Proyectil"))
         {
             anim.SetBool("infection", true);
             gotTouch = true;
-
+            StartCoroutine(HandleInfection());
         }
     }
+
     public void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Proyectil")
+        if (collision.CompareTag("Proyectil"))
         {
             anim.SetBool("infection", true);
             gotTouch = true;
-
+            StartCoroutine(HandleInfection());
         }
     }
 
-    public void OnCollisionExit2D(Collision2D collision)
+    private IEnumerator HandleInfection()
     {
-        if (collision.gameObject.tag == "Virus")
+        // esperar 1 segundo desde el primer contacto
+        yield return new WaitForSeconds(1f);
+
+        // confirmar infección y explotar
+        if (gotTouch && !isInfected) // evitar múltiples explosiones
         {
-            //timer -= Time.deltaTime;
-            //anim.SetBool("infection", false);
-
+            isInfected = true;
+            explode();
         }
-    }
-    // Update is called once per frame
-    private void Update()
-    {
-        //if ()
-        //if (timer < 0) { timer = 0; }
-        if (!gotTouch) { timer = 0; }
-        if (gotTouch) {timer += Time.deltaTime;}
-        if (timer > 1f) { isInfected= true; }
-        if (isInfected) explode();
     }
 }

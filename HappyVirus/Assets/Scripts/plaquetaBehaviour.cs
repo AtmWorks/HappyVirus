@@ -10,7 +10,6 @@ public class plaquetaBehaviour : MonoBehaviour
     public bool PlaqisChasing;
     public float timer;
     public Animator animator;
-    public RandomMovement thisRandScript;
     public bool canExplode;
     public bool stopMovement;
 
@@ -25,7 +24,6 @@ public class plaquetaBehaviour : MonoBehaviour
         PlaqisChasing = false;
         AttractionSpeed = 2;
         animator = GetComponent<Animator>();
-        thisRandScript = GetComponent<RandomMovement>();
     }
 
    
@@ -61,11 +59,8 @@ public class plaquetaBehaviour : MonoBehaviour
             if (PlaqisChasing == true)
             {
                 animator.SetBool("isChasing", true);
-
-                thisRandScript.enabled = false;
                 AttractionSpeed += (Time.deltaTime / 2);
                 transform.position = Vector3.MoveTowards(transform.position, Virus.transform.position, AttractionSpeed * Time.deltaTime);
-
             }
             else if (PlaqisChasing == false)
             {
@@ -83,8 +78,6 @@ public class plaquetaBehaviour : MonoBehaviour
             Rigidbody2D rb = this.GetComponent<Rigidbody2D>();
             rb.constraints = RigidbodyConstraints2D.FreezeAll;
         }
-        
-
 
     }
 

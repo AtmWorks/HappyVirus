@@ -18,7 +18,7 @@ public class spikerEnemyBehaviour : MonoBehaviour
     //public GameObject projectile;
 
     public float maxSpeed;
-    public float accelerationRate = 5f; 
+    public float accelerationRate = 8f; 
     private Vector2 targetVelocity; // Velocidad objetivo gradual
 
     public float desiredDistance = 0;
@@ -48,7 +48,6 @@ public class spikerEnemyBehaviour : MonoBehaviour
 
     void Start()
     {
-     //   rb = GetComponent<Rigidbody2D>();
         isDead = false;
         timer = -3 ;
         resetTime = 2f;
@@ -91,16 +90,7 @@ public class spikerEnemyBehaviour : MonoBehaviour
         {
             _animator.SetBool("imShooting", true);
         }
-        //if (canRotate)
-        //{
-        //    rotationParent.GetComponent<Rotation>().enabled = true; // Desactivar el script
 
-        //}
-        //if (!canRotate)
-        //{
-        //    rotationParent.GetComponent<Rotation>().enabled = false; // Desactivar el script
-
-        //}
         if (timer > 1f )
         {
             _animator.SetBool("imShooting", false);
@@ -111,17 +101,18 @@ public class spikerEnemyBehaviour : MonoBehaviour
            
         }
 
-        float distance = Vector3.Distance(target.gameObject.transform.position, transform.position);
         if (target != null ) 
-        { 
-        if (distance > desiredDistance)
         {
-            isVirusInRange = false;
-        }
-        else if (distance < desiredDistance)
-        {
-            isVirusInRange = true;
-        }
+            float distance = Vector3.Distance(target.gameObject.transform.position, transform.position);
+
+            if (distance > desiredDistance)
+            {
+                isVirusInRange = false;
+            }
+            else if (distance < desiredDistance)
+            {
+                isVirusInRange = true;
+            }
         }
 
         pullBackMovement();
@@ -139,29 +130,11 @@ public class spikerEnemyBehaviour : MonoBehaviour
         Instantiate(explosion, new Vector3(this.gameObject.transform.position.x + 1, this.gameObject.transform.position.y -1, 0), Quaternion.identity);
         Destroy(parent);
     }
-    //public void pullBackMovement()
-    //{
-    //    if (isVirusInRange)
-    //    {
-    //        Vector2 direction = (target.gameObject.transform.position - transform.position).normalized;
-    //        //TODO: modify the next line to LERP the velocity instead setting it directly 
-    //        rb.velocity = -direction * maxSpeed;
-    //    }
-    //    if (!isVirusInRange)
-    //    {
-    //        if (target != null)
-    //        {
-    //            Vector2 direction = (target.gameObject.transform.position - transform.position).normalized;
-    //            rb.velocity = direction * maxSpeed;
-    //        }
-    //    }
-    //}
 
     public void pullBackMovement()
     {
 
-        float distance = Vector3.Distance(target.gameObject.transform.position, transform.position);
-        if (distance > desiredDistance -1.5 && distance < desiredDistance + 1.5) { return;}
+        
         if (isVirusInRange)
         {
             Vector2 direction = (target.gameObject.transform.position - transform.position).normalized;
@@ -169,6 +142,8 @@ public class spikerEnemyBehaviour : MonoBehaviour
         }
         else if (target != null)
         {
+            float distance = Vector3.Distance(target.gameObject.transform.position, transform.position);
+            if (distance > desiredDistance - 1.5 && distance < desiredDistance + 1.5) { return; }
             Vector2 direction = (target.gameObject.transform.position - transform.position).normalized;
             targetVelocity = direction * maxSpeed; // Establecer la nueva velocidad objetivo
         }

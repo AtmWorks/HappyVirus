@@ -19,10 +19,11 @@ public class meatBall : MonoBehaviour
     public float timer;
     private Coroutine dashCoroutine;
     public bool canAttack;
-
+    public bool didWakeUp=true;
+    public float wakeUpDistance=10f;
     [SerializeField]
     private float velocidadRotacion = 1f;
-
+    public bool freezeConstrains = false;
     void Start()
     {
         this.gameObject.tag = "Neutral";
@@ -38,7 +39,7 @@ public class meatBall : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.tag == "Virus" && isChasing == false)
+        if (collision.tag == "Player" && isChasing == false)
         {
             isChasing = true;
             moveTo = collision.transform;
@@ -59,46 +60,63 @@ public class meatBall : MonoBehaviour
     void FixedUpdate()
     {
         timer += Time.deltaTime;
-        if (isChasing == true )
-        {
-            timeSinceLastSpeedIncrease += Time.fixedDeltaTime;
-            if (timeSinceLastSpeedIncrease >= speedIncreaseInterval && ChaseSpeed < maxSpeed)
+        if(didWakeUp)
+        { 
+            if (isChasing == true )
             {
-                ChaseSpeed += 0.5f;
-                timeSinceLastSpeedIncrease = 0f;
+                timeSinceLastSpeedIncrease += Time.fixedDeltaTime;
+                if (timeSinceLastSpeedIncrease >= speedIncreaseInterval && ChaseSpeed < maxSpeed)
+                {
+                    ChaseSpeed += 0.5f;
+                    timeSinceLastSpeedIncrease = 0f;
+                }
+
+                    Vector2 movement = Vector2.MoveTowards(rb.position, moveTo.position, ChaseSpeed * Time.fixedDeltaTime);
+                    rb.MovePosition(movement);
+
             }
-
-                Vector2 movement = Vector2.MoveTowards(rb.position, moveTo.position, ChaseSpeed * Time.fixedDeltaTime);
-                rb.MovePosition(movement);
-
-        }
-        if (timer >= 3.3f && isAttack == true )
-        {
-            dashToVirus();
-        }
-        if (timer > 4f)
-        {
-            if (canAttack == true)
+            if (timer >= 3.3f && isAttack == true )
             {
-                isAttack = true;
-                animatorP.SetBool("isAttack", true);
-                timer = 0;
+                dashToVirus();
             }
+            if (timer > 4f)
+            {
+                if (canAttack == true)
+                {
+                    isAttack = true;
+                    animatorP.SetBool("isAttack", true);
+                    timer = 0;
+                }
             
+            }
+            //mantener la rotacion
+
+            float anguloActual = transform.rotation.eulerAngles.z;
+            if (anguloActual != rotacionInicial.eulerAngles.z)
+            {
+                float anguloObjetivo = rotacionInicial.eulerAngles.z;
+                float rotacion = anguloObjetivo - anguloActual;
+                if (rotacion > 180)
+                    rotacion -= 360;
+                else if (rotacion < -180)
+                    rotacion += 360;
+                rb.AddTorque(rotacion * velocidadRotacion);
+            }
+            rb.constraints = freezeConstrains ? rb.constraints | (RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezePositionY)
+                                  : rb.constraints & ~(RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezePositionY);
+
+            //if freezeConstrains (bool) is true, then take the rigidbody and fix his X and Y position constrains (if they are fixed), if its false, disable them if they are enabled
+        }
+        else
+        {
+            float dist = Vector2.Distance(rb.position, moveTo.position);
+            if (dist <= wakeUpDistance)
+            {
+                didWakeUp = true;
+            }
         }
 
-        //mantener la rotacion
-        float anguloActual = transform.rotation.eulerAngles.z;
-        if (anguloActual != rotacionInicial.eulerAngles.z)
-        {
-            float anguloObjetivo = rotacionInicial.eulerAngles.z;
-            float rotacion = anguloObjetivo - anguloActual;
-            if (rotacion > 180)
-                rotacion -= 360;
-            else if (rotacion < -180)
-                rotacion += 360;
-            rb.AddTorque(rotacion * velocidadRotacion);
-        }
+        
     }
     //public void dashToVirus() //no funciona muy bien
     //{

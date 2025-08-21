@@ -716,7 +716,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &5328101571161128672
 Transform:
   m_ObjectHideFlags: 0
@@ -1126,7 +1126,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isTriggerHandled: 0
-  desiredDistance: 30
   Virus: {fileID: 0}
   Child: {fileID: 0}
+  isChildOriginPoint: 0
   isBackgroundElement: 0

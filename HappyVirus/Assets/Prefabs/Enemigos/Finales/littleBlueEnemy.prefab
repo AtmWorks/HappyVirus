@@ -1053,9 +1053,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 484531a31167e454db8c41cd976088ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isTriggerHandled: 0
   Virus: {fileID: 0}
   Child: {fileID: 0}
-  desiredDistance: 45
+  isChildOriginPoint: 0
+  isBackgroundElement: 0
 --- !u!1 &5607089217978043371
 GameObject:
   m_ObjectHideFlags: 0

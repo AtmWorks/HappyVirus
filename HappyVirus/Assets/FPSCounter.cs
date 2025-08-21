@@ -33,15 +33,15 @@ public class FPSCounter : MonoBehaviour
             float fpsPromedio = frames / acumulado;
 
             string texto =
-                "FPS: " + Mathf.RoundToInt(fpsPromedio) + "\n" +
-                "Used Memory: " + (Profiler.GetTotalAllocatedMemoryLong() / 1048576f).ToString("F2") + " MB\n";
+                "FPS: " + Mathf.RoundToInt(fpsPromedio) + "\n";
+            //"Used Memory: " + (Profiler.GetTotalAllocatedMemoryLong() / 1048576f).ToString("F2") + " MB\n";
 
 #if UNITY_EDITOR
             texto +=
-                "Batches: " + UnityEditor.UnityStats.batches + "\n" +
-                "SetPass Calls: " + UnityEditor.UnityStats.setPassCalls + "\n" +
-                "Tris: " + UnityEditor.UnityStats.triangles + "\n" +
-                "Verts: " + UnityEditor.UnityStats.vertices + "\n";
+                "Batches: " + UnityEditor.UnityStats.batches + "\n";
+                //"SetPass Calls: " + UnityEditor.UnityStats.setPassCalls + "\n" +
+                //"Tris: " + UnityEditor.UnityStats.triangles + "\n" +
+                //"Verts: " + UnityEditor.UnityStats.vertices + "\n";
 #endif
 
             if (textoFPS != null)

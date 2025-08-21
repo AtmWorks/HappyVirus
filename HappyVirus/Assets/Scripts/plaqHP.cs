@@ -25,8 +25,7 @@ public class plaqHP : MonoBehaviour
     
     public void destroyThis()
     {
-        Destroy(transform.parent.gameObject);
-
+        Destroy(this.transform.parent.transform.parent.gameObject);
     }
     // Update is called once per frame
     void Update()

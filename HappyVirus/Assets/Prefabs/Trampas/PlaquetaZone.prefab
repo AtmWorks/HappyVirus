@@ -97,11 +97,10 @@ GameObject:
   - component: {fileID: 8965164090467350870}
   - component: {fileID: 1104744014569176426}
   - component: {fileID: 6172183919992302904}
-  - component: {fileID: 9101593792861544667}
   - component: {fileID: 346951946223836795}
   m_Layer: 0
   m_Name: Plaqueta (1)
-  m_TagString: tentacleTarget
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -218,31 +217,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b9e67d396ecce4449a572d6b95b1732, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rb: {fileID: 0}
-  speed: 2
-  accelerationTime: 0.05
-  maxSpeed: 4
-  comebackTimer: 0
-  inSide: 0
-  ready: 0
-  sourcePoint: {fileID: 6689111735930292028}
---- !u!114 &9101593792861544667
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4043088714930881947}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 221b4172cb941a84bbdff80e664e8861, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sprite1: {fileID: 1018326966998007996}
-  sprite2: {fileID: 5931034039642455347}
-  sprite3: {fileID: 9055723408033652075}
-  colorTransitionSpeed: 1
-  virusTag: Virus
+  speed: 1
+  accelerationTime: 0.25
+  movementRadius: 0.15
+  randomForceInterval: 1
+  noiseWeight: 0.05
 --- !u!114 &346951946223836795
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -307,9 +286,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 484531a31167e454db8c41cd976088ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isTriggerHandled: 0
   Virus: {fileID: 0}
   Child: {fileID: 0}
-  desiredDistance: 30
+  isChildOriginPoint: 0
+  isBackgroundElement: 0
 --- !u!1 &6689111735930292028
 GameObject:
   m_ObjectHideFlags: 0
@@ -319,7 +300,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7807172372039107733}
-  - component: {fileID: 68870938205615749}
   m_Layer: 0
   m_Name: PlaquetaZone
   m_TagString: PlqZone
@@ -343,41 +323,6 @@ Transform:
   - {fileID: 7338479003680958718}
   m_Father: {fileID: 1283709491473337629}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!58 &68870938205615749
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6689111735930292028}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.5
 --- !u!1 &7424293292939321053
 GameObject:
   m_ObjectHideFlags: 0

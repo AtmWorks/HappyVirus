@@ -793,8 +793,8 @@ MonoBehaviour:
   target: {fileID: 0}
   parent: {fileID: 6717552693183738439}
   rb: {fileID: 211196397237168176}
-  maxSpeed: 10
-  accelerationRate: 3
+  maxSpeed: 12
+  accelerationRate: 4
   desiredDistance: 10
   isShooting: 0
   canRotate: 0
@@ -806,7 +806,7 @@ MonoBehaviour:
   resetTime: 0
   nextTime: 0
   isDead: 0
-  explosion: {fileID: 5459446116007223409, guid: 69ada58f03867024aa748d198bc627e8,
+  explosion: {fileID: 5459446116007223409, guid: bea9c348d1b30534499a610a3b1649de,
     type: 3}
   velocidadRotacion: 1
 --- !u!50 &211196397237168176
@@ -870,7 +870,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 12
+  m_Radius: 15.527224
 --- !u!58 &7822641691998000869
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -1097,9 +1097,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 484531a31167e454db8c41cd976088ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isTriggerHandled: 0
   Virus: {fileID: 0}
   Child: {fileID: 0}
-  desiredDistance: 30
+  isChildOriginPoint: 1
+  isBackgroundElement: 0
 --- !u!1 &6796938858452501598
 GameObject:
   m_ObjectHideFlags: 0
