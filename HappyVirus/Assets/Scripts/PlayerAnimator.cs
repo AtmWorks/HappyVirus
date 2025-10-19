@@ -14,7 +14,6 @@ public class PlayerAnimator : MonoBehaviour {
     void Start ()
     {
         GetDmg = false;
-
     }
 
 
