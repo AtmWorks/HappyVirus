@@ -3,6 +3,12 @@ using UnityEngine.UI;
 
 public class MovementController : MonoBehaviour
 {
+    public enum ControlScheme { Mobile, PC, Controller }
+
+    [Header("Esquema de control")]
+    [Tooltip("Mobile = joystick en pantalla; PC = WASD/Flechas; Controller = (pendiente)")]
+    public ControlScheme controlScheme = ControlScheme.Mobile;
+
     [Header("Velocidad")]
     public float speed = 5f;
     [HideInInspector] public float baseSpeed;
@@ -42,18 +48,54 @@ public class MovementController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        // Leer entradas UI
-        isSprinting = sprintButton != null && sprintButton.buttonPressed;
+        // Determinar sprint según esquema de control
+        switch (controlScheme)
+        {
+            case ControlScheme.Mobile:
+                // Tu flujo original: botón de sprint en pantalla
+                isSprinting = (sprintButton != null && sprintButton.buttonPressed);
+                break;
+            case ControlScheme.PC:
+                // En PC, sprint con Left Shift
+                isSprinting = Input.GetKey(KeyCode.LeftShift);
+                break;
+            case ControlScheme.Controller:
+                // De momento no gestionamos sprint por mando
+                isSprinting = false;
+                break;
+        }
 
         // Sprint / stamina
         dashingMovement(2);
 
-        // Movimiento con joystick en pantalla
-        float joystickHorizontal = screenJoystick != null ? screenJoystick.Horizontal : 0f;
-        float joystickVertical = screenJoystick != null ? screenJoystick.Vertical : 0f;
-        Vector2 joyMovement = new Vector2(joystickHorizontal, joystickVertical);
+        // Movimiento según esquema
+        if (controlScheme == ControlScheme.Mobile)
+        {
+            // Movimiento con joystick en pantalla (flujo original)
+            float joystickHorizontal = screenJoystick != null ? screenJoystick.Horizontal : 0f;
+            float joystickVertical = screenJoystick != null ? screenJoystick.Vertical : 0f;
+            Vector2 joyMovement = new Vector2(joystickHorizontal, joystickVertical);
 
-        rig.velocity = joyMovement * speed;
+            rig.velocity = joyMovement * speed;
+        }
+        else if (controlScheme == ControlScheme.PC)
+        {
+            // Movimiento con WASD y Flechas, ignorando el joystick
+            float h = 0f;
+            float v = 0f;
+
+            if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow)) h -= 1f;
+            if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow)) h += 1f;
+            if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow)) v -= 1f;
+            if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow)) v += 1f;
+
+            Vector2 pcMovement = new Vector2(h, v).normalized;
+            rig.velocity = pcMovement * speed;
+        }
+        else if (controlScheme == ControlScheme.Controller)
+        {
+            // De momento no hacemos nada (no modificamos rig.velocity)
+        }
 
         // Control del doble
         //if (virusDoble != null)
