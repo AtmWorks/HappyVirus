@@ -2,13 +2,10 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
-//using Tentacle;
 
 public class PlayerMovement : MonoBehaviour
 {
     public static bool VirusFaceCheck;
-    //public bool VirusFaceCheck;
-
     public int colorStatus = 0;
 
     public GameObject smoke;
@@ -16,25 +13,13 @@ public class PlayerMovement : MonoBehaviour
     public GameObject VirusFace;
     public GameObject VirusSkin;
     public GameObject VirusBody;
-    public GameObject virusDoble;
     public GameObject tentacles;
-    public float speed;
-    public float baseSpeed;
-    private Rigidbody2D rig;
-    private Rigidbody2D rigCopy;
-    private bool growingFace;
-    private bool outOfControl;
-    public bool isSprinting;
+
     public bool killed1stBoss;
 
     public static bool isAttractingEgg;
 
-    public isButtonPressed sprintButton;
-    public isButtonPressed EggFollowButton;
-
     public VirusAttraction control;
-    public Joystick screenJoystick;
-
     public UnityEngine.UI.Button faceButton;
     public UnityEngine.UI.Button tentacleButton;
     public UnityEngine.UI.Button addO2Button;
@@ -47,14 +32,14 @@ public class PlayerMovement : MonoBehaviour
     public GameObject creatteEggButtonObject;
     public GameObject followEggButtonObject;
 
-    //Tentaculos
+    // Tentáculos
     [SerializeField] private Tentacle tentacle1;
     [SerializeField] private Tentacle tentacle2;
 
-    //Escudo
+    // Escudo
     public GameObject shieldRing;
 
-    //Posicionamiento del soft body
+    // Posicionamiento del soft body
     public GameObject blob1;
     public GameObject blob2;
     public GameObject blob3;
@@ -73,39 +58,26 @@ public class PlayerMovement : MonoBehaviour
     private Quaternion softRot;
     public Quaternion skinRot;
 
-
-    //
-    public Image Stamina;
+    // UI no relacionada a movimiento
     public Image blobCircle;
-    public bool coolingDown;
-    public float waitTime = 1.0f;
-    public bool resting;
-    //
-    public bool activedobl;
-    //
-    public CameraBehaviour01 mainCamera;
-    public EggCounter virusSelect;
+
+    public CameraBehaviour01 mainCamera;     // sigue usándose para otras features
+    //public EggCounter virusSelect;           // sigue usándose para otras features
 
     public bool isOnTentacleTarget;
 
     private void Awake()
     {
         isOnTentacleTarget = false;
-        rig = this.GetComponent<Rigidbody2D>();
-        // rigCopy = virusDoble.GetComponent<Rigidbody2D>();
-        resting = false;
-        isSprinting = false;
     }
 
     void Start()
     {
-        baseSpeed = speed;
-        //VirusBody.gameObject.SetActive(false);
-        outOfControl = false;
+        // Estados iniciales no relacionados con movimiento
+        // VirusBody.gameObject.SetActive(false);
         //VirusFaceCheck = false;
-        waitTime = 2f;
 
-        //guardamos posiciones del soft 
+        // Guardamos posiciones del soft 
         softPos1 = blob1.transform.localPosition;
         softPos2 = blob2.transform.localPosition;
         softPos3 = blob3.transform.localPosition;
@@ -119,7 +91,6 @@ public class PlayerMovement : MonoBehaviour
         skinScale = VirusSkin.transform.localScale;
 
         VirusFace.gameObject.transform.localScale = new Vector3(0, 0, 0);
-        //VirusSkin.SetActive(false);
         growingFace = false;
 
         faceButton.onClick.AddListener(changeColor);
@@ -132,57 +103,31 @@ public class PlayerMovement : MonoBehaviour
 
         blobCircle.fillAmount = 0f;
         killed1stBoss = false;
-
     }
+
     void changeColor()
     {
-        if (colorStatus == 0)
-        {
-            colorStatus = 1;
-        }
-        else if (colorStatus == 1)
-        {
-            colorStatus = 0;
-        }
+        if (colorStatus == 0) colorStatus = 1;
+        else if (colorStatus == 1) colorStatus = 0;
     }
-
 
     public GameObject getMouseOverThing()
     {
+        Vector2 mousePos = Input.mousePosition;
+        Vector2 worldPos = Camera.main.ScreenToWorldPoint(mousePos);
+
+        Collider2D[] hits = Physics2D.OverlapPointAll(worldPos);
+        foreach (Collider2D hit in hits)
         {
-            Vector2 mousePos = Input.mousePosition;
-            Vector2 worldPos = Camera.main.ScreenToWorldPoint(mousePos);
-
-            Collider2D[] hits = Physics2D.OverlapPointAll(worldPos);
-            foreach (Collider2D hit in hits)
+            if (hit.tag == "tentacleTarget")
             {
-                if (hit.tag == "tentacleTarget")
-                {
-                    isOnTentacleTarget = true;
-                    return hit.gameObject;
-                }
+                isOnTentacleTarget = true;
+                return hit.gameObject;
             }
-            isOnTentacleTarget = false;
-            return null;
         }
+        isOnTentacleTarget = false;
+        return null;
     }
-    //public GameObject GetMouseOverEnemy()
-    //{
-    //    Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-    //    Collider2D hitCollider = Physics2D.OverlapPoint(mousePos);
-
-    //    if (hitCollider != null && hitCollider.gameObject.tag == "tentacleTarget")
-    //    {
-    //        isOnTentacleTarget = true;
-    //        return hitCollider.gameObject;
-
-    //    }
-    //    else
-    //    {
-    //        isOnTentacleTarget = false;
-    //        return null;
-    //    }
-    //}
 
     public void softBodyPosition()
     {
@@ -203,35 +148,27 @@ public class PlayerMovement : MonoBehaviour
         VirusSkin.gameObject.transform.localRotation = skinRot;
         VirusSkin.gameObject.transform.localScale = skinScale;
         findSoftBodys();
-
     }
+
     public void findSoftBodys()
     {
-        // Buscar todos los objetos activos en la escena con el tag "subVirus"
         GameObject[] subViruses = GameObject.FindGameObjectsWithTag("SubVirus");
-
         foreach (GameObject subVirus in subViruses)
         {
-            // Verificar si el objeto tiene un componente "cloneMovement"
             cloneMovement cloneMovement = subVirus.GetComponent<cloneMovement>();
-
             if (cloneMovement != null)
             {
-                // Ejecutar el método "softBodyPosition()" en el componente "cloneMovement"
                 cloneMovement.softBodyPosition();
             }
         }
     }
 
+    private bool growingFace;
+
     private void growFaceOver()
     {
         if (VirusFaceCheck == false)
         {
-
-            //VirusFace.gameObject.transform.localScale = new Vector3 (1, 1, 1) ; 
-            //VirusFace.SetActive(true);
-            //PlayerCollision.PlayermaxHP = 6;
-            //PlayerCollision.PlayerHP = PlayerCollision.PlayermaxHP;
             softBodyPosition();
             growingFace = true;
             Debug.Log("Face Growing");
@@ -242,14 +179,12 @@ public class PlayerMovement : MonoBehaviour
         else
         {
             Debug.Log("Not enough O2");
-
         }
+
         if (blobCircle.fillAmount >= 1.0f)
         {
             softBodyPosition();
-
         }
-
     }
 
     void showTentacles()
@@ -258,177 +193,62 @@ public class PlayerMovement : MonoBehaviour
         {
             tentacles.SetActive(true);
             catchTentacleButton.SetActive(true);
-
         }
         else
         {
             tentacles.SetActive(false);
             catchTentacleButton.SetActive(false);
-
-
         }
-
     }
+
     void getO2()
     {
         PlayerStatics.maxO2counter = 100;
         PlayerStatics.O2counter = PlayerStatics.maxO2counter;
     }
+
     public void useSmoke()
     {
         PlayerAnimator.GetDmg = true;
         StartCoroutine(spawnSmoke());
-
     }
+
     IEnumerator spawnSmoke()
     {
         GameObject smokeInstance = Instantiate(smoke, transform.position, Quaternion.identity);
         smokeInstance.transform.SetParent(transform);
         yield return new WaitForSeconds(1.5f);
         PlayerAnimator.GetDmg = false;
-
-
     }
+
     void switchEggAttract()
     {
-        if (isAttractingEgg)
-        {
-            isAttractingEgg = false;
-        }
-        else if (!isAttractingEgg)
-        {
-            isAttractingEgg = true;
-        }
+        if (isAttractingEgg) isAttractingEgg = false;
+        else isAttractingEgg = true;
     }
 
     void switchSmoke()
     {
         if (smokeButtonObject.activeSelf == true)
-        {
             smokeButtonObject.SetActive(false);
-        }
-        else if (smokeButtonObject.activeSelf == false)
-        {
+        else
             smokeButtonObject.SetActive(true);
-        }
     }
+
     void CrearEscudo()
     {
         GameObject copia = Instantiate(shieldRing, transform.position, transform.rotation, transform);
         copia.SetActive(true);
     }
-    void dashingMovement(int mode)
-    {
-        if (mode == 1)
-        {
-            if (coolingDown == true)
-            {
-                //Reduce fill amount over 30 seconds
-                Stamina.fillAmount -= 2.0f / waitTime * Time.deltaTime;
-            }
-            else
-            {
-                Stamina.fillAmount += 1.0f / waitTime * Time.deltaTime;
-            }
-            //STAMINA
-            if (Stamina.fillAmount <= 0.05f)
-            {
 
-                resting = true;
-                Stamina.color = new Color32(255, 86, 69, 255);
-                //coolingDown = true;
-
-            }
-            else if (Stamina.fillAmount >= 0.5f)
-            {
-                resting = false;
-                Stamina.color = new Color32(255, 246, 95, 255);
-
-            }
-            if (Stamina.fillAmount >= 1f)
-            {
-                Stamina.color = new Color32(255, 246, 95, 0);
-            }
-            else if (Stamina.fillAmount <= 1f && Stamina.fillAmount >= 0.5f)
-            {
-                Stamina.color = new Color32(255, 246, 95, 255);
-            }
-            if ((Input.GetKey("left shift") || isSprinting) && Stamina.fillAmount >= 0.05f && resting == false)
-            {
-
-                coolingDown = true;
-                PlayerAnimator.IsSprinting = true;
-                speed = 15;
-
-            }
-            else
-            {
-                coolingDown = false;
-                PlayerAnimator.IsSprinting = false;
-                speed = baseSpeed;
-            }
-        }
-
-        if (mode == 2)
-        {
-            if (coolingDown == true)
-            {
-                Stamina.fillAmount -= 5.0f * Time.deltaTime;
-            }
-            else if (coolingDown == false)
-            {
-                PlayerAnimator.IsSprinting = false;
-                speed = baseSpeed;
-                Stamina.fillAmount += 1.0f / waitTime * Time.deltaTime;
-            }
-
-            if (Stamina.fillAmount <= 1f)
-            {
-                if (Stamina.fillAmount <= 0.05f)
-                {
-                    coolingDown = false;
-                }
-                resting = true;
-                Stamina.color = new Color32(255, 86, 69, 255);
-            }
-
-            if (Stamina.fillAmount >= 0.90f)
-            {
-                resting = false;
-                Stamina.color = new Color32(255, 246, 95, 255);
-            }
-            if (Stamina.fillAmount >= 1f)
-            {
-                Stamina.color = new Color32(255, 246, 95, 0);
-            }
-
-
-            if ((Input.GetKey("left shift") || isSprinting) && Stamina.fillAmount >= 0.90f)
-            {
-
-                coolingDown = true;
-                PlayerAnimator.IsSprinting = true;
-                speed = 35;
-
-            }
-        }
-
-
-    }
     void FixedUpdate()
     {
-
         if (colorStatus != PlayerStatics.colorState)
         {
             PlayerStatics.colorState = colorStatus;
         }
-        //CANVAS BUTTON INPUTS
 
-        //PARA HUEVOS MANTENIDO
-        //isAttractingEgg = EggFollowButton.buttonPressed;
-        isSprinting = sprintButton.buttonPressed;
-
-        //MECANICA DE CAMBIAR DE FORMA
+        // Mecánica de cambiar de forma (no movimiento)
         if (growingFace == true)
         {
             VirusFace.gameObject.transform.localScale += new Vector3(1.5f * Time.deltaTime, 1.5f * Time.deltaTime, 1.5f * Time.deltaTime);
@@ -437,131 +257,30 @@ public class PlayerMovement : MonoBehaviour
         {
             VirusFace.gameObject.transform.localScale = new Vector3(1, 1, 1);
             growingFace = false;
-
         }
-        //if (PlayerCollision.PlayerHP> 1 && !VirusFaceCheck && killed1stBoss == true)
+
         if (PlayerCollision.PlayerHP > 1 && !VirusFaceCheck)
         {
-
             growFaceOver();
-
         }
 
         if (PlayerCollision.PlayerHP <= 1 && VirusFaceCheck == true)
         {
-            //VirusFace.SetActive(false);
             VirusFace.gameObject.transform.localScale = new Vector3(0, 0, 0);
-            //VirusSkin.gameObject.transform.localScale = new Vector3(0, 0, 0);
-
-
-            //PlayerCollision.PlayermaxHP =3;
-            //PlayerCollision.PlayerHP = 3;
             tentacles.SetActive(false);
             catchTentacleButton.SetActive(false);
             creatteEggButtonObject.SetActive(false);
             followEggButtonObject.SetActive(false);
             VirusFaceCheck = false;
         }
-        //if (PlayerCollision.PlayerHP <= 0)
-        //{
-        //    VirusBody.gameObject.SetActive(false);
-        //    blobCircle.color = new Color32(95, 255, 100, 90);
-        //    blobCircle.fillAmount += 1.0f / (waitTime*2) * Time.deltaTime;
-        //    if(blobCircle.fillAmount >= 1.0f) 
-        //    {
-        //        blobCircle.fillAmount = 0f;
-        //        softBodyPosition();
-        //        blobCircle.color = new Color32(95, 255, 100, 255);
-        //        PlayerCollision.PlayerHP = 1;
-        //    }
 
-        //}
-        //ATRAER HUEVOS AL PLAYER//
-        if ((/*Input.GetMouseButton(1)||*/isAttractingEgg) && PlayerAnimator.IsShooting == false)
-        {
+        // Atraer huevos al player (no movimiento)
+        if (isAttractingEgg && PlayerAnimator.IsShooting == false)
             EggAttraction.isAbsorbing = true;
-        }
         else
-        {
             EggAttraction.isAbsorbing = false;
-        }
 
-        //LLEVAR LOS TENTACULOS A COGER ALGO
-
-        //SPRINT
-        dashingMovement(2);
-
-        //MOVIMIENTO//
-        float moveHorizontal = Input.GetAxis("Horizontal");
-        float moveVertical = Input.GetAxis("Vertical");
-        Vector2 movement = new Vector2(moveHorizontal, moveVertical);
-
-        float joystickHorizontal = screenJoystick.Horizontal;
-        float joystickVertical = screenJoystick.Vertical;
-        Vector2 joyMovement = new Vector2(joystickHorizontal, joystickVertical);
-
-        //para input normal
-        //rig.velocity = movement * speed;
-        //rig.AddForce(movement * speed * 3);
-
-
-        //para joystick de screen
-        rig.velocity = joyMovement * speed;
-
-        //rig.AddForce(movement * speed);
-        //Debug.Log(rig.velocity);
-
-
-        //MOVIMIENTO AL DOBLE
-        if (virusDoble.activeSelf == true) { activedobl = true; }
-        else if (virusDoble.activeSelf == false) { activedobl = false; } //checkers
-
-        if (Input.GetKeyDown("k"))
-        {
-            if (outOfControl == false)
-            {
-                //elegir el virus que se queda
-                if (virusSelect.DobleVirus.activeSelf == true)
-                {
-                    virusDoble = virusSelect.DobleVirus;
-                }
-                rig = virusDoble.GetComponent<Rigidbody2D>();//Cambiar el focus del rigidBody
-                VirusAttraction.isOnControl = true;//para que el clon no te siga
-                outOfControl = true;
-                mainCamera.target = virusDoble.transform;//cambiar la camara
-
-            }
-            else if (outOfControl == true)
-            {
-                Debug.Log("ESTOY OUTOFCONTROL");
-                rig = this.GetComponent<Rigidbody2D>();
-                VirusAttraction.isOnControl = false;//para que el clon no te siga
-                mainCamera.target = this.gameObject.transform;//cambiar la camara
-                outOfControl = false;
-
-
-            }
-
-            //devolver el control al clon
-
-        }
-
-
-        //CONGELA PLAYER//
-
-        if (PlayerAnimator.IsShooting == true || PlayerAnimator.IsCreatingEgg == true)
-        {
-            //rig.constraints = RigidbodyConstraints2D.FreezeAll;
-            rig.velocity = rig.velocity / 3;
-        }
-        else
-        {
-            rig.constraints &= ~RigidbodyConstraints2D.FreezePositionY;
-            rig.constraints &= ~RigidbodyConstraints2D.FreezePositionX;
-        }
-
-
-        //MODOS DE DISPARO//
+        // Modos de disparo (no movimiento)
         if (Input.GetKeyDown("1"))
         {
             ParticleFire.shootMode = 1;
@@ -582,8 +301,5 @@ public class PlayerMovement : MonoBehaviour
             ParticleFire.shootMode = 4;
             Debug.Log("I SWITCHED TO MODE4");
         }
-
-
-
     }
 }
