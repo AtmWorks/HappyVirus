@@ -3,11 +3,6 @@ using UnityEngine.UI;
 
 public class MovementController : MonoBehaviour
 {
-    public enum ControlScheme { Mobile, PC, Controller }
-
-    [Header("Esquema de control")]
-    [Tooltip("Mobile = joystick en pantalla; PC = WASD/Flechas; Controller = (pendiente)")]
-    public ControlScheme controlScheme = ControlScheme.Mobile;
 
     [Header("Velocidad")]
     public float speed = 5f;
@@ -49,17 +44,17 @@ public class MovementController : MonoBehaviour
     private void FixedUpdate()
     {
         // Determinar sprint según esquema de control
-        switch (controlScheme)
+        switch (PlayerStatics.controlType)
         {
-            case ControlScheme.Mobile:
+            case PlayerStatics.ControlScheme.Mobile:
                 // Tu flujo original: botón de sprint en pantalla
                 isSprinting = (sprintButton != null && sprintButton.buttonPressed);
                 break;
-            case ControlScheme.PC:
+            case PlayerStatics.ControlScheme.PC:
                 // En PC, sprint con Left Shift
                 isSprinting = Input.GetKey(KeyCode.LeftShift);
                 break;
-            case ControlScheme.Controller:
+            case PlayerStatics.ControlScheme.Controller:
                 // De momento no gestionamos sprint por mando
                 isSprinting = false;
                 break;
@@ -69,8 +64,9 @@ public class MovementController : MonoBehaviour
         dashingMovement(2);
 
         // Movimiento según esquema
-        if (controlScheme == ControlScheme.Mobile)
+        if (PlayerStatics.controlType == PlayerStatics.ControlScheme.Mobile)
         {
+            if (screenJoystick.gameObject.activeSelf == false) { screenJoystick.gameObject.SetActive(true); }
             // Movimiento con joystick en pantalla (flujo original)
             float joystickHorizontal = screenJoystick != null ? screenJoystick.Horizontal : 0f;
             float joystickVertical = screenJoystick != null ? screenJoystick.Vertical : 0f;
@@ -78,8 +74,10 @@ public class MovementController : MonoBehaviour
 
             rig.velocity = joyMovement * speed;
         }
-        else if (controlScheme == ControlScheme.PC)
+        else if (PlayerStatics.controlType == PlayerStatics.ControlScheme.PC)
         {
+            if (screenJoystick.gameObject.activeSelf == true) { screenJoystick.gameObject.SetActive(false); }
+
             // Movimiento con WASD y Flechas, ignorando el joystick
             float h = 0f;
             float v = 0f;
@@ -92,8 +90,10 @@ public class MovementController : MonoBehaviour
             Vector2 pcMovement = new Vector2(h, v).normalized;
             rig.velocity = pcMovement * speed;
         }
-        else if (controlScheme == ControlScheme.Controller)
+        else if (PlayerStatics.controlType == PlayerStatics.ControlScheme.Controller)
         {
+            if (screenJoystick.gameObject.activeSelf == true) { screenJoystick.gameObject.SetActive(false); }
+
             // De momento no hacemos nada (no modificamos rig.velocity)
         }
 

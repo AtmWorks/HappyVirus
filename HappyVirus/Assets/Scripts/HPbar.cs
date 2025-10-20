@@ -55,7 +55,6 @@ public class HPbar : MonoBehaviour {
 
     public void healingProcess()
     {
-        Debug.Log("Entering healingProcess");
         if (healButton.buttonPressed)
         {
 
@@ -99,8 +98,6 @@ public class HPbar : MonoBehaviour {
     }
     public void healOnce()
     {
-        Debug.Log("HEALED ONE");
-
         PlayerCollision.PlayerHP++;
         PlayerStatics.O2counter -= 5;
         popScore.popText = "-5";
