@@ -37773,6 +37773,7 @@ GameObject:
   - component: {fileID: 1374653703284074420}
   - component: {fileID: 1374653703284074423}
   - component: {fileID: 1522263097460157843}
+  - component: {fileID: 3412122533744749074}
   - component: {fileID: 1374653703284074422}
   - component: {fileID: 1374653703284074440}
   - component: {fileID: 1374653703284074443}
@@ -37889,6 +37890,29 @@ MonoBehaviour:
   waitTime: 2
   resting: 0
   activedobl: 0
+--- !u!114 &3412122533744749074
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1374653703284074417}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51d427799c5524d4c992b30991266596, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  VirusSkin: {fileID: 1374653704959941316}
+  VirusBody: {fileID: 1374653703168829465}
+  blob1: {fileID: 1374653704044137728}
+  blob2: {fileID: 1374653703127428598}
+  blob3: {fileID: 1374653703735055633}
+  blob4: {fileID: 1374653704498784118}
+  blob5: {fileID: 1374653703137111389}
+  blob6: {fileID: 1374653703812798151}
+  skinPos: {x: 0, y: 0, z: 0}
+  skinScale: {x: 0, y: 0, z: 0}
+  skinRot: {x: 0, y: 0, z: 0, w: 0}
 --- !u!114 &1374653703284074422
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -37904,11 +37928,8 @@ MonoBehaviour:
   colorStatus: 0
   smoke: {fileID: 1155941896016017193, guid: 162ad9467b01fa140bb84164480024e8, type: 3}
   VirusFace: {fileID: 1375520831685098200}
-  VirusSkin: {fileID: 1374653704959941316}
-  VirusBody: {fileID: 1374653703168829465}
   tentacles: {fileID: 2269034420071319367}
   killed1stBoss: 0
-  control: {fileID: 0}
   faceButton: {fileID: 7014243310032368915}
   tentacleButton: {fileID: 1534007705415075985}
   addO2Button: {fileID: 3222412520246621238}
@@ -37923,15 +37944,7 @@ MonoBehaviour:
   tentacle1: {fileID: 0}
   tentacle2: {fileID: 0}
   shieldRing: {fileID: 6976746987182958438}
-  blob1: {fileID: 1374653704044137728}
-  blob2: {fileID: 1374653703127428598}
-  blob3: {fileID: 1374653703735055633}
-  blob4: {fileID: 1374653704498784118}
-  blob5: {fileID: 1374653703137111389}
-  blob6: {fileID: 1374653703812798151}
-  skinPos: {x: 0, y: 0, z: 0}
-  skinScale: {x: 0, y: 0, z: 0}
-  skinRot: {x: 0, y: 0, z: 0, w: 0}
+  softBody: {fileID: 3412122533744749074}
   blobCircle: {fileID: 4483969881708394602}
   mainCamera: {fileID: 0}
   isOnTentacleTarget: 0

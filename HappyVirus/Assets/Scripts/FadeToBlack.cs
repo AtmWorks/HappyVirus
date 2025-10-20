@@ -16,8 +16,6 @@ public class FadeToBlack : MonoBehaviour
     private Color currentColor;
     private float fadeSpeed;
 
-    public PlayerMovement virusMove;
-
 
     public bool cameraEffect;
     //bool blobfix;
@@ -41,7 +39,6 @@ public class FadeToBlack : MonoBehaviour
     private void Start()
     {
         spriteRenderer = blackSquare.GetComponent<SpriteRenderer>();
-        virusMove = Player.GetComponent<PlayerMovement>(); ;
 
         currentColor = Color.clear;
         targetColor = Color.clear;
@@ -78,7 +75,7 @@ public class FadeToBlack : MonoBehaviour
 
         if ( timer >0.2f && targetColor == Color.clear && currentColor != targetColor)
         {
-            virusMove.softBodyPosition();
+            Player.GetComponent<SoftBodyPosition>().softBodyPosition();
             findSoftBodys();
 
 

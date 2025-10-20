@@ -17,9 +17,7 @@ public class proceduralBehaviour : MonoBehaviour
     public bool cameraEffect;
 
     //player related
-    public PlayerMovement virusMove;
     public GameObject Player;
-    public GameObject blobParts;
     public static List<cloneMovement> clones;
     public bool isReviving;
 
@@ -57,7 +55,6 @@ public class proceduralBehaviour : MonoBehaviour
     {
         mapsSecurityCopy = new List<GameObject>(LVLmaps);
         spriteRenderer = blackSquare.GetComponent<SpriteRenderer>();
-        virusMove = Player.GetComponent<PlayerMovement>(); ;
         currentColor = Color.clear;
         targetColor = Color.clear;
         fadeSpeed = 6f;
@@ -329,7 +326,7 @@ public class proceduralBehaviour : MonoBehaviour
 
         if (timer > 0.2f && targetColor == Color.clear && currentColor != targetColor)
         {
-            virusMove.softBodyPosition();
+            Player.GetComponent<SoftBodyPosition>().softBodyPosition();
             findSoftBodys();
         }
         if (cameraEffect == true && timer > 1.5)
