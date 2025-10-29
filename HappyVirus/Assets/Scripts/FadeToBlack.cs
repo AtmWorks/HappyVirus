@@ -63,7 +63,7 @@ public class FadeToBlack : MonoBehaviour
 
                 if (cloneMovement != null)
                 {
-                    // Ejecutar el método "softBodyPosition()" en el componente "cloneMovement"
+                    // Ejecutar el mï¿½todo "softBodyPosition()" en el componente "cloneMovement"
                     cloneMovement.softBodyPosition();
                 }
             }
@@ -92,14 +92,14 @@ public class FadeToBlack : MonoBehaviour
                 if(newArea != null)
                 {
                     newArea.SetActive(true);
-                    // Obtén una referencia al componente ResetObjectsToDefault
+                    // Obtï¿½n una referencia al componente ResetObjectsToDefault
                     
                     ResetObjectsToDefault resetComponent = newArea.GetComponent<ResetObjectsToDefault>();
 
-                    // Verifica si el componente se encontró antes de llamar al método
+                    // Verifica si el componente se encontrï¿½ antes de llamar al mï¿½todo
                     if (resetComponent != null)
                     {
-                        // Llama al método ResetToDefault() en el componente ResetObjectsToDefault
+                        // Llama al mï¿½todo ResetToDefault() en el componente ResetObjectsToDefault
                         resetComponent.ResetToDefault();
                     }
                     else
@@ -199,7 +199,7 @@ public class FadeToBlack : MonoBehaviour
 
     //public void UpdateNewTPs()
     //{
-    //    // Asegúrate de que spawnControllerManager y currentTPs no sean nulos.
+    //    // Asegï¿½rate de que spawnControllerManager y currentTPs no sean nulos.
     //    if (spawnController != null && newTPs != null)
     //    {
     //        // Vaciar la lista newTPs.

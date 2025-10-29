@@ -163,7 +163,7 @@ public class Tutorial_GrapplingGun : MonoBehaviour
                     break;
                 case LaunchType.Transform_Launch:
                     m_rigidbody.gravityScale = 0;
-                    m_rigidbody.velocity = Vector2.zero;
+                    m_rigidbody.linearVelocity = Vector2.zero;
                     break;
             }
         }

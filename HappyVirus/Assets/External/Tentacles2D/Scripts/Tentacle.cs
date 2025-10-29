@@ -84,12 +84,12 @@ namespace Cubequad.Tentacles2D
         /// </summary>
         public float Drag
         {
-            get { return Pivot.drag; }
+            get { return Pivot.linearDamping; }
             set
             {
-                Pivot.drag = Tip.drag = value;
+                Pivot.linearDamping = Tip.linearDamping = value;
                 for (int i = 0; i < Segments.Length; i++)
-                    Segments[i].drag = value;
+                    Segments[i].linearDamping = value;
             }
         }
         /// <summary>

@@ -160,7 +160,7 @@ public class cloneMovement : MonoBehaviour
                 float moveSpeed = Mathf.Min(maxSpeed, distanceToPlayer);
 
                 // Use Vector2.Lerp to gradually change the velocity.
-                thisRb.velocity = Vector2.Lerp(thisRb.velocity, moveDirection * moveSpeed, Time.fixedDeltaTime * 10);
+                thisRb.linearVelocity = Vector2.Lerp(thisRb.linearVelocity, moveDirection * moveSpeed, Time.fixedDeltaTime * 10);
             }
             else if (distanceToPlayer < minDistance)
             {
@@ -171,11 +171,11 @@ public class cloneMovement : MonoBehaviour
                 float moveSpeed = Mathf.Min(maxSpeed, distanceToPlayer);
 
                 // Use Vector2.Lerp to gradually change the velocity.
-                thisRb.velocity = Vector2.Lerp(thisRb.velocity, moveDirection * moveSpeed, Time.fixedDeltaTime * 10);
+                thisRb.linearVelocity = Vector2.Lerp(thisRb.linearVelocity, moveDirection * moveSpeed, Time.fixedDeltaTime * 10);
             }
             else
             {
-                thisRb.velocity = Vector2.Lerp(thisRb.velocity, Vector2.zero, Time.fixedDeltaTime * 15);
+                thisRb.linearVelocity = Vector2.Lerp(thisRb.linearVelocity, Vector2.zero, Time.fixedDeltaTime * 15);
                 // Inside the comfort zone, stop moving
 
             }

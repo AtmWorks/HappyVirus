@@ -28,7 +28,7 @@ namespace Cubequad.Tentacles2D
 
 
             //para input normal
-            rig.velocity = movement * speed;
+            rig.linearVelocity = movement * speed;
             if (Input.GetMouseButton(0))
             {
                 var mousePosition = Input.mousePosition;

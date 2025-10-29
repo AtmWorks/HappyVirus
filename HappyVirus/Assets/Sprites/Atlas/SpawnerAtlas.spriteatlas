@@ -1,0 +1,105 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: SpawnerAtlas
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings:
+    - serializedVersion: 4
+      m_BuildTarget: DefaultTexturePlatform
+      m_MaxTextureSize: 1024
+      m_ResizeAlgorithm: 0
+      m_TextureFormat: -1
+      m_TextureCompression: 1
+      m_CompressionQuality: 50
+      m_CrunchedCompression: 0
+      m_AllowsAlphaSplitting: 0
+      m_Overridden: 0
+      m_IgnorePlatformSupport: 0
+      m_AndroidETC2FallbackOverride: 0
+      m_ForceMaximumCompressionQuality_BC6H_BC7: 0
+    packingSettings:
+      serializedVersion: 2
+      padding: 2
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 1
+      enableTightPacking: 1
+      enableAlphaDilation: 0
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: -6306874911211415628, guid: 778ad15140582ff4c89119245770b78d, type: 3}
+    - {fileID: 1394759772247157112, guid: 778ad15140582ff4c89119245770b78d, type: 3}
+    - {fileID: 2691716560429615880, guid: 778ad15140582ff4c89119245770b78d, type: 3}
+    - {fileID: -4269043200440185878, guid: 778ad15140582ff4c89119245770b78d, type: 3}
+    - {fileID: -887285543571733166, guid: 778ad15140582ff4c89119245770b78d, type: 3}
+    - {fileID: 6768522320291689393, guid: 778ad15140582ff4c89119245770b78d, type: 3}
+    - {fileID: -6541934675403186653, guid: 778ad15140582ff4c89119245770b78d, type: 3}
+    - {fileID: -7029841885002019632, guid: 778ad15140582ff4c89119245770b78d, type: 3}
+    - {fileID: -977293609346256344, guid: 778ad15140582ff4c89119245770b78d, type: 3}
+    - {fileID: -1245645018192855617, guid: 778ad15140582ff4c89119245770b78d, type: 3}
+    - {fileID: -5422447497223171092, guid: 778ad15140582ff4c89119245770b78d, type: 3}
+    - {fileID: 8267516814641202398, guid: 778ad15140582ff4c89119245770b78d, type: 3}
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+    packedSpriteRenderDataKeys:
+    - 778ad15140582ff4c89119245770b78d: -6306874911211415628
+    - 778ad15140582ff4c89119245770b78d: 2691716560429615880
+    - 778ad15140582ff4c89119245770b78d: 1394759772247157112
+    - 778ad15140582ff4c89119245770b78d: -887285543571733166
+    - 778ad15140582ff4c89119245770b78d: -4269043200440185878
+    - 778ad15140582ff4c89119245770b78d: -6541934675403186653
+    - 778ad15140582ff4c89119245770b78d: 6768522320291689393
+    - 778ad15140582ff4c89119245770b78d: -977293609346256344
+    - 778ad15140582ff4c89119245770b78d: -7029841885002019632
+    - 778ad15140582ff4c89119245770b78d: 8267516814641202398
+    - 778ad15140582ff4c89119245770b78d: -1245645018192855617
+    - 778ad15140582ff4c89119245770b78d: -5422447497223171092
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: -6306874911211415628, guid: 778ad15140582ff4c89119245770b78d, type: 3}
+  - {fileID: 2691716560429615880, guid: 778ad15140582ff4c89119245770b78d, type: 3}
+  - {fileID: 1394759772247157112, guid: 778ad15140582ff4c89119245770b78d, type: 3}
+  - {fileID: -887285543571733166, guid: 778ad15140582ff4c89119245770b78d, type: 3}
+  - {fileID: -4269043200440185878, guid: 778ad15140582ff4c89119245770b78d, type: 3}
+  - {fileID: -6541934675403186653, guid: 778ad15140582ff4c89119245770b78d, type: 3}
+  - {fileID: 6768522320291689393, guid: 778ad15140582ff4c89119245770b78d, type: 3}
+  - {fileID: -977293609346256344, guid: 778ad15140582ff4c89119245770b78d, type: 3}
+  - {fileID: -7029841885002019632, guid: 778ad15140582ff4c89119245770b78d, type: 3}
+  - {fileID: 8267516814641202398, guid: 778ad15140582ff4c89119245770b78d, type: 3}
+  - {fileID: -1245645018192855617, guid: 778ad15140582ff4c89119245770b78d, type: 3}
+  - {fileID: -5422447497223171092, guid: 778ad15140582ff4c89119245770b78d, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - SpawnerSprite_01
+  - SpawnerSprite_03
+  - SpawnerSprite_02
+  - SpawnerSprite_05
+  - SpawnerSprite_04
+  - SpawnerSprite_07
+  - SpawnerSprite_06
+  - SpawnerSprite_09
+  - SpawnerSprite_08
+  - SpawnerSprite_12
+  - SpawnerSprite_10
+  - SpawnerSprite_11
+  m_RenderDataMap: {}
+  m_Tag: SpawnerAtlas
+  m_IsVariant: 0

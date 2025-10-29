@@ -56,7 +56,7 @@ public class NeedleEnemyBehaviour : MonoBehaviour
         if (!canChase && !isChasing )
         {
             thisAnimator.SetBool("canChase", false);
-            thisRb.velocity = Vector2.Lerp(thisRb.velocity, Vector2.zero, Time.deltaTime * 2f);
+            thisRb.linearVelocity = Vector2.Lerp(thisRb.linearVelocity, Vector2.zero, Time.deltaTime * 2f);
             if(virusObject != null) { 
             if (Vector2.Dot(thisRb.transform.right, (virusObject.transform.position - thisRb.transform.position).normalized) > 0.95f)
             {
@@ -68,7 +68,7 @@ public class NeedleEnemyBehaviour : MonoBehaviour
         if (isChasing)
         {
             if(!firstAttack) { firstAttack = true; }
-            thisRb.velocity = transform.right * instantVelocity;
+            thisRb.linearVelocity = transform.right * instantVelocity;
         }
 
     }

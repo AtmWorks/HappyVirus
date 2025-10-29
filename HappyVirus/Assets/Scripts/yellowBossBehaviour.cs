@@ -106,7 +106,7 @@ public class yellowBossBehaviour : MonoBehaviour
             animator.SetBool("isSpawning", true);
             movement.enabled = false;
             Rigidbody2D rb = parent.GetComponent<Rigidbody2D>();
-            rb.velocity = Vector3.zero;
+            rb.linearVelocity = Vector3.zero;
         }
         if (timer > 0 && didSpawn == false)
         {
@@ -205,7 +205,7 @@ public class yellowBossBehaviour : MonoBehaviour
                 Instantiate(plaquetaPrefab, spawner.transform.position, spawner.transform.rotation);
                 Instantiate(plaquetaPrefab, spawner.transform.position, spawner.transform.rotation);
             }
-            // Instantiate un enemigo en la posición del spawner.
+            // Instantiate un enemigo en la posiciï¿½n del spawner.
         }
     }
 }

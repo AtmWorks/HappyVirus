@@ -29,7 +29,7 @@ public class cloneMovementBoss : MonoBehaviour
         followBehaviour();
     }
 
-    //TODO: Modifica el siguiente metodo para que ademas de seguir al player, cuando tenga un objeto Damage cerca, modifique levemente la rotacion de su direccion para intentar evitar el obstaculo, sin dejar de seguir al player pero añadiendo algunos grados en contrario a Dmg para sortearlo.
+    //TODO: Modifica el siguiente metodo para que ademas de seguir al player, cuando tenga un objeto Damage cerca, modifique levemente la rotacion de su direccion para intentar evitar el obstaculo, sin dejar de seguir al player pero aï¿½adiendo algunos grados en contrario a Dmg para sortearlo.
 
     void followBehaviour()
     {
@@ -46,7 +46,7 @@ public class cloneMovementBoss : MonoBehaviour
                 float moveSpeed = Mathf.Min(maxSpeed, distanceToPlayer);
 
                 // Use Vector2.Lerp to gradually change the velocity.
-                thisRb.velocity = Vector2.Lerp(thisRb.velocity, moveDirection * moveSpeed, Time.fixedDeltaTime * 10);
+                thisRb.linearVelocity = Vector2.Lerp(thisRb.linearVelocity, moveDirection * moveSpeed, Time.fixedDeltaTime * 10);
             }
             else if (distanceToPlayer < minDistance)
             {
@@ -57,11 +57,11 @@ public class cloneMovementBoss : MonoBehaviour
                 float moveSpeed = Mathf.Min(maxSpeed, distanceToPlayer);
 
                 // Use Vector2.Lerp to gradually change the velocity.
-                thisRb.velocity = Vector2.Lerp(thisRb.velocity, moveDirection * moveSpeed, Time.fixedDeltaTime * 10);
+                thisRb.linearVelocity = Vector2.Lerp(thisRb.linearVelocity, moveDirection * moveSpeed, Time.fixedDeltaTime * 10);
             }
             else
             {
-                thisRb.velocity = Vector2.Lerp(thisRb.velocity, Vector2.zero, Time.fixedDeltaTime * 15);
+                thisRb.linearVelocity = Vector2.Lerp(thisRb.linearVelocity, Vector2.zero, Time.fixedDeltaTime * 15);
                 // Inside the comfort zone, stop moving
 
             }
