@@ -10,8 +10,8 @@ public class spawnController : MonoBehaviour
     public SpawnBehaviour spawnBehaviour;
     public GameObject currentArea;
     public GameObject spawnArea;
-    public proceduralBehaviour proceduralBehaviour;
-    public bool isProdecuralMap = true;
+
+    public GameObject revivePoint;
     //public GameObject TPspawn;
 
     //public List<GameObject> currentTPlist;
@@ -25,31 +25,12 @@ public class spawnController : MonoBehaviour
 
     public void spawnProcess()
     {
-        Debug.Log("its spawn:"+currentSpawner+ "\nits procedural"+isProdecuralMap);
-        if (currentSpawner != null && isProdecuralMap)
+        
+        if ( currentSpawner != null )
         {
-            //TODO: RESETEAR VALORES DEL NIVEL
-
-            proceduralBehaviour.oldArea.SetActive(false);
-            proceduralBehaviour.oldArea = spawnArea;
-            proceduralBehaviour.onRevive();
-            spawnArea.SetActive(true);
+            // spawnArea.SetActive(true);
             currentSpawner.SetActive(true);
             spawnBehaviour = currentSpawner.GetComponent<SpawnBehaviour>();
-            
-            spawnBehaviour.spawnProcess();
-            //StartCoroutine(gestionTPs());
-            
-
-        }
-        else if ( currentSpawner != null && isProdecuralMap == false)
-        {
-            Debug.Log("its spawn:" + currentSpawner + "\nits procedural" + isProdecuralMap);
-
-            spawnArea.SetActive(true);
-            currentSpawner.SetActive(true);
-            spawnBehaviour = currentSpawner.GetComponent<SpawnBehaviour>();
-
             spawnBehaviour.spawnProcess();
         }
         else

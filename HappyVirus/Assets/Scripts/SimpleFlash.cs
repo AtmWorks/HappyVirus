@@ -1,7 +1,6 @@
 using System.Collections;
 
 using UnityEngine;
-using UnityEngine.U2D;
 
 namespace BarthaSzabolcs.Tutorial_SpriteFlash
 {
@@ -16,7 +15,6 @@ namespace BarthaSzabolcs.Tutorial_SpriteFlash
         //-------[SerializeField] private Material blobflashMaterial;
 
         [Tooltip("Duration of the flash.")]
-        [SerializeField] private float duration;
 
         #endregion
         #region Private Fields
@@ -58,7 +56,7 @@ namespace BarthaSzabolcs.Tutorial_SpriteFlash
 
         #endregion
 
-        public void Flash()
+        public void Flash(float duration = 1f)
         {
             // If the flashRoutine is not null, then it is currently running.
             if (flashRoutine != null)
@@ -69,24 +67,36 @@ namespace BarthaSzabolcs.Tutorial_SpriteFlash
             }
 
             // Start the Coroutine, and store the reference for it.
-            flashRoutine = StartCoroutine(FlashRoutine());
+            flashRoutine = StartCoroutine(FlashRoutine(duration));
         }
 
-        private IEnumerator FlashRoutine()
+        private IEnumerator FlashRoutine(float duration)
         {
             // Swap to the flashMaterial.
-            Color oldColor = spriteRenderer.color ;
 
-            spriteRenderer.color= whiteColor;
+            //if this gameobject has an script attached called 'colorController', deactivate it
+            colorController colorController = GetComponent<colorController>();
+            Color oldColor = spriteRenderer.color ;
+            if (colorController != null)
+            {
+                colorController.enabled = false;
+            }
+
             spriteRenderer.material = flashMaterial;
+            spriteRenderer.color= whiteColor;
+
             //------- blobRenderer.material = blobflashMaterial;
 
             // Pause the execution of this function for "duration" seconds.
             yield return new WaitForSeconds(duration);
 
             // After the pause, swap back to the original material.
-            spriteRenderer.material = originalMaterial;
+            if (colorController != null)
+            {
+                colorController.enabled = true;
+            }
             spriteRenderer.color = oldColor;
+            spriteRenderer.material = originalMaterial;
 
             //------- blobRenderer.material = originalBlobMaterial;
 

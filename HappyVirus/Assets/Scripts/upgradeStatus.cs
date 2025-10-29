@@ -71,8 +71,8 @@ public class upgradeStatus : MonoBehaviour
         }
         else if (isHP)
         {
-            PlayerCollision.PlayermaxHP++;
-            PlayerCollision.PlayerHP = PlayerCollision.PlayermaxHP;
+            PlayerStatics.PlayermaxHP++;
+            PlayerStatics.PlayerHP = PlayerStatics.PlayermaxHP;
 
             //popScore.popText = "+1 HP MAX";
             //popScore.isPoping = true;

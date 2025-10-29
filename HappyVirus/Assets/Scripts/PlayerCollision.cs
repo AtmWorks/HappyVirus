@@ -2,12 +2,11 @@
 using System.Collections.Generic;
 using BarthaSzabolcs.Tutorial_SpriteFlash;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class PlayerCollision : MonoBehaviour {
 
 
-
+    PlayerStatics playerStatics;
     private int lastSoundPos;
     private int lastSoundPosO2;
     public bool isSpeaker;
@@ -23,31 +22,30 @@ public class PlayerCollision : MonoBehaviour {
     public GameObject virusParent;
     public GameObject explosion;
     public GameObject spawn;
-    public HPbar hpscript;
-    public static int PlayermaxHP;
-    public static int PlayerHP ;
     public static float InmuneTime ;
     public static float FaceTime ;
     public static bool gotDamage;
     public spawnController spawnController;
     public PlayerMovement player;
 
-    public FadeToBlack thisTeleport;
+    public GameObject virusSkin;
+
+    // public FadeToBlack thisTeleport;
     public ParticleSystem hitParticles;
 
+    private CameraEffectController cameraEffectController;
+    public float inmunityTime = 1f;
     [SerializeField]private List <SimpleFlash> flashList;
-
-    //PARA EFECTO DE DAÑO
-
 
 
     // public GameObject PlayerObject;
 
     void Start ()
     {
+        playerStatics = FindFirstObjectByType<PlayerStatics>();
+        cameraEffectController = FindFirstObjectByType<CameraEffectController>();
+
         thisPlayed = false;
-        PlayermaxHP = 1;
-        PlayerHP = 1;
         gotDamage = false;
     }
 
@@ -59,8 +57,11 @@ public class PlayerCollision : MonoBehaviour {
         //this.transform.parent.transform.position = spawn.transform.position;
         //PlayerHP = 3;
         //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-        thisTeleport.isReviving = true;
-        thisTeleport.cameraEffect = true;
+
+
+        cameraEffectController.triggerFade(0.5f, 1f);
+        // thisTeleport.teleportPlayer(true, 0.8f);
+        virusSkin.SetActive(false);
         StartCoroutine(dameUnRespiro());
 
 
@@ -70,10 +71,11 @@ public class PlayerCollision : MonoBehaviour {
     {
         // Espera 1 segundo.
         yield return new WaitForSeconds(1f);
-        PlayerHP = PlayermaxHP;
+        virusSkin.SetActive(true);
+        PlayerStatics.PlayerHP = PlayerStatics.PlayermaxHP;
 
-        player.blobCircle.fillAmount = 0;
-        player.blobCircle.color = new Color32(95, 255, 100, 255);
+        // player.blobCircle.fillAmount = 0;
+        // player.blobCircle.color = new Color32(95, 255, 100, 255);
 
         spawnController.spawnProcess();
 
@@ -81,9 +83,10 @@ public class PlayerCollision : MonoBehaviour {
     void oneDamage()
     {
         PlayerAnimator.GetDmg = true;
-        PlayerStatics.inmuneTimer = 0.8f;
+        PlayerStatics.inmuneTimer = 1f;
         FaceTime = 1f;
-        PlayerHP -= 1;
+        playerStatics.substractHP(1);
+        // cameraEffectsController.triggerShake();
         hitParticles.Play();
     }
 
@@ -100,8 +103,10 @@ public class PlayerCollision : MonoBehaviour {
         //flashEffectEyeR.Flash();
         foreach (SimpleFlash flash in flashList)
         {
-            flash.Flash();
-
+            if (flash.gameObject.activeSelf == true)
+            {
+                flash.Flash(0.25f);
+            }
         }
         yield return null;
     }
@@ -124,7 +129,7 @@ public class PlayerCollision : MonoBehaviour {
            // Debug.Log("ENEMY TOUCH");
 
             gotDamage = true;
-            
+
 
 
         }
@@ -141,7 +146,7 @@ public class PlayerCollision : MonoBehaviour {
                     }
                 }
             }
-            
+
 
         }
 
@@ -153,7 +158,7 @@ public class PlayerCollision : MonoBehaviour {
             //StartCoroutine(enableThisSound());
         }
 
-        
+
     }
 
 
@@ -178,7 +183,7 @@ public class PlayerCollision : MonoBehaviour {
 //    {
 
 //        int clipSelected = Random.Range(0, 3);
-//        while (clipSelected== lastSoundPos) 
+//        while (clipSelected== lastSoundPos)
 //        {
 //        clipSelected = Random.Range(0, 3);
 //        }
@@ -193,7 +198,7 @@ public class PlayerCollision : MonoBehaviour {
 //    void reproduceHitSound()
 //    {
 //        isPlaying = true;
-//        //audioSource.clip = dmgClip; 
+//        //audioSource.clip = dmgClip;
 //        //audioSource.Play();
 ////        StartCoroutine(enableAudio());
 
@@ -234,15 +239,15 @@ public class PlayerCollision : MonoBehaviour {
 
         FaceTime -= Time.deltaTime;
 
-        if(PlayerHP <= 0)
-        { 
+        if(PlayerStatics.PlayerHP <= 0)
+        {
             PlayerDies();
             Debug.Log("I DIED");
             StartCoroutine(flashDMG());
             StartCoroutine(disableGetDmg());
         }
 
-        if (gotDamage == true && PlayerStatics.inmuneTimer <= 0 && PlayerHP >=1)
+        if (gotDamage == true && PlayerStatics.inmuneTimer <= 0 && PlayerStatics.PlayerHP >=1)
         {
             oneDamage();
             StartCoroutine(flashDMG());

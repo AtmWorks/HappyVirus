@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class SpawnBehaviour : MonoBehaviour
 {
+    public GameObject Player;
     public Animator thisAnimator;
     public GameObject currentArea;
     public GameObject spawnPoint;
-    public FadeToBlack thisTeleport = null;
     public bool isInfected;
     public spawnController spawnController = null;
     public bool isMainSpawner;
@@ -18,6 +18,12 @@ public class SpawnBehaviour : MonoBehaviour
 
     void Start()
     {
+        //if Player is not setted, find it in scene, its a gameObject with the name "Virus"
+        if (!Player)
+        {
+            Player = GameObject.Find("Virus");
+        }
+
         askOnce = false;
         GameObject leaveUIParent = GameObject.Find("leaveUI");
         if (leaveUIParent != null)
@@ -49,7 +55,6 @@ public class SpawnBehaviour : MonoBehaviour
             }
             if(isMainSpawner)
             {
-                thisTeleport.ReviveTPspawn = spawnPoint;
                 spawnController.currentSpawner = this.gameObject;
                 spawnController.spawnArea = currentArea;
             }
@@ -60,6 +65,9 @@ public class SpawnBehaviour : MonoBehaviour
 
         //StartCoroutine(animatorBoolWait());
         thisAnimator.SetBool("isSpawning", true);
+        // Player.SetActive(true);
+        Player.transform.position = spawnPoint.transform.position;
+        Player.GetComponent<SoftBodyPosition>().softBodyPosition();
         StartCoroutine(spawnVirus());
     }
     private IEnumerator animatorBoolWait()
@@ -71,8 +79,7 @@ public class SpawnBehaviour : MonoBehaviour
     private IEnumerator spawnVirus()
     {
         yield return new WaitForSeconds(0.5f); // Espera 1 segundo
-        //virus.SetActive(true);
-        //virus.transform.position = spawnPoint.transform.position;
+        
         thisAnimator.SetBool("isSpawning", false);
     }
     void Update()

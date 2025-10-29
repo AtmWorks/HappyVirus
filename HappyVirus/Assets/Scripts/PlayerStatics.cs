@@ -19,24 +19,31 @@ public class PlayerStatics : MonoBehaviour {
     public static int EggsCounterPubl;
     public static float inmuneTimer;//
     public static int colorState = 0;
+    public static int PlayerHP;
+    public static int PlayermaxHP;
 
-	// Use this for initialization
-	void Start ()
+    public CameraEffectController cameraEffectController;
+
+    // Use this for initialization
+    void Start ()
     {
+        cameraEffectController = FindFirstObjectByType<CameraEffectController>();
         controlType = controlScheme;
         // creationState = 0;
         O2counter = 0;
         maxO2counter = 20;
+        PlayermaxHP = 1;
+        PlayerHP = 1;
     }
-	
-	// Update is called once per frame
-	void FixedUpdate ()
+
+    // Update is called once per frame
+    void FixedUpdate()
     {
         if (PlayerStatics.inmuneTimer > 0)
         {
             PlayerStatics.inmuneTimer -= 1 * Time.deltaTime;
         }
-        if(O2counter > maxO2counter)
+        if (O2counter > maxO2counter)
         {
             O2counter = maxO2counter;
         }
@@ -44,5 +51,12 @@ public class PlayerStatics : MonoBehaviour {
         {
             controlType = controlScheme;
         }
+    }
+    
+    public void substractHP(int dmg)
+    {
+        PlayerHP -= dmg;
+        // cameraEffectController.triggerFade();
+        cameraEffectController.triggerShake(0.4f,0.4f);
     }
 }
