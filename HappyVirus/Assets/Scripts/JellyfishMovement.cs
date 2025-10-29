@@ -68,7 +68,7 @@ public class JellyfishMovement : MonoBehaviour
             currentSpeed = Mathf.Lerp(currentSpeed, 0f, Time.deltaTime);
             currentRotationSpeed = Mathf.Lerp(currentRotationSpeed, 0f, Time.deltaTime);
 
-            rb.velocity = transform.up * currentSpeed;
+            rb.linearVelocity = transform.up * currentSpeed;
 
             if (currentSpeed < 0.5f)
             {
@@ -82,7 +82,7 @@ public class JellyfishMovement : MonoBehaviour
         animator.SetBool("isIdle", true);
         isMoving = false;
         isReadyToMove = false;
-        rb.velocity = Vector2.zero;
+        rb.linearVelocity = Vector2.zero;
 
         idleTimer = isAvoiding ? (Random.Range(minIdleTime, maxIdleTime))*4 : Random.Range(minIdleTime, maxIdleTime);
 
@@ -179,7 +179,7 @@ public class JellyfishMovement : MonoBehaviour
         isReadyToMove = false;
 
         currentSpeed = Random.Range(minSpeed, maxSpeed);
-        rb.velocity = transform.up * currentSpeed;
+        rb.linearVelocity = transform.up * currentSpeed;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

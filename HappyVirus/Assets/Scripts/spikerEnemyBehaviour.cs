@@ -148,29 +148,29 @@ public class spikerEnemyBehaviour : MonoBehaviour
             targetVelocity = direction * maxSpeed; // Establecer la nueva velocidad objetivo
         }
 
-        // Aplicar una interpolación suave de la velocidad actual hacia la velocidad objetivo
-        rb.velocity = Vector2.Lerp(rb.velocity, targetVelocity, Time.deltaTime * accelerationRate);
+        // Aplicar una interpolaciï¿½n suave de la velocidad actual hacia la velocidad objetivo
+        rb.linearVelocity = Vector2.Lerp(rb.linearVelocity, targetVelocity, Time.deltaTime * accelerationRate);
     }
 
 
     public void keepRotation()
     {
-        // Obtenemos el ángulo de rotación actual en el eje Z
+        // Obtenemos el ï¿½ngulo de rotaciï¿½n actual en el eje Z
         float anguloActual = transform.rotation.eulerAngles.z;
-        // Si la rotación actual es diferente de la rotación inicial en el eje Z
+        // Si la rotaciï¿½n actual es diferente de la rotaciï¿½n inicial en el eje Z
         if (anguloActual != rotacionInicial.eulerAngles.z)
         {
-            // Calculamos el ángulo de rotación necesario para volver a la rotación inicial
+            // Calculamos el ï¿½ngulo de rotaciï¿½n necesario para volver a la rotaciï¿½n inicial
             float anguloObjetivo = rotacionInicial.eulerAngles.z;
 
-            // Calculamos la dirección de rotación más corta (en sentido horario o antihorario)
+            // Calculamos la direcciï¿½n de rotaciï¿½n mï¿½s corta (en sentido horario o antihorario)
             float rotacion = anguloObjetivo - anguloActual;
             if (rotacion > 180)
                 rotacion -= 360;
             else if (rotacion < -180)
                 rotacion += 360;
 
-            // Aplicamos una fuerza para rotar el objeto en la dirección correcta
+            // Aplicamos una fuerza para rotar el objeto en la direcciï¿½n correcta
             rb.AddTorque(rotacion * velocidadRotacion);
 
         }

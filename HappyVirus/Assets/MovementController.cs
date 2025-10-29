@@ -20,7 +20,7 @@ public class MovementController : MonoBehaviour
     public bool resting;
     private bool isSprinting;
 
-    //[Header("Cambio de control / Cámara")]
+    //[Header("Cambio de control / Cï¿½mara")]
     //public CameraBehaviour01 mainCamera;
     //public GameObject virusDoble;
     //public EggCounter virusSelect;
@@ -43,11 +43,11 @@ public class MovementController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        // Determinar sprint según esquema de control
+        // Determinar sprint segï¿½n esquema de control
         switch (PlayerStatics.controlType)
         {
             case PlayerStatics.ControlScheme.Mobile:
-                // Tu flujo original: botón de sprint en pantalla
+                // Tu flujo original: botï¿½n de sprint en pantalla
                 isSprinting = (sprintButton != null && sprintButton.buttonPressed);
                 break;
             case PlayerStatics.ControlScheme.PC:
@@ -63,7 +63,7 @@ public class MovementController : MonoBehaviour
         // Sprint / stamina
         dashingMovement(2);
 
-        // Movimiento según esquema
+        // Movimiento segï¿½n esquema
         if (PlayerStatics.controlType == PlayerStatics.ControlScheme.Mobile)
         {
             if (screenJoystick.gameObject.activeSelf == false) { screenJoystick.gameObject.SetActive(true); }
@@ -72,7 +72,7 @@ public class MovementController : MonoBehaviour
             float joystickVertical = screenJoystick != null ? screenJoystick.Vertical : 0f;
             Vector2 joyMovement = new Vector2(joystickHorizontal, joystickVertical);
 
-            rig.velocity = joyMovement * speed;
+            rig.linearVelocity = joyMovement * speed;
         }
         else if (PlayerStatics.controlType == PlayerStatics.ControlScheme.PC)
         {
@@ -88,7 +88,7 @@ public class MovementController : MonoBehaviour
             if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow)) v += 1f;
 
             Vector2 pcMovement = new Vector2(h, v).normalized;
-            rig.velocity = pcMovement * speed;
+            rig.linearVelocity = pcMovement * speed;
         }
         else if (PlayerStatics.controlType == PlayerStatics.ControlScheme.Controller)
         {
@@ -108,10 +108,10 @@ public class MovementController : MonoBehaviour
         //    ToggleControlToClone();
         //}
 
-        // Penalización de movimiento durante acciones (disparo/crear huevo)
+        // Penalizaciï¿½n de movimiento durante acciones (disparo/crear huevo)
         if (PlayerAnimator.IsShooting == true || PlayerAnimator.IsCreatingEgg == true)
         {
-            rig.velocity = rig.velocity / 3f;
+            rig.linearVelocity = rig.linearVelocity / 3f;
         }
         else
         {
@@ -214,13 +214,13 @@ public class MovementController : MonoBehaviour
     //        rig = virusDoble.GetComponent<Rigidbody2D>(); // Cambiar el focus del rigidBody
     //        VirusAttraction.isOnControl = true;           // para que el clon no te siga
     //        outOfControl = true;
-    //        mainCamera.target = virusDoble.transform;      // cambiar la cámara
+    //        mainCamera.target = virusDoble.transform;      // cambiar la cï¿½mara
     //    }
     //    else
     //    {
     //        rig = GetComponent<Rigidbody2D>();
     //        VirusAttraction.isOnControl = false;           // para que el clon no te siga
-    //        mainCamera.target = this.gameObject.transform; // cambiar la cámara
+    //        mainCamera.target = this.gameObject.transform; // cambiar la cï¿½mara
     //        outOfControl = false;
     //    }
     //}

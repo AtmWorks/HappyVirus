@@ -46,7 +46,7 @@ public class shooterBlueEnemyBehaviour : MonoBehaviour
 
     private IEnumerator DisparoConRetrasoCoroutine()
     {
-        // Instancia el objeto "proyectil" en la posición y rotación de "firePoint"
+        // Instancia el objeto "proyectil" en la posiciï¿½n y rotaciï¿½n de "firePoint"
         Instantiate(proyectil, firePoint.transform.position, firePoint.transform.rotation);
 
         // Establece la booleana "shootDelayed" en true
@@ -161,7 +161,7 @@ public class shooterBlueEnemyBehaviour : MonoBehaviour
         Vector2 targetVelocity = direction * speed;
 
         // Interpola la velocidad actual hacia la velocidad objetivo
-        rb.velocity = Vector2.Lerp(rb.velocity*1.01f, targetVelocity, Time.deltaTime/2);
+        rb.linearVelocity = Vector2.Lerp(rb.linearVelocity*1.01f, targetVelocity, Time.deltaTime/2);
     }
 
     //IEnumerator MoveSinusoidal()
@@ -176,9 +176,9 @@ public class shooterBlueEnemyBehaviour : MonoBehaviour
     //        {
     //            time += Time.deltaTime;
     //            float newY = initialY + Mathf.Sin(time * sinusSpeed) * yOffset;
-    //            Vector3 localPosition = transform.localPosition; // Obtener la posición local actual
+    //            Vector3 localPosition = transform.localPosition; // Obtener la posiciï¿½n local actual
     //            localPosition.y = newY; // Actualizar solo el componente Y en el espacio local
-    //            transform.localPosition = localPosition; // Asignar la nueva posición local
+    //            transform.localPosition = localPosition; // Asignar la nueva posiciï¿½n local
     //            yield return null;
     //        }
     //    }
@@ -192,9 +192,9 @@ public class shooterBlueEnemyBehaviour : MonoBehaviour
     //        {
     //            time += Time.deltaTime;
     //            float newX = initialX + Mathf.Sin(time * sinusSpeed) * yOffset;
-    //            Vector3 localPosition = transform.localPosition; // Obtener la posición local actual
+    //            Vector3 localPosition = transform.localPosition; // Obtener la posiciï¿½n local actual
     //            localPosition.x = newX; // Actualizar solo el componente Y en el espacio local
-    //            transform.localPosition = localPosition; // Asignar la nueva posición local
+    //            transform.localPosition = localPosition; // Asignar la nueva posiciï¿½n local
     //            yield return null;
     //        }
     //    }
@@ -279,9 +279,9 @@ public class shooterBlueEnemyBehaviour : MonoBehaviour
 //        {
 //            time += Time.deltaTime;
 //            float newY = initialY + Mathf.Sin(time * sinusSpeed) * yOffset;
-//            Vector3 localPosition = transform.localPosition; // Obtener la posición local actual
+//            Vector3 localPosition = transform.localPosition; // Obtener la posiciï¿½n local actual
 //            localPosition.y = newY; // Actualizar solo el componente Y en el espacio local
-//            transform.localPosition = localPosition; // Asignar la nueva posición local
+//            transform.localPosition = localPosition; // Asignar la nueva posiciï¿½n local
 //            yield return null;
 //        }
 //    }
@@ -297,7 +297,7 @@ public class shooterBlueEnemyBehaviour : MonoBehaviour
 //{
 //    public string virusTag = "Virus"; // El tag del objeto Virus.
 //    public float velocidadMovimiento = 5f; // Velocidad de movimiento del objeto.
-//    public float rangoObjetivo = 5f; // Rango al que el objeto se acercará.
+//    public float rangoObjetivo = 5f; // Rango al que el objeto se acercarï¿½.
 
 //    private Transform objetivo; // El objeto Virus.
 //    private Rigidbody2D rb2d;
@@ -321,14 +321,14 @@ public class shooterBlueEnemyBehaviour : MonoBehaviour
 //    {
 //        if (objetivo != null)
 //        {
-//            // Calculamos la dirección hacia el objeto Virus.
+//            // Calculamos la direcciï¿½n hacia el objeto Virus.
 //            Vector2 direccion = (objetivo.position - transform.position).normalized;
 
 //            // Calculamos el movimiento senoidal suave.
 //            float t = (Time.time - tiempoInicio) * velocidadMovimiento;
 //            float seno = Mathf.Sin(t);
 
-//            // Movemos el objeto en la dirección y el movimiento senoidal.
+//            // Movemos el objeto en la direcciï¿½n y el movimiento senoidal.
 //            rb2d.velocity = direccion * seno;
 
 //            // Rotamos hacia el objeto Virus.

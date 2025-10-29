@@ -1,0 +1,702 @@
+fileFormatVersion: 2
+guid: a74723785dc10c34f8e4cae40184aaac
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -3161689556265943955
+    second: AtlasVirusFace_0
+  - first:
+      213: -7089225068718538523
+    second: AtlasVirusFace_1
+  - first:
+      213: 7584610158047647109
+    second: AtlasVirusFace_2
+  - first:
+      213: -865914191658509354
+    second: AtlasVirusFace_3
+  - first:
+      213: -1312738393936720310
+    second: AtlasVirusFace_4
+  - first:
+      213: -4237446048668015859
+    second: AtlasVirusFace_5
+  - first:
+      213: 7213300476743693908
+    second: AtlasVirusFace_6
+  - first:
+      213: 1157382835103916048
+    second: AtlasVirusFace_7
+  - first:
+      213: 1137205198168343210
+    second: AtlasVirusFace_8
+  - first:
+      213: -404578457256669684
+    second: AtlasVirusFace_9
+  - first:
+      213: 7039307652652502535
+    second: AtlasVirusFace_10
+  - first:
+      213: 7888975345033136468
+    second: AtlasVirusFace_11
+  - first:
+      213: -2845870878006388100
+    second: AtlasVirusFace_12
+  - first:
+      213: 2880181990101674386
+    second: AtlasVirusFace_13
+  - first:
+      213: 2717500476573504683
+    second: AtlasVirusFace_14
+  - first:
+      213: 1200842603473041394
+    second: AtlasVirusFace_15
+  - first:
+      213: 8399799902115771893
+    second: AtlasVirusFace_16
+  - first:
+      213: -7734188507106044507
+    second: AtlasVirusFace_17
+  - first:
+      213: 2407845073042945828
+    second: AtlasVirusFace_18
+  - first:
+      213: 3115529340138084004
+    second: AtlasVirusFace_19
+  - first:
+      213: -8921517833324623835
+    second: AtlasVirusFace_20
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 150
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 1
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 1024
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 1024
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 1024
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 1024
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 1024
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: AtlasVirusFace_0
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 481
+        width: 30
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6cb4b4991c6f14d0800000000000000
+      internalID: -3161689556265943955
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AtlasVirusFace_1
+      rect:
+        serializedVersion: 2
+        x: 45
+        y: 420
+        width: 89
+        height: 89
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e0cc3e3c530e9d90800000000000000
+      internalID: -7089225068718538523
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AtlasVirusFace_2
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 427
+        width: 67
+        height: 83
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 585df36f0c2f14960800000000000000
+      internalID: 7584610158047647109
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AtlasVirusFace_3
+      rect:
+        serializedVersion: 2
+        x: 211
+        y: 445
+        width: 41
+        height: 43
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6db993861a7abf3f0800000000000000
+      internalID: -865914191658509354
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AtlasVirusFace_4
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 432
+        width: 68
+        height: 74
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a4e826ac26738cde0800000000000000
+      internalID: -1312738393936720310
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AtlasVirusFace_5
+      rect:
+        serializedVersion: 2
+        x: 329
+        y: 405
+        width: 213
+        height: 107
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d03a24a05419135c0800000000000000
+      internalID: -4237446048668015859
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AtlasVirusFace_6
+      rect:
+        serializedVersion: 2
+        x: 583
+        y: 370
+        width: 136
+        height: 127
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 456b67ed09aca1460800000000000000
+      internalID: 7213300476743693908
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AtlasVirusFace_7
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 448
+        width: 30
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 010e0837e89df0010800000000000000
+      internalID: 1157382835103916048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AtlasVirusFace_8
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 401
+        width: 30
+        height: 38
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa24d814a1a28cf00800000000000000
+      internalID: 1137205198168343210
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AtlasVirusFace_9
+      rect:
+        serializedVersion: 2
+        x: 108
+        y: 289
+        width: 189
+        height: 113
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c0ec0736906a26af0800000000000000
+      internalID: -404578457256669684
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AtlasVirusFace_10
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 294
+        width: 95
+        height: 98
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 70e8a05a305a0b160800000000000000
+      internalID: 7039307652652502535
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AtlasVirusFace_11
+      rect:
+        serializedVersion: 2
+        x: 305
+        y: 306
+        width: 88
+        height: 93
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 459c38a57454b7d60800000000000000
+      internalID: 7888975345033136468
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AtlasVirusFace_12
+      rect:
+        serializedVersion: 2
+        x: 438
+        y: 203
+        width: 167
+        height: 170
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7adcc7b38f6188d0800000000000000
+      internalID: -2845870878006388100
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AtlasVirusFace_13
+      rect:
+        serializedVersion: 2
+        x: 608
+        y: 206
+        width: 167
+        height: 170
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 299ec78924678f720800000000000000
+      internalID: 2880181990101674386
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AtlasVirusFace_14
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 195
+        width: 111
+        height: 82
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba45e17194086b520800000000000000
+      internalID: 2717500476573504683
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AtlasVirusFace_15
+      rect:
+        serializedVersion: 2
+        x: 122
+        y: 178
+        width: 196
+        height: 107
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f77a2b4cff3aa010800000000000000
+      internalID: 1200842603473041394
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AtlasVirusFace_16
+      rect:
+        serializedVersion: 2
+        x: 322
+        y: 202
+        width: 104
+        height: 83
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f5b8f5c185129470800000000000000
+      internalID: 8399799902115771893
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AtlasVirusFace_17
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 5
+        width: 167
+        height: 159
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a51900c784aaa490800000000000000
+      internalID: -7734188507106044507
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AtlasVirusFace_18
+      rect:
+        serializedVersion: 2
+        x: 233
+        y: 6
+        width: 196
+        height: 168
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 42736ec26526a6120800000000000000
+      internalID: 2407845073042945828
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AtlasVirusFace_19
+      rect:
+        serializedVersion: 2
+        x: 441
+        y: 18
+        width: 167
+        height: 170
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a6dc369d659c3b20800000000000000
+      internalID: 3115529340138084004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AtlasVirusFace_20
+      rect:
+        serializedVersion: 2
+        x: 613
+        y: 19
+        width: 167
+        height: 170
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5288f5f7cc6603480800000000000000
+      internalID: -8921517833324623835
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      AtlasVirusFace_0: -3161689556265943955
+      AtlasVirusFace_1: -7089225068718538523
+      AtlasVirusFace_10: 7039307652652502535
+      AtlasVirusFace_11: 7888975345033136468
+      AtlasVirusFace_12: -2845870878006388100
+      AtlasVirusFace_13: 2880181990101674386
+      AtlasVirusFace_14: 2717500476573504683
+      AtlasVirusFace_15: 1200842603473041394
+      AtlasVirusFace_16: 8399799902115771893
+      AtlasVirusFace_17: -7734188507106044507
+      AtlasVirusFace_18: 2407845073042945828
+      AtlasVirusFace_19: 3115529340138084004
+      AtlasVirusFace_2: 7584610158047647109
+      AtlasVirusFace_20: -8921517833324623835
+      AtlasVirusFace_3: -865914191658509354
+      AtlasVirusFace_4: -1312738393936720310
+      AtlasVirusFace_5: -4237446048668015859
+      AtlasVirusFace_6: 7213300476743693908
+      AtlasVirusFace_7: 1157382835103916048
+      AtlasVirusFace_8: 1137205198168343210
+      AtlasVirusFace_9: -404578457256669684
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

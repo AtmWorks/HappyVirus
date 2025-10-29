@@ -71,7 +71,7 @@ public class proyectilBone : MonoBehaviour{
         //option2: apply speed to rigidbody, also point to the direction of this rotation
         if (speed != 0)
         {
-            rb.velocity = transform.right * speed;
+            rb.linearVelocity = transform.right * speed;
         }
         else
         {

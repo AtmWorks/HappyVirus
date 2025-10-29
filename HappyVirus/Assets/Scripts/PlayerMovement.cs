@@ -190,12 +190,12 @@ public class PlayerMovement : MonoBehaviour
             growingFace = false;
         }
 
-        if (PlayerCollision.PlayerHP > 1 && !VirusFaceCheck)
+        if (PlayerStatics.PlayerHP > 1 && !VirusFaceCheck)
         {
             growFaceOver();
         }
 
-        if (PlayerCollision.PlayerHP <= 1 && VirusFaceCheck == true)
+        if (PlayerStatics.PlayerHP <= 1 && VirusFaceCheck == true)
         {
             VirusFace.gameObject.transform.localScale = new Vector3(0, 0, 0);
             tentacles.SetActive(false);

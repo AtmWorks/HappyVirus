@@ -1,12 +1,10 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿
 using UnityEngine;
 using UnityEngine.UI;
 
 
 public class HPbar : MonoBehaviour {
 
-    public Slider healthBarSlider;
     public Text HealthText;
     public int EggCounts;
     public Text O2Text;
@@ -33,7 +31,7 @@ public class HPbar : MonoBehaviour {
 
         for (int i = 0; i < CurrentHPS.Length; i++)
         {
-            if (i < PlayerCollision.PlayerHP)
+            if (i < PlayerStatics.PlayerHP)
             {
                 CurrentHPS[i].SetActive(true);
             }
@@ -42,7 +40,7 @@ public class HPbar : MonoBehaviour {
                 CurrentHPS[i].SetActive(false);
             }
 
-            if (i < PlayerCollision.PlayermaxHP)
+            if (i < PlayerStatics.PlayermaxHP)
             {
                 MaxHPS[i].SetActive(true);
             }
@@ -58,7 +56,7 @@ public class HPbar : MonoBehaviour {
         if (healButton.buttonPressed)
         {
 
-            if (PlayerCollision.PlayerHP < PlayerCollision.PlayermaxHP && PlayerStatics.O2counter >= 5)
+            if (PlayerStatics.PlayerHP < PlayerStatics.PlayermaxHP && PlayerStatics.O2counter >= 5)
             {
 
                 healEffect.SetActive(true);
@@ -98,7 +96,7 @@ public class HPbar : MonoBehaviour {
     }
     public void healOnce()
     {
-        PlayerCollision.PlayerHP++;
+        PlayerStatics.PlayerHP++;
         PlayerStatics.O2counter -= 5;
         popScore.popText = "-5";
         popScore.isPoping = true;

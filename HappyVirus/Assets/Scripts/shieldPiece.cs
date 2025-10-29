@@ -30,14 +30,14 @@ public class MovementAndDamage : MonoBehaviour
             Vector2 direction = (targetPoint.transform.position - transform.position).normalized;
             float distance = Vector2.Distance(transform.position, targetPoint.transform.position);
 
-            // Comprueba si ha llegado a la posición
+            // Comprueba si ha llegado a la posiciï¿½n
             if (distance <= arrivalThreshold)
             {
-                rb.velocity = Vector2.Lerp(rb.velocity, direction * 5, Time.deltaTime * 2f); // Lerp a velocidad 1
+                rb.linearVelocity = Vector2.Lerp(rb.linearVelocity, direction * 5, Time.deltaTime * 2f); // Lerp a velocidad 1
             }
             else
             {
-                rb.velocity = Vector2.Lerp(rb.velocity, direction * speed, Time.deltaTime * 0.5f); // Lerp a velocidad speed
+                rb.linearVelocity = Vector2.Lerp(rb.linearVelocity, direction * speed, Time.deltaTime * 0.5f); // Lerp a velocidad speed
             }
         }
     }

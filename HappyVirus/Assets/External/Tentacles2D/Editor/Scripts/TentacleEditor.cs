@@ -1031,10 +1031,10 @@ namespace Cubequad.Tentacles2D
                     }
                 Gravity = new Tuple<float, bool>(gravity, gravityHaveMixedValues);
 
-                var drag = segments[0].drag;
+                var drag = segments[0].linearDamping;
                 var dragHaveMixedValues = false;
                 for (int i = 1; i < segments.Length; i++)
-                    if (drag != segments[i].drag)
+                    if (drag != segments[i].linearDamping)
                     {
                         dragHaveMixedValues = true;
                         break;
@@ -1181,7 +1181,7 @@ namespace Cubequad.Tentacles2D
             {
                 Undo.RecordObjects(segments, "Set Segments Rigidbody2D Drag");
                 for (int i = 0; i < segments.Length; i++)
-                    segments[i].drag = drag;
+                    segments[i].linearDamping = drag;
                 Drag = new Tuple<float, bool>(drag, false);
             }
 

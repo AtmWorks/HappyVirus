@@ -12,7 +12,7 @@ public enum MovementType
 //{
 //    public List<GameObject> patrolPoints; // Lista de posiciones a recorrer
 //    public float speed = 5f;
-//    public float accelerationRate = 2f; // Velocidad de aceleración
+//    public float accelerationRate = 2f; // Velocidad de aceleraciï¿½n
 //    public MovementType movementType = MovementType.Linear;
 //    public bool loopBackwards = false; // Si debe recorrer las posiciones en sentido contrario al llegar al final
 
@@ -29,7 +29,7 @@ public enum MovementType
 
 //    private void Update()
 //    {
-//        // Determinar la dirección hacia el punto objetivo
+//        // Determinar la direcciï¿½n hacia el punto objetivo
 //        Vector2 direction = (targetPosition - rb.position).normalized;
 
 //        // Calcular la distancia hasta el punto objetivo
@@ -43,7 +43,7 @@ public enum MovementType
 //            currentSpeed = 0f; // Reiniciar la velocidad al cambiar de objetivo
 //        }
 
-//        // Calcular la velocidad actual según el tipo de movimiento seleccionado
+//        // Calcular la velocidad actual segï¿½n el tipo de movimiento seleccionado
 //        switch (movementType)
 //        {
 //            case MovementType.Linear:
@@ -57,7 +57,7 @@ public enum MovementType
 //                break;
 //        }
 
-//        // Aplicar la velocidad al Rigidbody2D en la dirección calculada
+//        // Aplicar la velocidad al Rigidbody2D en la direcciï¿½n calculada
 //        rb.velocity = direction * currentSpeed;
 //    }
 
@@ -94,7 +94,7 @@ public enum MovementType
 
 //    private void UpdateSinusoidalMovement()
 //    {
-//        // Movimiento sinusoidal: la velocidad varía sinusoidalmente
+//        // Movimiento sinusoidal: la velocidad varï¿½a sinusoidalmente
 //        float amplitude = speed / 2f; // Amplitud de la onda sinusoidal
 //        currentSpeed = speed + amplitude * Mathf.Sin(Time.time * 2f); // Frecuencia de la onda
 //    }
@@ -105,7 +105,7 @@ public class PatrolMovement : MonoBehaviour
 {
     public List<GameObject> patrolPoints; // Lista de posiciones a recorrer
     public float speed = 5f;
-    public float accelerationRate = 2f; // Velocidad de aceleración
+    public float accelerationRate = 2f; // Velocidad de aceleraciï¿½n
     public MovementType movementType = MovementType.Linear;
     public bool loopBackwards = false; // Si debe recorrer las posiciones en sentido contrario al llegar al final
     public bool reverseLoop = false; // Si debe invertir el orden al recorrer la lista al llegar al final
@@ -113,7 +113,7 @@ public class PatrolMovement : MonoBehaviour
     private Rigidbody2D rb;
     private Vector2 targetPosition;
     private int currentPatrolIndex = 0;
-    private int patrolDirection = 1; // Dirección del patrullaje (1 para adelante, -1 para atrás)
+    private int patrolDirection = 1; // Direcciï¿½n del patrullaje (1 para adelante, -1 para atrï¿½s)
     private float currentSpeed = 0f;
     public float oscillationValue = 0f;
     public float waitingTime = 2f; // Tiempo de espera en segundos
@@ -128,7 +128,7 @@ public class PatrolMovement : MonoBehaviour
 
     private void Update()
     {
-        // Determinar la dirección hacia el punto objetivo
+        // Determinar la direcciï¿½n hacia el punto objetivo
         Vector2 direction = (targetPosition - rb.position).normalized;
 
         // Calcular la distancia hasta el punto objetivo
@@ -157,12 +157,12 @@ public class PatrolMovement : MonoBehaviour
             else
             {
                 // Detener el movimiento mientras esperamos
-                rb.velocity = Vector2.zero;
-                return; // Salir del método sin aplicar la velocidad
+                rb.linearVelocity = Vector2.zero;
+                return; // Salir del mï¿½todo sin aplicar la velocidad
             }
         }
 
-        // Calcular la velocidad actual según el tipo de movimiento seleccionado
+        // Calcular la velocidad actual segï¿½n el tipo de movimiento seleccionado
         switch (movementType)
         {
             case MovementType.Linear:
@@ -176,8 +176,8 @@ public class PatrolMovement : MonoBehaviour
                 break;
         }
 
-        // Aplicar la velocidad al Rigidbody2D en la dirección calculada
-        rb.velocity = direction * currentSpeed;
+        // Aplicar la velocidad al Rigidbody2D en la direcciï¿½n calculada
+        rb.linearVelocity = direction * currentSpeed;
     }
 
 
@@ -188,17 +188,17 @@ public class PatrolMovement : MonoBehaviour
 
     private void IncrementPatrolIndex()
     {
-        // Determinar el siguiente índice de patrullaje
+        // Determinar el siguiente ï¿½ndice de patrullaje
         if (reverseLoop && (currentPatrolIndex == 0 || currentPatrolIndex == patrolPoints.Count - 1))
         {
-            // Invertir dirección al llegar al inicio o al final
+            // Invertir direcciï¿½n al llegar al inicio o al final
             patrolDirection *= -1;
         }
 
-        // Incrementar el índice de patrullaje
+        // Incrementar el ï¿½ndice de patrullaje
         currentPatrolIndex += patrolDirection;
 
-        // Revisar los límites del índice de patrullaje
+        // Revisar los lï¿½mites del ï¿½ndice de patrullaje
         if (currentPatrolIndex < 0)
         {
             currentPatrolIndex = patrolPoints.Count - 1;
@@ -223,7 +223,7 @@ public class PatrolMovement : MonoBehaviour
 
     private void UpdateSinusoidalMovement()
     {
-        // Movimiento sinusoidal: la velocidad varía sinusoidalmente
+        // Movimiento sinusoidal: la velocidad varï¿½a sinusoidalmente
         float amplitude = speed / 2f; // Amplitud de la onda sinusoidal
         currentSpeed = speed + amplitude * Mathf.Sin(Time.time * 2f); // Frecuencia de la onda
     }

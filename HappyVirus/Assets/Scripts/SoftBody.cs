@@ -17,13 +17,11 @@ public class SoftBody : MonoBehaviour
     private void Awake()
     {
         UpdateVerticies();
-        
     }
 
     private void Update()
     {
         UpdateVerticies();
-
     }
     #endregion
 
