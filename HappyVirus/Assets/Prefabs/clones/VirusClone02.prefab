@@ -28924,10 +28924,10 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 4.28, y: 4.04}
+  m_Size: {x: 1.1266667, y: 1.1466666}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!114 &8054283547388381389
@@ -28943,7 +28943,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   flashMaterial: {fileID: 2100000, guid: 866275304bd51bf459b511f907436dad, type: 2}
-  duration: 0.3
   whiteColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &8054283547404793893
 GameObject:
@@ -44072,10 +44071,10 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.38, y: 0.33333334}
+  m_Size: {x: 0.2, y: 0.16666667}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!114 &8054283547450385539
@@ -44105,7 +44104,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   flashMaterial: {fileID: 2100000, guid: 866275304bd51bf459b511f907436dad, type: 2}
-  duration: 0.3
   whiteColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &8054283547486721611
 GameObject:
@@ -44418,10 +44416,10 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.55333334, y: 0.15333334}
+  m_Size: {x: 0.21333334, y: 0.26666668}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!114 &8054283547517765733
@@ -44451,7 +44449,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   flashMaterial: {fileID: 2100000, guid: 866275304bd51bf459b511f907436dad, type: 2}
-  duration: 0.3
   whiteColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &8054283547520820230
 GameObject:
@@ -50800,10 +50797,10 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.45333335, y: 0.49333334}
+  m_Size: {x: 0.6333333, y: 0.6666667}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!114 &8054283547856802453
@@ -50819,7 +50816,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   flashMaterial: {fileID: 2100000, guid: 866275304bd51bf459b511f907436dad, type: 2}
-  duration: 0.3
   whiteColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &8054283547861473408
 GameObject:
@@ -63779,10 +63775,10 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1.3066666, y: 1.12}
+  m_Size: {x: 0.7, y: 0.5733333}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!114 &8054283548395713602
@@ -63798,7 +63794,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   flashMaterial: {fileID: 2100000, guid: 866275304bd51bf459b511f907436dad, type: 2}
-  duration: 0.3
   whiteColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &8054283548396799138
 GameObject:
@@ -64297,10 +64292,10 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.9, y: 0.88666666}
+  m_Size: {x: 0.6, y: 0.62}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!114 &8054283548498033222
@@ -64316,7 +64311,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   flashMaterial: {fileID: 2100000, guid: 866275304bd51bf459b511f907436dad, type: 2}
-  duration: 0.3
   whiteColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &8054283548508730739
 GameObject:
@@ -65130,10 +65124,10 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.2, y: 0.25333333}
+  m_Size: {x: 0.2, y: 0.19333333}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!114 &8054283548620407151
@@ -65163,7 +65157,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   flashMaterial: {fileID: 2100000, guid: 866275304bd51bf459b511f907436dad, type: 2}
-  duration: 0.3
   whiteColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &8054283548639654554
 GameObject:
@@ -72625,10 +72618,10 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.7, y: 0.64}
+  m_Size: {x: 1.26, y: 0.75333333}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!114 &8054283549168757998
@@ -72644,7 +72637,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   flashMaterial: {fileID: 2100000, guid: 866275304bd51bf459b511f907436dad, type: 2}
-  duration: 0.3
   whiteColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &8054283549191436857
 GameObject:

@@ -67,7 +67,7 @@ public class SpawnBehaviour : MonoBehaviour
         thisAnimator.SetBool("isSpawning", true);
         // Player.SetActive(true);
         Player.transform.position = spawnPoint.transform.position;
-        Player.GetComponent<SoftBodyPosition>().softBodyPosition();
+        Player.GetComponent<SoftBody>().softBodyPosition();
         StartCoroutine(spawnVirus());
     }
     private IEnumerator animatorBoolWait()

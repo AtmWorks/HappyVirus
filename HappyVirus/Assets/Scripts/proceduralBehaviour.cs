@@ -326,7 +326,7 @@ public class proceduralBehaviour : MonoBehaviour
 
         if (timer > 0.2f && targetColor == Color.clear && currentColor != targetColor)
         {
-            Player.GetComponent<SoftBodyPosition>().softBodyPosition();
+            Player.GetComponent<SoftBody>().softBodyPosition();
             findSoftBodys();
         }
         if (cameraEffect == true && timer > 1.5)

@@ -5,6 +5,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1043039083177636799, guid: 48b373fe509d35d4e8f3a9dee9fbbf16,
@@ -150,7 +151,7 @@ PrefabInstance:
     - target: {fileID: 5721891914443402027, guid: 48b373fe509d35d4e8f3a9dee9fbbf16,
         type: 3}
       propertyPath: m_Name
-      value: 'HPUPGRADE '
+      value: HPUPGRADE  Variant
       objectReference: {fileID: 0}
     - target: {fileID: 6394472743923161677, guid: 48b373fe509d35d4e8f3a9dee9fbbf16,
         type: 3}
@@ -273,4 +274,7 @@ PrefabInstance:
       value: 0.0990566
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 48b373fe509d35d4e8f3a9dee9fbbf16, type: 3}

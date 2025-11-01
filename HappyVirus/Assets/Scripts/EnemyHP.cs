@@ -12,14 +12,14 @@ public class EnemyHP : MonoBehaviour {
     //public SpriteRenderer bodyRend;
     public GameObject corpse;
     public Animator thisAnim;
-    public ChasePlayer chaseScript;
+    public BlueEnemyBehavior chaseScript;
     public float deadlyTimer;
 
     //public bool isInfected;
     public List<SimpleFlash> flashList;
     public Material flashMaterial;
 
-    public ChasePlayer parentTag;
+    public BlueEnemyBehavior parentTag;
 
     //[SerializeField] private SimpleFlash flashEffectbody;
     //[SerializeField] private SimpleFlash flashEffectface;

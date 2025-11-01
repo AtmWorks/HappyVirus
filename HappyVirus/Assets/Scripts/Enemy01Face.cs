@@ -8,12 +8,12 @@ public class Enemy01Face : MonoBehaviour {
     public SpriteRenderer bodyrend;
     public Sprite normalFace, followFace, deadFace, normalBody, deadBody;
     public GameObject thisEnemy;
-    private ChasePlayer chasePlayer;
+    private BlueEnemyBehavior chasePlayer;
     public EnemyHP enemyHp;
 
     void Start ()
     {
-        chasePlayer = thisEnemy.GetComponent<ChasePlayer>(); ;
+        chasePlayer = thisEnemy.GetComponent<BlueEnemyBehavior>(); ;
         rend = GetComponent<SpriteRenderer>();
         rend.sprite = normalFace;
 

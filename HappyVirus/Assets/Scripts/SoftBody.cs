@@ -1,8 +1,19 @@
 
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.U2D;
 public class SoftBody : MonoBehaviour
 {
+
+    public GameObject blobsSkin;
+    public GameObject blobsParent;
+    public Vector3[] softPositions;
+    
+    public Vector3 skinPos;
+    public Vector3 skinScale;
+    
+    private Quaternion softRot;
+    public Quaternion skinRot;
     #region Constants;
     public float splineOffset = 0.5f;
     #endregion
@@ -14,9 +25,54 @@ public class SoftBody : MonoBehaviour
     #endregion
 
     #region MonoBehaviour Callbacks
-    private void Awake()
+void Awake()
+{
+    // Asegura el tamaño
+    if (points == null || points.Length == 0)
     {
-        UpdateVerticies();
+        Debug.LogError("SoftBody: 'points' vacío.");
+        return;
+    }
+
+    softPositions = new Vector3[points.Length-1];
+    UpdateVerticies(); // si necesitas esto en Awake
+}
+
+void Start()
+{
+    for (int i = 0; i < points.Length-1; i++)
+        softPositions[i] = points[i].localPosition;
+
+    softRot = points[0].rotation;
+    skinPos = blobsSkin.transform.localPosition;
+    skinRot = blobsSkin.transform.localRotation;
+    skinScale = blobsSkin.transform.localScale;
+}
+
+    public void softBodyPosition()
+    {
+        for (int i = 0; i < points.Length-1; i++)
+        {
+            points[i].localPosition = softPositions[i];
+            points[i].transform.rotation = softRot;
+        }
+        blobsSkin.gameObject.transform.localPosition = skinPos;
+        blobsSkin.gameObject.transform.localRotation = skinRot;
+        blobsSkin.gameObject.transform.localScale = skinScale;
+        findSoftBodys();
+    }
+    
+    public void findSoftBodys()
+    {
+        GameObject[] subViruses = GameObject.FindGameObjectsWithTag("SubVirus");
+        foreach (GameObject subVirus in subViruses)
+        {
+            cloneMovement cloneMovement = subVirus.GetComponent<cloneMovement>();
+            if (cloneMovement != null)
+            {
+                cloneMovement.softBodyPosition();
+            }
+        }
     }
 
     private void Update()

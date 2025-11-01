@@ -7,16 +7,16 @@ public class PlayerMovement : MonoBehaviour
 {
     public static bool VirusFaceCheck;
     public int colorStatus = 0;
+    public GameObject smokeEffect;
+    public GameObject virusFace;
+    public GameObject tentaclesParent;
 
-    public GameObject smoke;
-
-    public GameObject VirusFace;
-    public GameObject tentacles;
-
-    public bool killed1stBoss;
-
+    //EGG behavior
     public static bool isAttractingEgg;
+    public GameObject createEggButtonObject;
+    public GameObject followEggButtonObject;
 
+//BUTTONS
     public UnityEngine.UI.Button faceButton;
     public UnityEngine.UI.Button tentacleButton;
     public UnityEngine.UI.Button addO2Button;
@@ -26,8 +26,7 @@ public class PlayerMovement : MonoBehaviour
     public UnityEngine.UI.Button smokeButtonEnable;
     public GameObject catchTentacleButton;
     public GameObject smokeButtonObject;
-    public GameObject creatteEggButtonObject;
-    public GameObject followEggButtonObject;
+
 
     // Tentáculos
     [SerializeField] private Tentacle tentacle1;
@@ -36,7 +35,7 @@ public class PlayerMovement : MonoBehaviour
     // Escudo
     public GameObject shieldRing;
 
-    public SoftBodyPosition softBody;
+    public SoftBody softBody;
 
     // UI no relacionada a movimiento
     public Image blobCircle;
@@ -53,8 +52,8 @@ public class PlayerMovement : MonoBehaviour
 
     void Start()
     {
-        softBody = this.gameObject.GetComponent<SoftBodyPosition>();
-        VirusFace.gameObject.transform.localScale = new Vector3(0, 0, 0);
+        softBody = this.gameObject.GetComponent<SoftBody>();
+        virusFace.gameObject.transform.localScale = new Vector3(0, 0, 0);
         growingFace = false;
 
         faceButton.onClick.AddListener(changeColor);
@@ -66,7 +65,6 @@ public class PlayerMovement : MonoBehaviour
         smokeButtonEnable.onClick.AddListener(switchSmoke);
 
         blobCircle.fillAmount = 0f;
-        killed1stBoss = false;
     }
 
     void changeColor()
@@ -103,7 +101,7 @@ public class PlayerMovement : MonoBehaviour
             softBody.softBodyPosition();
             growingFace = true;
             Debug.Log("Face Growing");
-            creatteEggButtonObject.SetActive(true);
+            createEggButtonObject.SetActive(true);
             followEggButtonObject.SetActive(true);
             VirusFaceCheck = true;
         }
@@ -120,14 +118,14 @@ public class PlayerMovement : MonoBehaviour
 
     void showTentacles()
     {
-        if (tentacles.activeSelf == false)
+        if (tentaclesParent.activeSelf == false)
         {
-            tentacles.SetActive(true);
+            tentaclesParent.SetActive(true);
             catchTentacleButton.SetActive(true);
         }
         else
         {
-            tentacles.SetActive(false);
+            tentaclesParent.SetActive(false);
             catchTentacleButton.SetActive(false);
         }
     }
@@ -146,7 +144,7 @@ public class PlayerMovement : MonoBehaviour
 
     IEnumerator spawnSmoke()
     {
-        GameObject smokeInstance = Instantiate(smoke, transform.position, Quaternion.identity);
+        GameObject smokeInstance = Instantiate(smokeEffect, transform.position, Quaternion.identity);
         smokeInstance.transform.SetParent(transform);
         yield return new WaitForSeconds(1.5f);
         PlayerAnimator.GetDmg = false;
@@ -182,11 +180,11 @@ public class PlayerMovement : MonoBehaviour
         // Mecánica de cambiar de forma (no movimiento)
         if (growingFace == true)
         {
-            VirusFace.gameObject.transform.localScale += new Vector3(1.5f * Time.deltaTime, 1.5f * Time.deltaTime, 1.5f * Time.deltaTime);
+            virusFace.gameObject.transform.localScale += new Vector3(1.5f * Time.deltaTime, 1.5f * Time.deltaTime, 1.5f * Time.deltaTime);
         }
-        if (VirusFace.gameObject.transform.localScale.x >= 1 && VirusFace.gameObject.transform.localScale.y >= 1)
+        if (virusFace.gameObject.transform.localScale.x >= 1 && virusFace.gameObject.transform.localScale.y >= 1)
         {
-            VirusFace.gameObject.transform.localScale = new Vector3(1, 1, 1);
+            virusFace.gameObject.transform.localScale = new Vector3(1, 1, 1);
             growingFace = false;
         }
 
@@ -197,10 +195,10 @@ public class PlayerMovement : MonoBehaviour
 
         if (PlayerStatics.PlayerHP <= 1 && VirusFaceCheck == true)
         {
-            VirusFace.gameObject.transform.localScale = new Vector3(0, 0, 0);
-            tentacles.SetActive(false);
+            virusFace.gameObject.transform.localScale = new Vector3(0, 0, 0);
+            tentaclesParent.SetActive(false);
             catchTentacleButton.SetActive(false);
-            creatteEggButtonObject.SetActive(false);
+            createEggButtonObject.SetActive(false);
             followEggButtonObject.SetActive(false);
             VirusFaceCheck = false;
         }
@@ -211,26 +209,5 @@ public class PlayerMovement : MonoBehaviour
         else
             EggAttraction.isAbsorbing = false;
 
-        // Modos de disparo (no movimiento)
-        if (Input.GetKeyDown("1"))
-        {
-            ParticleFire.shootMode = 1;
-            Debug.Log("I SWITCHED TO MODE1");
-        }
-        if (Input.GetKeyDown("2"))
-        {
-            ParticleFire.shootMode = 2;
-            Debug.Log("I SWITCHED TO MODE2");
-        }
-        if (Input.GetKeyDown("3"))
-        {
-            ParticleFire.shootMode = 3;
-            Debug.Log("I SWITCHED TO MODE3");
-        }
-        if (Input.GetKeyDown("4"))
-        {
-            ParticleFire.shootMode = 4;
-            Debug.Log("I SWITCHED TO MODE4");
-        }
     }
 }

@@ -36655,7 +36655,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   flashMaterial: {fileID: 2100000, guid: 866275304bd51bf459b511f907436dad, type: 2}
-  duration: 0.3
   whiteColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &2212278620969043822
 MonoBehaviour:
@@ -37124,7 +37123,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   flashMaterial: {fileID: 2100000, guid: 866275304bd51bf459b511f907436dad, type: 2}
-  duration: 0.3
   whiteColor: {r: 1, g: 1, b: 1, a: 0}
 --- !u!114 &8853052030187600097
 MonoBehaviour:
@@ -37248,7 +37246,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   flashMaterial: {fileID: 2100000, guid: 866275304bd51bf459b511f907436dad, type: 2}
-  duration: 0.3
   whiteColor: {r: 1, g: 1, b: 1, a: 0}
 --- !u!114 &419962558905857750
 MonoBehaviour:
@@ -37470,7 +37467,7 @@ SpringJoint2D:
   m_AutoConfigureDistance: 1
   m_Distance: 1.0499992
   m_DampingRatio: 0
-  m_Frequency: 7
+  m_Frequency: 6
 --- !u!231 &1374653703127428597
 SpringJoint2D:
   m_ObjectHideFlags: 0
@@ -37532,11 +37529,11 @@ MonoBehaviour:
   explosion: {fileID: 5459446116007223409, guid: d526eccf8bb67924ea4503130961d5fb,
     type: 3}
   spawn: {fileID: 0}
-  hpscript: {fileID: 1374653703284074442}
   spawnController: {fileID: 0}
   player: {fileID: 1374653703284074422}
-  thisTeleport: {fileID: 2359741656610107153}
+  virusSkin: {fileID: 1374653704959941316}
   hitParticles: {fileID: 8525990746990614060}
+  inmunityTime: 1
   flashList:
   - {fileID: 858696444}
   - {fileID: 1706568584}
@@ -37768,7 +37765,7 @@ SpringJoint2D:
   m_AutoConfigureDistance: 1
   m_Distance: 1.0499992
   m_DampingRatio: 0
-  m_Frequency: 7
+  m_Frequency: 6
 --- !u!231 &1374653703137111376
 SpringJoint2D:
   m_ObjectHideFlags: 0
@@ -37830,11 +37827,11 @@ MonoBehaviour:
   explosion: {fileID: 5459446116007223409, guid: d526eccf8bb67924ea4503130961d5fb,
     type: 3}
   spawn: {fileID: 0}
-  hpscript: {fileID: 1374653703284074442}
   spawnController: {fileID: 0}
   player: {fileID: 1374653703284074422}
-  thisTeleport: {fileID: 2359741656610107153}
+  virusSkin: {fileID: 1374653704959941316}
   hitParticles: {fileID: 8525990746990614060}
+  inmunityTime: 1
   flashList:
   - {fileID: 858696444}
   - {fileID: 1706568584}
@@ -37990,7 +37987,6 @@ GameObject:
   - component: {fileID: 1374653703284074420}
   - component: {fileID: 1522263097460157843}
   - component: {fileID: 1374653703284074422}
-  - component: {fileID: 3412122533744749074}
   - component: {fileID: 1374653703284074440}
   - component: {fileID: 1374653703284074442}
   - component: {fileID: 1374653703284074446}
@@ -38050,7 +38046,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94ffc8ddd0e91ed45a970ea383f8e050, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  controlScheme: 1
+  controlScheme: 0
+  cameraEffectController: {fileID: 0}
 --- !u!114 &1374653703284074423
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -38084,11 +38081,11 @@ MonoBehaviour:
   explosion: {fileID: 5459446116007223409, guid: d526eccf8bb67924ea4503130961d5fb,
     type: 3}
   spawn: {fileID: 0}
-  hpscript: {fileID: 1374653703284074442}
   spawnController: {fileID: 0}
   player: {fileID: 1374653703284074422}
-  thisTeleport: {fileID: 2359741656610107153}
+  virusSkin: {fileID: 1374653704959941316}
   hitParticles: {fileID: 8525990746990614060}
+  inmunityTime: 1
   flashList:
   - {fileID: 858696444}
   - {fileID: 1706568584}
@@ -38131,10 +38128,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   colorStatus: 0
-  smoke: {fileID: 1155941896016017193, guid: 162ad9467b01fa140bb84164480024e8, type: 3}
-  VirusFace: {fileID: 1375520831685098200}
-  tentacles: {fileID: 2269034420071319367}
-  killed1stBoss: 0
+  smokeEffect: {fileID: 4425129568908624160}
+  virusFace: {fileID: 1375520831685098200}
+  tentaclesParent: {fileID: 2269034420071319367}
+  createEggButtonObject: {fileID: 1874811579}
+  followEggButtonObject: {fileID: 723298520}
   faceButton: {fileID: 7014243310032368915}
   tentacleButton: {fileID: 1534007705415075985}
   addO2Button: {fileID: 3222412520246621238}
@@ -38144,38 +38142,13 @@ MonoBehaviour:
   smokeButtonEnable: {fileID: 3621676873456286741}
   catchTentacleButton: {fileID: 1197156295}
   smokeButtonObject: {fileID: 1010265236858060434}
-  creatteEggButtonObject: {fileID: 1874811579}
-  followEggButtonObject: {fileID: 723298520}
   tentacle1: {fileID: 0}
   tentacle2: {fileID: 0}
   shieldRing: {fileID: 6976746987182958438}
-  softBody: {fileID: 3412122533744749074}
+  softBody: {fileID: 0}
   blobCircle: {fileID: 4483969881708394602}
   mainCamera: {fileID: 0}
   isOnTentacleTarget: 0
---- !u!114 &3412122533744749074
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1374653703284074417}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 51d427799c5524d4c992b30991266596, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  VirusSkin: {fileID: 1374653704959941316}
-  VirusBody: {fileID: 1374653703168829465}
-  blob1: {fileID: 1374653704044137728}
-  blob2: {fileID: 1374653703127428598}
-  blob3: {fileID: 1374653703735055633}
-  blob4: {fileID: 1374653704498784118}
-  blob5: {fileID: 1374653703137111389}
-  blob6: {fileID: 1374653703812798151}
-  skinPos: {x: 0, y: 0, z: 0}
-  skinScale: {x: 0, y: 0, z: 0}
-  skinRot: {x: 0, y: 0, z: 0, w: 0}
 --- !u!114 &1374653703284074440
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -38188,6 +38161,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b24826f6c744af4d8af2b582fb385a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  blobsSkin: {fileID: 1374653704959941316}
+  blobsParent: {fileID: 1374653703168829465}
+  softPositions: []
+  skinPos: {x: 0, y: 0, z: 0}
+  skinScale: {x: 0, y: 0, z: 0}
+  skinRot: {x: 0, y: 0, z: 0, w: 0}
   splineOffset: 0.5
   spriteShape: {fileID: 1374653704959941338}
   points:
@@ -38210,7 +38189,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3461e319a23befa48be3076184775b60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthBarSlider: {fileID: 0}
   HealthText: {fileID: 0}
   EggCounts: 0
   O2Text: {fileID: 0}
@@ -38254,7 +38232,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 0.8
   m_LinearDamping: 0
   m_AngularDamping: 1
   m_GravityScale: 0
@@ -38565,7 +38543,7 @@ SpringJoint2D:
   m_AutoConfigureDistance: 1
   m_Distance: 1.0419327
   m_DampingRatio: 0
-  m_Frequency: 7
+  m_Frequency: 6
 --- !u!231 &1374653703735055636
 SpringJoint2D:
   m_ObjectHideFlags: 0
@@ -38627,11 +38605,11 @@ MonoBehaviour:
   explosion: {fileID: 5459446116007223409, guid: d526eccf8bb67924ea4503130961d5fb,
     type: 3}
   spawn: {fileID: 0}
-  hpscript: {fileID: 1374653703284074442}
   spawnController: {fileID: 0}
   player: {fileID: 1374653703284074422}
-  thisTeleport: {fileID: 2359741656610107153}
+  virusSkin: {fileID: 1374653704959941316}
   hitParticles: {fileID: 8525990746990614060}
+  inmunityTime: 1
   flashList:
   - {fileID: 858696444}
   - {fileID: 1706568584}
@@ -38863,7 +38841,7 @@ SpringJoint2D:
   m_AutoConfigureDistance: 1
   m_Distance: 1.0419327
   m_DampingRatio: 0
-  m_Frequency: 7
+  m_Frequency: 6
 --- !u!231 &1374653703812798170
 SpringJoint2D:
   m_ObjectHideFlags: 0
@@ -38925,11 +38903,11 @@ MonoBehaviour:
   explosion: {fileID: 5459446116007223409, guid: d526eccf8bb67924ea4503130961d5fb,
     type: 3}
   spawn: {fileID: 0}
-  hpscript: {fileID: 1374653703284074442}
   spawnController: {fileID: 0}
   player: {fileID: 1374653703284074422}
-  thisTeleport: {fileID: 2359741656610107153}
+  virusSkin: {fileID: 1374653704959941316}
   hitParticles: {fileID: 8525990746990614060}
+  inmunityTime: 1
   flashList:
   - {fileID: 858696444}
   - {fileID: 1706568584}
@@ -39161,7 +39139,7 @@ SpringJoint2D:
   m_AutoConfigureDistance: 1
   m_Distance: 1.0419327
   m_DampingRatio: 0
-  m_Frequency: 7
+  m_Frequency: 6
 --- !u!231 &1374653704044137735
 SpringJoint2D:
   m_ObjectHideFlags: 0
@@ -39223,11 +39201,11 @@ MonoBehaviour:
   explosion: {fileID: 5459446116007223409, guid: d526eccf8bb67924ea4503130961d5fb,
     type: 3}
   spawn: {fileID: 0}
-  hpscript: {fileID: 1374653703284074442}
   spawnController: {fileID: 0}
   player: {fileID: 1374653703284074422}
-  thisTeleport: {fileID: 2359741656610107153}
+  virusSkin: {fileID: 1374653704959941316}
   hitParticles: {fileID: 8525990746990614060}
+  inmunityTime: 1
   flashList:
   - {fileID: 858696444}
   - {fileID: 1706568584}
@@ -39543,7 +39521,7 @@ SpringJoint2D:
   m_AutoConfigureDistance: 1
   m_Distance: 1.0419327
   m_DampingRatio: 0
-  m_Frequency: 7
+  m_Frequency: 6
 --- !u!231 &1374653704498784117
 SpringJoint2D:
   m_ObjectHideFlags: 0
@@ -39605,11 +39583,11 @@ MonoBehaviour:
   explosion: {fileID: 5459446116007223409, guid: d526eccf8bb67924ea4503130961d5fb,
     type: 3}
   spawn: {fileID: 0}
-  hpscript: {fileID: 1374653703284074442}
   spawnController: {fileID: 0}
   player: {fileID: 1374653703284074422}
-  thisTeleport: {fileID: 2359741656610107153}
+  virusSkin: {fileID: 1374653704959941316}
   hitParticles: {fileID: 8525990746990614060}
+  inmunityTime: 1
   flashList:
   - {fileID: 858696444}
   - {fileID: 1706568584}
@@ -40165,7 +40143,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   flashMaterial: {fileID: 2100000, guid: 866275304bd51bf459b511f907436dad, type: 2}
-  duration: 0.3
   whiteColor: {r: 1, g: 1, b: 1, a: 0}
 --- !u!114 &2447786882472364135
 MonoBehaviour:
@@ -40356,7 +40333,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   flashMaterial: {fileID: 2100000, guid: 866275304bd51bf459b511f907436dad, type: 2}
-  duration: 0.3
   whiteColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &2803892892440160832
 MonoBehaviour:
@@ -40495,7 +40471,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   flashMaterial: {fileID: 2100000, guid: 866275304bd51bf459b511f907436dad, type: 2}
-  duration: 0.3
   whiteColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &4926816385341410392
 MonoBehaviour:
@@ -41042,7 +41017,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   flashMaterial: {fileID: 2100000, guid: 866275304bd51bf459b511f907436dad, type: 2}
-  duration: 0.3
   whiteColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &4949579566306325464
 MonoBehaviour:
@@ -41665,7 +41639,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   flashMaterial: {fileID: 2100000, guid: 866275304bd51bf459b511f907436dad, type: 2}
-  duration: 0.3
   whiteColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &320958298450523675
 MonoBehaviour:
@@ -85511,7 +85484,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &3596569422500510514
 Transform:
   m_ObjectHideFlags: 0
@@ -92279,18 +92252,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 252494428}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &2359741656610107153 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2359741656760266061, guid: 4597cb7e4acb4f24f8fa6f958dbfcbca,
-    type: 3}
-  m_PrefabInstance: {fileID: 252494428}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c58ccc88e2fb6474ab32cfd3cdc93232, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &406967428
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -94522,6 +94483,12 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 162ad9467b01fa140bb84164480024e8, type: 3}
+--- !u!1 &4425129568908624160 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1155941896016017193, guid: 162ad9467b01fa140bb84164480024e8,
+    type: 3}
+  m_PrefabInstance: {fileID: 3270612658485130761}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &4425129568909122816 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1155941896015653641, guid: 162ad9467b01fa140bb84164480024e8,
