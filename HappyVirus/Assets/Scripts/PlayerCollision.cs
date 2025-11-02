@@ -110,7 +110,7 @@ public class PlayerCollision : MonoBehaviour {
         }
         yield return null;
     }
-    private void OnCollisionStay2D(Collision2D PlayerCol )
+    private void OnCollisionStay2D(Collision2D PlayerCol)
     {
         if (PlayerCol.gameObject.tag == "Damage" && PlayerStatics.inmuneTimer <= 0 && FaceTime <= 0)
         {
@@ -126,7 +126,7 @@ public class PlayerCollision : MonoBehaviour {
 
             Instantiate(explosion, new Vector3(contactPoint.x, contactPoint.y, 0), Quaternion.identity);
 
-           // Debug.Log("ENEMY TOUCH");
+            // Debug.Log("ENEMY TOUCH");
 
             gotDamage = true;
 
@@ -150,6 +150,15 @@ public class PlayerCollision : MonoBehaviour {
 
         }
 
+    }
+    private void OnParticleCollision(GameObject other)
+    {
+        if (other.gameObject.tag == "Damage" && PlayerStatics.inmuneTimer <= 0 && FaceTime <= 0)
+        {
+            //reproduceHitSound();
+            Instantiate(explosion, other.transform.position, Quaternion.identity);
+            gotDamage = true;
+        }
     }
     private void OnCollisionExit2D(Collision2D collision)
     {
