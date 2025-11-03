@@ -740,13 +740,14 @@ GameObject:
   - component: {fileID: 5328101571161128675}
   - component: {fileID: 5328101571161128673}
   - component: {fileID: 4040162309812607276}
+  - component: {fileID: 4455584724432168868}
   m_Layer: 0
   m_Name: parent
-  m_TagString: Neutral
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &5328101571161128672
 Transform:
   m_ObjectHideFlags: 0
@@ -781,8 +782,11 @@ MonoBehaviour:
   isDmg: 0
   isDead: 0
   virusTag: Virus
-  maxChaseSpeed: 8
-  canChase: 0
+  damageTag: Damage
+  neutralTag: Neutral
+  invisibleTag: invisible
+  velocidadRotacion: 20
+  attackCooldown: 1.5
   animatorP: {fileID: 5328101571809632611}
 --- !u!60 &5328101571161128677
 PolygonCollider2D:
@@ -859,9 +863,9 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 15
+  m_Mass: 10
   m_LinearDamping: 10
-  m_AngularDamping: 5
+  m_AngularDamping: 20
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -909,7 +913,7 @@ CircleCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
-  m_Radius: 3.1908495
+  m_Radius: 4
 --- !u!114 &5328101571161128673
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -991,6 +995,45 @@ EdgeCollider2D:
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
   m_UseAdjacentEndPoint: 0
+--- !u!114 &4455584724432168868
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5328101571161128671}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1ed4c3bece1476419aac31a04f0628e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ChaseBehavior
+  objectToChase: {fileID: 0}
+  objectTag: Player
+  maxSpeed: 5
+  minimumSpeed: 1
+  rotationSpeed: 50
+  awakeRange: 15
+  stopRange: 20
+  isAbleToChase: 1
+  shouldBackToPoint: 0
+  isRotationVirtual: 1
+  speedMode: 1
+  rotationMode: 1
+  speedLerpRate: 2
+  pulseFrequency: 1.2
+  randomBurstInterval: 0.75
+  momentumDecayRate: 0.5
+  momentumBoost: 1
+  sinusAmplitude: 45
+  sinusFrequency: 1
+  predictiveLeadTime: 0.35
+  jitterAngle: 6
+  jitterFrequency: 6
+  orbitAngularSpeed: 180
+  orbitTangentWeight: 0.6
+  homingGain: 2
+  returnSpeed: 3
+  returnArriveThreshold: 0.1
 --- !u!1 &5328101571214122534
 GameObject:
   m_ObjectHideFlags: 0
@@ -1161,7 +1204,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5328101571809632606}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 484531a31167e454db8c41cd976088ae, type: 3}
   m_Name: 
