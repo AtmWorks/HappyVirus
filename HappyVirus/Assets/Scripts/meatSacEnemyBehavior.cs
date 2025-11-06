@@ -5,7 +5,7 @@ using UnityEngine;
 public class meatSacEnemyBehavior : MonoBehaviour
 {
     [Header("Stats")]
-    [SerializeField] private int hp = 3;
+    [SerializeField] private int hp = 6;
 
     [Header("Rango de activación")]
     [SerializeField] private float awakeDistance = 5f;
@@ -20,7 +20,7 @@ public class meatSacEnemyBehavior : MonoBehaviour
 
     [Header("Animator Params")]
     [SerializeField] private string isShootingParam = "isShooting";
-    [SerializeField]private List <SimpleFlash> flashList;
+    [SerializeField] private List <SimpleFlash> flashList;
 
     // Tiempo de espera sin amenazas para dejar de esconderse
 

@@ -9,7 +9,6 @@ public class BlueEnemyBehavior : MonoBehaviour
     public bool isDead;
 
     [Header("Tags")]
-    [SerializeField] private string virusTag = "Virus";
     [SerializeField] private string damageTag = "Damage";
     [SerializeField] private string neutralTag = "Neutral";
     [SerializeField] private string invisibleTag = "invisible";
@@ -19,11 +18,18 @@ public class BlueEnemyBehavior : MonoBehaviour
 
     [Header("Ataque")]
     [SerializeField] private float attackCooldown = 1.5f;
+    [SerializeField] public float attackRange = 2f;
 
     [Header("Movimiento")]
     private Quaternion rotacionInicial;
     private Rigidbody2D rb;
     public Animator animatorP;
+    private GameObject player;
+
+    [Header("Desfase de Animator (opcional)")]
+    [SerializeField] private bool randomizeAnimatorStartTime = true;
+    [SerializeField] private Vector2 normalizedTimeRange = new Vector2(0f, 1f); // 0..1 dentro del ciclo
+    [SerializeField] private float animatorSpeedJitter = 0f; // p.ej. 0.1 -> ±10% de variación
 
     private static readonly int IsAttackHash = Animator.StringToHash("isAttack");
 
@@ -37,8 +43,40 @@ public class BlueEnemyBehavior : MonoBehaviour
         rotacionInicial = transform.rotation;   // restaurado: la rotación objetivo de partida
         currentTag = gameObject.tag;
         isDmg = false;
+        player = GameObject.FindGameObjectWithTag("Player");
+    }
+    private void Start()
+    {
+        desfaseAnimator();
     }
 
+    private void desfaseAnimator()
+    {
+        // Desfase aleatorio del Animator para que no vayan sincronizados
+        if (animatorP != null && randomizeAnimatorStartTime)
+        {
+            // Asegura que el Animator haya evaluado al estado por defecto (Idle, etc.)
+            animatorP.Update(0f);
+
+            // Cogemos el estado actual en la capa 0 (la habitual)
+            var st = animatorP.GetCurrentAnimatorStateInfo(0);
+
+            // Si es un estado en bucle (Idle suele serlo), saltamos a un punto aleatorio
+            if (st.loop)
+            {
+                float t = Random.Range(normalizedTimeRange.x, normalizedTimeRange.y);
+                animatorP.Play(st.fullPathHash, 0, t);
+                animatorP.Update(0f); // aplica inmediatamente
+            }
+
+            // Variación opcional de velocidad para más “vida”
+            if (animatorSpeedJitter > 0f)
+            {
+                float factor = 1f + Random.Range(-animatorSpeedJitter, animatorSpeedJitter);
+                animatorP.speed *= factor;
+            }
+        }
+    }
     private void Update()
     {
         // Cooldown sin coroutines encadenadas
@@ -80,16 +118,17 @@ public class BlueEnemyBehavior : MonoBehaviour
             rb.AddTorque(rotacion * velocidadRotacion); // sin normalizar ni clamp para mantener el “feel”
         }
         // ----------------------------------------------------------------
-    }
-
-    private void OnTriggerStay2D(Collider2D other)
-    {
-        // Evita spam de ataques usando cooldown y estados
-        if (!isDead && other.CompareTag(virusTag) && !isAttacking)
+        //si este objeto se acerca al jugador tanto como attackRange, Attack()
+        if (player != null && Vector2.Distance(transform.position, player.transform.position) <= attackRange)
         {
-            Attack();
+            if (!isDead && !isAttacking)
+            {
+                Attack();
+            }
         }
     }
+
+
 
     private void Attack()
     {
@@ -97,5 +136,12 @@ public class BlueEnemyBehavior : MonoBehaviour
         attackTimer = attackCooldown;
 
         animatorP.SetBool(IsAttackHash, true);
+    }
+
+    //Pinta gizmo que muestre attackRange en el editor
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, attackRange);
     }
 }

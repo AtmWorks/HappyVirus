@@ -56,7 +56,7 @@ namespace BarthaSzabolcs.Tutorial_SpriteFlash
 
         #endregion
 
-        public void Flash(float duration = 1f)
+        public void Flash(float duration = 0.25f)
         {
             // If the flashRoutine is not null, then it is currently running.
             if (flashRoutine != null)

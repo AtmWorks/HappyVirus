@@ -598,25 +598,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50b6a5ab538265043acdee1385b40af2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyHP: 4
   explosion: {fileID: 5459446116007223409, guid: 69ada58f03867024aa748d198bc627e8,
     type: 3}
-  realExplosion: {fileID: 0}
-  EnemyObject: {fileID: 5328101571809632606}
-  face: {fileID: 5328101571214122534}
   corpse: {fileID: 2776787549449851587, guid: cb55e5fb4bb29364aa2ce7f0c2f2d2ed, type: 3}
-  thisAnim: {fileID: 5328101571809632611}
-  chaseScript: {fileID: 5328101571161128674}
-  deadlyTimer: 0
+  EnemyObject: {fileID: 5328101571809632606}
   flashList:
   - {fileID: 5427901302609592103}
   - {fileID: 3440073728121844328}
   - {fileID: 1133549522368972811}
   - {fileID: 3558851312676025827}
-  flashMaterial: {fileID: 2100000, guid: d9c0d1c6573b0a447b87d716c1366f77, type: 2}
   parentTag: {fileID: 5328101571161128674}
-  EnemyAlive: 0
-  isSpawned: 0
-  enemyHP: 3
 --- !u!1 &5328101570895438528
 GameObject:
   m_ObjectHideFlags: 0
@@ -735,12 +727,10 @@ GameObject:
   m_Component:
   - component: {fileID: 5328101571161128672}
   - component: {fileID: 5328101571161128674}
-  - component: {fileID: 5328101571161128677}
-  - component: {fileID: 5328101571161128676}
-  - component: {fileID: 5328101571161128675}
-  - component: {fileID: 5328101571161128673}
-  - component: {fileID: 4040162309812607276}
   - component: {fileID: 4455584724432168868}
+  - component: {fileID: 5328101571161128676}
+  - component: {fileID: 5328101571161128677}
+  - component: {fileID: 4040162309812607276}
   m_Layer: 0
   m_Name: parent
   m_TagString: Enemy
@@ -781,13 +771,82 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isDmg: 0
   isDead: 0
-  virusTag: Virus
   damageTag: Damage
   neutralTag: Neutral
   invisibleTag: invisible
-  velocidadRotacion: 20
+  velocidadRotacion: 50
   attackCooldown: 1.5
+  attackRange: 3.5
   animatorP: {fileID: 5328101571809632611}
+  randomizeAnimatorStartTime: 1
+  normalizedTimeRange: {x: 0, y: 1}
+  animatorSpeedJitter: 0
+--- !u!114 &4455584724432168868
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5328101571161128671}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1ed4c3bece1476419aac31a04f0628e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ChaseBehavior
+  objectToChase: {fileID: 0}
+  objectTag: Player
+  maxSpeed: 4
+  minimumSpeed: 0.5
+  rotationSpeed: 75
+  awakeRange: 15
+  stopRange: 20
+  isAbleToChase: 1
+  shouldBackToPoint: 0
+  isRotationVirtual: 1
+  speedMode: 1
+  rotationMode: 1
+  speedLerpRate: 1
+  pulseFrequency: 1.2
+  randomBurstInterval: 0.75
+  momentumDecayRate: 0.5
+  momentumBoost: 1
+  sinusAmplitude: 45
+  sinusFrequency: 1
+  predictiveLeadTime: 0.35
+  jitterAngle: 6
+  jitterFrequency: 6
+  orbitAngularSpeed: 180
+  orbitTangentWeight: 0.6
+  homingGain: 2
+  returnSpeed: 3
+  returnArriveThreshold: 0.1
+--- !u!50 &5328101571161128676
+Rigidbody2D:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5328101571161128671}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 12
+  m_LinearDamping: 25
+  m_AngularDamping: 50
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 1
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!60 &5328101571161128677
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -851,94 +910,6 @@ PolygonCollider2D:
       - {x: 1.9591827, y: 1.4781332}
       - {x: 0.74095917, y: 1.2084703}
   m_UseDelaunayMesh: 0
---- !u!50 &5328101571161128676
-Rigidbody2D:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5328101571161128671}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 10
-  m_LinearDamping: 10
-  m_AngularDamping: 20
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_Interpolate: 1
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
---- !u!58 &5328101571161128675
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5328101571161128671}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_CompositeOperation: 0
-  m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
-  m_Radius: 4
---- !u!114 &5328101571161128673
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5328101571161128671}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 45304f0f3b9a37748a1e783c4f3053c8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bodyrend: {fileID: 0}
-  normalFace: {fileID: -3236497245667354034, guid: ffb0994ce35279049b27bf9cb772e89e,
-    type: 3}
-  followFace: {fileID: -70116476281398081, guid: ffb0994ce35279049b27bf9cb772e89e,
-    type: 3}
-  deadFace: {fileID: -233850793546587920, guid: ffb0994ce35279049b27bf9cb772e89e,
-    type: 3}
-  normalBody: {fileID: -2038895375735083962, guid: ffb0994ce35279049b27bf9cb772e89e,
-    type: 3}
-  deadBody: {fileID: -2668427417100682915, guid: ffb0994ce35279049b27bf9cb772e89e,
-    type: 3}
-  thisEnemy: {fileID: 5328101571161128671}
-  enemyHp: {fileID: 5328101570745346457}
 --- !u!68 &4040162309812607276
 EdgeCollider2D:
   m_ObjectHideFlags: 0
@@ -995,45 +966,6 @@ EdgeCollider2D:
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
   m_UseAdjacentEndPoint: 0
---- !u!114 &4455584724432168868
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5328101571161128671}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a1ed4c3bece1476419aac31a04f0628e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ChaseBehavior
-  objectToChase: {fileID: 0}
-  objectTag: Player
-  maxSpeed: 5
-  minimumSpeed: 1
-  rotationSpeed: 50
-  awakeRange: 15
-  stopRange: 20
-  isAbleToChase: 1
-  shouldBackToPoint: 0
-  isRotationVirtual: 1
-  speedMode: 1
-  rotationMode: 1
-  speedLerpRate: 2
-  pulseFrequency: 1.2
-  randomBurstInterval: 0.75
-  momentumDecayRate: 0.5
-  momentumBoost: 1
-  sinusAmplitude: 45
-  sinusFrequency: 1
-  predictiveLeadTime: 0.35
-  jitterAngle: 6
-  jitterFrequency: 6
-  orbitAngularSpeed: 180
-  orbitTangentWeight: 0.6
-  homingGain: 2
-  returnSpeed: 3
-  returnArriveThreshold: 0.1
 --- !u!1 &5328101571214122534
 GameObject:
   m_ObjectHideFlags: 0

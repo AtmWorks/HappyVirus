@@ -11,21 +11,13 @@ public class WallBehaviour : MonoBehaviour
     void Start()
     {
         wallAnim.SetBool("Open", false);
-        //Wallanim  
     }
 
-
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "EGG")
         {
             wallAnim.SetBool("Open", true);
-
         }
-    }
-
-    void Update()
-    {
-        
     }
 }

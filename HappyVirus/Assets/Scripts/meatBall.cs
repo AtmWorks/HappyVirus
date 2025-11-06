@@ -70,9 +70,11 @@ public class meatBall : MonoBehaviour
                     ChaseSpeed += 0.5f;
                     timeSinceLastSpeedIncrease = 0f;
                 }
-
+                if (moveTo != null)
+                {
                     Vector2 movement = Vector2.MoveTowards(rb.position, moveTo.position, ChaseSpeed * Time.fixedDeltaTime);
                     rb.MovePosition(movement);
+                }
 
             }
             if (timer >= 3.3f && isAttack == true )
@@ -109,10 +111,13 @@ public class meatBall : MonoBehaviour
         }
         else
         {
-            float dist = Vector2.Distance(rb.position, moveTo.position);
-            if (dist <= wakeUpDistance)
+            if (moveTo != null){  }
             {
-                didWakeUp = true;
+                float dist = Vector2.Distance(rb.position, moveTo.position);
+                if (dist <= wakeUpDistance)
+                {
+                    didWakeUp = true;
+                }
             }
         }
 
@@ -145,15 +150,15 @@ public class meatBall : MonoBehaviour
     {
         this.gameObject.tag = "Damage";
         StartCoroutine(stopDmg());
-        ChaseSpeed = 20f; // Ajusta la velocidad del dash según sea necesario
+        ChaseSpeed = 20f; // Ajusta la velocidad del dash segï¿½n sea necesario
         Debug.Log("ENEMY DASHED");
         // Establecer la velocidad deseada
 
         // Esperar un tiempo determinado para el movimiento del dash
-        float dashDuration = 0.2f; // Ajusta la duración del dash según sea necesario
+        float dashDuration = 0.2f; // Ajusta la duraciï¿½n del dash segï¿½n sea necesario
         yield return new WaitForSeconds(dashDuration);
 
-        // Después de la duración del dash, detener el movimiento
+        // Despuï¿½s de la duraciï¿½n del dash, detener el movimiento
         ChaseSpeed=1f;
     }
     private IEnumerator stopDmg()

@@ -137,7 +137,5 @@ public class O2Behaviour : MonoBehaviour
 
         }
         Destroy(this.gameObject);
-
-
     }
 }

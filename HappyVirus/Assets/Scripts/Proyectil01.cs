@@ -37,8 +37,8 @@ public class Proyectil01 : MonoBehaviour {
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-
-        if (collision.gameObject.tag=="Enemy" || collision.gameObject.tag == "Wall" || collision.gameObject.tag == "hit" || collision.gameObject.tag == "neutral" )
+        Debug.Log("Proyectil collided with: " + collision.gameObject.tag);
+        if (collision.gameObject.tag=="Enemy" || collision.gameObject.tag == "Wall" || collision.gameObject.tag == "hit" )
         {
             //audioAndDestroy.proyectilSound = true;
             Instantiate(explosion, new Vector3(this.gameObject.transform.position.x, this.gameObject.transform.position.y, 0), Quaternion.identity);
