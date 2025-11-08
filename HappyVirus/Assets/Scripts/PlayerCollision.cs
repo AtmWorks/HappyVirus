@@ -35,6 +35,8 @@ public class PlayerCollision : MonoBehaviour {
 
     private CameraEffectController cameraEffectController;
     public float inmunityTime = 1f;
+
+    public bool isMapsGameMode = true;
     [SerializeField]private List <SimpleFlash> flashList;
 
 
@@ -59,9 +61,10 @@ public class PlayerCollision : MonoBehaviour {
         //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
 
 
-        cameraEffectController.triggerFade(0.5f, 1f);
+        cameraEffectController.triggerFade(0.5f, 1.5f);
         // thisTeleport.teleportPlayer(true, 0.8f);
         virusSkin.SetActive(false);
+        
         StartCoroutine(dameUnRespiro());
 
 
@@ -69,14 +72,22 @@ public class PlayerCollision : MonoBehaviour {
     }
     IEnumerator dameUnRespiro()
     {
-        // Espera 1 segundo.
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0.75f);
+        if (isMapsGameMode)
+        {
+            MapsController mapsController = GameObject.FindFirstObjectByType<MapsController>();
+            if (mapsController != null)
+            {
+                mapsController.DieReset();
+            }
+        }
+        yield return new WaitForSeconds(0.5f);
         virusSkin.SetActive(true);
         PlayerStatics.PlayerHP = PlayerStatics.PlayermaxHP;
 
         // player.blobCircle.fillAmount = 0;
         // player.blobCircle.color = new Color32(95, 255, 100, 255);
-
+        
         spawnController.spawnProcess();
 
     }

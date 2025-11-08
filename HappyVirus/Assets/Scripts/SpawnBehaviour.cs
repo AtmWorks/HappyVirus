@@ -13,6 +13,8 @@ public class SpawnBehaviour : MonoBehaviour
     public bool isMainSpawner;
     public GameObject leaveUI;
     public bool askOnce;
+
+
     //public List<GameObject> currentTPs;
     
 
@@ -68,6 +70,7 @@ public class SpawnBehaviour : MonoBehaviour
         // Player.SetActive(true);
         Player.transform.position = spawnPoint.transform.position;
         Player.GetComponent<SoftBody>().softBodyPosition();
+        
         StartCoroutine(spawnVirus());
     }
     private IEnumerator animatorBoolWait()
