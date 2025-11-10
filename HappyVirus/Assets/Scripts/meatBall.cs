@@ -111,7 +111,7 @@ public class meatBall : MonoBehaviour
         }
         else
         {
-            if (moveTo != null){  }
+            if (moveTo != null)
             {
                 float dist = Vector2.Distance(rb.position, moveTo.position);
                 if (dist <= wakeUpDistance)

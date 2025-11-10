@@ -37,17 +37,15 @@ public class BlueEnemyBehavior : MonoBehaviour
     private bool isAttacking;
     private float attackTimer;
 
-    private void Awake()
+    private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         rotacionInicial = transform.rotation;   // restaurado: la rotación objetivo de partida
         currentTag = gameObject.tag;
         isDmg = false;
         player = GameObject.FindGameObjectWithTag("Player");
-    }
-    private void Start()
-    {
         desfaseAnimator();
+
     }
 
     private void desfaseAnimator()
@@ -125,6 +123,10 @@ public class BlueEnemyBehavior : MonoBehaviour
             {
                 Attack();
             }
+        }
+        else if (player == null)
+        {
+            Debug.LogWarning("Player no encontrado en BlueEnemyBehavior");
         }
     }
 

@@ -21979,6 +21979,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: LRTB_2
       objectReference: {fileID: 0}
+    - target: {fileID: 3995482084551124838, guid: ecc7b8ba248db344d85588be5cac73ed,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5495991327248957924, guid: ecc7b8ba248db344d85588be5cac73ed,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -28310,10 +28315,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   maps:
-  - {fileID: 3995482084551124838, guid: 3f03f7a367d11a04eadbd6f4cf6b661b, type: 3}
-  - {fileID: 3995482084551124838, guid: 3f03f7a367d11a04eadbd6f4cf6b661b, type: 3}
-  - {fileID: 3995482084551124838, guid: 3f03f7a367d11a04eadbd6f4cf6b661b, type: 3}
-  - {fileID: 3995482084551124838, guid: 3f03f7a367d11a04eadbd6f4cf6b661b, type: 3}
+  - {fileID: 3995482084551124838, guid: ecc7b8ba248db344d85588be5cac73ed, type: 3}
+  - {fileID: 3995482084551124838, guid: ecc7b8ba248db344d85588be5cac73ed, type: 3}
+  - {fileID: 3995482084551124838, guid: ecc7b8ba248db344d85588be5cac73ed, type: 3}
+  - {fileID: 3995482084551124838, guid: ecc7b8ba248db344d85588be5cac73ed, type: 3}
+  - {fileID: 3995482084551124838, guid: ecc7b8ba248db344d85588be5cac73ed, type: 3}
   - {fileID: 3995482084551124838, guid: 3f03f7a367d11a04eadbd6f4cf6b661b, type: 3}
   - {fileID: 3995482084551124838, guid: 3f03f7a367d11a04eadbd6f4cf6b661b, type: 3}
   - {fileID: 3995482084551124838, guid: 3f03f7a367d11a04eadbd6f4cf6b661b, type: 3}
@@ -30567,7 +30573,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1598960354
 RectTransform:
   m_ObjectHideFlags: 0
@@ -37885,8 +37891,8 @@ SceneRoots:
   - {fileID: 1359881225}
   - {fileID: 1251953325}
   - {fileID: 1890439308}
-  - {fileID: 418081767}
   - {fileID: 1112317361}
+  - {fileID: 418081767}
   - {fileID: 713169114}
   - {fileID: 1409141674}
   - {fileID: 1683385183}

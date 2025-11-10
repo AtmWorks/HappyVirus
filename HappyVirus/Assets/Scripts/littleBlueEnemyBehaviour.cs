@@ -15,7 +15,7 @@ public class littleBlueEnemyBehaviour : MonoBehaviour
 
     public void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Virus"|| collision.gameObject.tag == "Damage"|| collision.gameObject.tag == "Enemy")
+        if (collision.gameObject.tag == "Virus"|| collision.gameObject.tag == "Damage"|| collision.gameObject.tag == "Enemy" || collision.gameObject.tag == "Neutral")
         {
             StartCoroutine(changeTag());
             animator.SetBool("isExploding", true);

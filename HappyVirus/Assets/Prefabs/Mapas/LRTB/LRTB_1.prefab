@@ -3383,7 +3383,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -1.0337467, y: 17.564316}
+  m_Offset: {x: -0.5529785, y: 16.963352}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -3393,7 +3393,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 50.936275, y: 42.188797}
+  m_Size: {x: 46.849724, y: 40.98687}
   m_EdgeRadius: 0
 --- !u!114 &3383553829921546013
 MonoBehaviour:
@@ -3409,7 +3409,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mainCamera: {fileID: 0}
   zoomSpeed: 0.5
-  targetZoom: 12
+  targetZoom: 13.5
   zoomEpsilon: 0.01
 --- !u!1 &408967421394010229
 GameObject:
@@ -122006,6 +122006,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: meatSacWallEnemy (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 9171994559506520076, guid: cfab3183c58005346af5a2d84333861d,
+        type: 3}
+      propertyPath: InitialModule.startLifetime.scalar
+      value: 2.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -130040,6 +130045,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: meatSacWallEnemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 9171994559506520076, guid: cfab3183c58005346af5a2d84333861d,
+        type: 3}
+      propertyPath: InitialModule.startLifetime.scalar
+      value: 1.8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
