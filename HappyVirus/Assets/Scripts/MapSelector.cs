@@ -5,7 +5,7 @@ using UnityEngine;
 /// <summary>
 /// Componente del mapa. Gestiona un catálogo de variantes ya presentes en el prefab
 /// (todas desactivadas de inicio) y activa UNA según la lógica indicada.
-/// Tras activar, detecta los hijos directos "SPAWN_" y rellena 'gates'.
+/// Tras activar, detecta los hijos "SPAWN_" dentro de SPAWNCONTAINER y rellena 'gates'.
 /// </summary>
 public class MapSelector : MonoBehaviour
 {
@@ -41,8 +41,8 @@ public class MapSelector : MonoBehaviour
     /// - variant exacto o Default si no existe.
     /// - difficulty exacta o restando hasta 1.
     /// - hasTransition debe coincidir; si no es posible, usa Default con isTransition == false.
-    /// Activa un objeto al azar de la lista escogida (solo SetActive), busca sus hijos directos "SPAWN_",
-    /// rellena 'gates' y devuelve esa lista.
+    /// Activa un objeto al azar de la lista escogida (solo SetActive), busca las GATES dentro de SPAWNCONTAINER,
+    /// elimina (Destroy) todas las variantes no elegidas, limpia las listas, rellena 'gates' y devuelve esa lista.
     /// </summary>
     public List<GameObject> variantSelector(VariantType variant, int difficulty, bool hasTransition)
     {
@@ -91,14 +91,17 @@ public class MapSelector : MonoBehaviour
         DeactivateAll();
         chosen.SetActive(true);
 
-        // 6) Buscar hijos directos "SPAWN_" del elegido, rellenar 'gates' y devolverlos
-        var spawnChildren = GetDirectSpawnChildren(chosen);
+        // 6) (NUEVO) Destruir todas las variantes no elegidas y limpiar listas
+        DestroyAllVariantsExcept(chosen);
+
+        // 7) (NUEVO) Buscar SPAWNCONTAINER en los hijos directos del elegido y tomar sus hijos "SPAWN_"
+        var spawnChildren = GetSpawnChildrenFromContainer(chosen);
         gates = spawnChildren.ToArray();
-        
+
         return spawnChildren;
     }
 
-    // ----------------- Helpers privados (simples y legibles) -----------------
+    // ----------------- Helpers privados -----------------
 
     /// <summary>
     /// Desactiva todos los GameObjects de todas las entradas del catálogo.
@@ -106,24 +109,76 @@ public class MapSelector : MonoBehaviour
     private void DeactivateAll()
     {
         foreach (var entry in variantCatalog)
+        {
             foreach (var go in entry.variantObjects)
                 if (go != null && go.activeSelf)
                     go.SetActive(false);
+        }
     }
 
     /// <summary>
-    /// Devuelve los hijos directos de 'root' cuyo nombre empieza por "SPAWN_".
+    /// Destruye (Destroy) todas las variantes del catálogo que no sean 'chosen'
+    /// y limpia las listas para evitar referencias nulas o tamaños innecesarios.
     /// </summary>
-    private List<GameObject> GetDirectSpawnChildren(GameObject root)
+    private void DestroyAllVariantsExcept(GameObject chosen)
+    {
+        foreach (var entry in variantCatalog)
+        {
+            // Si el elegido está en esta entry, conservamos solo ese; los demás se destruyen
+            if (entry.variantObjects != null && entry.variantObjects.Count > 0)
+            {
+                for (int i = entry.variantObjects.Count - 1; i >= 0; i--)
+                {
+                    var go = entry.variantObjects[i];
+                    if (go == null) { entry.variantObjects.RemoveAt(i); continue; }
+
+                    if (go != chosen)
+                    {
+                        // Destroy es diferido a fin de frame; removemos la referencia para limpiar la lista ya
+                        Object.Destroy(go);
+                        entry.variantObjects.RemoveAt(i);
+                    }
+                }
+            }
+        }
+    }
+
+    /// <summary>
+    /// Busca un hijo directo llamado "SPAWNCONTAINER" bajo 'root' y devuelve
+    /// los hijos de ese contenedor cuyo nombre empiece por "SPAWN_".
+    /// </summary>
+    private List<GameObject> GetSpawnChildrenFromContainer(GameObject root)
     {
         var result = new List<GameObject>();
+        if (root == null) return result;
+
+        // Buscar SOLO entre hijos directos
+        Transform container = null;
         var t = root.transform;
         for (int i = 0; i < t.childCount; i++)
         {
-            var child = t.GetChild(i).gameObject;
-            if (child.name.StartsWith("SPAWN_"))
-                result.Add(child);
+            var child = t.GetChild(i);
+            if (child.name == "SPAWNCONTAINER")
+            {
+                container = child;
+                break;
+            }
         }
+
+        if (container == null)
+        {
+            Debug.LogWarning($"[MapSelector] No se encontró SPAWNCONTAINER bajo {root.name} en {name}.");
+            return result;
+        }
+
+        // Iterar SOLO los hijos directos del contenedor
+        for (int i = 0; i < container.childCount; i++)
+        {
+            var spawn = container.GetChild(i).gameObject;
+            if (spawn.name.StartsWith("SPAWN_"))
+                result.Add(spawn);
+        }
+
         return result;
     }
 
@@ -132,7 +187,7 @@ public class MapSelector : MonoBehaviour
     /// </summary>
     private List<GameObject> ReturnEmptyWithWarning(string msg)
     {
-        Debug.LogWarning($"[MapBehavior] {msg}");
+        Debug.LogWarning($"[MapSelector] {msg}");
         gates = new GameObject[0];
         return new List<GameObject>();
     }

@@ -28315,15 +28315,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   maps:
-  - {fileID: 3995482084551124838, guid: ecc7b8ba248db344d85588be5cac73ed, type: 3}
-  - {fileID: 3995482084551124838, guid: ecc7b8ba248db344d85588be5cac73ed, type: 3}
-  - {fileID: 3995482084551124838, guid: ecc7b8ba248db344d85588be5cac73ed, type: 3}
-  - {fileID: 3995482084551124838, guid: ecc7b8ba248db344d85588be5cac73ed, type: 3}
-  - {fileID: 3995482084551124838, guid: ecc7b8ba248db344d85588be5cac73ed, type: 3}
   - {fileID: 3995482084551124838, guid: 3f03f7a367d11a04eadbd6f4cf6b661b, type: 3}
-  - {fileID: 3995482084551124838, guid: 3f03f7a367d11a04eadbd6f4cf6b661b, type: 3}
-  - {fileID: 3995482084551124838, guid: 3f03f7a367d11a04eadbd6f4cf6b661b, type: 3}
-  - {fileID: 3995482084551124838, guid: 3f03f7a367d11a04eadbd6f4cf6b661b, type: 3}
+  - {fileID: 3995482084551124838, guid: ecc7b8ba248db344d85588be5cac73ed, type: 3}
+  - {fileID: 3995482084551124838, guid: 730a4834c1c925a4a88b2e84ac5f5ea0, type: 3}
+  - {fileID: 2052214430}
   lobbyMap: {fileID: 1598960353}
   currentMap: {fileID: 1598960353}
   player: {fileID: 1844703899}
@@ -30573,7 +30568,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1598960354
 RectTransform:
   m_ObjectHideFlags: 0
@@ -36695,6 +36690,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: LR_1
       objectReference: {fileID: 0}
+    - target: {fileID: 1898613020743034524, guid: 2c1c2744898d1c441aafe220cb98c6cc,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2597308472697780765, guid: 2c1c2744898d1c441aafe220cb98c6cc,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -36750,6 +36750,12 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2c1c2744898d1c441aafe220cb98c6cc, type: 3}
+--- !u!1 &2052214430 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1898613020743034524, guid: 2c1c2744898d1c441aafe220cb98c6cc,
+    type: 3}
+  m_PrefabInstance: {fileID: 2052214429}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2056173243
 GameObject:
   m_ObjectHideFlags: 0
@@ -37892,11 +37898,11 @@ SceneRoots:
   - {fileID: 1251953325}
   - {fileID: 1890439308}
   - {fileID: 1112317361}
-  - {fileID: 418081767}
   - {fileID: 713169114}
+  - {fileID: 2052214429}
+  - {fileID: 418081767}
   - {fileID: 1409141674}
   - {fileID: 1683385183}
-  - {fileID: 2052214429}
   - {fileID: 1006133200}
   - {fileID: 1172195407}
   - {fileID: 1637871800}
