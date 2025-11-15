@@ -8,8 +8,14 @@ using UnityEngine;
 /// </summary>
 public class MapsController : MonoBehaviour
 {
-    [Header("Catálogo de mapas (prefabs con MapSelector)")]
-    public List<GameObject> maps = new List<GameObject>();
+    [Header("Rooms (>=3 puertas)")]
+    public List<GameObject> roomMaps = new List<GameObject>();
+
+    [Header("Tunnels (2 puertas)")]
+    public List<GameObject> tunnelMaps = new List<GameObject>();
+
+    [Header("Dead Ends (1 puerta)")]
+    public List<GameObject> deadEndMaps = new List<GameObject>();
 
     [Header("Mapa del lobby (sin MapSelector)")]
     public GameObject lobbyMap;
@@ -24,19 +30,30 @@ public class MapsController : MonoBehaviour
 
     [Header("Límite de ramificación")]
     public int maxGatesPossible = 6;
+    public int minimumGates = 2; // mínimo de openGates para permitir túneles y dead ends
 
     public List<GameObject> usedMaps = new List<GameObject>();
-    public List<GameObject> originalMaps = new List<GameObject>();
+
+    // Copias originales para resetear al morir
+    public List<GameObject> originalRoomMaps = new List<GameObject>();
+    public List<GameObject> originalTunnelMaps = new List<GameObject>();
+    public List<GameObject> originalDeadEndMaps = new List<GameObject>();
 
     public GateBehavior lobbyGate;
+
+    // para evitar dos túneles seguidos
+    private bool lastWasTunnel = false;
+
     private void Start()
     {
-        // Guardar copia de los mapas originales
-        originalMaps = new List<GameObject>(maps);
+        // Guardar copia de los mapas originales para cada lista
+        originalRoomMaps   = new List<GameObject>(roomMaps);
+        originalTunnelMaps = new List<GameObject>(tunnelMaps);
+        originalDeadEndMaps = new List<GameObject>(deadEndMaps);
     }
 
     /// <summary>
-    /// Viaja al siguiente mapa. Puede reutilizar uno ya existente (linkedMap) o instanciar uno nuevo desde 'maps'.
+    /// Viaja al siguiente mapa. Puede reutilizar uno ya existente (linkedMap) o instanciar uno nuevo desde las listas.
     /// - fromOrientation: orientación por la que salimos del mapa actual (para colocar al jugador en la puerta opuesta).
     /// - gateFrom: la Gate desde la que hemos salido (en el mapa actual).
     /// - linkedMap: si no es null, ya existe y se reutiliza (no se instancia nuevo).
@@ -94,7 +111,7 @@ public class MapsController : MonoBehaviour
         // --- CASO 2: no hay mapa enlazado; instanciar uno nuevo siguiendo reglas ---
 
         // Resta 1 por usar una puerta de salida
-        openGates --;
+        openGates--;
 
         // Necesitamos que el nombre del mapa contenga la puerta opuesta (L/R/T/B)
         char neededGateLetter = OrientationToLetter(opposite);
@@ -102,8 +119,9 @@ public class MapsController : MonoBehaviour
         // Comprobar bioma objetivo (si no se especifica, usamos currentBiome)
         BiomeType targetBiome = biomeToGo.HasValue ? biomeToGo.Value : currentBiome;
 
-        // 1) Filtrar por bioma y por presencia de la gate necesaria en el NOMBRE
-        var biomeCandidates = maps
+        // 1) Obtener candidatos de cada lista pública (Rooms / Tunnels / DeadEnds),
+        // filtrando por bioma y letra de puerta necesaria.
+        List<GameObject> roomCandidates = roomMaps
             .Where(pf =>
             {
                 if (pf == null) return false;
@@ -116,59 +134,146 @@ public class MapsController : MonoBehaviour
             })
             .ToList();
 
-        if (biomeCandidates.Count == 0)
+        List<GameObject> tunnelCandidates = tunnelMaps
+            .Where(pf =>
+            {
+                if (pf == null) return false;
+                var sel = pf.GetComponent<MapSelector>();
+                if (sel == null) return false;
+                if (sel.biome != targetBiome) return false;
+
+                string n = pf.name.ToUpperInvariant();
+                return n.Contains(neededGateLetter.ToString());
+            })
+            .ToList();
+
+        List<GameObject> deadEndCandidates = deadEndMaps
+            .Where(pf =>
+            {
+                if (pf == null) return false;
+                var sel = pf.GetComponent<MapSelector>();
+                if (sel == null) return false;
+                if (sel.biome != targetBiome) return false;
+
+                string n = pf.name.ToUpperInvariant();
+                return n.Contains(neededGateLetter.ToString());
+            })
+            .ToList();
+
+        if (roomCandidates.Count == 0 && tunnelCandidates.Count == 0 && deadEndCandidates.Count == 0)
         {
-            Debug.LogWarning("[MapsController] No hay mapas candidatos válidos para el bioma/orientación requeridos.");
+            Debug.LogWarning("[MapsController] No hay mapas candidatos válidos para el bioma/orientación requeridos (Rooms/Tunnels/DeadEnds).");
             return;
         }
 
-        // 2) Determinar si debemos forzar DeadEnd según openGates y maxGatesPossible
-        bool mustForceDeadEnd = openGates > maxGatesPossible;
+        // 2) Reglas de minimumGates / maximumGates y tipo de sala
+        bool canUseTunnelsAndDeadEnds = openGates >= minimumGates;
+        bool mustForceDeadEnd = openGates > maxGatesPossible && canUseTunnelsAndDeadEnds;
 
-        // 3) Separar candidatos en DeadEnds vs No-DeadEnds (por nombre)
-        var deadEnds = biomeCandidates.Where(IsDeadEndName).ToList();
-        var notDeadEnds = biomeCandidates.Where(p => !IsDeadEndName(p.name)).ToList();
-
-        // 4) Seleccionar un prefab válido según la regla de dead end
         GameObject chosenPrefab = null;
 
-        if (mustForceDeadEnd)
+        // 2a) Si debemos forzar DeadEnd y hay candidatos, los intentamos primero
+        if (mustForceDeadEnd && deadEndCandidates.Count > 0)
         {
-            if (deadEnds.Count == 0)
-            {
-                // Si no hay deadEnds disponibles, caemos a cualquier candidato (para no bloquear)
-                chosenPrefab = biomeCandidates[Random.Range(0, biomeCandidates.Count)];
-            }
-            else
-            {
-                chosenPrefab = deadEnds[Random.Range(0, deadEnds.Count)];
-            }
+            chosenPrefab = deadEndCandidates[Random.Range(0, deadEndCandidates.Count)];
         }
         else
         {
-            // Podemos usar cualquier no-deadEnd; si no hay, usar deadEnd
-            if (notDeadEnds.Count > 0)
-                chosenPrefab = notDeadEnds[Random.Range(0, notDeadEnds.Count)];
+            // 2b) No se deben agregar Tunnels ni DeadEnds si openGates está por debajo de minimumGates
+            if (!canUseTunnelsAndDeadEnds)
+            {
+                if (roomCandidates.Count > 0)
+                {
+                    chosenPrefab = roomCandidates[Random.Range(0, roomCandidates.Count)];
+                }
+                else
+                {
+                    // Fallback extremo: no hay Rooms, usamos cualquier otro para no bloquear
+                    List<GameObject> fallback = new List<GameObject>();
+                    fallback.AddRange(tunnelCandidates);
+                    fallback.AddRange(deadEndCandidates);
+
+                    if (fallback.Count > 0)
+                    {
+                        Debug.LogWarning("[MapsController] No hay Rooms disponibles por debajo de minimumGates. Usando fallback (Tunnel/DeadEnd).");
+                        chosenPrefab = fallback[Random.Range(0, fallback.Count)];
+                    }
+                }
+            }
             else
-                chosenPrefab = deadEnds[Random.Range(0, deadEnds.Count)];
+            {
+                // canUseTunnelsAndDeadEnds == true
+
+                if (lastWasTunnel)
+                {
+                    // 2c) Si el último fue Tunnel, el siguiente debe ser Room o, si superamos máximo, DeadEnd.
+                    if (mustForceDeadEnd && deadEndCandidates.Count > 0)
+                    {
+                        chosenPrefab = deadEndCandidates[Random.Range(0, deadEndCandidates.Count)];
+                    }
+                    else if (roomCandidates.Count > 0)
+                    {
+                        chosenPrefab = roomCandidates[Random.Range(0, roomCandidates.Count)];
+                    }
+                    else if (tunnelCandidates.Count > 0)
+                    {
+                        // Fallback: no hay Rooms ni DeadEnds válidos, permitimos Tunnel de nuevo para no romper la run.
+                        Debug.LogWarning("[MapsController] No hay Rooms ni DeadEnds disponibles tras un Tunnel. Permitiendo Tunnel consecutivo como fallback.");
+                        chosenPrefab = tunnelCandidates[Random.Range(0, tunnelCandidates.Count)];
+                    }
+                }
+                else
+                {
+                    // 2d) Última sala no fue Tunnel. Podemos usar Rooms y Tunnels aleatoriamente.
+                    List<GameObject> pool = new List<GameObject>();
+                    pool.AddRange(roomCandidates);
+                    pool.AddRange(tunnelCandidates);
+
+                    if (pool.Count > 0)
+                    {
+                        chosenPrefab = pool[Random.Range(0, pool.Count)];
+                    }
+                    else if (mustForceDeadEnd && deadEndCandidates.Count > 0)
+                    {
+                        chosenPrefab = deadEndCandidates[Random.Range(0, deadEndCandidates.Count)];
+                    }
+                    else if (deadEndCandidates.Count > 0)
+                    {
+                        // Si no hay Rooms/Tunnels pero sí DeadEnds y estamos por encima de minimumGates, se permite.
+                        chosenPrefab = deadEndCandidates[Random.Range(0, deadEndCandidates.Count)];
+                    }
+                }
+            }
+
+            // Si queríamos forzar DeadEnd pero no hay candidatos, dejar constancia
+            if (mustForceDeadEnd && deadEndCandidates.Count == 0)
+            {
+                Debug.LogWarning("[MapsController] Se quería forzar DeadEnd (superado maxGatesPossible) pero no hay candidatos de DeadEnd. Usando otro tipo de sala.");
+            }
         }
 
         if (chosenPrefab == null)
         {
-            Debug.LogWarning("[MapsController] No se pudo elegir un prefab de mapa.");
+            Debug.LogWarning("[MapsController] No se pudo elegir un prefab de mapa tras aplicar reglas de Rooms/Tunnels/DeadEnds.");
             return;
         }
 
-        // 5) Actualizar openGates sumando (numGatesDelMapa - 1) si no es deadEnd
-        int gateCount = CountGateLettersFromName(chosenPrefab.name);
-        if (!IsDeadEndName(chosenPrefab.name))
+        // 3) Actualizar openGates sumando (numGatesDelMapa - 1) si no es DeadEnd
+        int chosenGateCount = CountGateLettersFromName(chosenPrefab.name);
+        bool chosenIsDeadEnd = (chosenGateCount <= 1);
+        bool chosenIsTunnel = (chosenGateCount == 2);
+
+        if (!chosenIsDeadEnd)
         {
             // Contamos todas menos la de entrada
-            openGates += Mathf.Max(0, gateCount - 1);
+            openGates += Mathf.Max(0, chosenGateCount - 1);
         }
-        // Si es deadEnd, no se suma nada (ya restamos 1 al salir)
+        // Si es DeadEnd, no se suma nada (ya restamos 1 al salir)
 
-        // 6) Instanciar el mapa y activar variante
+        // Registrar si el último instanciado fue un túnel
+        lastWasTunnel = chosenIsTunnel;
+
+        // 4) Instanciar el mapa y activar variante
         var instance = Instantiate(chosenPrefab);
         instance.name = chosenPrefab.name + "_Instance";
 
@@ -193,7 +298,7 @@ public class MapsController : MonoBehaviour
             return;
         }
 
-        // 7) Elegir una Gate válida:
+        // 5) Elegir una Gate válida:
         //    - GateBehavior.linkedGate y linkedMap vacías
         //    - gateOrientation == opuesta a fromOrientation
         GateBehavior targetGate = null;
@@ -221,7 +326,7 @@ public class MapsController : MonoBehaviour
             return;
         }
 
-        // 8) Linkear las puerta de origen y destino entre sí y sus mapas 
+        // 6) Linkear las puerta de origen y destino entre sí y sus mapas 
         targetGate.linkedGate = gateFrom;
         targetGate.linkedMap = currentMap;
 
@@ -229,21 +334,33 @@ public class MapsController : MonoBehaviour
         gateFrom.GetComponent<GateBehavior>().linkedMap = instance;
 
 
-        // 9) Colocar al jugador en el SpawnPoint de la puerta elegida
+        // 7) Colocar al jugador en el SpawnPoint de la puerta elegida
         if (player != null && targetGate.spawnPoint != null)
         {
             player.transform.position = targetGate.spawnPoint.position;
         }
 
-        // 10) Encender player y actualizar estado
+        // 8) Encender player y actualizar estado
         if (player != null) player.SetActive(true);
 
         instance.SetActive(true);
         currentMap = instance;
         currentBiome = selector.biome;
 
-        // 11) Eliminar el prefab elegido de la lista de mapas disponibles (ya forma parte de la run)
-        maps.Remove(chosenPrefab);
+        // 9) Eliminar el prefab elegido de la lista correspondiente (ya forma parte de la run)
+        if (roomMaps.Contains(chosenPrefab))
+        {
+            roomMaps.Remove(chosenPrefab);
+        }
+        else if (tunnelMaps.Contains(chosenPrefab))
+        {
+            tunnelMaps.Remove(chosenPrefab);
+        }
+        else if (deadEndMaps.Contains(chosenPrefab))
+        {
+            deadEndMaps.Remove(chosenPrefab);
+        }
+
         usedMaps.Add(instance);
     }
 
@@ -273,6 +390,7 @@ public class MapsController : MonoBehaviour
         }
     }
 
+    // Estos métodos se siguen usando para el cálculo de openGates
     private static bool IsDeadEndName(GameObject go) => IsDeadEndName(go.name);
     private static bool IsDeadEndName(string nameUpper)
     {
@@ -299,10 +417,23 @@ public class MapsController : MonoBehaviour
     {
         currentMap = lobbyMap;//destroy the current map
         currentMap.SetActive(true);
-        maps = new List<GameObject>(originalMaps);
-        //destroy every map in usedMaps
+
+        // reset de las listas a sus prefabs originales
+        roomMaps      = new List<GameObject>(originalRoomMaps);
+        tunnelMaps    = new List<GameObject>(originalTunnelMaps);
+        deadEndMaps   = new List<GameObject>(originalDeadEndMaps);
+
+        // reset de random para que la nueva run tenga secuencia distinta
+        UnityEngine.Random.InitState(System.Environment.TickCount);
+
+        // Reset estado de enlaces desde el lobby
         lobbyGate.linkedGate = null;
         lobbyGate.linkedMap = null;
+
+        // Reset flag de túneles
+        lastWasTunnel = false;
+
+        //destroy every map in usedMaps
         foreach (GameObject map in usedMaps)
         {
             Destroy(map);
